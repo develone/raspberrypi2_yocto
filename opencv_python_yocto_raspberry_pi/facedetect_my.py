@@ -57,7 +57,7 @@ if __name__ == '__main__':
                 draw_rects(vis_roi, subrects, (255, 0, 0))
         dt = clock() - t
 
-        #draw_str(vis, (20, 20), 'time: %.1f ms' % (dt*1000))
+        draw_str(vis, (20, 20), 'time: %.1f ms' % (dt*1000))
         cv2.imshow('facedetect', vis)
 
         if 0xFF & cv2.waitKey(5) == 27:
