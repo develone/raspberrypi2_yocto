@@ -1,0 +1,52 @@
+poky fido
+
+commit 0f8d89ce66cfffccc9911d6c61470a585173b79d
+Author: Ross Burton <ross.burton@intel.com>
+Date:   Fri Jul 17 15:40:22 2015 +0100
+
+    core-image-lsb-sdk: use kernel-devsrc to ensure kernel module builds work
+    
+    With the move of the kernel source to the kernel-devsrc, we need this packag
+    ensure the kernel module sanity tests made on core-image-lsb-sdk continue to
+    pass. Therefore update the name of the package included in the image.
+    
+    (From OE-Core rev: b283b82ec59a2137cf717811172765848fa813fa)
+    
+    Signed-off-by: Ross Burton <ross.burton@intel.com>
+    Signed-off-by: Richard Purdie <richard.purdie@linuxfoundation.org>
+
+meta-raspberrypi
+
+commit 7457bf182c8fd550ec877ecd786a3edd16e65495
+Author: Petter Mabäcker <petter@technux.se>
+Date:   Sun Jul 19 11:11:26 2015 +0200
+
+    wiringpi: Bump SRCREV
+    
+    Update wiringpi to latest revision. Due to a refactoring of the build
+    procedure in wiringpi the integration patch 'makefile-install.patch'
+    didn't apply anymore. While migrating that patch it was simplified and
+    generated using 'git format-patch' instead, to make it easier to maintain
+    the patch in the future.
+    
+    [Support #60]
+    
+    Signed-off-by: Petter Mabäcker <petter@technux.se>
+    Acked-by: Andrei Gherzan <andrei@gherzan.ro>
+
+meta-oe
+
+commit 0f8d89ce66cfffccc9911d6c61470a585173b79d
+Author: Ross Burton <ross.burton@intel.com>
+Date:   Fri Jul 17 15:40:22 2015 +0100
+
+    core-image-lsb-sdk: use kernel-devsrc to ensure kernel module builds work
+    
+    With the move of the kernel source to the kernel-devsrc, we need this packag
+    ensure the kernel module sanity tests made on core-image-lsb-sdk continue to
+    pass. Therefore update the name of the package included in the image.
+    
+    (From OE-Core rev: b283b82ec59a2137cf717811172765848fa813fa)
+    
+    Signed-off-by: Ross Burton <ross.burton@intel.com>
+    Signed-off-by: Richard Purdie <richard.purdie@linuxfoundation.org>
