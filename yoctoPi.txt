@@ -1,0 +1,165 @@
+http://www.cnx-software.com/2015/02/27/yocto-project-raspberry-pi-2-board-minimal-image/
+When using 16GB & 32GB need to gparted the sdb2 partition
+cd wkg
+mkdir yocto
+cd yocto
+mkdir repo072015
+cd repo072015
+git clone git://git.yoctoproject.org/poky.git
+git://git.yoctoproject.org/meta-raspberrypi
+
+mkdir RaspberryPi2
+cd RaspberryPi2
+rsync -avl ../repo072015/poky .
+cd poky/
+git checkout -b fido
+rsync -avl ../../repo072015/meta-raspberrypi .
+git checkout -b fido
+git checkout master
+
+. oe-init-build-env
+now using a new location of downloads
+now using fido branch for poky & meta-raspberrypi
+
+DL_DIR ?= "/home/vidal/wkg/yocto/downloads"
+ bitbake rpi-basic-image
+Parsing recipes:   7% |###                                      | ETA:  00:09:49
+
+bitbake rpi-basic-image
+Parsing recipes:  70% |#############################            | ETA:  00:03:30
+Build Configuration:
+BB_VERSION        = "1.27.1"
+BUILD_SYS         = "x86_64-linux"
+NATIVELSBSTRING   = "Ubuntu-12.04"
+TARGET_SYS        = "arm-poky-linux-gnueabi"
+MACHINE           = "raspberrypi2"
+DISTRO            = "poky"
+DISTRO_VERSION    = "1.8+snapshot-20150727"
+TUNE_FEATURES     = "arm armv7a vfp thumb neon callconvention-hard vfpv4 cortexa7"
+TARGET_FPU        = "vfp-vfpv4-neon"
+meta              
+meta-yocto        
+meta-yocto-bsp    = "fido:0f8d89ce66cfffccc9911d6c61470a585173b79d"
+meta-raspberrypi  = "fifo:7457bf182c8fd550ec877ecd786a3edd16e65495"
+meta-oe           = "fido:0f8d89ce66cfffccc9911d6c61470a585173b79d"
+
+NOTE: Preparing RunQueue
+NOTE: Executing SetScene Tasks
+NOTE: Executing RunQueue Tasks
+NOTE: Tasks Summary: Attempted 6260 tasks of which 6227 didn't need to be rerun and all succeeded.
+
+core-image-sato 2hrs 10 min build time on ws009 amd 6 core with 16GB of Memory.
+
+rpi-basic-image 1965 tasks 
+core-image-sato with dev-pkgs tools-sdk 5667 tasks
+core-image-sato with dev-pkgs tools-sdk 5924 tasks
+ kernel-dev xterm git \
+ jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
+ python-numpy
+core-image-sato with dev-pkgs tools-sdk 6015 tasks
+kernel-dev xterm git \
+ jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
+ python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
+ chkconfig v4l-utils
+core-image-sato with dev-pkgs tools-sdk 6054 tasks
+kernel-dev xterm git \
+ jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
+ python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
+ chkconfig v4l-utils python-imaging
+core-image-sato with dev-pkgs tools-sdk 6070 tasks
+kernel-dev xterm git \
+ jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
+ python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
+ chkconfig v4l-utils python-imaging parted
+core-image-sato with dev-pkgs tools-sdk 6109 tasks
+kernel-dev xterm git \
+ jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
+ python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
+ chkconfig v4l-utils python-imaging parted python-distribute \
+ python-pyrex python-pexpect"
+core-image-sato with dev-pkgs tools-sdk 6135 tasks
+kernel-dev xterm git \
+ jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
+ python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
+ chkconfig v4l-utils python-imaging parted python-distribute \
+ python-pyrex python-pexpect gperf tree
+core-image-sato with dev-pkgs tools-sdk 6233 tasks
+kernel-dev xterm git \
+ jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
+ python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
+ chkconfig v4l-utils python-imaging parted python-distribute \
+ python-pyrex python-pexpect gperf tree libav libav-dev \
+ x264 x264-dev libav libav-dev opencv opencv-samples
+sudo dd if=tmp/deploy/images/raspberrypi2/rpi-basic-image-raspberrypi2.rpi-sdimg | pv | sudo dd of=/dev/sdX bs=16M
+
+dd if=tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg | pv | sudo dd of=/dev/sdb bs=16
+1638400+0 records inMB/s] [                         <=>                        ]
+1638400+0 records out
+838860800 bytes (839 MB) copied, 468.862 s, 1.8 MB/s
+ 800MB 0:07:48 [1.71MB/s] [                          <=>                       ]
+52428800+0 records in
+52428800+0 records out
+838860800 bytes (839 MB) copied, 472.69 s, 1.8 MB/s
+
+Read more: http://www.cnx-software.com/2015/02/27/yocto-project-raspberry-pi-2-board-minimal-image/#ixzz3gTs5MrwG
+
+212992+0 records in3MB/s] [ <=>                                                ]
+212992+0 records out
+109051904 bytes (109 MB) copied, 2.53324 s, 43.0 MB/s
+ 104MB 0:00:02 [  42MB/s] [  <=>                                               ]
+0+1598 records in
+0+1598 records out
+109051904 bytes (109 MB) copied, 13.3466 s, 8.2 MB/s
+
+Use gparted /dev/sdX to resize the 2nd partition.
+
+bitbake meta-toolchain
+root@ws009:/home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/deploy/sdk# ./poky-glibc-x86_64-meta-toolchain-cortexa7hf-vfp-vfpv4-neon-toolchain-1.8+snapshot.sh  
+Poky (Yocto Project Reference Distro) SDK installer version 1.8+snapshot
+===========================================================
+Enter target directory for SDK (default: /opt/poky/1.8+snapshot): 
+You are about to install the SDK to "/opt/poky/1.8+snapshot". Proceed[Y/n]?y
+Extracting SDK...done
+Setting it up...done
+SDK has been successfully set up and is ready to be used.
+Each time you wish to use the SDK in a new shell session, you need to source the environment setup script e.g.
+ $ . /opt/poky/1.8+snapshot/environment-setup-cortexa7hf-vfp-vfpv4-neon-poky-linux-gnueabi
+
+diff -u local.conf RaspberryPi2/poky/build/conf/local.conf 
+--- local.conf	2015-07-20 17:44:56.544117377 -0600
++++ RaspberryPi2/poky/build/conf/local.conf	2015-07-20 17:46:03.741656167 -0600
+@@ -34,7 +34,10 @@
+ #MACHINE ?= "edgerouter"
+ #
+ # This sets the default machine to be qemux86 if no other machine is selected:
+-MACHINE ??= "qemux86"
++#MACHINE ??= "qemux86"
++#MACHINE = "raspberrypi2"
++MACHINE ??= "raspberrypi2"
++GPU_MEM = "16"
+
+diff -u bblayers.conf RaspberryPi2_test1/poky/build/conf/bblayers.conf 
+--- bblayers.conf	2015-07-20 17:45:06.610954757 -0600
++++ RaspberryPi2_test1/poky/build/conf/bblayers.conf	2015-07-20 17:20:40.679711601 -0600
+@@ -9,6 +9,7 @@
+   /home/vidal/wkg/yocto/RaspberryPi2/poky/meta \
+   /home/vidal/wkg/yocto/RaspberryPi2/poky/meta-yocto \
+   /home/vidal/wkg/yocto/RaspberryPi2/poky/meta-yocto-bsp \
++  /home/vidal/wkg/yocto/RaspberryPi2/poky/meta-raspberrypi \
+   "
+ BBLAYERS_NON_REMOVABLE ?= " \
+   /home/vidal/wkg/yocto/RaspberryPi2/poky/meta \
+
+diff -u poky.conf RaspberryPi2/poky/meta-yocto/conf/distro/poky.conf 
+--- poky.conf	2015-07-20 17:50:20.837808414 -0600
++++ RaspberryPi2/poky/meta-yocto/conf/distro/poky.conf	2015-07-20 17:55:54.034578720 -0600
+@@ -72,6 +72,7 @@
+ SANITY_TESTED_DISTROS ?= " \
+             poky-1.7 \n \
+             poky-1.8 \n \
++            Ubuntu-12.04 \n \
+             Ubuntu-14.04 \n \
+             Ubuntu-14.10 \n \
+             Ubuntu-15.04 \n \
+
+
