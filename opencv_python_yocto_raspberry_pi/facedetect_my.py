@@ -32,8 +32,8 @@ if __name__ == '__main__':
     except:
         video_src = 0
     args = dict(args)
-    cascade_fn = args.get('--cascade', "../../haarcascades/haarcascade_frontalface_alt.xml")
-    nested_fn  = args.get('--nested-cascade', "../../haarcascades/haarcascade_eye.xml")
+    cascade_fn = args.get('--cascade', "/usr/share/OpenCV/haarcascades/haarcascade_frontalface_alt.xml")
+    nested_fn  = args.get('--nested-cascade', "/usr/share/OpenCV/haarcascades/haarcascade_eye.xml")
 
     cascade = cv2.CascadeClassifier(cascade_fn)
     nested = cv2.CascadeClassifier(nested_fn)
