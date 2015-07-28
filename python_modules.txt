@@ -1,0 +1,23 @@
+ls /usr/lib/python2.7/site-packages/
+ANSI.py			     gobject
+ANSI.pyc		     gtk-2.0
+FSM.py			     nose
+FSM.pyc			     nose-1.3.6-py2.7.egg-info
+PIL			     numpy
+PIL.pth			     numpy-1.7.0-py2.7.egg-info
+Pyrex			     pexpect
+Pyrex-0.9.9-py2.7.egg-info   pexpect-3.3-py2.7.egg-info
+README			     pxssh.py
+_dbus_bindings.la	     pxssh.pyc
+_dbus_bindings.so	     pygtk.pth
+_dbus_glib_bindings.la	     pygtk.py
+_dbus_glib_bindings.so	     pygtk.pyo
+cairo			     rpm
+cv.py			     screen.py
+cv2.so			     screen.pyc
+dbus			     setuptools-0.6c11-py2.7.egg-info
+distribute-0.6.32-py2.7.egg  setuptools.pth
+fdpexpect.py		     smart
+fdpexpect.pyc		     smart-1.5-py2.7.egg-info
+glib
+
