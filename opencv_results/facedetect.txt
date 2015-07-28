@@ -1,0 +1,10 @@
+testing opencv yocto build raspberry pi 2 B
+
+ssh -Y 192.168.1.136
+cd opencv_python_yocto_raspberry_pi
+
+
+python facedetect_my.py uses camera 0 default 
+or python facedetect_my.py 0 uses camera 0
+or python facedetect_my.py 1 uses camera 1
+see yoctoopencv.png taken in my lab 07/28/15
