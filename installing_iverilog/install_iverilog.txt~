@@ -1,0 +1,39 @@
+
+Installing Iveriog on a Raspberry Pi 2 B created with Yocto 07/29/15
+
+git config --global user.name "Edward Vidal Jr."
+git config --global user.email "develone@sbcglobal.net"
+git clone git://github.com/steveicarus/iverilog.git
+
+git checkout --track -b v0_9-branch origin/v0_9-branch
+
+git pull
+
+When building with ADT
+source /opt/poky/1.8+snapshot/environment-setup-cortexa7hf-vfp-vfpv4-neon-poky-linux-gnueabi
+sh autoconf.sh
+Autoconf in root...
+Precompiling lexor_keyword.gperf
+
+./configure or
+./configure ${CONFIGURE_FLAGS} When building with ADT
+
+make fails when using ADT to crosscompile works okay on target
+./version.exe `head -1 ./iverilog-vpi.man.in`'\n' > iverilog-vpi.man
+./version.exe: 1: ./version.exe: Syntax error: word unexpected (expecting ")")
+make: *** [iverilog-vpi.man] Error 2
+
+make install
+ls /usr/local/bin/
+evcd2vcd  ghwdump   iverilog-vpi  rtlbrowse  vcd2fst   vcd2vzt	vzt2vcd
+fst2vcd   gtkwave   lxt2miner	  shmidcat   vcd2lxt   vermin	vztminer
+fstminer  iverilog  lxt2vcd	  twinwave   vcd2lxt2  vvp
+
+cd /home/root/myhdl/cosimulation/icarus
+make
+ls
+Makefile    myhdl.c	      myhdl.o	 myhdl_20030518.c  myhdl_table.o
+README.txt  myhdl.c.20030518  myhdl.vpi  myhdl_table.c	   test
+
+compiled saved on ws009
+/home/vidal/iverilog_pi_compiled

@@ -3298,6 +3298,9 @@ tcl-8.6.4-r0.cortexa7hf_vfp_vfpv4_neon
 tcl-dev-8.6.4-r0.cortexa7hf_vfp_vfpv4_neon
 time-1.7-r2.cortexa7hf_vfp_vfpv4_neon
 time-dev-1.7-r2.cortexa7hf_vfp_vfpv4_neon
+tk-8.6.0-r0.cortexa7hf_vfp_vfpv4_neon
+tk-dev-8.6.0-r0.cortexa7hf_vfp_vfpv4_neon
+tk-lib-8.6.0-r0.cortexa7hf_vfp_vfpv4_neon
 tree-1.7.0-r0.cortexa7hf_vfp_vfpv4_neon
 tree-dev-1.7.0-r0.cortexa7hf_vfp_vfpv4_neon
 tslib-conf-1.1-r0.cortexa7hf_vfp_vfpv4_neon

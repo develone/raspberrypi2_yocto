@@ -34,7 +34,7 @@ NATIVELSBSTRING   = "Ubuntu-12.04"
 TARGET_SYS        = "arm-poky-linux-gnueabi"
 MACHINE           = "raspberrypi2"
 DISTRO            = "poky"
-DISTRO_VERSION    = "1.8+snapshot-20150727"
+DISTRO_VERSION    = "1.8+snapshot-20150729"
 TUNE_FEATURES     = "arm armv7a vfp thumb neon callconvention-hard vfpv4 cortexa7"
 TARGET_FPU        = "vfp-vfpv4-neon"
 meta              
@@ -46,7 +46,8 @@ meta-oe           = "fido:0f8d89ce66cfffccc9911d6c61470a585173b79d"
 NOTE: Preparing RunQueue
 NOTE: Executing SetScene Tasks
 NOTE: Executing RunQueue Tasks
-NOTE: Tasks Summary: Attempted 6260 tasks of which 6227 didn't need to be rerun and all succeeded.
+
+NOTE: Tasks Summary: Attempted 6273 tasks of which 6267 didn't need to be rerun and all succeeded.
 
 core-image-sato 2hrs 10 min build time on ws009 amd 6 core with 16GB of Memory.
 
@@ -99,7 +100,7 @@ dd if=tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg | pv
  800MB 0:07:48 [1.71MB/s] [                          <=>                       ]
 52428800+0 records in
 52428800+0 records out
-838860800 bytes (839 MB) copied, 472.69 s, 1.8 MB/s
+868220928 bytes (868 MB) copied, 488.488 s, 1.8 MB/s
 
 Read more: http://www.cnx-software.com/2015/02/27/yocto-project-raspberry-pi-2-board-minimal-image/#ixzz3gTs5MrwG
 
