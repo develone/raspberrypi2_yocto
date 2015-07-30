@@ -1,0 +1,286 @@
+sudo python setup.py install
+[sudo] password for vidal: 
+running install
+Checking .pth file support in /usr/local/lib/python2.7/dist-packages/
+/usr/bin/python -E -c pass
+TEST PASSED: /usr/local/lib/python2.7/dist-packages/ appears to support .pth files
+running bdist_egg
+running egg_info
+creating XsTools.egg-info
+writing requirements to XsTools.egg-info/requires.txt
+writing XsTools.egg-info/PKG-INFO
+writing top-level names to XsTools.egg-info/top_level.txt
+writing dependency_links to XsTools.egg-info/dependency_links.txt
+writing manifest file 'XsTools.egg-info/SOURCES.txt'
+reading manifest file 'XsTools.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no previously-included files matching '__pycache__' found under directory '*'
+warning: no previously-included files matching '*.py[co]' found under directory '*'
+writing manifest file 'XsTools.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-x86_64/egg
+running install_lib
+running build_py
+creating build
+creating build/lib.linux-x86_64-2.7
+creating build/lib.linux-x86_64-2.7/xstools
+copying xstools/xsusb.py -> build/lib.linux-x86_64-2.7/xstools
+copying xstools/xsmemio.py -> build/lib.linux-x86_64-2.7/xstools
+copying xstools/__init__.py -> build/lib.linux-x86_64-2.7/xstools
+copying xstools/picmicro.py -> build/lib.linux-x86_64-2.7/xstools
+copying xstools/xsboard.py -> build/lib.linux-x86_64-2.7/xstools
+copying xstools/xsdutio.py -> build/lib.linux-x86_64-2.7/xstools
+copying xstools/xscomm.py -> build/lib.linux-x86_64-2.7/xstools
+copying xstools/xsspi.py -> build/lib.linux-x86_64-2.7/xstools
+copying xstools/xsjtag.py -> build/lib.linux-x86_64-2.7/xstools
+copying xstools/xshostio.py -> build/lib.linux-x86_64-2.7/xstools
+copying xstools/xilbitstr.py -> build/lib.linux-x86_64-2.7/xstools
+copying xstools/xserror.py -> build/lib.linux-x86_64-2.7/xstools
+copying xstools/ramdev.py -> build/lib.linux-x86_64-2.7/xstools
+copying xstools/XstoolsApi.py -> build/lib.linux-x86_64-2.7/xstools
+copying xstools/flashdev.py -> build/lib.linux-x86_64-2.7/xstools
+copying xstools/xsbitarray.py -> build/lib.linux-x86_64-2.7/xstools
+copying xstools/xilfpga.py -> build/lib.linux-x86_64-2.7/xstools
+copying xstools/xsi2c.py -> build/lib.linux-x86_64-2.7/xstools
+creating build/lib.linux-x86_64-2.7/tests
+copying tests/__init__.py -> build/lib.linux-x86_64-2.7/tests
+copying tests/test_xsconnect.py -> build/lib.linux-x86_64-2.7/tests
+creating build/lib.linux-x86_64-2.7/xstools/test
+copying xstools/test/__init__.py -> build/lib.linux-x86_64-2.7/xstools/test
+copying xstools/test/test_utils.py -> build/lib.linux-x86_64-2.7/xstools/test
+copying xstools/test/test_location.py -> build/lib.linux-x86_64-2.7/xstools/test
+creating build/lib.linux-x86_64-2.7/xstools/xula2
+copying xstools/xula2/ramintfc_jtag_lx25.bit -> build/lib.linux-x86_64-2.7/xstools/xula2
+copying xstools/xula2/fintf_jtag_lx9.bit -> build/lib.linux-x86_64-2.7/xstools/xula2
+copying xstools/xula2/ramintfc_jtag_lx9.bit -> build/lib.linux-x86_64-2.7/xstools/xula2
+copying xstools/xula2/fintf_jtag_lx25.bit -> build/lib.linux-x86_64-2.7/xstools/xula2
+copying xstools/xula2/test_board_jtag_lx9.bit -> build/lib.linux-x86_64-2.7/xstools/xula2
+copying xstools/xula2/test_board_jtag_lx25.bit -> build/lib.linux-x86_64-2.7/xstools/xula2
+creating build/lib.linux-x86_64-2.7/xstools/xula
+copying xstools/xula/ramintfc_jtag_50.bit -> build/lib.linux-x86_64-2.7/xstools/xula
+copying xstools/xula/test_board_jtag_200.bit -> build/lib.linux-x86_64-2.7/xstools/xula
+copying xstools/xula/fintf_jtag_200.bit -> build/lib.linux-x86_64-2.7/xstools/xula
+copying xstools/xula/ramintfc_jtag_200.bit -> build/lib.linux-x86_64-2.7/xstools/xula
+copying xstools/xula/test_board_jtag_50.bit -> build/lib.linux-x86_64-2.7/xstools/xula
+copying xstools/xula/fintf_jtag_50.bit -> build/lib.linux-x86_64-2.7/xstools/xula
+copying xstools/xula2/XuLA_jtag.hex -> build/lib.linux-x86_64-2.7/xstools/xula2
+copying xstools/xula/XuLA_jtag.hex -> build/lib.linux-x86_64-2.7/xstools/xula
+copying xstools/81-xstools-usb.rules -> build/lib.linux-x86_64-2.7/xstools
+creating build/lib.linux-x86_64-2.7/xstools/icons
+copying xstools/icons/down_arrow.png -> build/lib.linux-x86_64-2.7/xstools/icons
+copying xstools/icons/fpga.png -> build/lib.linux-x86_64-2.7/xstools/icons
+copying xstools/icons/serial_flash.png -> build/lib.linux-x86_64-2.7/xstools/icons
+copying xstools/icons/down_arrow_disabled.png -> build/lib.linux-x86_64-2.7/xstools/icons
+copying xstools/icons/sdram.png -> build/lib.linux-x86_64-2.7/xstools/icons
+copying xstools/icons/uc.png -> build/lib.linux-x86_64-2.7/xstools/icons
+creating build/bdist.linux-x86_64
+creating build/bdist.linux-x86_64/egg
+creating build/bdist.linux-x86_64/egg/xstools
+copying build/lib.linux-x86_64-2.7/xstools/xsusb.py -> build/bdist.linux-x86_64/egg/xstools
+copying build/lib.linux-x86_64-2.7/xstools/xsmemio.py -> build/bdist.linux-x86_64/egg/xstools
+copying build/lib.linux-x86_64-2.7/xstools/__init__.py -> build/bdist.linux-x86_64/egg/xstools
+creating build/bdist.linux-x86_64/egg/xstools/icons
+copying build/lib.linux-x86_64-2.7/xstools/icons/down_arrow.png -> build/bdist.linux-x86_64/egg/xstools/icons
+copying build/lib.linux-x86_64-2.7/xstools/icons/fpga.png -> build/bdist.linux-x86_64/egg/xstools/icons
+copying build/lib.linux-x86_64-2.7/xstools/icons/serial_flash.png -> build/bdist.linux-x86_64/egg/xstools/icons
+copying build/lib.linux-x86_64-2.7/xstools/icons/down_arrow_disabled.png -> build/bdist.linux-x86_64/egg/xstools/icons
+copying build/lib.linux-x86_64-2.7/xstools/icons/sdram.png -> build/bdist.linux-x86_64/egg/xstools/icons
+copying build/lib.linux-x86_64-2.7/xstools/icons/uc.png -> build/bdist.linux-x86_64/egg/xstools/icons
+copying build/lib.linux-x86_64-2.7/xstools/picmicro.py -> build/bdist.linux-x86_64/egg/xstools
+copying build/lib.linux-x86_64-2.7/xstools/81-xstools-usb.rules -> build/bdist.linux-x86_64/egg/xstools
+copying build/lib.linux-x86_64-2.7/xstools/xsboard.py -> build/bdist.linux-x86_64/egg/xstools
+copying build/lib.linux-x86_64-2.7/xstools/xsdutio.py -> build/bdist.linux-x86_64/egg/xstools
+copying build/lib.linux-x86_64-2.7/xstools/xscomm.py -> build/bdist.linux-x86_64/egg/xstools
+copying build/lib.linux-x86_64-2.7/xstools/xsspi.py -> build/bdist.linux-x86_64/egg/xstools
+copying build/lib.linux-x86_64-2.7/xstools/xsjtag.py -> build/bdist.linux-x86_64/egg/xstools
+creating build/bdist.linux-x86_64/egg/xstools/xula2
+copying build/lib.linux-x86_64-2.7/xstools/xula2/ramintfc_jtag_lx25.bit -> build/bdist.linux-x86_64/egg/xstools/xula2
+copying build/lib.linux-x86_64-2.7/xstools/xula2/fintf_jtag_lx9.bit -> build/bdist.linux-x86_64/egg/xstools/xula2
+copying build/lib.linux-x86_64-2.7/xstools/xula2/ramintfc_jtag_lx9.bit -> build/bdist.linux-x86_64/egg/xstools/xula2
+copying build/lib.linux-x86_64-2.7/xstools/xula2/fintf_jtag_lx25.bit -> build/bdist.linux-x86_64/egg/xstools/xula2
+copying build/lib.linux-x86_64-2.7/xstools/xula2/test_board_jtag_lx9.bit -> build/bdist.linux-x86_64/egg/xstools/xula2
+copying build/lib.linux-x86_64-2.7/xstools/xula2/test_board_jtag_lx25.bit -> build/bdist.linux-x86_64/egg/xstools/xula2
+copying build/lib.linux-x86_64-2.7/xstools/xula2/XuLA_jtag.hex -> build/bdist.linux-x86_64/egg/xstools/xula2
+creating build/bdist.linux-x86_64/egg/xstools/xula
+copying build/lib.linux-x86_64-2.7/xstools/xula/ramintfc_jtag_50.bit -> build/bdist.linux-x86_64/egg/xstools/xula
+copying build/lib.linux-x86_64-2.7/xstools/xula/test_board_jtag_200.bit -> build/bdist.linux-x86_64/egg/xstools/xula
+copying build/lib.linux-x86_64-2.7/xstools/xula/fintf_jtag_200.bit -> build/bdist.linux-x86_64/egg/xstools/xula
+copying build/lib.linux-x86_64-2.7/xstools/xula/ramintfc_jtag_200.bit -> build/bdist.linux-x86_64/egg/xstools/xula
+copying build/lib.linux-x86_64-2.7/xstools/xula/test_board_jtag_50.bit -> build/bdist.linux-x86_64/egg/xstools/xula
+copying build/lib.linux-x86_64-2.7/xstools/xula/XuLA_jtag.hex -> build/bdist.linux-x86_64/egg/xstools/xula
+copying build/lib.linux-x86_64-2.7/xstools/xula/fintf_jtag_50.bit -> build/bdist.linux-x86_64/egg/xstools/xula
+copying build/lib.linux-x86_64-2.7/xstools/xshostio.py -> build/bdist.linux-x86_64/egg/xstools
+copying build/lib.linux-x86_64-2.7/xstools/xilbitstr.py -> build/bdist.linux-x86_64/egg/xstools
+copying build/lib.linux-x86_64-2.7/xstools/xserror.py -> build/bdist.linux-x86_64/egg/xstools
+creating build/bdist.linux-x86_64/egg/xstools/test
+copying build/lib.linux-x86_64-2.7/xstools/test/__init__.py -> build/bdist.linux-x86_64/egg/xstools/test
+copying build/lib.linux-x86_64-2.7/xstools/test/test_utils.py -> build/bdist.linux-x86_64/egg/xstools/test
+copying build/lib.linux-x86_64-2.7/xstools/test/test_location.py -> build/bdist.linux-x86_64/egg/xstools/test
+copying build/lib.linux-x86_64-2.7/xstools/ramdev.py -> build/bdist.linux-x86_64/egg/xstools
+copying build/lib.linux-x86_64-2.7/xstools/XstoolsApi.py -> build/bdist.linux-x86_64/egg/xstools
+copying build/lib.linux-x86_64-2.7/xstools/flashdev.py -> build/bdist.linux-x86_64/egg/xstools
+copying build/lib.linux-x86_64-2.7/xstools/xsbitarray.py -> build/bdist.linux-x86_64/egg/xstools
+copying build/lib.linux-x86_64-2.7/xstools/xilfpga.py -> build/bdist.linux-x86_64/egg/xstools
+copying build/lib.linux-x86_64-2.7/xstools/xsi2c.py -> build/bdist.linux-x86_64/egg/xstools
+creating build/bdist.linux-x86_64/egg/tests
+copying build/lib.linux-x86_64-2.7/tests/__init__.py -> build/bdist.linux-x86_64/egg/tests
+copying build/lib.linux-x86_64-2.7/tests/test_xsconnect.py -> build/bdist.linux-x86_64/egg/tests
+byte-compiling build/bdist.linux-x86_64/egg/xstools/xsusb.py to xsusb.pyc
+byte-compiling build/bdist.linux-x86_64/egg/xstools/xsmemio.py to xsmemio.pyc
+byte-compiling build/bdist.linux-x86_64/egg/xstools/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/xstools/picmicro.py to picmicro.pyc
+byte-compiling build/bdist.linux-x86_64/egg/xstools/xsboard.py to xsboard.pyc
+byte-compiling build/bdist.linux-x86_64/egg/xstools/xsdutio.py to xsdutio.pyc
+byte-compiling build/bdist.linux-x86_64/egg/xstools/xscomm.py to xscomm.pyc
+byte-compiling build/bdist.linux-x86_64/egg/xstools/xsspi.py to xsspi.pyc
+byte-compiling build/bdist.linux-x86_64/egg/xstools/xsjtag.py to xsjtag.pyc
+byte-compiling build/bdist.linux-x86_64/egg/xstools/xshostio.py to xshostio.pyc
+byte-compiling build/bdist.linux-x86_64/egg/xstools/xilbitstr.py to xilbitstr.pyc
+byte-compiling build/bdist.linux-x86_64/egg/xstools/xserror.py to xserror.pyc
+byte-compiling build/bdist.linux-x86_64/egg/xstools/test/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/xstools/test/test_utils.py to test_utils.pyc
+byte-compiling build/bdist.linux-x86_64/egg/xstools/test/test_location.py to test_location.pyc
+byte-compiling build/bdist.linux-x86_64/egg/xstools/ramdev.py to ramdev.pyc
+byte-compiling build/bdist.linux-x86_64/egg/xstools/XstoolsApi.py to XstoolsApi.pyc
+byte-compiling build/bdist.linux-x86_64/egg/xstools/flashdev.py to flashdev.pyc
+byte-compiling build/bdist.linux-x86_64/egg/xstools/xsbitarray.py to xsbitarray.pyc
+byte-compiling build/bdist.linux-x86_64/egg/xstools/xilfpga.py to xilfpga.pyc
+byte-compiling build/bdist.linux-x86_64/egg/xstools/xsi2c.py to xsi2c.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tests/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tests/test_xsconnect.py to test_xsconnect.pyc
+creating build/bdist.linux-x86_64/egg/EGG-INFO
+installing scripts to build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+running install_scripts
+running build_scripts
+creating build/scripts-2.7
+copying bin/xstools_defs.py -> build/scripts-2.7
+copying and adjusting bin/xstest.py -> build/scripts-2.7
+copying bin/xstest.cmd -> build/scripts-2.7
+copying and adjusting bin/xsload.py -> build/scripts-2.7
+copying bin/xsload.cmd -> build/scripts-2.7
+copying and adjusting bin/xsusbprg.py -> build/scripts-2.7
+copying bin/xsusbprg.cmd -> build/scripts-2.7
+copying and adjusting bin/xsflags.py -> build/scripts-2.7
+copying bin/xsflags.cmd -> build/scripts-2.7
+copying and adjusting bin/usb2serial.py -> build/scripts-2.7
+copying bin/usb2serial.cmd -> build/scripts-2.7
+copying and adjusting bin/gxstools.py -> build/scripts-2.7
+copying bin/gxstools.cmd -> build/scripts-2.7
+changing mode of build/scripts-2.7/xstools_defs.py from 664 to 775
+changing mode of build/scripts-2.7/xstest.py from 644 to 755
+changing mode of build/scripts-2.7/xstest.cmd from 664 to 775
+changing mode of build/scripts-2.7/xsload.py from 644 to 755
+changing mode of build/scripts-2.7/xsload.cmd from 664 to 775
+changing mode of build/scripts-2.7/xsusbprg.py from 644 to 755
+changing mode of build/scripts-2.7/xsusbprg.cmd from 664 to 775
+changing mode of build/scripts-2.7/xsflags.py from 644 to 755
+changing mode of build/scripts-2.7/xsflags.cmd from 664 to 775
+changing mode of build/scripts-2.7/usb2serial.py from 644 to 755
+changing mode of build/scripts-2.7/usb2serial.cmd from 664 to 775
+changing mode of build/scripts-2.7/gxstools.py from 644 to 755
+changing mode of build/scripts-2.7/gxstools.cmd from 664 to 775
+creating build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/xstest.cmd -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/xsflags.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/usb2serial.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/xsflags.cmd -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/xstools_defs.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/usb2serial.cmd -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/xsusbprg.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/xsload.cmd -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/gxstools.cmd -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/xsload.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/xstest.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/xsusbprg.cmd -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/gxstools.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/xstest.cmd to 775
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/xsflags.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/usb2serial.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/xsflags.cmd to 775
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/xstools_defs.py to 775
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/usb2serial.cmd to 775
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/xsusbprg.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/xsload.cmd to 775
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/gxstools.cmd to 775
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/xsload.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/xstest.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/xsusbprg.cmd to 775
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/gxstools.py to 755
+copying XsTools.egg-info/PKG-INFO -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying XsTools.egg-info/SOURCES.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying XsTools.egg-info/dependency_links.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying XsTools.egg-info/not-zip-safe -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying XsTools.egg-info/requires.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying XsTools.egg-info/top_level.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+creating dist
+creating 'dist/XsTools-0.1.26-py2.7.egg' and adding 'build/bdist.linux-x86_64/egg' to it
+removing 'build/bdist.linux-x86_64/egg' (and everything under it)
+Processing XsTools-0.1.26-py2.7.egg
+creating /usr/local/lib/python2.7/dist-packages/XsTools-0.1.26-py2.7.egg
+Extracting XsTools-0.1.26-py2.7.egg to /usr/local/lib/python2.7/dist-packages
+Adding XsTools 0.1.26 to easy-install.pth file
+Installing xstest.cmd script to /usr/local/bin
+Installing xsflags.py script to /usr/local/bin
+Installing usb2serial.py script to /usr/local/bin
+Installing xsflags.cmd script to /usr/local/bin
+Installing xstools_defs.py script to /usr/local/bin
+Installing usb2serial.cmd script to /usr/local/bin
+Installing xsusbprg.py script to /usr/local/bin
+Installing xsload.cmd script to /usr/local/bin
+Installing gxstools.cmd script to /usr/local/bin
+Installing xsload.py script to /usr/local/bin
+Installing xstest.py script to /usr/local/bin
+Installing xsusbprg.cmd script to /usr/local/bin
+Installing gxstools.py script to /usr/local/bin
+
+Installed /usr/local/lib/python2.7/dist-packages/XsTools-0.1.26-py2.7.egg
+Processing dependencies for XsTools==0.1.26
+Searching for intelhex>=1.4
+Reading http://pypi.python.org/simple/intelhex/
+Reading http://www.bialix.com/intelhex/
+Reading https://launchpad.net/intelhex
+Reading https://launchpad.net/intelhex/+download
+Best match: intelhex 2.0
+Downloading https://pypi.python.org/packages/source/I/IntelHex/intelhex-2.0.tar.gz#md5=484c91b23d703bbdb043d7e19dfff799
+Processing intelhex-2.0.tar.gz
+Running intelhex-2.0/setup.py -q bdist_egg --dist-dir /tmp/easy_install-5P8g8V/intelhex-2.0/egg-dist-tmp-OkxX66
+zip_safe flag not set; analyzing archive contents...
+Adding intelhex 2.0 to easy-install.pth file
+Installing hexmerge.py script to /usr/local/bin
+Installing hex2bin.py script to /usr/local/bin
+Installing hex2dump.py script to /usr/local/bin
+Installing hexdiff.py script to /usr/local/bin
+Installing bin2hex.py script to /usr/local/bin
+
+Installed /usr/local/lib/python2.7/dist-packages/intelhex-2.0-py2.7.egg
+Searching for bitstring>=3.1.1
+Reading http://pypi.python.org/simple/bitstring/
+Reading http://python-bitstring.googlecode.com
+Best match: bitstring 3.1.3
+Downloading https://pypi.python.org/packages/source/b/bitstring/bitstring-3.1.3.zip#md5=1db5d54ee269f6b54d50c3eb257eea4b
+Processing bitstring-3.1.3.zip
+Running bitstring-3.1.3/setup.py -q bdist_egg --dist-dir /tmp/easy_install-TjsnIx/bitstring-3.1.3/egg-dist-tmp-d7UA6X
+zip_safe flag not set; analyzing archive contents...
+Adding bitstring 3.1.3 to easy-install.pth file
+
+Installed /usr/local/lib/python2.7/dist-packages/bitstring-3.1.3-py2.7.egg
+Searching for pyusb>=1.0.0a3,<1.0.0b1
+Reading http://pypi.python.org/simple/pyusb/
+Best match: pyusb 1.0.0a3
+Downloading https://pypi.python.org/packages/source/p/pyusb/pyusb-1.0.0a3.zip#md5=45a5ba190ca7a86fe71cfe9f6fb3065e
+Processing pyusb-1.0.0a3.zip
+Running pyusb-1.0.0a3/setup.py -q bdist_egg --dist-dir /tmp/easy_install-lkkM4S/pyusb-1.0.0a3/egg-dist-tmp-vdZhq0
+zip_safe flag not set; analyzing archive contents...
+Adding pyusb 1.0.0a3 to easy-install.pth file
+
+Installed /usr/local/lib/python2.7/dist-packages/pyusb-1.0.0a3-py2.7.egg
+Searching for pypubsub>=3.1.2
+Reading http://pypi.python.org/simple/pypubsub/
+Best match: PyPubSub 3.3.0
+Downloading http://downloads.sourceforge.net/project/pubsub/pubsub/3.3.0/PyPubSub-3.3.0.zip?r=&ts=1402255259&use_mirror=hivelocity#md5=1c8d88cc2506532df85bc95dde719816
+Processing PyPubSub-3.3.0.zip
+Running PyPubSub-3.3.0/setup.py -q bdist_egg --dist-dir /tmp/easy_install-isBDQc/PyPubSub-3.3.0/egg-dist-tmp-olnJlm
+Adding PyPubSub 3.3.0 to easy-install.pth file
+
+Installed /usr/local/lib/python2.7/dist-packages/PyPubSub-3.3.0-py2.7.egg
+Finished processing dependencies for XsTools==0.1.26
+control: unrecognized option '--reload_rules'
