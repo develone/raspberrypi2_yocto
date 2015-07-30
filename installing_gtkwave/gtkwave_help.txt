@@ -1,0 +1,45 @@
+gtkwave -h
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Usage: gtkwave [OPTION]... [DUMPFILE] [SAVEFILE] [RCFILE]
+
+  -n, --nocli=DIRPATH        use file requester for dumpfile name
+  -f, --dump=FILE            specify dumpfile name
+  -F, --fastload             generate/use VCD recoder fastload files
+  -o, --optimize             optimize VCD to FST
+  -a, --save=FILE            specify savefile name
+  -A, --autosavename         assume savefile is suffix modified dumpfile name
+  -r, --rcfile=FILE          specify override .rcfile name
+  -d, --defaultskip          if missing .rcfile, do not use useful defaults
+  -D, --dualid=WHICH         specify multisession identifier
+  -l, --logfile=FILE         specify simulation logfile name for time values
+  -s, --start=TIME           specify start time for LXT2/VZT block skip
+  -e, --end=TIME             specify end time for LXT2/VZT block skip
+  -t, --stems=FILE           specify stems file for source code annotation
+  -c, --cpu=NUMCPUS          specify number of CPUs for parallelizable ops
+  -N, --nowm                 disable window manager for most windows
+  -M, --nomenus              do not render menubar (for making applets)
+  -S, --script=FILE          specify Tcl command script file for execution
+  -T, --tcl_init=FILE        specify Tcl command script file to be loaded on startup
+  -W, --wish                 enable Tcl command line on stdio
+  -R, --repscript=FILE       specify timer-driven Tcl command script file
+  -P, --repperiod=VALUE      specify repscript period in msec (default: 500)
+  -X, --xid=XID              specify XID of window for GtkPlug to connect to
+  -2, --chdir=DIR            specify new current working directory
+  -I, --interactive          interactive VCD mode (filename is shared mem ID)
+  -C, --comphier             use compressed hierarchy names (slower)
+  -g, --giga                 use gigabyte mempacking when recoding (slower)
+  -L, --legacy               use legacy VCD mode rather than the VCD recoder
+  -v, --vcd                  use stdin as a VCD dumpfile
+  -O, --output=FILE          specify filename for stdout/stderr redirect
+  -z, --slider-zoom          enable horizontal slider stretch zoom
+  -V, --version              display version banner then exit
+  -h, --help                 display this help then exit
+  -x, --exit                 exit after loading trace (for loader benchmarks)
+
+VCD files and save files may be compressed with zip or gzip.
+GHW files may be compressed with gzip or bzip2.
+Other formats must remain uncompressed due to their non-linear access.
+Note that DUMPFILE is optional if the --dump or --nocli options are specified.
+SAVEFILE and RCFILE are always optional.
+
+Report bugs to <bybell@rocketmail.com>

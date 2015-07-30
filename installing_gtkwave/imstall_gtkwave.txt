@@ -1,0 +1,6 @@
+using gtkwave-3.3.65.tar.gz
+after untar
+./configure 
+make 
+make install
+
