@@ -1,0 +1,28 @@
+Create a directory where creating and testing the recipe.
+
+mkdir /home/vidal/wkg/yocto/myhdl_recipe
+
+rsync -avl ../repo072015/poky .
+
+cd poky
+
+git checkout -b fido
+Switched to a new branch 'fido'
+
+. oe-init-build-env
+
+ recipetool create  -o /home/vidal/wkg/yocto/myhdl_recipe/poky/meta/recipes-devtools/python/python-myhdl_1.0.0.bb  https://github.com/jandecaluwe/myhdl.git
+
+The recipe template will be created including some information about the file fetched.
+ 
+LICENSE = "CLOSED"
+LIC_FILES_CHKSUM = ""
+
+SRC_URI = "https://github.com/jandecaluwe/myhdl.git"
+SRC_URI[md5sum] = "6f56a9bcbd03a9c8036f87f32f9adc47"
+SRC_URI[sha256sum] = "7766c49947c6574c8fb35d0dfcd795ada1e4e457ab5b15499d7000909b8e46e9"
+
+NOTE: Fetching https://github.com/jandecaluwe/myhdl.git...
+NOTE: Unpacking /home/vidal/wkg/yocto/myhdl_recipe/poky/build/downloads/myhdl.git to /tmp/recipetool-QNSXTq/
+NOTE: Recipe /home/vidal/wkg/yocto/myhdl_recipe/poky/meta/recipes-devtools/python/python-myhdl_1.0.0.bb has been created; further editing may be required to make it fully functional
+
