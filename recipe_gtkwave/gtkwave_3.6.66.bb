@@ -9,6 +9,7 @@
 # these in the LICENSE value using & if the multiple licenses all apply, or | if there
 # is a choice between the multiple licenses. If in doubt, check the accompanying
 # documentation to determine which situation is applicable.
+
 LICENSE = "Unknown"
 LIC_FILES_CHKSUM = "file://LICENSE.TXT;md5=6aad4d18bf623a14af299bc60814eb12 \
                     file://COPYING;md5=75859989545e37968a99b631ef42722e \
@@ -31,5 +32,5 @@ S = "${WORKDIR}/gtkwave-3.3.66"
 inherit pkgconfig autotools
 
 # Specify any options you want to pass to the configure script using EXTRA_OECONF:
-EXTRA_OECONF = ""
+EXTRA_OECONF = "--with-tcl=/home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/raspberrypi2/usr/lib --with-tk=/home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/raspberrypi2/usr/lib"
 
