@@ -518,6 +518,8 @@ initscripts-1.0-r155.cortexa7hf_vfp_vfpv4_neon
 initscripts-dev-1.0-r155.cortexa7hf_vfp_vfpv4_neon
 initscripts-functions-1.0-r155.cortexa7hf_vfp_vfpv4_neon
 inputproto-dev-2.3.1-r0.cortexa7hf_vfp_vfpv4_neon
+intelhex-1.5-r0.cortexa7hf_vfp_vfpv4_neon
+intelhex-dev-1.5-r0.cortexa7hf_vfp_vfpv4_neon
 intltool-0.51.0-r0.cortexa7hf_vfp_vfpv4_neon
 intltool-dev-0.51.0-r0.cortexa7hf_vfp_vfpv4_neon
 iptables-1.4.21-r0.cortexa7hf_vfp_vfpv4_neon
@@ -3181,6 +3183,7 @@ python-compression-2.7.9-r1.cortexa7hf_vfp_vfpv4_neon
 python-contextlib-2.7.9-r1.cortexa7hf_vfp_vfpv4_neon
 python-core-2.7.9-r1.cortexa7hf_vfp_vfpv4_neon
 python-crypt-2.7.9-r1.cortexa7hf_vfp_vfpv4_neon
+python-ctypes-2.7.9-r1.cortexa7hf_vfp_vfpv4_neon
 python-datetime-2.7.9-r1.cortexa7hf_vfp_vfpv4_neon
 python-dbus-1.2.0-r0.cortexa7hf_vfp_vfpv4_neon
 python-dbus-dev-1.2.0-r0.cortexa7hf_vfp_vfpv4_neon
@@ -3245,6 +3248,8 @@ python-unittest-2.7.9-r1.cortexa7hf_vfp_vfpv4_neon
 python-unixadmin-2.7.9-r1.cortexa7hf_vfp_vfpv4_neon
 python-xml-2.7.9-r1.cortexa7hf_vfp_vfpv4_neon
 python-zlib-2.7.9-r1.cortexa7hf_vfp_vfpv4_neon
+pyusb-1.0.0a3-r0.cortexa7hf_vfp_vfpv4_neon
+pyusb-dev-1.0.0a3-r0.cortexa7hf_vfp_vfpv4_neon
 qemuwrapper-cross-1.0-r0.cortexa7hf_vfp_vfpv4_neon
 qemuwrapper-cross-dev-1.0-r0.cortexa7hf_vfp_vfpv4_neon
 quilt-0.64-r0.cortexa7hf_vfp_vfpv4_neon
