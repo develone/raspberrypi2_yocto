@@ -14,4 +14,5 @@ IMAGE_INSTALL += "packagegroup-core-x11-sato-games kernel-dev xterm git \
  chkconfig v4l-utils python-imaging parted python-distribute \
  python-pyrex python-pexpect gperf tree libav libav-dev \
  x264 x264-dev libav libav-dev opencv opencv-samples cmake \
- opencv-apps python-opencv tcl tk" 
+ opencv-apps python-opencv tcl tk python-myhdl python-bitstring \
+ PyPubSub tar intelhex pyusb" 

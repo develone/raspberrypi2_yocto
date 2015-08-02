@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- information file for XS Boards -->
+<xess>
+	<boards>
+		<board>
+			<model>XuLA2-LX9</model>
+			<chip_type>6SLX9FTG256</chip_type>
+			<usbjtag>
+				<root>XuLA2/LX9/USB/</root>
+				<inv_mask />
+				<default_interface />
+				<ram_interface>ramintfc_jtag.bit</ram_interface>
+				<osc_interface />
+				<programmable_osc>no</programmable_osc>
+				<erase_interface />
+				<flash_interface>fintf_jtag.bit</flash_interface>
+				<flash_config_interface />
+				<test_interface />
+				<test_bitstream>test_board_jtag.bit</test_bitstream>
+				<test_object_file />
+				<user_instruction>000010</user_instruction>
+			</usbjtag>
+		</board>
+		<board>
+			<model>XuLA2-LX25</model>
+			<chip_type>6SLX25FTG256</chip_type>
+			<usbjtag>
+				<root>XuLA2/LX25/USB/</root>
+				<inv_mask />
+				<default_interface />
+				<ram_interface>ramintfc_jtag.bit</ram_interface>
+				<osc_interface />
+				<programmable_osc>no</programmable_osc>
+				<erase_interface />
+				<flash_interface>fintf_jtag.bit</flash_interface>
+				<flash_config_interface />
+				<test_interface />
+				<test_bitstream>test_board_jtag.bit</test_bitstream>
+				<test_object_file />
+				<user_instruction>000010</user_instruction>
+			</usbjtag>
+		</board>
+		<board>
+			<model>XuLA-50</model>
+			<chip_type>3S50AVQ100</chip_type>
+			<usbjtag>
+				<root>XuLA/50/USB/</root>
+				<inv_mask />
+				<default_interface />
+				<ram_interface>ramintfc_jtag.bit</ram_interface>
+				<osc_interface />
+				<programmable_osc>no</programmable_osc>
+				<erase_interface />
+				<flash_interface>fintf_jtag.bit</flash_interface>
+				<flash_config_interface />
+				<test_interface />
+				<test_bitstream>test_board_jtag.bit</test_bitstream>
+				<test_object_file />
+				<user_instruction>000010</user_instruction>
+			</usbjtag>
+		</board>
+		<board>
+			<model>XuLA-200</model>
+			<chip_type>3S200AVQ100</chip_type>
+			<usbjtag>
+				<root>XuLA/200/USB/</root>
+				<inv_mask />
+				<default_interface />
+				<ram_interface>ramintfc_jtag.bit</ram_interface>
+				<osc_interface />
+				<programmable_osc>no</programmable_osc>
+				<erase_interface />
+				<flash_interface>fintf_jtag.bit</flash_interface>
+				<flash_config_interface />
+				<test_interface />
+				<test_bitstream>test_board_jtag.bit</test_bitstream>
+				<test_object_file />
+				<user_instruction>000010</user_instruction>
+			</usbjtag>
+		</board>
+		<board>
+			<model>XSA-50</model>
+			<chip_type>2S50TQ144</chip_type>
+			<lpt>
+				<root>XSA/50/LPT/</root>
+				<inv_mask>0x090003</inv_mask>
+				<default_interface>dwnldpar.svf</default_interface>
+				<ram_interface>ramintfc.bit</ram_interface>
+				<osc_interface />
+				<programmable_osc>yes</programmable_osc>
+				<erase_interface />
+				<flash_interface>fintf.svf</flash_interface>
+				<flash_config_interface>fcnfg.svf</flash_config_interface>
+				<test_interface>dwnldpar.svf</test_interface>
+				<test_bitstream>test_board.bit</test_bitstream>
+				<test_object_file />
+				<user_instruction/>
+			</lpt>
+			<usbjtag>
+				<root>XSA/50/USB/</root>
+				<inv_mask />
+				<default_interface>xessjtag.svf</default_interface>
+				<ram_interface>ramintfc_jtag.bit</ram_interface>
+				<osc_interface />
+				<programmable_osc>yes</programmable_osc>
+				<erase_interface />
+				<flash_interface>fintf_jtag.bit</flash_interface>
+				<flash_config_interface>fcnfg.svf</flash_config_interface>
+				<test_interface>xessjtag.svf</test_interface>
+				<test_bitstream>test_board_jtag.bit</test_bitstream>
+				<test_object_file />
+				<user_instruction>00010</user_instruction>
+			</usbjtag>
+		</board>
+		<board>
+			<model>XSA-100</model>
+			<chip_type>2S100TQ144</chip_type>
+			<lpt>
+				<root>XSA/100/LPT/</root>
+				<inv_mask>0x090003</inv_mask>
+				<default_interface>dwnldpar.svf</default_interface>
+				<ram_interface>ramintfc.bit</ram_interface>
+				<osc_interface />
+				<programmable_osc>yes</programmable_osc>
+				<erase_interface />
+				<flash_interface>fintf.svf</flash_interface>
+				<flash_config_interface>fcnfg.svf</flash_config_interface>
+				<test_interface>dwnldpar.svf</test_interface>
+				<test_bitstream>test_board.bit</test_bitstream>
+				<test_object_file />
+				<user_instruction/>
+			</lpt>
+			<usbjtag>
+				<root>XSA/100/USB/</root>
+				<inv_mask />
+				<default_interface>xessjtag.svf</default_interface>
+				<ram_interface>ramintfc_jtag.bit</ram_interface>
+				<osc_interface />
+				<programmable_osc>yes</programmable_osc>
+				<erase_interface />
+				<flash_interface>fintf_jtag.bit</flash_interface>
+				<flash_config_interface>fcnfg.svf</flash_config_interface>
+				<test_interface>xessjtag.svf</test_interface>
+				<test_bitstream>test_board_jtag.bit</test_bitstream>
+				<test_object_file />
+				<user_instruction>00010</user_instruction>
+			</usbjtag>
+		</board>
+		<board>
+			<model>XSA-200</model>
+			<chip_type>2S200FG256</chip_type>
+			<lpt>
+				<root>XSA/200/LPT/</root>
+				<inv_mask>0x0b8003</inv_mask>
+				<default_interface>dwnldpar.svf</default_interface>
+				<ram_interface>ramintfc.bit</ram_interface>
+				<osc_interface />
+				<programmable_osc>no</programmable_osc>
+				<erase_interface />
+				<flash_interface>fintf.bit</flash_interface>
+				<flash_config_interface>fcnfg.svf</flash_config_interface>
+				<test_interface>dwnldpar.svf</test_interface>
+				<test_bitstream>test_board.bit</test_bitstream>
+				<test_object_file />
+				<user_instruction/>
+			</lpt>
+			<usbjtag>
+				<root>XSA/200/USB/</root>
+				<inv_mask />
+				<default_interface>xessjtag.svf</default_interface>
+				<ram_interface>ramintfc_jtag.bit</ram_interface>
+				<osc_interface />
+				<programmable_osc>no</programmable_osc>
+				<erase_interface />
+				<flash_interface>fintf_jtag.bit</flash_interface>
+				<flash_config_interface>fcnfg.svf</flash_config_interface>
+				<test_interface>xessjtag.svf</test_interface>
+				<test_bitstream>test_board_jtag.bit</test_bitstream>
+				<test_object_file />
+				<user_instruction>00010</user_instruction>
+			</usbjtag>
+		</board>
+		<board>
+			<model>XSA-3S1000</model>
+			<chip_type>3S1000FT256</chip_type>
+			<lpt>
+				<root>XSA/3S1000/LPT/</root>
+				<inv_mask>0x0b8003</inv_mask>
+				<default_interface>dwnldpar.svf</default_interface>
+				<ram_interface>ramintfc.bit</ram_interface>
+				<osc_interface />
+				<programmable_osc>no</programmable_osc>
+				<erase_interface />
+				<flash_interface>fintf.bit</flash_interface>
+				<flash_config_interface>fcnfg.svf</flash_config_interface>
+				<test_interface>dwnldpar.svf</test_interface>
+				<test_bitstream>test_board.bit</test_bitstream>
+				<test_object_file />
+				<user_instruction/>
+			</lpt>
+			<usbjtag>
+				<root>XSA/3S1000/USB/</root>
+				<inv_mask />
+				<default_interface>xessjtag.svf</default_interface>
+				<ram_interface>ramintfc_jtag.bit</ram_interface>
+				<osc_interface />
+				<programmable_osc>no</programmable_osc>
+				<erase_interface />
+				<flash_interface>fintf_jtag.bit</flash_interface>
+				<flash_config_interface>fcnfg.svf</flash_config_interface>
+				<test_interface>xessjtag.svf</test_interface>
+				<test_bitstream>test_board_jtag.bit</test_bitstream>
+				<test_object_file />
+				<user_instruction>000010</user_instruction>
+			</usbjtag>
+		</board>
+		<board>
+			<model>XSB-300E</model>
+			<chip_type>2S300EPQ208</chip_type>
+			<lpt>
+				<root>XSB/300E/LPT/</root>
+				<inv_mask>0x090003</inv_mask>
+				<default_interface>dwnldpar.svf</default_interface>
+				<ram_interface>ramintfc.bit</ram_interface>
+				<osc_interface>cfgi2c.bit</osc_interface>
+				<programmable_osc>yes</programmable_osc>
+				<erase_interface />
+				<flash_interface>fintf.svf</flash_interface>
+				<flash_config_interface>fcnfg.svf</flash_config_interface>
+				<test_interface>dwnldpar.svf</test_interface>
+				<test_bitstream>test_board.bit</test_bitstream>
+				<test_object_file />
+				<user_instruction/>
+			</lpt>
+			<usbjtag>
+				<root>XSB/300E/USB/</root>
+				<inv_mask />
+				<default_interface>xessjtag.svf</default_interface>
+<!--
+				<ram_interface>sdramintfc_jtag.bit</ram_interface>
+-->
+				<ram_interface>ramintfc_jtag.bit</ram_interface>
+				<osc_interface />
+				<programmable_osc>no</programmable_osc>
+				<erase_interface />
+				<flash_interface>fintf_jtag.bit</flash_interface>
+				<flash_config_interface>fcnfg.svf</flash_config_interface>
+				<test_interface>xessjtag.svf</test_interface>
+				<test_bitstream>test_board_jtag.bit</test_bitstream>
+				<test_object_file />
+				<user_instruction>00010</user_instruction>
+			</usbjtag>
+		</board>
+		<board>
+			<model>XS95-108</model>
+			<chip_type>XC95108PC84</chip_type>
+			<lpt>
+				<root>XS95/LPT/</root>
+				<inv_mask>0x090003</inv_mask>
+				<default_interface/>
+				<ram_interface/>
+				<osc_interface>osc108.svf</osc_interface>
+				<programmable_osc>yes</programmable_osc>
+				<erase_interface>erase108.svf</erase_interface>
+				<flash_interface/>
+				<flash_config_interface/>
+				<test_interface/>
+				<test_bitstream>test108.svf</test_bitstream>
+				<test_object_file>hdwtest.hex</test_object_file>
+				<user_instruction/>
+			</lpt>
+		</board>
+		<board>
+			<model>XS95-108+</model>
+			<chip_type>XC95108PC84</chip_type>
+			<lpt>
+				<root>XS95/LPT/</root>
+				<inv_mask>0x090003</inv_mask>
+				<default_interface/>
+				<ram_interface/>
+				<osc_interface>osc108.svf</osc_interface>
+				<programmable_osc>yes</programmable_osc>
+				<erase_interface>erase108.svf</erase_interface>
+				<flash_interface/>
+				<flash_config_interface/>
+				<test_interface/>
+				<test_bitstream>test108p.svf</test_bitstream>
+				<test_object_file>hdwtestp.hex</test_object_file>
+				<user_instruction/>
+			</lpt>
+		</board>
+		<board>
+			<model>XS40-005XL</model>
+			<chip_type>4005XLPC84</chip_type>
+			<lpt>
+				<root>XS40/LPT/</root>
+				<inv_mask>0x090003</inv_mask>
+				<default_interface/>
+				<ram_interface>ram05xl.bit</ram_interface>
+				<osc_interface>osc05xl.bit</osc_interface>
+				<programmable_osc>yes</programmable_osc>
+				<erase_interface/>
+				<flash_interface>see05xl.bit</flash_interface>
+				<flash_config_interface/>
+				<test_interface/>
+				<test_bitstream>test05xl.bit</test_bitstream>
+				<test_object_file>hdwtest.hex</test_object_file>
+				<user_instruction/>
+			</lpt>
+		</board>
+		<board>
+			<model>XS40-005XL+</model>
+			<chip_type>4005XLPC84</chip_type>
+			<lpt>
+				<root>XS40/LPT/</root>
+				<inv_mask>0x090003</inv_mask>
+				<default_interface/>
+				<ram_interface>ram05xlp.bit</ram_interface>
+				<osc_interface>osc05xl.bit</osc_interface>
+				<programmable_osc>yes</programmable_osc>
+				<erase_interface/>
+				<flash_interface>see05xl.bit</flash_interface>
+				<flash_config_interface/>
+				<test_interface/>
+				<test_bitstream>test05xlp.bit</test_bitstream>
+				<test_object_file>hdwtestp.hex</test_object_file>
+				<user_instruction/>
+			</lpt>
+		</board>
+		<board>
+			<model>XS40-005E</model>
+			<chip_type>4005EPC84</chip_type>
+			<lpt>
+				<root>XS40/LPT/</root>
+				<inv_mask>0x090003</inv_mask>
+				<default_interface/>
+				<ram_interface>ram05e.bit</ram_interface>
+				<osc_interface>osc05e.bit</osc_interface>
+				<programmable_osc>yes</programmable_osc>
+				<erase_interface/>
+				<flash_interface>see05e.bit</flash_interface>
+				<flash_config_interface/>
+				<test_interface/>
+				<test_bitstream>test05e.bit</test_bitstream>
+				<test_object_file>hdwtest.hex</test_object_file>
+				<user_instruction/>
+			</lpt>
+		</board>
+		<board>
+			<model>XS40-005E+</model>
+			<chip_type>4005EPC84</chip_type>
+			<lpt>
+				<root>XS40/LPT/</root>
+				<inv_mask>0x090003</inv_mask>
+				<default_interface/>
+				<ram_interface>ram05ep.bit</ram_interface>
+				<osc_interface>osc05e.bit</osc_interface>
+				<programmable_osc>yes</programmable_osc>
+				<erase_interface/>
+				<flash_interface>see05e.bit</flash_interface>
+				<flash_config_interface/>
+				<test_interface/>
+				<test_bitstream>test05ep.bit</test_bitstream>
+				<test_object_file>hdwtestp.hex</test_object_file>
+				<user_instruction/>
+			</lpt>
+		</board>
+		<board>
+			<model>XS40-010XL</model>
+			<chip_type>4010XLPC84</chip_type>
+			<lpt>
+				<root>XS40/LPT/</root>
+				<inv_mask>0x090003</inv_mask>
+				<default_interface/>
+				<ram_interface>ram10xl.bit</ram_interface>
+				<osc_interface>osc10xl.bit</osc_interface>
+				<programmable_osc>yes</programmable_osc>
+				<erase_interface/>
+				<flash_interface>see10xl.bit</flash_interface>
+				<flash_config_interface/>
+				<test_interface/>
+				<test_bitstream>test10xl.bit</test_bitstream>
+				<test_object_file>hdwtest.hex</test_object_file>
+				<user_instruction/>
+			</lpt>
+		</board>
+		<board>
+			<model>XS40-010XL+</model>
+			<chip_type>4010XLPC84</chip_type>
+			<lpt>
+				<root>XS40/LPT/</root>
+				<inv_mask>0x090003</inv_mask>
+				<default_interface/>
+				<ram_interface>ram10xlp.bit</ram_interface>
+				<osc_interface>osc10xl.bit</osc_interface>
+				<programmable_osc>yes</programmable_osc>
+				<erase_interface/>
+				<flash_interface>see10xl.bit</flash_interface>
+				<flash_config_interface/>
+				<test_interface/>
+				<test_bitstream>test10xlp.bit</test_bitstream>
+				<test_object_file>hdwtestp.hex</test_object_file>
+				<user_instruction/>
+			</lpt>
+		</board>
+		<board>
+			<model>XS40-010E</model>
+			<chip_type>4010EPC84</chip_type>
+			<lpt>
+				<root>XS40/LPT/</root>
+				<inv_mask>0x090003</inv_mask>
+				<default_interface/>
+				<ram_interface>ram10e.bit</ram_interface>
+				<osc_interface>osc10e.bit</osc_interface>
+				<programmable_osc>yes</programmable_osc>
+				<erase_interface/>
+				<flash_interface>see10e.bit</flash_interface>
+				<flash_config_interface/>
+				<test_interface/>
+				<test_bitstream>test10e.bit</test_bitstream>
+				<test_object_file>hdwtest.hex</test_object_file>
+				<user_instruction/>
+			</lpt>
+		</board>
+		<board>
+			<model>XS40-010E+</model>
+			<chip_type>4010EPC84</chip_type>
+			<lpt>
+				<root>XS40/LPT/</root>
+				<inv_mask>0x090003</inv_mask>
+				<default_interface/>
+				<ram_interface>ram10ep.bit</ram_interface>
+				<osc_interface>osc10e.bit</osc_interface>
+				<programmable_osc>yes</programmable_osc>
+				<erase_interface/>
+				<flash_interface>see10e.bit</flash_interface>
+				<flash_config_interface/>
+				<test_interface/>
+				<test_bitstream>test10ep.bit</test_bitstream>
+				<test_object_file>hdwtestp.hex</test_object_file>
+				<user_instruction/>
+			</lpt>
+		</board>
+		<board>
+			<model>XSP-010</model>
+			<chip_type>S10PC84</chip_type>
+			<lpt>
+				<root>XS40/LPT/</root>
+				<inv_mask>0x090003</inv_mask>
+				<default_interface/>
+				<ram_interface>rams10.bit</ram_interface>
+				<osc_interface>oscs10.bit</osc_interface>
+				<programmable_osc>yes</programmable_osc>
+				<erase_interface/>
+				<flash_interface/>
+				<flash_config_interface/>
+				<test_interface/>
+				<test_bitstream>tests10.bit</test_bitstream>
+				<test_object_file>hdwtest.hex</test_object_file>
+				<user_instruction/>
+			</lpt>
+		</board>
+		<board>
+			<model>XSP-010+</model>
+			<chip_type>S10PC84</chip_type>
+			<lpt>
+				<root>XS40/LPT/</root>
+				<inv_mask>0x090003</inv_mask>
+				<default_interface/>
+				<ram_interface>rams10p.bit</ram_interface>
+				<osc_interface>oscs10.bit</osc_interface>
+				<programmable_osc>yes</programmable_osc>
+				<erase_interface/>
+				<flash_interface/>
+				<flash_config_interface/>
+				<test_interface/>
+				<test_bitstream>tests10p.bit</test_bitstream>
+				<test_object_file>hdwtestp.hex</test_object_file>
+				<user_instruction/>
+			</lpt>
+		</board>
+		<board>
+			<model>XSV-50</model>
+			<chip_type>V50PQ240</chip_type>
+			<lpt>
+				<root>XSV/LPT/</root>
+				<inv_mask>0x090003</inv_mask>
+				<default_interface>dwnldpar.svf</default_interface>
+				<ram_interface>ram50.bit</ram_interface>
+				<osc_interface>osc.svf</osc_interface>
+				<programmable_osc>yes</programmable_osc>
+				<erase_interface>erase.svf</erase_interface>
+				<flash_interface>fintfc.svf</flash_interface>
+				<flash_config_interface>fconfig.svf</flash_config_interface>
+				<test_interface>dwnldtst.svf</test_interface>
+				<test_bitstream>xsvtst50.bit</test_bitstream>
+				<test_object_file/>
+				<user_instruction/>
+			</lpt>
+		</board>
+		<board>
+			<model>XSV-100</model>
+			<chip_type>V100PQ240</chip_type>
+			<lpt>
+				<root>XSV/LPT/</root>
+				<inv_mask>0x090003</inv_mask>
+				<default_interface>dwnldpar.svf</default_interface>
+				<ram_interface>ram100.bit</ram_interface>
+				<osc_interface>osc.svf</osc_interface>
+				<programmable_osc>yes</programmable_osc>
+				<erase_interface>erase.svf</erase_interface>
+				<flash_interface>fintfc.svf</flash_interface>
+				<flash_config_interface>fconfig.svf</flash_config_interface>
+				<test_interface>dwnldtst.svf</test_interface>
+				<test_bitstream>xsvtst100.bit</test_bitstream>
+				<test_object_file/>
+				<user_instruction/>
+			</lpt>
+		</board>
+		<board>
+			<model>XSV-300</model>
+			<chip_type>V300PQ240</chip_type>
+			<lpt>
+				<root>XSV/LPT/</root>
+				<inv_mask>0x090003</inv_mask>
+				<default_interface>dwnldpar.svf</default_interface>
+				<ram_interface>ram300.bit</ram_interface>
+				<osc_interface>osc.svf</osc_interface>
+				<programmable_osc>yes</programmable_osc>
+				<erase_interface>erase.svf</erase_interface>
+				<flash_interface>fintfc.svf</flash_interface>
+				<flash_config_interface>fconfig.svf</flash_config_interface>
+				<test_interface>dwnldtst.svf</test_interface>
+				<test_bitstream>xsvtst300.bit</test_bitstream>
+				<test_object_file/>
+				<user_instruction/>
+			</lpt>
+		</board>
+		<board>
+			<model>XSV-800</model>
+			<chip_type>V800PQ240</chip_type>
+			<lpt>
+				<root>XSV/LPT/</root>
+				<inv_mask>0x090003</inv_mask>
+				<default_interface>dwnldpar.svf</default_interface>
+				<ram_interface>ram800.bit</ram_interface>
+				<osc_interface>osc.svf</osc_interface>
+				<programmable_osc>yes</programmable_osc>
+				<erase_interface>erase.svf</erase_interface>
+				<flash_interface>fintfc.svf</flash_interface>
+				<flash_config_interface>fconfig.svf</flash_config_interface>
+				<test_interface>dwnldtst.svf</test_interface>
+				<test_bitstream>xsvtst800.bit</test_bitstream>
+				<test_object_file/>
+				<user_instruction/>
+			</lpt>
+		</board>
+	</boards>
+</xess>
+
+
+<!--
+# XSA Boards
+# model     chip         inv mask  dwnldbits                rambits                  oscbits              erasebits          flashbits             flashconfigbits       testintfcbits            testbits                   testobjfile
+XSA-50      2S50TQ144    0x090003  XSA\50\dwnldpar.svf      XSA\50\ramintfc.bit      NULL                 NULL               XSA\50\fintf.svf      XSA\50\fcnfg.svf      XSA\50\dwnldpar.svf      XSA\50\test_board.bit      NULL
+XSA-100     2S100TQ144   0x090003  XSA\100\dwnldpar.svf     XSA\100\ramintfc.bit     NULL                 NULL               XSA\100\fintf.svf     XSA\100\fcnfg.svf     XSA\100\dwnldpar.svf     XSA\100\test_board.bit     NULL
+XSA-200     2S200FG256   0x0b8003  XSA\200\dwnldpar.svf     XSA\200\ramintfc.bit     NULL                 NULL               XSA\200\fintf.bit     XSA\200\fcnfg.svf     XSA\200\dwnldpar.svf     XSA\200\test_board.bit     NULL
+XSA-3S1000  3S1000FT256  0x0b8003  XSA\3S1000\dwnldpar.svf  XSA\3S1000\ramintfc.bit  NULL                 NULL               XSA\3S1000\fintf.bit  XSA\3S1000\fcnfg.svf  XSA\3S1000\dwnldpar.svf  XSA\3S1000\test_board.bit  NULL
+
+# XSB Boards
+# model     chip         inv mask  dwnldbits                rambits                  oscbits              erasebits          flashbits             flashconfigbits       testintfcbits            testbits                   testobjfile
+XSB-300E    2S300EPQ208  0x090003  XSB\300E\dwnldpar.svf    XSB\300E\ramintfc.bit    XSB\300E\cfgi2c.bit  NULL               XSB\300E\fintf.svf    XSB\300E\fcnfg.svf    XSB\300E\dwnldpar.svf    XSB\300E\test_board.bit    NULL
+
+# XS95 Boards
+# model     chip         inv mask  dwnldbits                rambits                  oscbits              erasebits          flashbits             flashconfigbits       testintfcbits            testbits                   testobjfile
+XS95-108    XC95108PC84  0x090003  NULL                     NULL                     XS95\osc108.svf      XS95\erase108.svf  NULL                  NULL                  NULL                     XS95\test108.svf           XS95\hdwtest.hex	
+XS95-108+   XC95108PC84  0x090003  NULL                     NULL                     XS95\osc108.svf      XS95\erase108.svf  NULL                  NULL                  NULL                     XS95\test108p.svf          XS95\hdwtestp.hex	
+
+# XS40 Boards
+# model     chip         inv mask  dwnldbits                rambits                  oscbits              erasebits          flashbits             flashconfigbits       testintfcbits            testbits                   testobjfile
+XS40-005XL  4005XLPC84   0x090003  NULL                     XS40\ram05xl.bit         XS40\osc05xl.bit     NULL               XS40\see05xl.bit      NULL                  NULL                     XS40\test05xl.bit          XS40\hdwtest.hex
+XS40-005XL+ 4005XLPC84   0x090003  NULL                     XS40\ram05xlp.bit        XS40\osc05xl.bit     NULL               XS40\see05xl.bit      NULL                  NULL                     XS40\tst05xlp.bit          XS40\hdwtestp.hex
+XS40-005E   4005EPC84    0x090003  NULL                     XS40\ram05e.bit          XS40\osc05e.bit      NULL               XS40\see05e.bit       NULL                  NULL                     XS40\test05e.bit           XS40\hdwtest.hex
+XS40-005E+  4005EPC84    0x090003  NULL                     XS40\ram05ep.bit         XS40\osc05e.bit      NULL               XS40\see05e.bit       NULL                  NULL                     XS40\test05ep.bit          XS40\hdwtestp.hex
+XS40-010XL  4010XLPC84   0x090003  NULL                     XS40\ram10xl.bit         XS40\osc10xl.bit     NULL               NULL		   NULL                  NULL                     XS40\test10xl.bit          XS40\hdwtest.hex
+XS40-010XL+ 4010XLPC84   0x090003  NULL                     XS40\ram10xlp.bit        XS40\osc10xl.bit     NULL               NULL		   NULL                  NULL                     XS40\tst10xlp.bit          XS40\hdwtestp.hex
+XS40-010E   4010EPC84    0x090003  NULL                     XS40\ram10e.bit          XS40\osc10e.bit      NULL               XS40\see10e.bit       NULL                  NULL                     XS40\test10e.bit           XS40\hdwtest.hex
+XS40-010E+  4010EPC84    0x090003  NULL                     XS40\ram10ep.bit         XS40\osc10e.bit      NULL               XS40\see10e.bit       NULL                  NULL                     XS40\test10ep.bit          XS40\hdwtestp.hex
+XSP-010     S10PC84      0x090003  NULL                     XS40\rams10.bit          XS40\oscs10.bit      NULL               NULL                  NULL                  NULL                     XS40\tests10.bit           XS40\hdwtest.hex
+XSP-010+    S10PC84      0x090003  NULL                     XS40\rams10p.bit         XS40\oscs10.bit      NULL               NULL                  NULL                  NULL                     XS40\tests10p.bit          XS40\hdwtestp.hex
+
+# XSV Boards
+# model     chip         inv mask  dwnldbits                rambits                  oscbits              erasebits          flashbits             flashconfigbits       testintfcbits            testbits                   testobjfile
+XSV-50      V50PQ240     0x090003  XSV\dwnldpar.svf         XSV\ram50.bit            XSV\osc.svf          XSV\erase.svf      XSV\fintfc.svf        XSV\fconfig.svf       XSV\dwnldtst.svf         XSV\xsvtst50.bit           NULL
+XSV-100     V100PQ240    0x090003  XSV\dwnldpar.svf         XSV\ram100.bit           XSV\osc.svf          XSV\erase.svf      XSV\fintfc.svf        XSV\fconfig.svf       XSV\dwnldtst.svf         XSV\xsvts100.bit           NULL
+XSV-300     V300PQ240    0x090003  XSV\dwnldpar.svf         XSV\ram300.bit           XSV\osc.svf          XSV\erase.svf      XSV\fintfc.svf        XSV\fconfig.svf       XSV\dwnldtst.svf         XSV\xsvts300.bit           NULL
+XSV-800     V800HQ240    0x090003  XSV\dwnldpar.svf         XSV\ram800.bit           XSV\osc.svf          XSV\erase.svf      XSV\fintfc.svf        XSV\fconfig.svf       XSV\dwnldtst.svf         XSV\xsvts800.bit           NULL
+
+-->

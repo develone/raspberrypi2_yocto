@@ -1,0 +1,334 @@
+
+cd wkg/yocto/RaspberryPi2/poky/
+
+Setup the Yocto project enviornment
+
+. oe-init-build-env
+bitbake core-image-sato
+
+Remove all partitions from the SD card
+
+fdisk /dev/sdb
+
+Transfer the image to the 32 GB SD card
+
+dd if=tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg | pv | sudo dd of=/dev/sdb bs=16
+
+Resize to use all space.
+
+gparted /dev/sdb
+
+ssh -Y 192.168.1.136
+passwd
+
+These are the python packages installed by yocto.
+
+ls /usr/lib/python2.7/site-packages/
+ANSI.py				gtk-2.0
+ANSI.pyc			intelhex
+FSM.py				intelhex-1.5-py2.7.egg-info
+FSM.pyc				myhdl
+PIL				myhdl-1.0dev-py2.7.egg-info
+PIL.pth				nose
+PyPubSub-3.3.0-py2.7.egg-info	nose-1.3.6-py2.7.egg-info
+Pyrex				numpy
+Pyrex-0.9.9-py2.7.egg-info	numpy-1.7.0-py2.7.egg-info
+README				pexpect
+_dbus_bindings.la		pexpect-3.3-py2.7.egg-info
+_dbus_bindings.so		pubsub
+_dbus_glib_bindings.la		pxssh.py
+_dbus_glib_bindings.so		pxssh.pyc
+bitstring-3.1.3-py2.7.egg-info	pygtk.pth
+bitstring.py			pygtk.py
+bitstring.pyc			pygtk.pyo
+cairo				pyusb-1.0.0a3-py2.7.egg-info
+cv.py				rpm
+cv2.so				screen.py
+dbus				screen.pyc
+distribute-0.6.32-py2.7.egg	setuptools-0.6c11-py2.7.egg-info
+fdpexpect.py			setuptools.pth
+fdpexpect.pyc			smart
+glib				smart-1.5-py2.7.egg-info
+gobject				usb
+
+Transfer the py_compile.py to the target.
+
+scp py_compile.py 192.168.1.136:~/
+
+Add a copy of file py_compile.py to the location on target where Python is installed.
+ 
+cp py_compile.py /usr/lib/python2.7/site-packages/
+
+python setup.py install
+running install
+running bdist_egg
+running egg_info
+creating XsTools.egg-info
+writing requirements to XsTools.egg-info/requires.txt
+writing XsTools.egg-info/PKG-INFO
+writing top-level names to XsTools.egg-info/top_level.txt
+writing dependency_links to XsTools.egg-info/dependency_links.txt
+writing entry points to XsTools.egg-info/entry_points.txt
+writing manifest file 'XsTools.egg-info/SOURCES.txt'
+reading manifest file 'XsTools.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no previously-included files matching '__pycache__' found under directory '*'
+warning: no previously-included files matching '*.py[co]' found under directory '*'
+writing manifest file 'XsTools.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-armv7l/egg
+running install_lib
+running build_py
+creating build
+creating build/lib
+creating build/lib/xstools
+copying xstools/xsmfgtest2.py -> build/lib/xstools
+copying xstools/xsbitarray.py -> build/lib/xstools
+copying xstools/xilbitstr.py -> build/lib/xstools
+copying xstools/xsdutio.py -> build/lib/xstools
+copying xstools/xsusbprg.py -> build/lib/xstools
+copying xstools/xshostio.py -> build/lib/xstools
+copying xstools/xsi2c.py -> build/lib/xstools
+copying xstools/xserror.py -> build/lib/xstools
+copying xstools/gxstools.py -> build/lib/xstools
+copying xstools/ramdev.py -> build/lib/xstools
+copying xstools/xstest.py -> build/lib/xstools
+copying xstools/xscomm.py -> build/lib/xstools
+copying xstools/xsmfgtest.py -> build/lib/xstools
+copying xstools/xsflags.py -> build/lib/xstools
+copying xstools/picmicro.py -> build/lib/xstools
+copying xstools/xsusb.py -> build/lib/xstools
+copying xstools/flashdev.py -> build/lib/xstools
+copying xstools/xsmemio.py -> build/lib/xstools
+copying xstools/usb2serial.py -> build/lib/xstools
+copying xstools/xsboard.py -> build/lib/xstools
+copying xstools/xsspi.py -> build/lib/xstools
+copying xstools/xilfpga.py -> build/lib/xstools
+copying xstools/xsload.py -> build/lib/xstools
+copying xstools/__init__.py -> build/lib/xstools
+copying xstools/XstoolsApi.py -> build/lib/xstools
+copying xstools/xsjtag.py -> build/lib/xstools
+creating build/lib/tests
+copying tests/test_xsconnect.py -> build/lib/tests
+copying tests/__init__.py -> build/lib/tests
+creating build/lib/xstools/test
+copying xstools/test/test_utils.py -> build/lib/xstools/test
+copying xstools/test/test_location.py -> build/lib/xstools/test
+copying xstools/test/__init__.py -> build/lib/xstools/test
+creating build/lib/xstools/xula
+copying xstools/xula/ramintfc_jtag_200.bit -> build/lib/xstools/xula
+copying xstools/xula/test_board_jtag_50.bit -> build/lib/xstools/xula
+copying xstools/xula/fintf_jtag_200.bit -> build/lib/xstools/xula
+copying xstools/xula/fintf_jtag_50.bit -> build/lib/xstools/xula
+copying xstools/xula/test_board_jtag_200.bit -> build/lib/xstools/xula
+copying xstools/xula/ramintfc_jtag_50.bit -> build/lib/xstools/xula
+creating build/lib/xstools/xula2
+copying xstools/xula2/test_board_jtag_lx9.bit -> build/lib/xstools/xula2
+copying xstools/xula2/test_board_jtag_lx25.bit -> build/lib/xstools/xula2
+copying xstools/xula2/ramintfc_jtag_lx9.bit -> build/lib/xstools/xula2
+copying xstools/xula2/fintf_jtag_lx9.bit -> build/lib/xstools/xula2
+copying xstools/xula2/ramintfc_jtag_lx25.bit -> build/lib/xstools/xula2
+copying xstools/xula2/fintf_jtag_lx25.bit -> build/lib/xstools/xula2
+copying xstools/xula/XuLA_jtag.hex -> build/lib/xstools/xula
+copying xstools/xula2/XuLA_jtag.hex -> build/lib/xstools/xula2
+copying xstools/81-xstools-usb.rules -> build/lib/xstools
+creating build/lib/xstools/icons
+copying xstools/icons/serial_flash.png -> build/lib/xstools/icons
+copying xstools/icons/down_arrow_disabled.png -> build/lib/xstools/icons
+copying xstools/icons/down_arrow.png -> build/lib/xstools/icons
+copying xstools/icons/sdram.png -> build/lib/xstools/icons
+copying xstools/icons/uc.png -> build/lib/xstools/icons
+copying xstools/icons/fpga.png -> build/lib/xstools/icons
+creating build/bdist.linux-armv7l
+creating build/bdist.linux-armv7l/egg
+creating build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xsmfgtest2.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xsbitarray.py -> build/bdist.linux-armv7l/egg/xstools
+creating build/bdist.linux-armv7l/egg/xstools/icons
+copying build/lib/xstools/icons/serial_flash.png -> build/bdist.linux-armv7l/egg/xstools/icons
+copying build/lib/xstools/icons/down_arrow_disabled.png -> build/bdist.linux-armv7l/egg/xstools/icons
+copying build/lib/xstools/icons/down_arrow.png -> build/bdist.linux-armv7l/egg/xstools/icons
+copying build/lib/xstools/icons/sdram.png -> build/bdist.linux-armv7l/egg/xstools/icons
+copying build/lib/xstools/icons/uc.png -> build/bdist.linux-armv7l/egg/xstools/icons
+copying build/lib/xstools/icons/fpga.png -> build/bdist.linux-armv7l/egg/xstools/icons
+copying build/lib/xstools/xilbitstr.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xsdutio.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xsusbprg.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xshostio.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/81-xstools-usb.rules -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xsi2c.py -> build/bdist.linux-armv7l/egg/xstools
+creating build/bdist.linux-armv7l/egg/xstools/xula
+copying build/lib/xstools/xula/ramintfc_jtag_200.bit -> build/bdist.linux-armv7l/egg/xstools/xula
+copying build/lib/xstools/xula/test_board_jtag_50.bit -> build/bdist.linux-armv7l/egg/xstools/xula
+copying build/lib/xstools/xula/fintf_jtag_200.bit -> build/bdist.linux-armv7l/egg/xstools/xula
+copying build/lib/xstools/xula/fintf_jtag_50.bit -> build/bdist.linux-armv7l/egg/xstools/xula
+copying build/lib/xstools/xula/test_board_jtag_200.bit -> build/bdist.linux-armv7l/egg/xstools/xula
+copying build/lib/xstools/xula/XuLA_jtag.hex -> build/bdist.linux-armv7l/egg/xstools/xula
+copying build/lib/xstools/xula/ramintfc_jtag_50.bit -> build/bdist.linux-armv7l/egg/xstools/xula
+copying build/lib/xstools/xserror.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/gxstools.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/ramdev.py -> build/bdist.linux-armv7l/egg/xstools
+creating build/bdist.linux-armv7l/egg/xstools/xula2
+copying build/lib/xstools/xula2/test_board_jtag_lx9.bit -> build/bdist.linux-armv7l/egg/xstools/xula2
+copying build/lib/xstools/xula2/test_board_jtag_lx25.bit -> build/bdist.linux-armv7l/egg/xstools/xula2
+copying build/lib/xstools/xula2/ramintfc_jtag_lx9.bit -> build/bdist.linux-armv7l/egg/xstools/xula2
+copying build/lib/xstools/xula2/fintf_jtag_lx9.bit -> build/bdist.linux-armv7l/egg/xstools/xula2
+copying build/lib/xstools/xula2/ramintfc_jtag_lx25.bit -> build/bdist.linux-armv7l/egg/xstools/xula2
+copying build/lib/xstools/xula2/fintf_jtag_lx25.bit -> build/bdist.linux-armv7l/egg/xstools/xula2
+copying build/lib/xstools/xula2/XuLA_jtag.hex -> build/bdist.linux-armv7l/egg/xstools/xula2
+creating build/bdist.linux-armv7l/egg/xstools/test
+copying build/lib/xstools/test/test_utils.py -> build/bdist.linux-armv7l/egg/xstools/test
+copying build/lib/xstools/test/test_location.py -> build/bdist.linux-armv7l/egg/xstools/test
+copying build/lib/xstools/test/__init__.py -> build/bdist.linux-armv7l/egg/xstools/test
+copying build/lib/xstools/xstest.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xscomm.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xsmfgtest.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xsflags.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/picmicro.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xsusb.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/flashdev.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xsmemio.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/usb2serial.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xsboard.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xsspi.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xilfpga.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xsload.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/__init__.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/XstoolsApi.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xsjtag.py -> build/bdist.linux-armv7l/egg/xstools
+creating build/bdist.linux-armv7l/egg/tests
+copying build/lib/tests/test_xsconnect.py -> build/bdist.linux-armv7l/egg/tests
+copying build/lib/tests/__init__.py -> build/bdist.linux-armv7l/egg/tests
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xsmfgtest2.py to xsmfgtest2.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xsbitarray.py to xsbitarray.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xilbitstr.py to xilbitstr.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xsdutio.py to xsdutio.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xsusbprg.py to xsusbprg.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xshostio.py to xshostio.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xsi2c.py to xsi2c.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xserror.py to xserror.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/gxstools.py to gxstools.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/ramdev.py to ramdev.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/test/test_utils.py to test_utils.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/test/test_location.py to test_location.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/test/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xstest.py to xstest.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xscomm.py to xscomm.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xsmfgtest.py to xsmfgtest.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xsflags.py to xsflags.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/picmicro.py to picmicro.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xsusb.py to xsusb.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/flashdev.py to flashdev.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xsmemio.py to xsmemio.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/usb2serial.py to usb2serial.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xsboard.py to xsboard.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xsspi.py to xsspi.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xilfpga.py to xilfpga.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xsload.py to xsload.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/XstoolsApi.py to XstoolsApi.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xsjtag.py to xsjtag.pyc
+byte-compiling build/bdist.linux-armv7l/egg/tests/test_xsconnect.py to test_xsconnect.pyc
+byte-compiling build/bdist.linux-armv7l/egg/tests/__init__.py to __init__.pyc
+creating build/bdist.linux-armv7l/egg/EGG-INFO
+copying XsTools.egg-info/PKG-INFO -> build/bdist.linux-armv7l/egg/EGG-INFO
+copying XsTools.egg-info/SOURCES.txt -> build/bdist.linux-armv7l/egg/EGG-INFO
+copying XsTools.egg-info/dependency_links.txt -> build/bdist.linux-armv7l/egg/EGG-INFO
+copying XsTools.egg-info/entry_points.txt -> build/bdist.linux-armv7l/egg/EGG-INFO
+copying XsTools.egg-info/not-zip-safe -> build/bdist.linux-armv7l/egg/EGG-INFO
+copying XsTools.egg-info/requires.txt -> build/bdist.linux-armv7l/egg/EGG-INFO
+copying XsTools.egg-info/top_level.txt -> build/bdist.linux-armv7l/egg/EGG-INFO
+creating dist
+creating 'dist/XsTools-0.1.27-py2.7.egg' and adding 'build/bdist.linux-armv7l/egg' to it
+removing 'build/bdist.linux-armv7l/egg' (and everything under it)
+Processing XsTools-0.1.27-py2.7.egg
+creating /usr/lib/python2.7/site-packages/XsTools-0.1.27-py2.7.egg
+Extracting XsTools-0.1.27-py2.7.egg to /usr/lib/python2.7/site-packages
+Adding XsTools 0.1.27 to easy-install.pth file
+Installing xsflags script to /usr/bin
+Installing xsusbprg script to /usr/bin
+Installing xsmfgtest script to /usr/bin
+Installing xstest script to /usr/bin
+Installing usb2serial script to /usr/bin
+Installing xsload script to /usr/bin
+Installing gxstools script to /usr/bin
+
+Installed /usr/lib/python2.7/site-packages/XsTools-0.1.27-py2.7.egg
+Processing dependencies for XsTools==0.1.27
+Searching for intelhex==1.5
+Best match: intelhex 1.5
+Adding intelhex 1.5 to easy-install.pth file
+
+Using /usr/lib/python2.7/site-packages
+Searching for bitstring==3.1.3
+Best match: bitstring 3.1.3
+Adding bitstring 3.1.3 to easy-install.pth file
+
+Using /usr/lib/python2.7/site-packages
+Searching for pyusb==1.0.0a3
+Best match: pyusb 1.0.0a3
+Adding pyusb 1.0.0a3 to easy-install.pth file
+
+Using /usr/lib/python2.7/site-packages
+Searching for PyPubSub==3.3.0
+Best match: PyPubSub 3.3.0
+Adding PyPubSub 3.3.0 to easy-install.pth file
+
+Using /usr/lib/python2.7/site-packages
+Finished processing dependencies for XsTools==0.1.27
+control: unrecognized option '--reload_rules'
+
+ls /usr/lib/python2.7/site-packages/
+ANSI.py				gtk-2.0
+ANSI.pyc			intelhex
+FSM.py				intelhex-1.5-py2.7.egg-info
+FSM.pyc				myhdl
+PIL				myhdl-1.0dev-py2.7.egg-info
+PIL.pth				nose
+PyPubSub-3.3.0-py2.7.egg-info	nose-1.3.6-py2.7.egg-info
+Pyrex				numpy
+Pyrex-0.9.9-py2.7.egg-info	numpy-1.7.0-py2.7.egg-info
+README				pexpect
+XsTools-0.1.27-py2.7.egg	pexpect-3.3-py2.7.egg-info
+_dbus_bindings.la		pubsub
+_dbus_bindings.so		pxssh.py
+_dbus_glib_bindings.la		pxssh.pyc
+_dbus_glib_bindings.so		py_compile.py
+bitstring-3.1.3-py2.7.egg-info	py_compile.pyc
+bitstring.py			pygtk.pth
+bitstring.pyc			pygtk.py
+cairo				pygtk.pyo
+cv.py				pyusb-1.0.0a3-py2.7.egg-info
+cv2.so				rpm
+dbus				screen.py
+distribute-0.6.32-py2.7.egg	screen.pyc
+easy-install.pth		setuptools-0.6c11-py2.7.egg-info
+fdpexpect.py			setuptools.pth
+fdpexpect.pyc			smart
+glib				smart-1.5-py2.7.egg-info
+gobject				usb
+
+The following programs get installed at /usr/bin
+
+ls /usr/bin/xs*
+/usr/bin/xset		 /usr/bin/xsload     /usr/bin/xsusbprg
+/usr/bin/xsettings-dump  /usr/bin/xsmfgtest
+/usr/bin/xsflags	 /usr/bin/xstest
+
+Reboot to load udev rules.
+
+lsusb
+Bus 001 Device 007: ID 046d:c001 Logitech, Inc. N48/M-BB48 [FirstMouse Plus]
+Bus 001 Device 006: ID 0a81:0101 Chesen Electronics Corp. Keyboard
+Bus 001 Device 005: ID 148f:5370 Ralink Technology, Corp. RT5370 Wireless Adapter
+Bus 001 Device 008: ID 04d8:ff8c Microchip Technology, Inc. 
+Bus 001 Device 003: ID 0424:ec00 Standard Microsystems Corp. SMSC9512/9514 Fast Ethernet Adapter
+Bus 001 Device 011: ID 046d:082d Logitech, Inc. HD Pro Webcam C920
+Bus 001 Device 010: ID 046d:082d Logitech, Inc. HD Pro Webcam C920
+Bus 001 Device 009: ID 05e3:0608 Genesys Logic, Inc. USB-2.0 4-Port HUB
+Bus 001 Device 004: ID 0409:0059 NEC Corp. HighSpeed Hub
+Bus 001 Device 002: ID 0424:9514 Standard Microsystems Corp. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+scp XSBRDINF.xml 192.168.1.136:~/
+
+cp XSBRDINF.xml /usr/lib/python2.7/site-packages/

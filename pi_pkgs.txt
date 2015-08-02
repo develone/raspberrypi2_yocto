@@ -1,3 +1,5 @@
+PyPubSub-3.1.3-r0.cortexa7hf_vfp_vfpv4_neon
+PyPubSub-dev-3.1.3-r0.cortexa7hf_vfp_vfpv4_neon
 acl-2.2.52-r0.cortexa7hf_vfp_vfpv4_neon
 acl-dev-2.2.52-r0.cortexa7hf_vfp_vfpv4_neon
 alsa-conf-1.0.29-r0.cortexa7hf_vfp_vfpv4_neon
@@ -3172,6 +3174,8 @@ pulseaudio-module-x11-publish-6.0-r0.cortexa7hf_vfp_vfpv4_neon
 pulseaudio-module-x11-xsmp-6.0-r0.cortexa7hf_vfp_vfpv4_neon
 pulseaudio-server-6.0-r0.cortexa7hf_vfp_vfpv4_neon
 python-audio-2.7.9-r1.cortexa7hf_vfp_vfpv4_neon
+python-bitstring-3.1.3-r0.cortexa7hf_vfp_vfpv4_neon
+python-bitstring-dev-3.1.3-r0.cortexa7hf_vfp_vfpv4_neon
 python-codecs-2.7.9-r1.cortexa7hf_vfp_vfpv4_neon
 python-compression-2.7.9-r1.cortexa7hf_vfp_vfpv4_neon
 python-contextlib-2.7.9-r1.cortexa7hf_vfp_vfpv4_neon
@@ -3200,6 +3204,8 @@ python-math-2.7.9-r1.cortexa7hf_vfp_vfpv4_neon
 python-mime-2.7.9-r1.cortexa7hf_vfp_vfpv4_neon
 python-misc-2.7.9-r1.cortexa7hf_vfp_vfpv4_neon
 python-mmap-2.7.9-r1.cortexa7hf_vfp_vfpv4_neon
+python-myhdl-1.0.0+git0+fdc453fcc7-r0.cortexa7hf_vfp_vfpv4_neon
+python-myhdl-dev-1.0.0+git0+fdc453fcc7-r0.cortexa7hf_vfp_vfpv4_neon
 python-netclient-2.7.9-r1.cortexa7hf_vfp_vfpv4_neon
 python-netserver-2.7.9-r1.cortexa7hf_vfp_vfpv4_neon
 python-nose-1.3.6-r0.cortexa7hf_vfp_vfpv4_neon
@@ -3294,6 +3300,8 @@ sysvinit-dev-2.88dsf-r14.cortexa7hf_vfp_vfpv4_neon
 sysvinit-inittab-2.88dsf-r10.raspberrypi2
 sysvinit-inittab-dev-2.88dsf-r10.raspberrypi2
 sysvinit-pidof-2.88dsf-r14.cortexa7hf_vfp_vfpv4_neon
+tar-1.28-r0.cortexa7hf_vfp_vfpv4_neon
+tar-dev-1.28-r0.cortexa7hf_vfp_vfpv4_neon
 tcl-8.6.4-r0.cortexa7hf_vfp_vfpv4_neon
 tcl-dev-8.6.4-r0.cortexa7hf_vfp_vfpv4_neon
 time-1.7-r2.cortexa7hf_vfp_vfpv4_neon

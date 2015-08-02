@@ -1,0 +1,306 @@
+cd gtkwave-3.3.66
+root@raspberrypi2:~/gtkwave-3.3.66# ./configure 
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking if MIME and desktop updates should be disabled... no
+checking for update-mime-database... /usr/bin/update-mime-database
+checking for update-desktop-database... no
+checking if structure packing should be enabled... no
+checking if Tcl usage should be disabled... no
+checking for Tcl configuration... found /usr/lib/tclConfig.sh
+checking for existence of /usr/lib/tclConfig.sh... loading
+checking for Tk configuration... found /usr/lib/tkConfig.sh
+checking for existence of /usr/lib/tkConfig.sh... loading
+checking if Tcl/Tk (if present) should be stubified... no
+checking if gtk1 or gtk2 should be used... gtk2
+checking if fatlines should be used... no
+checking if manymarkers should be used... no
+checking if ae2 support should be used... no
+checking if FsdbReader support should be used... no
+checking for g++... g++
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking for style of include used by make... GNU
+checking dependency style of g++... gcc3
+checking for gawk... (cached) gawk
+checking for gcc... gcc
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking dependency style of gcc... gcc3
+checking whether make sets $(MAKE)... (cached) yes
+checking for flex... flex
+checking lex output file root... lex.yy
+checking lex library... -lfl
+checking whether yytext is a pointer... yes
+checking for ranlib... ranlib
+checking whether gcc and cc understand -c and -o together... yes
+checking for gedit... notfound
+checking for fsdbdebug... notfound
+checking for fsdb2vcd... notfound
+checking for vpd2vcd... notfound
+checking for wlf2vcd... notfound
+checking for gperf... /usr/bin/gperf
+checking for dlopen in -ldl... yes
+checking for sqrt in -lm... yes
+checking for main in -lpthread... yes
+checking for gzread in -lz... yes
+checking for BZ2_bzread in -lbz2... yes
+checking if XZ should be enabled... yes
+checking for lzma_end in -llzma... yes
+checking if Fast SST Tree should be enabled... yes
+checking if Judy array support should be enabled... no
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for GTK... yes
+checking for GTK_UNIX_PRINT... yes
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for size_t... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking for ANSI C header files... (cached) yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking for inttypes.h... (cached) yes
+checking libintl.h usability... yes
+checking libintl.h presence... yes
+checking for libintl.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking malloc.h usability... yes
+checking malloc.h presence... yes
+checking for malloc.h... yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking for stdint.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for strings.h... (cached) yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for unistd.h... (cached) yes
+checking wchar.h usability... yes
+checking wchar.h presence... yes
+checking for wchar.h... yes
+checking wctype.h usability... yes
+checking wctype.h presence... yes
+checking for wctype.h... yes
+checking getopt.h usability... yes
+checking getopt.h presence... yes
+checking for getopt.h... yes
+checking for rpc/types.h... yes
+checking for rpc/xdr.h... yes
+checking size of void *... 4
+checking size of double... 8
+checking size of long... 4
+checking size of int... 4
+checking for an ANSI C-conforming const... yes
+checking for stdbool.h that conforms to C99... yes
+checking for _Bool... yes
+checking for inline... inline
+checking for off_t... yes
+checking for pid_t... yes
+checking for size_t... (cached) yes
+checking whether time.h and sys/time.h may both be included... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for ptrdiff_t... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... 64
+checking for error_at_line... yes
+checking vfork.h usability... no
+checking vfork.h presence... no
+checking for vfork.h... no
+checking for fork... yes
+checking for vfork... yes
+checking for working fork... yes
+checking for working vfork... (cached) yes
+checking for _LARGEFILE_SOURCE value needed for large files... no
+checking for working memcmp... yes
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/param.h... yes
+checking for getpagesize... yes
+checking for working mmap... yes
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking types of arguments for select... int,fd_set *,struct timeval *
+checking whether lstat correctly handles trailing slash... yes
+checking whether stat accepts an empty string... no
+checking for working strtod... yes
+checking for vprintf... yes
+checking for _doprnt... no
+checking for atexit... yes
+checking for btowc... yes
+checking for bzero... yes
+checking for dup2... yes
+checking for memmove... yes
+checking for memset... yes
+checking for munmap... yes
+checking for pow... yes
+checking for putenv... yes
+checking for re_comp... yes
+checking for realpath... yes
+checking for regcomp... yes
+checking for select... yes
+checking for setenv... yes
+checking for strcasecmp... yes
+checking for strchr... yes
+checking for strdup... yes
+checking for strerror... yes
+checking for strncasecmp... yes
+checking for strrchr... yes
+checking for strstr... yes
+checking for getopt_long... yes
+checking for setenv... (cached) yes
+checking for unsetenv... yes
+checking for xdrmem_create in -lnsl... yes
+checking for xdrmem_create in -lrpc... no
+checking for Tcl_CreateInterp in -ltcl8.6... yes
+configure:
+--------------------------------------------
+  Configuration summary:
+
+  FASTTREE_CFLAGS       : 
+
+  gtk1                  : no
+  gtk version           : 2.24.28
+  GTK_CFLAGS            : -pthread -I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/libpng16 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/freetype2
+  GTK_LIBS              : -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lfontconfig -lfreetype
+
+  LIBZ_CFLAGS           : 
+  LIBZ_LDADD            : -lz
+
+  LIBBZ2_CFLAGS         : 
+  LIBBZ2_LDADD          : -lbz2
+
+  LIBXZ_CFLAGS          : -D_WAVE_HAVE_XZ
+  LIBXZ_LDADD           : -llzma
+
+  LIBJUDY_CFLAGS        : 
+  LIBJUDY_LDADD         : 
+
+  AET2_CFLAGS           : 
+  AET2_LDADD            : 
+
+  FSDB_CFLAGS           : 
+  FSDB_LDADD            : 
+
+  EXTLOAD_CFLAGS        : 
+
+  TCL_INCLUDE_SPEC      : -I=/usr/include/tcl8.6
+  TCL_LIB_SPEC          : -L=/usr/lib -ltcl8.6
+  TCL_LDADD             : -L=/usr/lib -ltcl8.6
+  TCL_DEFADD            : -DHAVE_LIBTCL
+
+  TK_INCLUDE_SPEC       : -I/usr/include
+  TK_LIB_SPEC           : -L/usr/lib -ltk8.6
+  TK_LDADD              : -L/usr/lib -ltk8.6
+
+  CPPFLAGS              : -DWAVE_USE_GTK2 
+  CFLAGS                : -g -O2  -DFST_WRITER_PARALLEL
+  LDFLAGS               : 
+  LIBS                  : -lnsl -lpthread -lm -ldl 
+
+  MINGW_LDADD           : 
+  GTK_MAC_CFLAGS        : 
+  GTK_MAC_LIBS          : 
+  COCOA_GTK_CFLAGS      : 
+  COCOA_GTK_LDADD       : 
+  COCOA_GTK_LDFLAGS     : 
+
+  GCONF_CFLAGS          : 
+  GCONF_LIBS            : 
+
+  GTK_UNIX_PRINT_CFLAGS : -pthread -I/usr/include/gtk-unix-print-2.0 -I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/libpng16 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/freetype2 -DWAVE_GTK_UNIX_PRINT
+  GTK_UNIX_PRINT_LIBS   : -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lfontconfig -lfreetype
+
+  GEDIT_CFLAGS          : 
+--------------------------------------------
+
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating doc/Makefile
+config.status: creating contrib/Makefile
+config.status: creating contrib/pccts/IBM_VISUAL_AGE_PROJECTS/Makefile
+config.status: creating contrib/pccts/Makefile
+config.status: creating contrib/pccts/antlr/Makefile
+config.status: creating contrib/pccts/dlg/Makefile
+config.status: creating contrib/pccts/h/Makefile
+config.status: creating contrib/pccts/sorcerer/Makefile
+config.status: creating contrib/pccts/sorcerer/h/Makefile
+config.status: creating contrib/pccts/sorcerer/lib/Makefile
+config.status: creating contrib/pccts/sorcerer/test/Makefile
+config.status: creating contrib/pccts/sorcerer/test/test7/Makefile
+config.status: creating contrib/pccts/sorcerer/testcpp/Makefile
+config.status: creating contrib/pccts/support/DECmms/Makefile
+config.status: creating contrib/pccts/support/Makefile
+config.status: creating contrib/pccts/support/genmk/Makefile
+config.status: creating contrib/pccts/support/rexpr/Makefile
+config.status: creating contrib/pccts/support/set/Makefile
+config.status: creating contrib/pccts/support/sym/Makefile
+config.status: creating contrib/pccts/testcpp/Makefile
+config.status: creating contrib/rtlbrowse/Makefile
+config.status: creating contrib/vermin/Makefile
+config.status: creating contrib/bundle_for_osx/Makefile
+config.status: creating contrib/fst_jni/Makefile
+config.status: creating contrib/wlf2vcd/Makefile
+config.status: creating contrib/fsdb2vcd/Makefile
+config.status: creating examples/Makefile
+config.status: creating man/Makefile
+config.status: creating src/Makefile
+config.status: creating src/cocoa/Makefile
+config.status: creating src/helpers/Makefile
+config.status: creating src/liblzma/Makefile
+config.status: creating src/libbz2/Makefile
+config.status: creating src/libz/Makefile
+config.status: creating src/helpers/fst/Makefile
+config.status: creating share/Makefile
+config.status: creating share/mime/Makefile
+config.status: creating share/mime/packages/Makefile
+config.status: creating share/icons/Makefile
+config.status: creating share/icons/gnome/Makefile
+config.status: creating share/icons/gnome/16x16/Makefile
+config.status: creating share/icons/gnome/16x16/mimetypes/Makefile
+config.status: creating share/icons/gnome/32x32/Makefile
+config.status: creating share/icons/gnome/32x32/mimetypes/Makefile
+config.status: creating share/icons/gnome/48x48/Makefile
+config.status: creating share/icons/gnome/48x48/mimetypes/Makefile
+config.status: creating share/applications/Makefile
+config.status: creating share/appdata/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+
