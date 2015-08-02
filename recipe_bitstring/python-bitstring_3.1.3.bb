@@ -7,7 +7,7 @@
 #
 # WARNING: the following LICENSE value is a best guess - it is your
 # responsibility to verify that the value is complete and correct.
-LICENSE = "MIT"
+LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
 HOMEPAGE = "http://python-bitstring.googlecode.com"
