@@ -9,4 +9,33 @@ core-image-sato working,
 07/28/15
 This image now supports OpenCV using 2 C920 cameras.
  
+08/03/15
+Goal: To install MyHDL, GTKWave, XSTOOLs and Iverilog on a core-image-sato.
 
+Created several recipes and modified core-image-sato.bb.
+The core-image-sato.bb is the recipe that I am using to add other 
+software to my build.
+These can be found at https://github.com/develone/raspberrypi2_yocto.git
+Each of the new recipes are in folders that begin with recipe_xxxxx.
+
+The recipe for gtkwave & python-xstools still needs work. Until these are
+working the target will be used to compile and install.
+The recipes intelhex, PyPubSub, python-bitstring, pyusb were the dependencies
+for XSTOOLs.  XSTOOLs installs on the target but still is not working
+see the file core-image-sato_xstools.txt  
+ 
+poky/meta/recipes-devtools/gtkwave/
+├── gtkwave_3.6.66.bb
+
+poky/meta/recipes-devtools/python/
+├── intelhex_1.5.bb
+├── PyPubSub_3.1.3.bb
+├── python-bitstring_3.1.3.bb
+├── python-myhdl_1.0.0.bb
+├── pyusb-1.0.0a3.bb
+
+poky/meta/recipes-sato/images/
+├── core-image-sato.bb
+
+
+ 
