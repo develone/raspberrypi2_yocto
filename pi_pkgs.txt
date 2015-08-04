@@ -29,6 +29,8 @@ alsa-utils-speakertest-1.0.29-r0.cortexa7hf_vfp_vfpv4_neon
 apm-3.2.2+14-r2.cortexa7hf_vfp_vfpv4_neon
 apmd-3.2.2+14-r2.cortexa7hf_vfp_vfpv4_neon
 apmd-dev-3.2.2+14-r2.cortexa7hf_vfp_vfpv4_neon
+argparse-1.2.1-r0.cortexa7hf_vfp_vfpv4_neon
+argparse-dev-1.2.1-r0.cortexa7hf_vfp_vfpv4_neon
 attr-2.4.47-r0.cortexa7hf_vfp_vfpv4_neon
 attr-dev-2.4.47-r0.cortexa7hf_vfp_vfpv4_neon
 autoconf-2.69-r11.cortexa7hf_vfp_vfpv4_neon

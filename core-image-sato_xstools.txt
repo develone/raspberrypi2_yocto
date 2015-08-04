@@ -24,32 +24,35 @@ passwd
 These are the python packages installed by yocto.
 
 ls /usr/lib/python2.7/site-packages/
-ANSI.py				gtk-2.0
-ANSI.pyc			intelhex
-FSM.py				intelhex-1.5-py2.7.egg-info
-FSM.pyc				myhdl
-PIL				myhdl-1.0dev-py2.7.egg-info
-PIL.pth				nose
-PyPubSub-3.3.0-py2.7.egg-info	nose-1.3.6-py2.7.egg-info
-Pyrex				numpy
-Pyrex-0.9.9-py2.7.egg-info	numpy-1.7.0-py2.7.egg-info
-README				pexpect
-_dbus_bindings.la		pexpect-3.3-py2.7.egg-info
-_dbus_bindings.so		pubsub
-_dbus_glib_bindings.la		pxssh.py
-_dbus_glib_bindings.so		pxssh.pyc
-bitstring-3.1.3-py2.7.egg-info	pygtk.pth
-bitstring.py			pygtk.py
-bitstring.pyc			pygtk.pyo
-cairo				pyusb-1.0.0a3-py2.7.egg-info
-cv.py				rpm
-cv2.so				screen.py
-dbus				screen.pyc
-distribute-0.6.32-py2.7.egg	setuptools-0.6c11-py2.7.egg-info
-fdpexpect.py			setuptools.pth
-fdpexpect.pyc			smart
-glib				smart-1.5-py2.7.egg-info
-gobject				usb
+ANSI.py				gobject
+ANSI.pyc			gtk-2.0
+FSM.py				intelhex
+FSM.pyc				intelhex-1.5-py2.7.egg-info
+PIL				myhdl
+PIL.pth				myhdl-1.0dev-py2.7.egg-info
+PyPubSub-3.3.0-py2.7.egg-info	nose
+Pyrex				nose-1.3.6-py2.7.egg-info
+Pyrex-0.9.9-py2.7.egg-info	numpy
+README				numpy-1.7.0-py2.7.egg-info
+_dbus_bindings.la		pexpect
+_dbus_bindings.so		pexpect-3.3-py2.7.egg-info
+_dbus_glib_bindings.la		pubsub
+_dbus_glib_bindings.so		pxssh.py
+argparse-1.2.1-py2.7.egg-info	pxssh.pyc
+argparse.py			pygtk.pth
+argparse.pyc			pygtk.py
+bitstring-3.1.3-py2.7.egg-info	pygtk.pyo
+bitstring.py			pyusb-1.0.0a3-py2.7.egg-info
+bitstring.pyc			rpm
+cairo				screen.py
+cv.py				screen.pyc
+cv2.so				setuptools-0.6c11-py2.7.egg-info
+dbus				setuptools.pth
+distribute-0.6.32-py2.7.egg	smart
+fdpexpect.py			smart-1.5-py2.7.egg-info
+fdpexpect.pyc			usb
+glib
+
 
 Transfer the py_compile.py to the target.
 
@@ -58,6 +61,10 @@ scp py_compile.py 192.168.1.136:~/
 Add a copy of file py_compile.py to the location on target where Python is installed.
  
 cp py_compile.py /usr/lib/python2.7/site-packages/
+
+git clone https://github.com/xesscorp/XSTOOLs.git
+
+cd XSTOOLs/
 
 python setup.py install
 running install
@@ -278,35 +285,36 @@ Finished processing dependencies for XsTools==0.1.27
 control: unrecognized option '--reload_rules'
 
 ls /usr/lib/python2.7/site-packages/
-ANSI.py				gtk-2.0
-ANSI.pyc			intelhex
-FSM.py				intelhex-1.5-py2.7.egg-info
-FSM.pyc				myhdl
-PIL				myhdl-1.0dev-py2.7.egg-info
-PIL.pth				nose
-PyPubSub-3.3.0-py2.7.egg-info	nose-1.3.6-py2.7.egg-info
-Pyrex				numpy
-Pyrex-0.9.9-py2.7.egg-info	numpy-1.7.0-py2.7.egg-info
-README				pexpect
-XsTools-0.1.27-py2.7.egg	pexpect-3.3-py2.7.egg-info
-_dbus_bindings.la		pubsub
-_dbus_bindings.so		pxssh.py
-_dbus_glib_bindings.la		pxssh.pyc
-_dbus_glib_bindings.so		py_compile.py
-bitstring-3.1.3-py2.7.egg-info	py_compile.pyc
-bitstring.py			pygtk.pth
-bitstring.pyc			pygtk.py
-cairo				pygtk.pyo
-cv.py				pyusb-1.0.0a3-py2.7.egg-info
-cv2.so				rpm
-dbus				screen.py
-distribute-0.6.32-py2.7.egg	screen.pyc
-easy-install.pth		setuptools-0.6c11-py2.7.egg-info
-fdpexpect.py			setuptools.pth
-fdpexpect.pyc			smart
-glib				smart-1.5-py2.7.egg-info
-gobject				usb
-
+ANSI.py				gobject
+ANSI.pyc			gtk-2.0
+FSM.py				intelhex
+FSM.pyc				intelhex-1.5-py2.7.egg-info
+PIL				myhdl
+PIL.pth				myhdl-1.0dev-py2.7.egg-info
+PyPubSub-3.3.0-py2.7.egg-info	nose
+Pyrex				nose-1.3.6-py2.7.egg-info
+Pyrex-0.9.9-py2.7.egg-info	numpy
+README				numpy-1.7.0-py2.7.egg-info
+XsTools-0.1.27-py2.7.egg	pexpect
+_dbus_bindings.la		pexpect-3.3-py2.7.egg-info
+_dbus_bindings.so		pubsub
+_dbus_glib_bindings.la		pxssh.py
+_dbus_glib_bindings.so		pxssh.pyc
+argparse-1.2.1-py2.7.egg-info	py_compile.py
+argparse.py			py_compile.pyc
+argparse.pyc			pygtk.pth
+bitstring-3.1.3-py2.7.egg-info	pygtk.py
+bitstring.py			pygtk.pyo
+bitstring.pyc			pyusb-1.0.0a3-py2.7.egg-info
+cairo				rpm
+cv.py				screen.py
+cv2.so				screen.pyc
+dbus				setuptools-0.6c11-py2.7.egg-info
+distribute-0.6.32-py2.7.egg	setuptools.pth
+easy-install.pth		smart
+fdpexpect.py			smart-1.5-py2.7.egg-info
+fdpexpect.pyc			usb
+glib
 The following programs get installed at /usr/bin
 
 ls /usr/bin/xs*
@@ -333,16 +341,14 @@ scp XSBRDINF.xml 192.168.1.136:~/
 
 cp XSBRDINF.xml /usr/lib/python2.7/site-packages/
 
-I downloaded http://code.google.com/p/argparse/source/browse/argparse.py
-argparse-e26233c6cc8f.tar.gz
- This extracted
-cd argparse-e26233c6cc8f
-python setup.py install
+scp -r xstools_test_files/ 192.168.1.136:~/ 
 
 python /usr/bin/xstest -u 0 -b XULA2-LX9
 Success: XuLA2-LX9 passed diagnostic test!
 Exception AttributeError: "'NoneType' object has no attribute 'copy'" in <bound method Device.__del__ of <usb.core.Device object at 0x76452030>> ignored
 Exception AttributeError: "'NoneType' object has no attribute 'libusb_unref_device'" in <bound method _Device.__del__ of <usb.backend.libusb1._Device object at 0x76452070>> ignored
+
+cd xstools_test_files
 
 python /usr/bin/xsload --usb 0 --fpga blinker_h1.bit      
 Success: Bitstream blinker_h1.bit downloaded into XuLA2-LX9 !
