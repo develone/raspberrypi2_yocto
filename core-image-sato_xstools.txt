@@ -332,3 +332,132 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 scp XSBRDINF.xml 192.168.1.136:~/
 
 cp XSBRDINF.xml /usr/lib/python2.7/site-packages/
+
+I downloaded http://code.google.com/p/argparse/source/browse/argparse.py
+argparse-e26233c6cc8f.tar.gz
+ This extracted
+cd argparse-e26233c6cc8f
+python setup.py install
+
+python /usr/bin/xstest -u 0 -b XULA2-LX9
+Success: XuLA2-LX9 passed diagnostic test!
+Exception AttributeError: "'NoneType' object has no attribute 'copy'" in <bound method Device.__del__ of <usb.core.Device object at 0x76452030>> ignored
+Exception AttributeError: "'NoneType' object has no attribute 'libusb_unref_device'" in <bound method _Device.__del__ of <usb.backend.libusb1._Device object at 0x76452070>> ignored
+
+python /usr/bin/xsload --usb 0 --fpga blinker_h1.bit      
+Success: Bitstream blinker_h1.bit downloaded into XuLA2-LX9 !
+Exception AttributeError: "'NoneType' object has no attribute 'copy'" in <bound method Device.__del__ of <usb.core.Device object at 0x7643b170>> ignored
+Exception AttributeError: "'NoneType' object has no attribute 'libusb_unref_device'" in <bound method _Device.__del__ of <usb.backend.libusb1._Device object at 0x7643b1b0>> ignored
+
+python /usr/bin/xsload --usb 0 --fpga pc_fast_blinker_sub_h1.bit
+Success: Bitstream pc_fast_blinker_sub_h1.bit downloaded into XuLA2-LX9 !
+Exception AttributeError: "'NoneType' object has no attribute 'copy'" in <bound method Device.__del__ of <usb.core.Device object at 0x76387170>> ignored
+Exception AttributeError: "'NoneType' object has no attribute 'libusb_unref_device'" in <bound method _Device.__del__ of <usb.backend.libusb1._Device object at 0x763871b0>> ignored
+
+ python pc_subtractor_test.py
+
+##################################################################
+# This program tests the interface between the host PC and the FPGA
+# on the XuLA board that has been programmed to act as a subtractor.
+##################################################################
+
+111 - 109 =    2 ==> CORRECT!
+ 42 -  38 =    4 ==> CORRECT!
+ 30 -  16 =   14 ==> CORRECT!
+110 -  63 =   47 ==> CORRECT!
+ 58 -  48 =   10 ==> CORRECT!
+ 83 -  47 =   36 ==> CORRECT!
+ 33 -  10 =   23 ==> CORRECT!
+ 65 -  41 =   24 ==> CORRECT!
+ 98 -  26 =   72 ==> CORRECT!
+115 - 107 =    8 ==> CORRECT!
+ 46 - 104 =  -58 ==> CORRECT!
+115 -  98 =   17 ==> CORRECT!
+100 - 104 =   -4 ==> CORRECT!
+ 77 -  65 =   12 ==> CORRECT!
+ 41 -  46 =   -5 ==> CORRECT!
+ 42 -  15 =   27 ==> CORRECT!
+108 -  97 =   11 ==> CORRECT!
+  2 -  88 =  -86 ==> CORRECT!
+ 81 - 109 =  -28 ==> CORRECT!
+ 63 -  12 =   51 ==> CORRECT!
+ 22 -  11 =   11 ==> CORRECT!
+113 -  86 =   27 ==> CORRECT!
+ 43 - 104 =  -61 ==> CORRECT!
+ 44 -  31 =   13 ==> CORRECT!
+104 -  88 =   16 ==> CORRECT!
+ 53 - 105 =  -52 ==> CORRECT!
+124 -  22 =  102 ==> CORRECT!
+110 -  90 =   20 ==> CORRECT!
+ 29 -  27 =    2 ==> CORRECT!
+ 40 -  58 =  -18 ==> CORRECT!
+ 57 -  60 =   -3 ==> CORRECT!
+124 - 126 =   -2 ==> CORRECT!
+ 35 - 113 =  -78 ==> CORRECT!
+ 94 -   9 =   85 ==> CORRECT!
+118 - 121 =   -3 ==> CORRECT!
+104 -   8 =   96 ==> CORRECT!
+109 -  63 =   46 ==> CORRECT!
+ 46 -  56 =  -10 ==> CORRECT!
+ 16 - 104 =  -88 ==> CORRECT!
+ 97 -  92 =    5 ==> CORRECT!
+126 -  82 =   44 ==> CORRECT!
+122 - 115 =    7 ==> CORRECT!
+ 45 -  31 =   14 ==> CORRECT!
+ 33 -  85 =  -52 ==> CORRECT!
+ 33 - 120 =  -87 ==> CORRECT!
+ 34 -  73 =  -39 ==> CORRECT!
+ 76 - 126 =  -50 ==> CORRECT!
+ 57 - 108 =  -51 ==> CORRECT!
+ 45 -  43 =    2 ==> CORRECT!
+ 33 -  29 =    4 ==> CORRECT!
+ 61 -  38 =   23 ==> CORRECT!
+ 59 - 112 =  -53 ==> CORRECT!
+101 -  60 =   41 ==> CORRECT!
+111 - 114 =   -3 ==> CORRECT!
+117 -  33 =   84 ==> CORRECT!
+108 - 103 =    5 ==> CORRECT!
+ 20 - 126 = -106 ==> CORRECT!
+ 43 -  57 =  -14 ==> CORRECT!
+126 -   1 =  125 ==> CORRECT!
+ 93 -  23 =   70 ==> CORRECT!
+ 88 -   2 =   86 ==> CORRECT!
+  3 -  83 =  -80 ==> CORRECT!
+ 30 -  24 =    6 ==> CORRECT!
+ 19 -  88 =  -69 ==> CORRECT!
+ 26 - 124 =  -98 ==> CORRECT!
+ 15 -  24 =   -9 ==> CORRECT!
+ 15 -  72 =  -57 ==> CORRECT!
+ 65 - 101 =  -36 ==> CORRECT!
+ 45 - 127 =  -82 ==> CORRECT!
+ 67 -  80 =  -13 ==> CORRECT!
+ 61 -  23 =   38 ==> CORRECT!
+ 11 -  25 =  -14 ==> CORRECT!
+ 26 - 127 = -101 ==> CORRECT!
+ 70 -  28 =   42 ==> CORRECT!
+  0 -  16 =  -16 ==> CORRECT!
+ 24 -  37 =  -13 ==> CORRECT!
+ 95 - 125 =  -30 ==> CORRECT!
+ 29 -  15 =   14 ==> CORRECT!
+118 -  67 =   51 ==> CORRECT!
+ 50 -  18 =   32 ==> CORRECT!
+113 -  65 =   48 ==> CORRECT!
+ 58 -  14 =   44 ==> CORRECT!
+109 -  96 =   13 ==> CORRECT!
+  0 -  42 =  -42 ==> CORRECT!
+ 44 -  31 =   13 ==> CORRECT!
+ 85 -  70 =   15 ==> CORRECT!
+ 47 -  29 =   18 ==> CORRECT!
+100 -  88 =   12 ==> CORRECT!
+ 96 -   1 =   95 ==> CORRECT!
+ 18 -  72 =  -54 ==> CORRECT!
+ 60 -  96 =  -36 ==> CORRECT!
+ 76 -  22 =   54 ==> CORRECT!
+ 92 -  53 =   39 ==> CORRECT!
+  0 -  66 =  -66 ==> CORRECT!
+ 27 - 101 =  -74 ==> CORRECT!
+ 90 - 118 =  -28 ==> CORRECT!
+ 89 -  61 =   28 ==> CORRECT!
+117 -  93 =   24 ==> CORRECT!
+ 12 -  52 =  -40 ==> CORRECT!
+ 31 -  81 =  -50 ==> CORRECT!
