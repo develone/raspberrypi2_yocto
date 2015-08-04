@@ -18,10 +18,10 @@ software to my build.
 These can be found at https://github.com/develone/raspberrypi2_yocto.git
 Each of the new recipes are in folders that begin with recipe_xxxxx.
 
-The recipe for gtkwave & python-xstools still needs work. Until these are
+The recipe for gtkwave_3.6.66.bb & XsTools_0.1.27.bb still needs work. Until these are
 working the target will be used to compile and install.
 The recipes intelhex, PyPubSub, python-bitstring, pyusb argparse were the dependencies
-for XSTOOLs.  XSTOOLs installs on the target but still is not working
+for XSTOOLs.  XSTOOLs installs on the target and is working
 see the file core-image-sato_xstools.txt  
  
 poky/meta/recipes-devtools/gtkwave/
