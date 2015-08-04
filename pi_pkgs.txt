@@ -3266,6 +3266,8 @@ rgb-1.0.6-r0.cortexa7hf_vfp_vfpv4_neon
 rgb-dev-1.0.6-r0.cortexa7hf_vfp_vfpv4_neon
 rpcbind-0.2.3-r0.cortexa7hf_vfp_vfpv4_neon
 rpcbind-dev-0.2.3-r0.cortexa7hf_vfp_vfpv4_neon
+rpi-gpio-0.5.11-r0.cortexa7hf_vfp_vfpv4_neon
+rpi-gpio-dev-0.5.11-r0.cortexa7hf_vfp_vfpv4_neon
 rpm-5.4.14-r0.cortexa7hf_vfp_vfpv4_neon
 rpm-dev-5.4.14-r0.cortexa7hf_vfp_vfpv4_neon
 rpm-libs-5.4.14-r0.cortexa7hf_vfp_vfpv4_neon

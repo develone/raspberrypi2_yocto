@@ -46,7 +46,7 @@ meta-oe           = "fido:0f8d89ce66cfffccc9911d6c61470a585173b79d"
 NOTE: Preparing RunQueue
 NOTE: Executing SetScene Tasks
 NOTE: Executing RunQueue Tasks
-NOTE: Tasks Summary: Attempted 6364 tasks of which 6358 didn't need to be rerun and all succeeded.
+NOTE: Tasks Summary: Attempted 6377 tasks of which 6371 didn't need to be rerun and all succeeded.
 
 
 core-image-sato 2hrs 10 min build time on ws009 amd 6 core with 16GB of Memory.
@@ -118,6 +118,15 @@ kernel-dev xterm git \
  x264 x264-dev libav libav-dev opencv opencv-samples cmake \
  opencv-apps python-opencv tcl tk python-myhdl python-bitstring \
  PyPubSub tar intelhex pyusb argparse
+core-image-sato with dev-pkgs tools-sdk 6377 tasks
+kernel-dev xterm git \
+ jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
+ python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
+ chkconfig v4l-utils python-imaging parted python-distribute \
+ python-pyrex python-pexpect gperf tree libav libav-dev \
+ x264 x264-dev libav libav-dev opencv opencv-samples cmake \
+ opencv-apps python-opencv tcl tk rpi-gpio python-myhdl python-bitstring \
+ PyPubSub tar intelhex pyusb argparse 
 sudo dd if=tmp/deploy/images/raspberrypi2/rpi-basic-image-raspberrypi2.rpi-sdimg | pv | sudo dd of=/dev/sdX bs=16M
 
 dd if=tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg | pv | sudo dd of=/dev/sdb bs=16
