@@ -29,8 +29,8 @@ S = "${WORKDIR}/gtkwave-3.3.66"
 # NOTE: if this software is not capable of being built in a separate build directory
 # from the source, you should replace autotools with autotools-brokensep in the
 # inherit line
-inherit pkgconfig autotools
-
+#inherit pkgconfig autotools gettext texinfo 
+DEPENDS = "tcl tk gpref" 
 # Specify any options you want to pass to the configure script using EXTRA_OECONF:
-EXTRA_OECONF = "--with-tcl=/home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/raspberrypi2/usr/lib --with-tk=/home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/raspberrypi2/usr/lib"
+EXTRA_OECONF = "--with-tcl=../../../../../sysroots/raspberrypi2/usr/lib --with-tk=../../../../../sysroots/raspberrypi2/usr/lib "
 

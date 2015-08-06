@@ -1,0 +1,42 @@
+diff --git a/iceprog/Makefile b/iceprog/Makefile
+index 86c69f4..3524218 100644
+--- a/iceprog/Makefile
++++ b/iceprog/Makefile
+@@ -1,5 +1,5 @@
+ # CC = clang
+-LDLIBS = -lftdi -lm
++LDLIBS = -lftdi1 -lm
+ CFLAGS = -MD -O0 -ggdb -Wall -std=c99
+ DESTDIR = /usr/local
+ 
+diff --git a/iceprog/iceprog.c b/iceprog/iceprog.c
+index 1288fe3..6f8475c 100644
+--- a/iceprog/iceprog.c
++++ b/iceprog/iceprog.c
+@@ -24,7 +24,7 @@
+ 
+ #define _GNU_SOURCE
+ 
+-#include <ftdi.h>
++#include "ftdi.h"
+ #include <stdio.h>
+ #include <stdint.h>
+ #include <stdbool.h>
+@@ -55,7 +55,7 @@ void error()
+ 	if (ftdic_open)
+ 		ftdi_usb_close(&ftdic);
+ 	ftdi_deinit(&ftdic);
+-	exit(1);
++	/*exit(1); */
+ }
+ 
+ uint8_t recv_byte()
+@@ -324,7 +324,7 @@ void help(const char *progname)
+ 	fprintf(stderr, "    -v\n");
+ 	fprintf(stderr, "        verbose output\n");
+ 	fprintf(stderr, "\n");
+-	exit(1);
++	/*exit(1);*/
+ }
+ 
+ int main(int argc, char **argv)
