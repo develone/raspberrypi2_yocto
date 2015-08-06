@@ -1,0 +1,48 @@
+/usr/bin/opj_decompress -h
+
+This is the opj_decompress utility from the OpenJPEG project.
+It decompresses JPEG 2000 codestreams to various image formats.
+It has been compiled against openjp2 library v2.1.0.
+
+Parameters:
+-----------
+
+  -ImgDir <directory> 
+	Image file Directory path 
+  -OutFor <PBM|PGM|PPM|PNM|PAM|PGX|PNG|BMP|TIF|RAW|RAWL|TGA>
+    REQUIRED only if -ImgDir is used
+	Output format for decompressed images.
+  -i <compressed file>
+    REQUIRED only if an Input image directory is not specified
+    Currently accepts J2K-files, JP2-files and JPT-files. The file type
+    is identified based on its suffix.
+  -o <decompressed file>
+    REQUIRED
+    Currently accepts formats specified above (see OutFor option)
+    Binary data is written to the file (not ascii). If a PGX
+    filename is given, there will be as many output files as there are
+    components: an indice starting from 0 will then be appended to the
+    output filename, just before the "pgx" extension. If a PGM filename
+    is given and there are more than one component, only the first component
+    will be written to the file.
+  -r <reduce factor>
+    Set the number of highest resolution levels to be discarded. The
+    image resolution is effectively divided by 2 to the power of the
+    number of discarded levels. The reduce factor is limited by the
+    smallest total number of decomposition levels among tiles.
+  -l <number of quality layers to decode>
+    Set the maximum number of quality layers to decode. If there are
+    less quality layers than the specified number, all the quality layers
+    are decoded.
+  -x  
+    Create an index file *.Idx (-x index_name.Idx) 
+  -d <x0,y0,x1,y1>
+    OPTIONAL
+    Decoding area
+    By default all the image is decoded.
+  -t <tile_number>
+    OPTIONAL
+    Set the tile number of the decoded tile. Follow the JPEG2000 convention from left-up to bottom-up
+    By default all tiles are decoded.
+
+
