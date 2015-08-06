@@ -1,0 +1,22 @@
+/usr/bin/opj_dump -h
+
+This is the opj_dump utility from the OpenJPEG project.
+It dumps JPEG 2000 codestream info to stdout or a given file.
+It has been compiled against openjp2 library v2.1.0.
+
+Parameters:
+-----------
+
+  -ImgDir <directory>
+	Image file Directory path 
+  -i <compressed file>
+    REQUIRED only if an Input image directory not specified
+    Currently accepts J2K-files, JP2-files and JPT-files. The file type
+    is identified based on its suffix.
+  -o <output file>
+    OPTIONAL
+    Output file where file info will be dump.
+    By default it will be in the stdout.
+  -v     OPTIONAL
+    Enable informative messages
+    By default verbose mode is off.
