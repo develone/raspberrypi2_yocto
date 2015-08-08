@@ -1,23 +1,71 @@
-ls /usr/lib/python2.7/site-packages/
-ANSI.py			     gobject
-ANSI.pyc		     gtk-2.0
-FSM.py			     nose
-FSM.pyc			     nose-1.3.6-py2.7.egg-info
-PIL			     numpy
-PIL.pth			     numpy-1.7.0-py2.7.egg-info
-Pyrex			     pexpect
-Pyrex-0.9.9-py2.7.egg-info   pexpect-3.3-py2.7.egg-info
-README			     pxssh.py
-_dbus_bindings.la	     pxssh.pyc
-_dbus_bindings.so	     pygtk.pth
-_dbus_glib_bindings.la	     pygtk.py
-_dbus_glib_bindings.so	     pygtk.pyo
-cairo			     rpm
-cv.py			     screen.py
-cv2.so			     screen.pyc
-dbus			     setuptools-0.6c11-py2.7.egg-info
-distribute-0.6.32-py2.7.egg  setuptools.pth
-fdpexpect.py		     smart
-fdpexpect.pyc		     smart-1.5-py2.7.egg-info
+ANSI.py
+ANSI.pyc
+FSM.py
+FSM.pyc
+PIL
+PIL.pth
+PyPubSub-3.3.0-py2.7.egg-info
+Pyrex
+Pyrex-0.9.9-py2.7.egg-info
+README
+RPi
+RPi.GPIO-0.5.11-py2.7.egg-info
+XsTools-0.1.27-py2.7.egg
+_dbus_bindings.la
+_dbus_bindings.so
+_dbus_glib_bindings.la
+_dbus_glib_bindings.so
+argparse-1.2.1-py2.7.egg-info
+argparse.py
+argparse.pyc
+bitstring-3.1.3-py2.7.egg-info
+bitstring.py
+bitstring.pyc
+cairo
+cv.py
+cv2.so
+dateutil
+dbus
+distribute-0.6.32-py2.7.egg
+easy-install.pth
+fdpexpect.py
+fdpexpect.pyc
 glib
-
+gobject
+gtk-2.0
+intelhex
+intelhex-1.5-py2.7.egg-info
+matplotlib
+matplotlib-1.1.0-py2.7.egg-info
+mpl_toolkits
+myhdl
+myhdl-1.0dev-py2.7.egg-info
+nose
+nose-1.3.6-py2.7.egg-info
+numpy
+numpy-1.7.0-py2.7.egg-info
+pexpect-2.3-py2.7.egg-info
+pexpect.py
+pexpect.pyc
+pubsub
+pxssh.py
+pxssh.pyc
+py_compile.py
+py_compile.pyc
+pygtk.pth
+pygtk.py
+pygtk.pyo
+pylab.py
+pylab.pyc
+python_dateutil-1.5-py2.7.egg-info
+pytz
+pytz-2014.7-py2.7.egg-info
+pyusb-1.0.0a3-py2.7.egg-info
+rpm
+screen.py
+screen.pyc
+setuptools-0.6c11-py2.7.egg-info
+setuptools.pth
+smart
+smart-1.5-py2.7.egg-info
+usb

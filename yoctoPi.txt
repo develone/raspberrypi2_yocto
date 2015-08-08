@@ -34,19 +34,20 @@ NATIVELSBSTRING   = "Ubuntu-12.04"
 TARGET_SYS        = "arm-poky-linux-gnueabi"
 MACHINE           = "raspberrypi2"
 DISTRO            = "poky"
-DISTRO_VERSION    = "1.8+snapshot-20150806"
+DISTRO_VERSION    = "1.8+snapshot-20150808"
 TUNE_FEATURES     = "arm armv7a vfp thumb neon callconvention-hard vfpv4 cortexa7"
 TARGET_FPU        = "vfp-vfpv4-neon"
 meta              
 meta-yocto        
 meta-yocto-bsp    = "fido:0f8d89ce66cfffccc9911d6c61470a585173b79d"
 meta-raspberrypi  = "fido:7457bf182c8fd550ec877ecd786a3edd16e65495"
-meta-oe           = "fido:0f8d89ce66cfffccc9911d6c61470a585173b79d"
+meta-oe           
+meta-python       = "fido:0f8d89ce66cfffccc9911d6c61470a585173b79d"
 
 NOTE: Preparing RunQueue
 NOTE: Executing SetScene Tasks
 NOTE: Executing RunQueue Tasks
-NOTE: Tasks Summary: Attempted 6431 tasks of which 6422 didn't need to be rerun and all succeeded.
+NOTE: Tasks Summary: Attempted 6470 tasks of which 6432 didn't need to be rerun and all succeeded.
 
 
 core-image-sato 2hrs 10 min build time on ws009 amd 6 core with 16GB of Memory.
@@ -136,16 +137,27 @@ kernel-dev xterm git \
  x264 x264-dev libav libav-dev opencv opencv-samples cmake \
  opencv-apps python-opencv tcl tk rpi-gpio python-myhdl python-bitstring \
  PyPubSub tar intelhex pyusb argparse pv openjpeg libftdi
+core-image-sato with dev-pkgs tools-sdk 6470 tasks
+kernel-dev xterm git \
+ jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
+ python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
+ chkconfig v4l-utils python-imaging parted python-distribute \
+ python-pyrex python-pexpect gperf tree libav libav-dev \
+ x264 x264-dev libav libav-dev opencv opencv-samples cmake \
+ opencv-apps python-opencv tcl tk rpi-gpio python-myhdl python-bitstring \
+ PyPubSub tar intelhex pyusb argparse pv openjpeg libftdi \
+ python-matplotlib
 sudo dd if=tmp/deploy/images/raspberrypi2/rpi-basic-image-raspberrypi2.rpi-sdimg | pv | sudo dd of=/dev/sdX bs=16M
 
 dd if=tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg | pv | sudo dd of=/dev/sdb bs=16
-1712128+0 records inMB/s] [                                       <=>          ]
-1712128+0 records out
-876609536 bytes (877 MB) copied, 493.362 s, 1.8 MB/s
- 836MB 0:08:13 [1.69MB/s] [                                        <=>         ]
-54788096+0 records in
-54788096+0 records out
-876609536 bytes (877 MB) copied, 493.928 s, 1.8 MB/s
+1859584+0 records inMB/s] [                            <=>                     ]
+1859584+0 records out
+952107008 bytes (952 MB) copied, 621.249 s, 1.5 MB/s
+ 908MB 0:10:21 [1.46MB/s] [                           <=>                      ]
+59506688+0 records in
+59506688+0 records out
+952107008 bytes (952 MB) copied, 622.876 s, 1.5 MB/s
+
 
 
 Read more: http://www.cnx-software.com/2015/02/27/yocto-project-raspberry-pi-2-board-minimal-image/#ixzz3gTs5MrwG
