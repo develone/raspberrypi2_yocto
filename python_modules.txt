@@ -10,7 +10,8 @@ Pyrex-0.9.9-py2.7.egg-info
 README
 RPi
 RPi.GPIO-0.5.11-py2.7.egg-info
-XsTools-0.1.27-py2.7.egg
+XSBRDINF.xml
+XsTools-0.1.29-py2.7.egg
 _dbus_bindings.la
 _dbus_bindings.so
 _dbus_glib_bindings.la

@@ -3372,6 +3372,8 @@ vte-termcap-0.28.2-r6.cortexa7hf_vfp_vfpv4_neon
 wayland-1.8.1-r0.cortexa7hf_vfp_vfpv4_neon
 wayland-dev-1.8.1-r0.cortexa7hf_vfp_vfpv4_neon
 wireless-tools-30.pre9-r0.cortexa7hf_vfp_vfpv4_neon
+wiringpi-dev-git-r0.cortexa7hf_vfp_vfpv4_neon
+wiringpi-git-r0.cortexa7hf_vfp_vfpv4_neon
 wpa-supplicant-2.4-r0.cortexa7hf_vfp_vfpv4_neon
 wpa-supplicant-cli-2.4-r0.cortexa7hf_vfp_vfpv4_neon
 wpa-supplicant-dev-2.4-r0.cortexa7hf_vfp_vfpv4_neon
