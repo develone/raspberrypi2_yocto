@@ -62,9 +62,17 @@ Add a copy of file py_compile.py to the location on target where Python is insta
  
 cp py_compile.py /usr/lib/python2.7/site-packages/
 
-git clone https://github.com/xesscorp/XSTOOLs.git
+ git clone https://github.com/xesscorp/XSTOOLs.git
 
-cd XSTOOLs/
+cd XSTOOLs
+
+git log 
+
+commit 1e1bec476a27a0ddede210bfc6ffd617784a4b21
+Author: Dave Vandenbout <devb@xess.com>
+Date:   Mon Aug 10 12:05:20 2015 -0400
+
+    Bumped the version number.
 
 python setup.py install
 running install
@@ -88,154 +96,148 @@ running build_py
 creating build
 creating build/lib
 creating build/lib/xstools
-copying xstools/xsmfgtest2.py -> build/lib/xstools
-copying xstools/xsbitarray.py -> build/lib/xstools
-copying xstools/xilbitstr.py -> build/lib/xstools
-copying xstools/xsdutio.py -> build/lib/xstools
-copying xstools/xsusbprg.py -> build/lib/xstools
-copying xstools/xshostio.py -> build/lib/xstools
 copying xstools/xsi2c.py -> build/lib/xstools
-copying xstools/xserror.py -> build/lib/xstools
-copying xstools/gxstools.py -> build/lib/xstools
-copying xstools/ramdev.py -> build/lib/xstools
-copying xstools/xstest.py -> build/lib/xstools
-copying xstools/xscomm.py -> build/lib/xstools
-copying xstools/xsmfgtest.py -> build/lib/xstools
-copying xstools/xsflags.py -> build/lib/xstools
-copying xstools/picmicro.py -> build/lib/xstools
-copying xstools/xsusb.py -> build/lib/xstools
 copying xstools/flashdev.py -> build/lib/xstools
-copying xstools/xsmemio.py -> build/lib/xstools
-copying xstools/usb2serial.py -> build/lib/xstools
+copying xstools/xstest.py -> build/lib/xstools
+copying xstools/xsusbprg.py -> build/lib/xstools
 copying xstools/xsboard.py -> build/lib/xstools
-copying xstools/xsspi.py -> build/lib/xstools
-copying xstools/xilfpga.py -> build/lib/xstools
-copying xstools/xsload.py -> build/lib/xstools
-copying xstools/__init__.py -> build/lib/xstools
+copying xstools/xilbitstr.py -> build/lib/xstools
 copying xstools/XstoolsApi.py -> build/lib/xstools
+copying xstools/__init__.py -> build/lib/xstools
+copying xstools/xsflags.py -> build/lib/xstools
+copying xstools/xsspi.py -> build/lib/xstools
+copying xstools/xsdutio.py -> build/lib/xstools
+copying xstools/xilfpga.py -> build/lib/xstools
+copying xstools/gxstools.py -> build/lib/xstools
+copying xstools/xserror.py -> build/lib/xstools
+copying xstools/xsbitarray.py -> build/lib/xstools
+copying xstools/xsload.py -> build/lib/xstools
+copying xstools/xsusb.py -> build/lib/xstools
+copying xstools/xscomm.py -> build/lib/xstools
+copying xstools/xshostio.py -> build/lib/xstools
+copying xstools/picmicro.py -> build/lib/xstools
+copying xstools/ramdev.py -> build/lib/xstools
+copying xstools/xsmemio.py -> build/lib/xstools
 copying xstools/xsjtag.py -> build/lib/xstools
+copying xstools/usb2serial.py -> build/lib/xstools
 creating build/lib/tests
-copying tests/test_xsconnect.py -> build/lib/tests
 copying tests/__init__.py -> build/lib/tests
+copying tests/test_xsconnect.py -> build/lib/tests
 creating build/lib/xstools/test
+copying xstools/test/__init__.py -> build/lib/xstools/test
 copying xstools/test/test_utils.py -> build/lib/xstools/test
 copying xstools/test/test_location.py -> build/lib/xstools/test
-copying xstools/test/__init__.py -> build/lib/xstools/test
 creating build/lib/xstools/xula
+copying xstools/xula/fintf_jtag_200.bit -> build/lib/xstools/xula
+copying xstools/xula/test_board_jtag_200.bit -> build/lib/xstools/xula
+copying xstools/xula/fintf_jtag_50.bit -> build/lib/xstools/xula
 copying xstools/xula/ramintfc_jtag_200.bit -> build/lib/xstools/xula
 copying xstools/xula/test_board_jtag_50.bit -> build/lib/xstools/xula
-copying xstools/xula/fintf_jtag_200.bit -> build/lib/xstools/xula
-copying xstools/xula/fintf_jtag_50.bit -> build/lib/xstools/xula
-copying xstools/xula/test_board_jtag_200.bit -> build/lib/xstools/xula
 copying xstools/xula/ramintfc_jtag_50.bit -> build/lib/xstools/xula
 creating build/lib/xstools/xula2
-copying xstools/xula2/test_board_jtag_lx9.bit -> build/lib/xstools/xula2
 copying xstools/xula2/test_board_jtag_lx25.bit -> build/lib/xstools/xula2
-copying xstools/xula2/ramintfc_jtag_lx9.bit -> build/lib/xstools/xula2
-copying xstools/xula2/fintf_jtag_lx9.bit -> build/lib/xstools/xula2
-copying xstools/xula2/ramintfc_jtag_lx25.bit -> build/lib/xstools/xula2
 copying xstools/xula2/fintf_jtag_lx25.bit -> build/lib/xstools/xula2
+copying xstools/xula2/fintf_jtag_lx9.bit -> build/lib/xstools/xula2
+copying xstools/xula2/test_board_jtag_lx9.bit -> build/lib/xstools/xula2
+copying xstools/xula2/ramintfc_jtag_lx25.bit -> build/lib/xstools/xula2
+copying xstools/xula2/ramintfc_jtag_lx9.bit -> build/lib/xstools/xula2
 copying xstools/xula/XuLA_jtag.hex -> build/lib/xstools/xula
 copying xstools/xula2/XuLA_jtag.hex -> build/lib/xstools/xula2
 copying xstools/81-xstools-usb.rules -> build/lib/xstools
 creating build/lib/xstools/icons
-copying xstools/icons/serial_flash.png -> build/lib/xstools/icons
+copying xstools/icons/sdram.png -> build/lib/xstools/icons
 copying xstools/icons/down_arrow_disabled.png -> build/lib/xstools/icons
 copying xstools/icons/down_arrow.png -> build/lib/xstools/icons
-copying xstools/icons/sdram.png -> build/lib/xstools/icons
 copying xstools/icons/uc.png -> build/lib/xstools/icons
+copying xstools/icons/serial_flash.png -> build/lib/xstools/icons
 copying xstools/icons/fpga.png -> build/lib/xstools/icons
 creating build/bdist.linux-armv7l
 creating build/bdist.linux-armv7l/egg
 creating build/bdist.linux-armv7l/egg/xstools
-copying build/lib/xstools/xsmfgtest2.py -> build/bdist.linux-armv7l/egg/xstools
-copying build/lib/xstools/xsbitarray.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xsi2c.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/flashdev.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xstest.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xsusbprg.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xsboard.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xilbitstr.py -> build/bdist.linux-armv7l/egg/xstools
+creating build/bdist.linux-armv7l/egg/xstools/xula
+copying build/lib/xstools/xula/fintf_jtag_200.bit -> build/bdist.linux-armv7l/egg/xstools/xula
+copying build/lib/xstools/xula/test_board_jtag_200.bit -> build/bdist.linux-armv7l/egg/xstools/xula
+copying build/lib/xstools/xula/fintf_jtag_50.bit -> build/bdist.linux-armv7l/egg/xstools/xula
+copying build/lib/xstools/xula/ramintfc_jtag_200.bit -> build/bdist.linux-armv7l/egg/xstools/xula
+copying build/lib/xstools/xula/XuLA_jtag.hex -> build/bdist.linux-armv7l/egg/xstools/xula
+copying build/lib/xstools/xula/test_board_jtag_50.bit -> build/bdist.linux-armv7l/egg/xstools/xula
+copying build/lib/xstools/xula/ramintfc_jtag_50.bit -> build/bdist.linux-armv7l/egg/xstools/xula
 creating build/bdist.linux-armv7l/egg/xstools/icons
-copying build/lib/xstools/icons/serial_flash.png -> build/bdist.linux-armv7l/egg/xstools/icons
+copying build/lib/xstools/icons/sdram.png -> build/bdist.linux-armv7l/egg/xstools/icons
 copying build/lib/xstools/icons/down_arrow_disabled.png -> build/bdist.linux-armv7l/egg/xstools/icons
 copying build/lib/xstools/icons/down_arrow.png -> build/bdist.linux-armv7l/egg/xstools/icons
-copying build/lib/xstools/icons/sdram.png -> build/bdist.linux-armv7l/egg/xstools/icons
 copying build/lib/xstools/icons/uc.png -> build/bdist.linux-armv7l/egg/xstools/icons
+copying build/lib/xstools/icons/serial_flash.png -> build/bdist.linux-armv7l/egg/xstools/icons
 copying build/lib/xstools/icons/fpga.png -> build/bdist.linux-armv7l/egg/xstools/icons
-copying build/lib/xstools/xilbitstr.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/XstoolsApi.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/__init__.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xsflags.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xsspi.py -> build/bdist.linux-armv7l/egg/xstools
 copying build/lib/xstools/xsdutio.py -> build/bdist.linux-armv7l/egg/xstools
-copying build/lib/xstools/xsusbprg.py -> build/bdist.linux-armv7l/egg/xstools
-copying build/lib/xstools/xshostio.py -> build/bdist.linux-armv7l/egg/xstools
-copying build/lib/xstools/81-xstools-usb.rules -> build/bdist.linux-armv7l/egg/xstools
-copying build/lib/xstools/xsi2c.py -> build/bdist.linux-armv7l/egg/xstools
-creating build/bdist.linux-armv7l/egg/xstools/xula
-copying build/lib/xstools/xula/ramintfc_jtag_200.bit -> build/bdist.linux-armv7l/egg/xstools/xula
-copying build/lib/xstools/xula/test_board_jtag_50.bit -> build/bdist.linux-armv7l/egg/xstools/xula
-copying build/lib/xstools/xula/fintf_jtag_200.bit -> build/bdist.linux-armv7l/egg/xstools/xula
-copying build/lib/xstools/xula/fintf_jtag_50.bit -> build/bdist.linux-armv7l/egg/xstools/xula
-copying build/lib/xstools/xula/test_board_jtag_200.bit -> build/bdist.linux-armv7l/egg/xstools/xula
-copying build/lib/xstools/xula/XuLA_jtag.hex -> build/bdist.linux-armv7l/egg/xstools/xula
-copying build/lib/xstools/xula/ramintfc_jtag_50.bit -> build/bdist.linux-armv7l/egg/xstools/xula
-copying build/lib/xstools/xserror.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xilfpga.py -> build/bdist.linux-armv7l/egg/xstools
 copying build/lib/xstools/gxstools.py -> build/bdist.linux-armv7l/egg/xstools
-copying build/lib/xstools/ramdev.py -> build/bdist.linux-armv7l/egg/xstools
 creating build/bdist.linux-armv7l/egg/xstools/xula2
-copying build/lib/xstools/xula2/test_board_jtag_lx9.bit -> build/bdist.linux-armv7l/egg/xstools/xula2
 copying build/lib/xstools/xula2/test_board_jtag_lx25.bit -> build/bdist.linux-armv7l/egg/xstools/xula2
-copying build/lib/xstools/xula2/ramintfc_jtag_lx9.bit -> build/bdist.linux-armv7l/egg/xstools/xula2
-copying build/lib/xstools/xula2/fintf_jtag_lx9.bit -> build/bdist.linux-armv7l/egg/xstools/xula2
-copying build/lib/xstools/xula2/ramintfc_jtag_lx25.bit -> build/bdist.linux-armv7l/egg/xstools/xula2
 copying build/lib/xstools/xula2/fintf_jtag_lx25.bit -> build/bdist.linux-armv7l/egg/xstools/xula2
+copying build/lib/xstools/xula2/fintf_jtag_lx9.bit -> build/bdist.linux-armv7l/egg/xstools/xula2
+copying build/lib/xstools/xula2/test_board_jtag_lx9.bit -> build/bdist.linux-armv7l/egg/xstools/xula2
+copying build/lib/xstools/xula2/ramintfc_jtag_lx25.bit -> build/bdist.linux-armv7l/egg/xstools/xula2
+copying build/lib/xstools/xula2/ramintfc_jtag_lx9.bit -> build/bdist.linux-armv7l/egg/xstools/xula2
 copying build/lib/xstools/xula2/XuLA_jtag.hex -> build/bdist.linux-armv7l/egg/xstools/xula2
+copying build/lib/xstools/xserror.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xsbitarray.py -> build/bdist.linux-armv7l/egg/xstools
 creating build/bdist.linux-armv7l/egg/xstools/test
+copying build/lib/xstools/test/__init__.py -> build/bdist.linux-armv7l/egg/xstools/test
 copying build/lib/xstools/test/test_utils.py -> build/bdist.linux-armv7l/egg/xstools/test
 copying build/lib/xstools/test/test_location.py -> build/bdist.linux-armv7l/egg/xstools/test
-copying build/lib/xstools/test/__init__.py -> build/bdist.linux-armv7l/egg/xstools/test
-copying build/lib/xstools/xstest.py -> build/bdist.linux-armv7l/egg/xstools
-copying build/lib/xstools/xscomm.py -> build/bdist.linux-armv7l/egg/xstools
-copying build/lib/xstools/xsmfgtest.py -> build/bdist.linux-armv7l/egg/xstools
-copying build/lib/xstools/xsflags.py -> build/bdist.linux-armv7l/egg/xstools
-copying build/lib/xstools/picmicro.py -> build/bdist.linux-armv7l/egg/xstools
-copying build/lib/xstools/xsusb.py -> build/bdist.linux-armv7l/egg/xstools
-copying build/lib/xstools/flashdev.py -> build/bdist.linux-armv7l/egg/xstools
-copying build/lib/xstools/xsmemio.py -> build/bdist.linux-armv7l/egg/xstools
-copying build/lib/xstools/usb2serial.py -> build/bdist.linux-armv7l/egg/xstools
-copying build/lib/xstools/xsboard.py -> build/bdist.linux-armv7l/egg/xstools
-copying build/lib/xstools/xsspi.py -> build/bdist.linux-armv7l/egg/xstools
-copying build/lib/xstools/xilfpga.py -> build/bdist.linux-armv7l/egg/xstools
 copying build/lib/xstools/xsload.py -> build/bdist.linux-armv7l/egg/xstools
-copying build/lib/xstools/__init__.py -> build/bdist.linux-armv7l/egg/xstools
-copying build/lib/xstools/XstoolsApi.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xsusb.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xscomm.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xshostio.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/picmicro.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/ramdev.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/81-xstools-usb.rules -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/xsmemio.py -> build/bdist.linux-armv7l/egg/xstools
 copying build/lib/xstools/xsjtag.py -> build/bdist.linux-armv7l/egg/xstools
+copying build/lib/xstools/usb2serial.py -> build/bdist.linux-armv7l/egg/xstools
 creating build/bdist.linux-armv7l/egg/tests
-copying build/lib/tests/test_xsconnect.py -> build/bdist.linux-armv7l/egg/tests
 copying build/lib/tests/__init__.py -> build/bdist.linux-armv7l/egg/tests
-byte-compiling build/bdist.linux-armv7l/egg/xstools/xsmfgtest2.py to xsmfgtest2.pyc
-byte-compiling build/bdist.linux-armv7l/egg/xstools/xsbitarray.py to xsbitarray.pyc
-byte-compiling build/bdist.linux-armv7l/egg/xstools/xilbitstr.py to xilbitstr.pyc
-byte-compiling build/bdist.linux-armv7l/egg/xstools/xsdutio.py to xsdutio.pyc
-byte-compiling build/bdist.linux-armv7l/egg/xstools/xsusbprg.py to xsusbprg.pyc
-byte-compiling build/bdist.linux-armv7l/egg/xstools/xshostio.py to xshostio.pyc
+copying build/lib/tests/test_xsconnect.py -> build/bdist.linux-armv7l/egg/tests
 byte-compiling build/bdist.linux-armv7l/egg/xstools/xsi2c.py to xsi2c.pyc
-byte-compiling build/bdist.linux-armv7l/egg/xstools/xserror.py to xserror.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/flashdev.py to flashdev.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xstest.py to xstest.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xsusbprg.py to xsusbprg.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xsboard.py to xsboard.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xilbitstr.py to xilbitstr.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/XstoolsApi.py to XstoolsApi.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xsflags.py to xsflags.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xsspi.py to xsspi.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xsdutio.py to xsdutio.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xilfpga.py to xilfpga.pyc
 byte-compiling build/bdist.linux-armv7l/egg/xstools/gxstools.py to gxstools.pyc
-byte-compiling build/bdist.linux-armv7l/egg/xstools/ramdev.py to ramdev.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xserror.py to xserror.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xsbitarray.py to xsbitarray.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/test/__init__.py to __init__.pyc
 byte-compiling build/bdist.linux-armv7l/egg/xstools/test/test_utils.py to test_utils.pyc
 byte-compiling build/bdist.linux-armv7l/egg/xstools/test/test_location.py to test_location.pyc
-byte-compiling build/bdist.linux-armv7l/egg/xstools/test/__init__.py to __init__.pyc
-byte-compiling build/bdist.linux-armv7l/egg/xstools/xstest.py to xstest.pyc
-byte-compiling build/bdist.linux-armv7l/egg/xstools/xscomm.py to xscomm.pyc
-byte-compiling build/bdist.linux-armv7l/egg/xstools/xsmfgtest.py to xsmfgtest.pyc
-byte-compiling build/bdist.linux-armv7l/egg/xstools/xsflags.py to xsflags.pyc
-byte-compiling build/bdist.linux-armv7l/egg/xstools/picmicro.py to picmicro.pyc
-byte-compiling build/bdist.linux-armv7l/egg/xstools/xsusb.py to xsusb.pyc
-byte-compiling build/bdist.linux-armv7l/egg/xstools/flashdev.py to flashdev.pyc
-byte-compiling build/bdist.linux-armv7l/egg/xstools/xsmemio.py to xsmemio.pyc
-byte-compiling build/bdist.linux-armv7l/egg/xstools/usb2serial.py to usb2serial.pyc
-byte-compiling build/bdist.linux-armv7l/egg/xstools/xsboard.py to xsboard.pyc
-byte-compiling build/bdist.linux-armv7l/egg/xstools/xsspi.py to xsspi.pyc
-byte-compiling build/bdist.linux-armv7l/egg/xstools/xilfpga.py to xilfpga.pyc
 byte-compiling build/bdist.linux-armv7l/egg/xstools/xsload.py to xsload.pyc
-byte-compiling build/bdist.linux-armv7l/egg/xstools/__init__.py to __init__.pyc
-byte-compiling build/bdist.linux-armv7l/egg/xstools/XstoolsApi.py to XstoolsApi.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xsusb.py to xsusb.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xscomm.py to xscomm.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xshostio.py to xshostio.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/picmicro.py to picmicro.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/ramdev.py to ramdev.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/xsmemio.py to xsmemio.pyc
 byte-compiling build/bdist.linux-armv7l/egg/xstools/xsjtag.py to xsjtag.pyc
-byte-compiling build/bdist.linux-armv7l/egg/tests/test_xsconnect.py to test_xsconnect.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xstools/usb2serial.py to usb2serial.pyc
 byte-compiling build/bdist.linux-armv7l/egg/tests/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-armv7l/egg/tests/test_xsconnect.py to test_xsconnect.pyc
 creating build/bdist.linux-armv7l/egg/EGG-INFO
 copying XsTools.egg-info/PKG-INFO -> build/bdist.linux-armv7l/egg/EGG-INFO
 copying XsTools.egg-info/SOURCES.txt -> build/bdist.linux-armv7l/egg/EGG-INFO
@@ -245,22 +247,21 @@ copying XsTools.egg-info/not-zip-safe -> build/bdist.linux-armv7l/egg/EGG-INFO
 copying XsTools.egg-info/requires.txt -> build/bdist.linux-armv7l/egg/EGG-INFO
 copying XsTools.egg-info/top_level.txt -> build/bdist.linux-armv7l/egg/EGG-INFO
 creating dist
-creating 'dist/XsTools-0.1.27-py2.7.egg' and adding 'build/bdist.linux-armv7l/egg' to it
+creating 'dist/XsTools-0.1.29-py2.7.egg' and adding 'build/bdist.linux-armv7l/egg' to it
 removing 'build/bdist.linux-armv7l/egg' (and everything under it)
-Processing XsTools-0.1.27-py2.7.egg
-creating /usr/lib/python2.7/site-packages/XsTools-0.1.27-py2.7.egg
-Extracting XsTools-0.1.27-py2.7.egg to /usr/lib/python2.7/site-packages
-Adding XsTools 0.1.27 to easy-install.pth file
-Installing xsflags script to /usr/bin
+Processing XsTools-0.1.29-py2.7.egg
+creating /usr/lib/python2.7/site-packages/XsTools-0.1.29-py2.7.egg
+Extracting XsTools-0.1.29-py2.7.egg to /usr/lib/python2.7/site-packages
+Adding XsTools 0.1.29 to easy-install.pth file
 Installing xsusbprg script to /usr/bin
-Installing xsmfgtest script to /usr/bin
+Installing xsload script to /usr/bin
 Installing xstest script to /usr/bin
 Installing usb2serial script to /usr/bin
-Installing xsload script to /usr/bin
+Installing xsflags script to /usr/bin
 Installing gxstools script to /usr/bin
 
-Installed /usr/lib/python2.7/site-packages/XsTools-0.1.27-py2.7.egg
-Processing dependencies for XsTools==0.1.27
+Installed /usr/lib/python2.7/site-packages/XsTools-0.1.29-py2.7.egg
+Processing dependencies for XsTools==0.1.29
 Searching for intelhex==1.5
 Best match: intelhex 1.5
 Adding intelhex 1.5 to easy-install.pth file
@@ -281,8 +282,130 @@ Best match: PyPubSub 3.3.0
 Adding PyPubSub 3.3.0 to easy-install.pth file
 
 Using /usr/lib/python2.7/site-packages
-Finished processing dependencies for XsTools==0.1.27
+Finished processing dependencies for XsTools==0.1.29
 control: unrecognized option '--reload_rules'
+
+Reboot
+
+cd raspberrypi2_yocto/xstools_test_files/
+
+xstest -u 0 -b XULA2-LX9
+Success: XuLA2-LX9 passed diagnostic test!
+
+xsload --usb 0 --fpga blinker_h1.bit             
+Success: Bitstream in blinker_h1.bit downloaded to FPGA on XuLA2-LX9!
+
+xsload --usb 0 --fpga pc_fast_blinker_sub_h1.bit 
+Success: Bitstream in pc_fast_blinker_sub_h1.bit downloaded to FPGA on XuLA2-LX9!
+
+ python pc_subtractor_test.py 
+
+##################################################################
+# This program tests the interface between the host PC and the FPGA 
+# on the XuLA board that has been programmed to act as a subtractor.
+##################################################################
+
+  2 -  20 =  -18 ==> CORRECT!
+118 - 118 =    0 ==> CORRECT!
+110 -  44 =   66 ==> CORRECT!
+  7 -  87 =  -80 ==> CORRECT!
+  2 -  35 =  -33 ==> CORRECT!
+113 -  86 =   27 ==> CORRECT!
+114 -  33 =   81 ==> CORRECT!
+ 31 -  15 =   16 ==> CORRECT!
+ 14 -  60 =  -46 ==> CORRECT!
+  3 -  80 =  -77 ==> CORRECT!
+ 38 -   8 =   30 ==> CORRECT!
+ 68 -  62 =    6 ==> CORRECT!
+108 -  74 =   34 ==> CORRECT!
+101 -  61 =   40 ==> CORRECT!
+ 61 -  50 =   11 ==> CORRECT!
+ 10 -  41 =  -31 ==> CORRECT!
+ 98 - 104 =   -6 ==> CORRECT!
+106 -  86 =   20 ==> CORRECT!
+  2 -  65 =  -63 ==> CORRECT!
+ 90 -  22 =   68 ==> CORRECT!
+ 42 -  34 =    8 ==> CORRECT!
+ 38 - 107 =  -69 ==> CORRECT!
+ 27 -  95 =  -68 ==> CORRECT!
+ 62 -  20 =   42 ==> CORRECT!
+116 - 108 =    8 ==> CORRECT!
+ 75 -  54 =   21 ==> CORRECT!
+ 89 -  85 =    4 ==> CORRECT!
+126 -  29 =   97 ==> CORRECT!
+ 37 - 107 =  -70 ==> CORRECT!
+ 67 -  10 =   57 ==> CORRECT!
+123 -  30 =   93 ==> CORRECT!
+ 88 -  54 =   34 ==> CORRECT!
+ 33 -  99 =  -66 ==> CORRECT!
+ 22 -  12 =   10 ==> CORRECT!
+ 25 -  47 =  -22 ==> CORRECT!
+ 65 - 105 =  -40 ==> CORRECT!
+ 96 -  20 =   76 ==> CORRECT!
+ 13 -  28 =  -15 ==> CORRECT!
+107 -  46 =   61 ==> CORRECT!
+ 40 -  13 =   27 ==> CORRECT!
+ 42 -  83 =  -41 ==> CORRECT!
+ 78 - 127 =  -49 ==> CORRECT!
+ 51 -  28 =   23 ==> CORRECT!
+114 -  40 =   74 ==> CORRECT!
+ 33 -  20 =   13 ==> CORRECT!
+105 - 105 =    0 ==> CORRECT!
+ 41 - 112 =  -71 ==> CORRECT!
+ 29 -  92 =  -63 ==> CORRECT!
+ 31 -  61 =  -30 ==> CORRECT!
+  0 -  70 =  -70 ==> CORRECT!
+  9 -  22 =  -13 ==> CORRECT!
+ 10 -  49 =  -39 ==> CORRECT!
+ 89 - 123 =  -34 ==> CORRECT!
+ 23 -  33 =  -10 ==> CORRECT!
+ 11 -  94 =  -83 ==> CORRECT!
+ 91 -  87 =    4 ==> CORRECT!
+ 89 -  90 =   -1 ==> CORRECT!
+ 41 -  85 =  -44 ==> CORRECT!
+  1 -   4 =   -3 ==> CORRECT!
+ 90 -  71 =   19 ==> CORRECT!
+ 72 -  19 =   53 ==> CORRECT!
+126 -  99 =   27 ==> CORRECT!
+104 -  62 =   42 ==> CORRECT!
+ 56 -  62 =   -6 ==> CORRECT!
+ 67 -  68 =   -1 ==> CORRECT!
+ 63 -  98 =  -35 ==> CORRECT!
+ 62 -  40 =   22 ==> CORRECT!
+112 -   3 =  109 ==> CORRECT!
+ 77 -  41 =   36 ==> CORRECT!
+ 23 -  71 =  -48 ==> CORRECT!
+ 42 -  55 =  -13 ==> CORRECT!
+ 66 -  38 =   28 ==> CORRECT!
+ 54 - 104 =  -50 ==> CORRECT!
+ 70 -  49 =   21 ==> CORRECT!
+ 47 -  23 =   24 ==> CORRECT!
+ 61 -  22 =   39 ==> CORRECT!
+ 74 -  92 =  -18 ==> CORRECT!
+  2 -  11 =   -9 ==> CORRECT!
+ 33 -   9 =   24 ==> CORRECT!
+  6 -  60 =  -54 ==> CORRECT!
+ 83 -  73 =   10 ==> CORRECT!
+ 81 -   8 =   73 ==> CORRECT!
+  4 -  28 =  -24 ==> CORRECT!
+112 - 104 =    8 ==> CORRECT!
+ 58 -  12 =   46 ==> CORRECT!
+ 30 -   3 =   27 ==> CORRECT!
+126 - 125 =    1 ==> CORRECT!
+ 63 - 122 =  -59 ==> CORRECT!
+ 61 - 127 =  -66 ==> CORRECT!
+122 -  51 =   71 ==> CORRECT!
+ 87 - 123 =  -36 ==> CORRECT!
+ 77 -  98 =  -21 ==> CORRECT!
+ 90 -  50 =   40 ==> CORRECT!
+126 - 103 =   23 ==> CORRECT!
+  0 -   5 =   -5 ==> CORRECT!
+110 - 101 =    9 ==> CORRECT!
+ 28 - 109 =  -81 ==> CORRECT!
+  0 -  11 =  -11 ==> CORRECT!
+101 - 108 =   -7 ==> CORRECT!
+ 22 -  98 =  -76 ==> CORRECT!
+
 
 ls /usr/lib/python2.7/site-packages/
 ANSI.py				gobject
@@ -343,127 +466,4 @@ cp XSBRDINF.xml /usr/lib/python2.7/site-packages/
 
 scp -r xstools_test_files/ 192.168.1.136:~/ 
 
-python /usr/bin/xstest -u 0 -b XULA2-LX9
-Success: XuLA2-LX9 passed diagnostic test!
-Exception AttributeError: "'NoneType' object has no attribute 'copy'" in <bound method Device.__del__ of <usb.core.Device object at 0x76452030>> ignored
-Exception AttributeError: "'NoneType' object has no attribute 'libusb_unref_device'" in <bound method _Device.__del__ of <usb.backend.libusb1._Device object at 0x76452070>> ignored
-
-cd xstools_test_files
-
-python /usr/bin/xsload --usb 0 --fpga blinker_h1.bit      
-Success: Bitstream blinker_h1.bit downloaded into XuLA2-LX9 !
-Exception AttributeError: "'NoneType' object has no attribute 'copy'" in <bound method Device.__del__ of <usb.core.Device object at 0x7643b170>> ignored
-Exception AttributeError: "'NoneType' object has no attribute 'libusb_unref_device'" in <bound method _Device.__del__ of <usb.backend.libusb1._Device object at 0x7643b1b0>> ignored
-
-python /usr/bin/xsload --usb 0 --fpga pc_fast_blinker_sub_h1.bit
-Success: Bitstream pc_fast_blinker_sub_h1.bit downloaded into XuLA2-LX9 !
-Exception AttributeError: "'NoneType' object has no attribute 'copy'" in <bound method Device.__del__ of <usb.core.Device object at 0x76387170>> ignored
-Exception AttributeError: "'NoneType' object has no attribute 'libusb_unref_device'" in <bound method _Device.__del__ of <usb.backend.libusb1._Device object at 0x763871b0>> ignored
-
- python pc_subtractor_test.py
-
-##################################################################
-# This program tests the interface between the host PC and the FPGA
-# on the XuLA board that has been programmed to act as a subtractor.
-##################################################################
-
-111 - 109 =    2 ==> CORRECT!
- 42 -  38 =    4 ==> CORRECT!
- 30 -  16 =   14 ==> CORRECT!
-110 -  63 =   47 ==> CORRECT!
- 58 -  48 =   10 ==> CORRECT!
- 83 -  47 =   36 ==> CORRECT!
- 33 -  10 =   23 ==> CORRECT!
- 65 -  41 =   24 ==> CORRECT!
- 98 -  26 =   72 ==> CORRECT!
-115 - 107 =    8 ==> CORRECT!
- 46 - 104 =  -58 ==> CORRECT!
-115 -  98 =   17 ==> CORRECT!
-100 - 104 =   -4 ==> CORRECT!
- 77 -  65 =   12 ==> CORRECT!
- 41 -  46 =   -5 ==> CORRECT!
- 42 -  15 =   27 ==> CORRECT!
-108 -  97 =   11 ==> CORRECT!
-  2 -  88 =  -86 ==> CORRECT!
- 81 - 109 =  -28 ==> CORRECT!
- 63 -  12 =   51 ==> CORRECT!
- 22 -  11 =   11 ==> CORRECT!
-113 -  86 =   27 ==> CORRECT!
- 43 - 104 =  -61 ==> CORRECT!
- 44 -  31 =   13 ==> CORRECT!
-104 -  88 =   16 ==> CORRECT!
- 53 - 105 =  -52 ==> CORRECT!
-124 -  22 =  102 ==> CORRECT!
-110 -  90 =   20 ==> CORRECT!
- 29 -  27 =    2 ==> CORRECT!
- 40 -  58 =  -18 ==> CORRECT!
- 57 -  60 =   -3 ==> CORRECT!
-124 - 126 =   -2 ==> CORRECT!
- 35 - 113 =  -78 ==> CORRECT!
- 94 -   9 =   85 ==> CORRECT!
-118 - 121 =   -3 ==> CORRECT!
-104 -   8 =   96 ==> CORRECT!
-109 -  63 =   46 ==> CORRECT!
- 46 -  56 =  -10 ==> CORRECT!
- 16 - 104 =  -88 ==> CORRECT!
- 97 -  92 =    5 ==> CORRECT!
-126 -  82 =   44 ==> CORRECT!
-122 - 115 =    7 ==> CORRECT!
- 45 -  31 =   14 ==> CORRECT!
- 33 -  85 =  -52 ==> CORRECT!
- 33 - 120 =  -87 ==> CORRECT!
- 34 -  73 =  -39 ==> CORRECT!
- 76 - 126 =  -50 ==> CORRECT!
- 57 - 108 =  -51 ==> CORRECT!
- 45 -  43 =    2 ==> CORRECT!
- 33 -  29 =    4 ==> CORRECT!
- 61 -  38 =   23 ==> CORRECT!
- 59 - 112 =  -53 ==> CORRECT!
-101 -  60 =   41 ==> CORRECT!
-111 - 114 =   -3 ==> CORRECT!
-117 -  33 =   84 ==> CORRECT!
-108 - 103 =    5 ==> CORRECT!
- 20 - 126 = -106 ==> CORRECT!
- 43 -  57 =  -14 ==> CORRECT!
-126 -   1 =  125 ==> CORRECT!
- 93 -  23 =   70 ==> CORRECT!
- 88 -   2 =   86 ==> CORRECT!
-  3 -  83 =  -80 ==> CORRECT!
- 30 -  24 =    6 ==> CORRECT!
- 19 -  88 =  -69 ==> CORRECT!
- 26 - 124 =  -98 ==> CORRECT!
- 15 -  24 =   -9 ==> CORRECT!
- 15 -  72 =  -57 ==> CORRECT!
- 65 - 101 =  -36 ==> CORRECT!
- 45 - 127 =  -82 ==> CORRECT!
- 67 -  80 =  -13 ==> CORRECT!
- 61 -  23 =   38 ==> CORRECT!
- 11 -  25 =  -14 ==> CORRECT!
- 26 - 127 = -101 ==> CORRECT!
- 70 -  28 =   42 ==> CORRECT!
-  0 -  16 =  -16 ==> CORRECT!
- 24 -  37 =  -13 ==> CORRECT!
- 95 - 125 =  -30 ==> CORRECT!
- 29 -  15 =   14 ==> CORRECT!
-118 -  67 =   51 ==> CORRECT!
- 50 -  18 =   32 ==> CORRECT!
-113 -  65 =   48 ==> CORRECT!
- 58 -  14 =   44 ==> CORRECT!
-109 -  96 =   13 ==> CORRECT!
-  0 -  42 =  -42 ==> CORRECT!
- 44 -  31 =   13 ==> CORRECT!
- 85 -  70 =   15 ==> CORRECT!
- 47 -  29 =   18 ==> CORRECT!
-100 -  88 =   12 ==> CORRECT!
- 96 -   1 =   95 ==> CORRECT!
- 18 -  72 =  -54 ==> CORRECT!
- 60 -  96 =  -36 ==> CORRECT!
- 76 -  22 =   54 ==> CORRECT!
- 92 -  53 =   39 ==> CORRECT!
-  0 -  66 =  -66 ==> CORRECT!
- 27 - 101 =  -74 ==> CORRECT!
- 90 - 118 =  -28 ==> CORRECT!
- 89 -  61 =   28 ==> CORRECT!
-117 -  93 =   24 ==> CORRECT!
- 12 -  52 =  -40 ==> CORRECT!
- 31 -  81 =  -50 ==> CORRECT!
+ 
