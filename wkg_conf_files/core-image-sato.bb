@@ -16,4 +16,4 @@ IMAGE_INSTALL += "packagegroup-core-x11-sato-games kernel-dev xterm git \
  x264 x264-dev libav libav-dev opencv opencv-samples cmake \
  opencv-apps python-opencv tcl tk rpi-gpio python-myhdl python-bitstring \
  PyPubSub tar intelhex pyusb argparse pv openjpeg libftdi \
- python-matplotlib wiringpi"
+ python-matplotlib wiringpi squashfs-tools"

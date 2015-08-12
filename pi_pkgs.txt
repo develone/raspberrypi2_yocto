@@ -2119,6 +2119,8 @@ libkmod2-21+git0+0d833715ea-r0.cortexa7hf_vfp_vfpv4_neon
 libkms1-2.4.62-r0.cortexa7hf_vfp_vfpv4_neon
 libltdl7-2.4.6-r0.cortexa7hf_vfp_vfpv4_neon
 liblzma5-5.2.1-r0.cortexa7hf_vfp_vfpv4_neon
+liblzo2-2-2.09-r0.cortexa7hf_vfp_vfpv4_neon
+liblzo2-dev-2.09-r0.cortexa7hf_vfp_vfpv4_neon
 libmad-dev-0.15.1b-r3.cortexa7hf_vfp_vfpv4_neon
 libmad-staticdev-0.15.1b-r3.cortexa7hf_vfp_vfpv4_neon
 libmad0-0.15.1b-r3.cortexa7hf_vfp_vfpv4_neon
@@ -2379,6 +2381,8 @@ libz1-1.2.8-r0.cortexa7hf_vfp_vfpv4_neon
 linux-libc-headers-dev-3.19-r0.cortexa7hf_vfp_vfpv4_neon
 locale-base-en-gb-2.21-r0.cortexa7hf_vfp_vfpv4_neon
 locale-base-en-us-2.21-r0.cortexa7hf_vfp_vfpv4_neon
+lz4-128+git0+5780864c0c-r0.cortexa7hf_vfp_vfpv4_neon
+lz4-dev-128+git0+5780864c0c-r0.cortexa7hf_vfp_vfpv4_neon
 m4-1.4.17-r0.cortexa7hf_vfp_vfpv4_neon
 m4-dev-1.4.17-r0.cortexa7hf_vfp_vfpv4_neon
 make-4.1-r0.cortexa7hf_vfp_vfpv4_neon
@@ -3310,6 +3314,8 @@ shutdown-desktop-dev-1.0-r1.all
 slang-2.2.4-r12.cortexa7hf_vfp_vfpv4_neon
 slang-dev-2.2.4-r12.cortexa7hf_vfp_vfpv4_neon
 smartpm-1.5+git0+407a7eca76-r0.cortexa7hf_vfp_vfpv4_neon
+squashfs-tools-4.3+gitr0+9c1db6d13a-r0.cortexa7hf_vfp_vfpv4_neon
+squashfs-tools-dev-4.3+gitr0+9c1db6d13a-r0.cortexa7hf_vfp_vfpv4_neon
 stat-3.3-r0.cortexa7hf_vfp_vfpv4_neon
 stat-dev-3.3-r0.cortexa7hf_vfp_vfpv4_neon
 sudo-1.8.13-r0.cortexa7hf_vfp_vfpv4_neon
