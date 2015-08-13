@@ -9,7 +9,7 @@ core-image-sato working,
 07/28/15
 This image now supports OpenCV using 2 C920 cameras.
  
-08/12/15
+08/13/15
 Goal: To install MyHDL, GTKWave, XSTOOLs and Iverilog on a core-image-sato.
 
 Created several recipes and modified core-image-sato.bb.
@@ -20,6 +20,64 @@ Each of the new recipes are in folders that begin with recipe_xxxxx.
 
 The recipes for gtkwave_3.6.66.bb & XsTools_0.1.29.bb still needs work. Until these are
 working the target will be used to compile and install.
+
+Note: Compiling on the target takes 17 mins for GTKWAVE and over 20 mins for Iverilog.
+
+Testing an approach of using a squashfs to install GTKWave, Iverilog, and XSTOOLS.
+A squashfs image "gtkwave_iverilog_compiled_xtools" is 
+"unsquashfs -d gtkwave_iverilog_compiled_xtools add_gtkwave_iverilog_xstools"
+this process takes less than a min.
+
+"cd gtkwave_iverilog_compiled_xtools/" 
+
+"./add_gtkwave_iverilog_xstools.sh"
+In addition this process installs some additional rpms
+wiringpi-dbg-git-r0.cortexa7hf_vfp_vfpv4_neon.rpm
+wiringpi-doc-git-r0.cortexa7hf_vfp_vfpv4_neon.rpm
+gtk-demo-2.24.28-r0.cortexa7hf_vfp_vfpv4_neon.rpm
+for a detailed decrription see the file add_gtkwave_iverilog_xstools.sh
+After the system reboots
+
+"cp -R gtkwave_iverilog_compiled_xtools/xstools_test_files ."
+
+"cd xstools_test_files"
+
+"xstest -u 0 -b XULA2-LX9"
+Success: XuLA2-LX9 passed diagnostic test!
+
+"xsload --usb 0 --fpga blinker_h1.bit"
+Now if a led is connected if flash.
+
+"xsload --usb 0 --fpga pc_fast_blinker_sub_h1.bit"
+Success: Bitstream in pc_fast_blinker_sub_h1.bit downloaded to FPGA on XuLA2-LX9!
+
+Now if a led is connected if flash at higher rate.
+"python pc_subtractor_test.py"
+##################################################################
+# This program tests the interface between the host PC and the FPGA 
+# on the XuLA board that has been programmed to act as a subtractor.
+##################################################################
+
+ 12 -  74 =  -62 ==> CORRECT!
+125 -  56 =   69 ==> CORRECT!
+ 48 -  44 =    4 ==> CORRECT!
+102 -  48 =   54 ==> CORRECT!
+  6 - 102 =  -96 ==> CORRECT!
+ 43 -  53 =  -10 ==> CORRECT!
+ 74 -  48 =   26 ==> CORRECT!
+ 50 - 108 =  -58 ==> CORRECT!
+	.
+	.
+	.
+ 62 -  73 =  -11 ==> CORRECT!
+ 36 -  40 =   -4 ==> CORRECT!
+118 -  20 =   98 ==> CORRECT!
+ 47 -  13 =   34 ==> CORRECT!
+ 70 -  80 =  -10 ==> CORRECT!
+ 61 - 122 =  -61 ==> CORRECT!
+ 55 -  10 =   45 ==> CORRECT!
+
+
 The recipes intelhex, PyPubSub, python-bitstring, pyusb argparse were the dependencies
 for XSTOOLs.  XSTOOLs installs on the target and is working
 see the file core-image-sato_xstools.txt  

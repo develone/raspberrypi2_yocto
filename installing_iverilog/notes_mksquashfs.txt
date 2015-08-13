@@ -1,0 +1,54 @@
+ ls gtkwave_iverilog_compiled_xtools/
+XSBRDINF.xml			 gtkwave_compiled_xstools_old
+XSTOOLS				 iverilog
+add_gtkwave_iverilog_xstools.sh  py_compile.py
+gtk-extra-rpms			 wiringpi-extra-rpms
+gtkwave-3.3.66			 xstools_test_files
+
+ mksquashfs gtkwave_iverilog_compiled_xtools/ add_gtkwave_iverilog_xstools
+Parallel mksquashfs: Using 4 processors
+Creating 4.0 filesystem on add_gtkwave_iverilog_xstools, block size 131072.
+[=============================================================-] 4963/4963 100%
+
+Exportable Squashfs 4.0 filesystem, gzip compressed, data block size 131072
+	compressed data, compressed metadata, compressed fragments, compressed xattrs
+	duplicates are removed
+Filesystem size 72844.78 Kbytes (71.14 Mbytes)
+	33.23% of uncompressed filesystem size (219225.03 Kbytes)
+Inode table size 46184 bytes (45.10 Kbytes)
+	33.60% of uncompressed inode table size (137454 bytes)
+Directory table size 35709 bytes (34.87 Kbytes)
+	44.14% of uncompressed directory table size (80896 bytes)
+Number of duplicate files found 1471
+Number of inodes 4121
+Number of files 3846
+Number of fragments 353
+Number of symbolic links  0
+Number of device nodes 0
+Number of fifo nodes 0
+Number of socket nodes 0
+Number of directories 275
+Number of ids (unique uids + gids) 2
+Number of uids 2
+	root (0)
+	unknown (500)
+Number of gids 2
+	root (0)
+	unknown (500)
+
+unsquashfs -d gtkwave_iverilog_compiled_xtools add_gtkwave_iverilog_xstools
+
+Parallel unsquashfs: Using 4 processors
+3846 inodes (4963 blocks) to write
+
+[=============================================================-] 4963/4963 100%
+
+created 3846 files
+created 275 directories
+created 0 symlinks
+created 0 devices
+created 0 fifos
+
+cd gtkwave_iverilog_compiled_xtools
+
+ ./add_gtkwave_iverilog_xstools.sh
