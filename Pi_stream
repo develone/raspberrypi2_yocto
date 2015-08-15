@@ -1,0 +1,2 @@
+#!/bin/bash
+cvlc -vvvvv 'Smurfs.avi' --sout '#standard{access=http,mux=ogg,dst=192.168.1.136:1234}' 

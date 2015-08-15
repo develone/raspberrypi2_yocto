@@ -1,0 +1,615 @@
+libmtp libtool \
+ fluidsynth fluidsynth-dev lua lua-dev lua-staticdev python-cheetah fribidi \
+ samba live555 libnotify libsdl-image mpeg2dec \
+to target.  Compiling on target takes 22 min with npoc
+ 
+
+xz -d vlc-2.1.4.tar.xz
+tar xf vlc-2.1.4.tar
+cd vlc-2.1.4 
+
+
+root@raspberrypi2:~/vlc-2.1.4# ./configure --enable-opencv=no --disable-libgcrypt --enable-run-as-root
+
+make -j$(nproc) 
+cd ../
+mksquashfs vlc-2.1.4 vlc_image 
+
+root@raspberrypi2:~/vlc-2.1.4# ./configure --enable-opencv=no --disable-libgcrypt --enable-run-as-root
+checking build system type... armv7l-unknown-linux-gnueabihf
+checking host system type... armv7l-unknown-linux-gnueabihf
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether UID '0' is supported by ustar format... yes
+checking whether GID '0' is supported by ustar format... yes
+checking how to create a ustar tar archive... gnutar
+checking whether make supports nested variables... (cached) yes
+checking whether to enable maintainer-specific portions of Makefiles... yes
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for gcc option to accept ISO C99... -std=gnu99
+checking how to run the C preprocessor... gcc -std=gnu99 -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... gcc3
+checking how to run the C preprocessor... gcc -std=gnu99 -E
+checking for gcc... gcc
+checking whether we are using the GNU Objective C compiler... no
+checking whether gcc accepts -g... no
+checking dependency style of gcc... gcc3
+checking dependency style of gcc... (cached) gcc3
+checking for egrep... (cached) /bin/grep -E
+checking whether make sets $(MAKE)... (cached) yes
+checking dependency style of gcc -std=gnu99... gcc3
+checking for desktop-file-validate... no
+checking for an ANSI C-conforming const... yes
+checking for inline... inline
+checking for C/C++ restrict keyword... __restrict
+checking for an Android system... no
+checking for 3rd party libraries path... not found
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc -std=gnu99... /usr/arm-poky-linux-gnueabi/bin/ld
+checking if the linker (/usr/arm-poky-linux-gnueabi/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert armv7l-unknown-linux-gnueabihf file names to armv7l-unknown-linux-gnueabihf format... func_convert_file_noop
+checking how to convert armv7l-unknown-linux-gnueabihf file names to toolchain format... func_convert_file_noop
+checking for /usr/arm-poky-linux-gnueabi/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... (cached) pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc -std=gnu99 object... ok
+checking for sysroot... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc -std=gnu99 supports -fno-rtti -fno-exceptions... no
+checking for gcc -std=gnu99 option to produce PIC... -fPIC -DPIC
+checking if gcc -std=gnu99 PIC flag -fPIC -DPIC works... yes
+checking if gcc -std=gnu99 static flag -static works... no
+checking if gcc -std=gnu99 supports -c -o file.o... yes
+checking if gcc -std=gnu99 supports -c -o file.o... (cached) yes
+checking whether the gcc -std=gnu99 linker (/usr/arm-poky-linux-gnueabi/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for shl_load... no
+checking for shl_load in -ldld... no
+checking for dlopen... no
+checking for dlopen in -ldl... yes
+checking whether a program can dlopen itself... yes
+checking whether a statically linked program can dlopen itself... yes
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/arm-poky-linux-gnueabi/bin/ld
+checking if the linker (/usr/arm-poky-linux-gnueabi/bin/ld) is GNU ld... yes
+checking whether the g++ linker (/usr/arm-poky-linux-gnueabi/bin/ld) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... no
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/arm-poky-linux-gnueabi/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for windres... no
+checking for bash... /bin/bash
+checking if dolt supports this host... yes, replacing libtool
+checking whether NLS is requested... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for ld used by gcc -std=gnu99... /usr/arm-poky-linux-gnueabi/bin/ld
+checking if the linker (/usr/arm-poky-linux-gnueabi/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking for GNU gettext in libc... yes
+checking whether to use NLS... yes
+checking where the gettext function comes from... libc
+checking for iconv... yes
+checking for working iconv... no
+checking for iconv declaration... 
+         extern size_t iconv (iconv_t cd, char * *inbuf, size_t *inbytesleft, char * *outbuf, size_t *outbytesleft);
+checking for buggy GNU/libc versions... not present
+checking for shared objects suffix... .so
+checking whether nanosleep is declared... yes
+checking for daemon... yes
+checking for fcntl... yes
+checking for fstatvfs... yes
+checking for fork... yes
+checking for getenv... yes
+checking for getpwuid_r... yes
+checking for isatty... yes
+checking for lstat... yes
+checking for memalign... yes
+checking for mmap... yes
+checking for openat... yes
+checking for pread... yes
+checking for posix_fadvise... yes
+checking for posix_madvise... yes
+checking for setlocale... yes
+checking for stricmp... no
+checking for strnicmp... no
+checking for strptime... yes
+checking for uselocale... yes
+checking for atof... yes
+checking for atoll... yes
+checking for dirfd... yes
+checking for fdopendir... yes
+checking for flockfile... yes
+checking for fsync... yes
+checking for getdelim... yes
+checking for getpid... yes
+checking for gmtime_r... yes
+checking for lldiv... yes
+checking for localtime_r... yes
+checking for nrand48... yes
+checking for poll... yes
+checking for posix_memalign... yes
+checking for rewind... yes
+checking for setenv... yes
+checking for strcasecmp... yes
+checking for strcasestr... yes
+checking for strdup... yes
+checking for strlcpy... no
+checking for strndup... yes
+checking for strnlen... yes
+checking for strsep... yes
+checking for strtof... yes
+checking for strtok_r... yes
+checking for strtoll... yes
+checking for swab... yes
+checking for tdestroy... yes
+checking for strverscmp... yes
+checking for fdatasync... yes
+checking for static_assert in assert.h... yes
+checking for working strcoll... yes
+checking for accept4... yes
+checking for pipe2... yes
+checking for eventfd... yes
+checking for vmsplice... yes
+checking for sched_getaffinity... yes
+checking for struct pollfd... yes
+checking for library containing connect... none required
+checking for library containing inet_pton... none required
+checking for if_nameindex... yes
+checking for if_nametoindex... yes
+checking for socklen_t in sys/socket.h... yes
+checking for struct sockaddr_storage... yes
+checking for getopt_long... yes
+checking for cos in -lm... yes
+checking for lrintf in -lm... yes
+checking for library containing dlopen... -ldl
+checking for library containing pthread_rwlock_init... -lpthread
+checking for clock_nanosleep in -lrt... yes
+checking search.h usability... yes
+checking search.h presence... yes
+checking for search.h... yes
+checking getopt.h usability... yes
+checking getopt.h presence... yes
+checking for getopt.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking xlocale.h usability... yes
+checking xlocale.h presence... yes
+checking for xlocale.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking arpa/inet.h usability... yes
+checking arpa/inet.h presence... yes
+checking for arpa/inet.h... yes
+checking netinet/udplite.h usability... no
+checking netinet/udplite.h presence... no
+checking for netinet/udplite.h... no
+checking sys/eventfd.h usability... yes
+checking sys/eventfd.h presence... yes
+checking for sys/eventfd.h... yes
+checking for net/if.h... yes
+checking for sys/mount.h... yes
+checking machine/param.h usability... no
+checking machine/param.h presence... no
+checking for machine/param.h... no
+checking sys/shm.h usability... yes
+checking sys/shm.h presence... yes
+checking for sys/shm.h... yes
+checking linux/version.h usability... yes
+checking linux/version.h presence... yes
+checking for linux/version.h... yes
+checking linux/dccp.h usability... yes
+checking linux/dccp.h presence... yes
+checking for linux/dccp.h... yes
+checking scsi/scsi.h usability... yes
+checking scsi/scsi.h presence... yes
+checking for scsi/scsi.h... yes
+checking linux/magic.h usability... yes
+checking linux/magic.h presence... yes
+checking for linux/magic.h... yes
+checking syslog.h usability... yes
+checking syslog.h presence... yes
+checking for syslog.h... yes
+checking mntent.h usability... yes
+checking mntent.h presence... yes
+checking for mntent.h... yes
+checking for ssize_t... yes
+checking pthread.h usability... yes
+checking pthread.h presence... yes
+checking for pthread.h... yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking zlib.h usability... yes
+checking zlib.h presence... yes
+checking for zlib.h... yes
+checking for MINIZIP... no
+checking unzip.h usability... no
+checking unzip.h presence... no
+checking for unzip.h... no
+checking for IDN... no
+checking for DBUS... yes
+checking for ntohl in sys/param.h... no
+checking if gcc -std=gnu99 accepts -Wall... yes
+checking if gcc -std=gnu99 accepts -Wextra... yes
+checking if gcc -std=gnu99 accepts -Wsign-compare... yes
+checking if gcc -std=gnu99 accepts -Wundef... yes
+checking if gcc -std=gnu99 accepts -Wpointer-arith... yes
+checking if gcc -std=gnu99 accepts -Wbad-function-cast... yes
+checking if gcc -std=gnu99 accepts -Wwrite-strings... yes
+checking if gcc -std=gnu99 accepts -Wmissing-prototypes... yes
+checking if gcc -std=gnu99 accepts -Wvolatile-register-var... yes
+checking if gcc -std=gnu99 accepts -Werror-implicit-function-declaration... yes
+checking if gcc -std=gnu99 accepts -pipe... yes
+checking if g++ accepts -Wall... yes
+checking if g++ accepts -Wextra... yes
+checking if g++ accepts -Wsign-compare... yes
+checking if g++ accepts -Wundef... yes
+checking if g++ accepts -Wpointer-arith... yes
+checking if g++ accepts -Wvolatile-register-var... yes
+checking if gcc -std=gnu99 accepts -fvisibility=hidden... yes
+checking if gcc -std=gnu99 accepts -ffast-math... yes
+checking if gcc -std=gnu99 accepts -funroll-loops... yes
+checking if gcc -std=gnu99 accepts -fomit-frame-pointer... yes
+checking __attribute__ ((aligned ())) support... 64
+checking for __attribute__((packed))... yes
+checking execinfo.h usability... yes
+checking execinfo.h presence... yes
+checking for execinfo.h... yes
+checking for backtrace... yes
+checking if gcc -std=gnu99 groks 3D Now! inline assembly... no
+checking for LUA... no
+configure: WARNING: No package 'lua5.2' found, trying lua 5.1 instead
+checking for LUA... no
+configure: WARNING: No package 'lua5.1' found, trying lua >= 5.1 instead
+checking for LUA... yes
+checking for luac... /usr/bin/luac
+./configure: line 29121: test: too many arguments
+checking for LIVE555... no
+configure: WARNING: No package 'live555' found.
+checking for live555 version 1324598400 or later... yes
+checking for main in -lliveMedia_pic... no
+checking for main in -lliveMedia... no
+checking for DC1394... no
+configure: WARNING: Library libdc1394-2 >= 2.1.0 needed for dc1394 was not found
+checking for DV1394... no
+configure: WARNING: Library libraw1394 >= 2.0.1 libavc1394 >= 0.5.3 needed for dv1394 was not found
+checking for LINSYS_SDI... no
+configure: WARNING: No package 'zvbi-0.2' found.
+checking for DVDREAD... no
+configure: WARNING: Library dvdread needed for dvdread was not found
+checking for DVDNAV... no
+configure: WARNING: No package 'dvdnav' found.
+checking for BLURAY... no
+configure: WARNING: Library libbluray >= 0.2.1 needed for bluray was not found
+checking for SMBCLIENT... no
+configure: WARNING: Library smbclient needed for smbclient was not found
+checking for SFTP... no
+configure: WARNING: Library libssh2 needed for sftp was not found
+checking linux/videodev2.h usability... yes
+checking linux/videodev2.h presence... yes
+checking for linux/videodev2.h... yes
+checking sys/videoio.h usability... no
+checking sys/videoio.h presence... no
+checking for sys/videoio.h... no
+checking DeckLinkAPIDispatch.cpp usability... no
+checking DeckLinkAPIDispatch.cpp presence... no
+checking for DeckLinkAPIDispatch.cpp... no
+configure: WARNING: Blackmagic DeckLink SDI include files not found
+checking for GNOMEVFS... no
+configure: WARNING: Library gnome-vfs-2.0 needed for gnomevfs was not found
+checking for cdrom_msf0 in linux/cdrom.h... yes
+checking for scsireq in sys/scsiio.h... no
+checking for ioc_toc_header in sys/cdio.h... no
+checking for LIBCDDB... no
+configure: WARNING: No package 'libcddb' found: CDDB access disabled.
+checking for Linux DVB version 5.1... yes
+checking for LIBVNC... no
+configure: WARNING: Library libvncclient >= 0.9.9 needed for libvnc was not found
+checking for LIBFREERDP... no
+configure: WARNING: Library freerdp >= 1.0.1 needed for libfreerdp was not found
+checking for DVBPSI... no
+checking gme/gme.h usability... no
+checking gme/gme.h presence... no
+checking for gme/gme.h... no
+checking for SID... no
+configure: WARNING: No package 'libsidplay2' found (required for sid).
+checking for OGG... yes
+checking for MUX_OGG... yes
+checking for SHOUT... no
+configure: WARNING: Library shout >= 2.1 needed for shout was not found
+checking ebml/EbmlVersion.h usability... no
+checking ebml/EbmlVersion.h presence... no
+checking for ebml/EbmlVersion.h... no
+checking for LIBMODPLUG... no
+configure: WARNING: No package 'libmodplug' found
+No package 'libmodplug' found.
+checking mpc/mpcdec.h usability... no
+checking mpc/mpcdec.h presence... no
+checking for mpc/mpcdec.h... no
+checking mpcdec/mpcdec.h usability... no
+checking mpcdec/mpcdec.h presence... no
+checking for mpcdec/mpcdec.h... no
+checking for libcrystalhd/libcrystalhd_if.h... no
+checking mad.h usability... yes
+checking mad.h presence... yes
+checking for mad.h... yes
+checking for mad_bit_init in -lmad... yes
+checking if linker supports -Bsymbolic... yes
+checking for AVCODEC... yes
+checking libavcodec/avcodec.h usability... yes
+checking libavcodec/avcodec.h presence... yes
+checking for libavcodec/avcodec.h... yes
+checking libavutil/avutil.h usability... yes
+checking libavutil/avutil.h presence... yes
+checking for libavutil/avutil.h... yes
+checking for LIBVA... no
+configure: WARNING: No package 'libva' found
+No package 'libva-x11' found.
+checking for AVFORMAT... yes
+checking libavformat/avformat.h usability... yes
+checking libavformat/avformat.h presence... yes
+checking for libavformat/avformat.h... yes
+checking libavformat/avio.h usability... yes
+checking libavformat/avio.h presence... yes
+checking for libavformat/avio.h... yes
+checking for libavutil/avutil.h... (cached) yes
+checking for SWSCALE... yes
+checking libswscale/swscale.h usability... yes
+checking libswscale/swscale.h presence... yes
+checking for libswscale/swscale.h... yes
+checking for POSTPROC... no
+configure: WARNING: No package 'libpostproc' found.
+checking faad.h usability... no
+checking faad.h presence... no
+checking for faad.h... no
+configure: WARNING: Cannot find development headers for libfaad...
+checking for TWOLAME... no
+configure: WARNING: Library twolame needed for twolame was not found
+checking a52dec/a52.h usability... yes
+checking a52dec/a52.h presence... yes
+checking for a52dec/a52.h... yes
+checking for a52_free in -la52... yes
+checking for DCA... no
+configure: WARNING: Library libdca >= 0.0.5 needed for dca was not found
+checking for FLAC... yes
+checking for LIBMPEG2... yes
+checking for VORBIS... yes
+checking for SPEEX... yes
+checking for SPEEXDSP... yes
+checking for OPUS... no
+configure: WARNING: Library ogg opus needed for opus was not found
+checking for THEORA... yes
+checking for DIRAC... no
+configure: WARNING: Library dirac >= 0.10.0 needed for dirac was not found
+checking for SCHROEDINGER... no
+configure: WARNING: Library schroedinger-1.0 >= 1.0.10 needed for schroedinger was not found
+checking png.h usability... yes
+checking png.h presence... yes
+checking for png.h... yes
+checking for png_set_rows in -lpng... yes
+checking for X26410B... no
+checking for X264... yes
+checking for QUICKSYNC... no
+configure: WARNING: Library libmfx needed for quicksync was not found
+checking for FLUIDSYNTH... yes
+checking for ZVBI... no
+configure: WARNING: No package 'zvbi-0.2' found. Enabling the telx module instead.
+checking for LIBASS... no
+configure: WARNING: No package 'libass' found.
+checking for KATE... no
+configure: WARNING: Library kate >= 0.3.0 needed for kate was not found
+checking for TIGER... no
+checking for GL... yes
+checking for X... libraries , headers 
+checking for gethostbyname... yes
+checking for connect... yes
+checking for remove... yes
+checking for shmat... yes
+checking for IceConnectionNumber in -lICE... yes
+checking X11/Xlib.h usability... yes
+checking X11/Xlib.h presence... yes
+checking for X11/Xlib.h... yes
+checking for XCB... yes
+checking for XCB_SHM... yes
+checking for XCB_COMPOSITE... yes
+checking for XCB_XV... yes
+checking for XCB_RANDR... yes
+checking for XPROTO... yes
+checking for XCB_KEYSYMS... no
+configure: WARNING: No package 'xcb-keysyms' found. Hotkeys will not work.
+checking for VDPAU... no
+checking for SDL... yes
+checking for SDL_IMAGE... yes
+checking for FREETYPE... yes
+checking Carbon/Carbon.h usability... no
+checking Carbon/Carbon.h presence... no
+checking for Carbon/Carbon.h... no
+checking fontconfig/fontconfig.h usability... yes
+checking fontconfig/fontconfig.h presence... yes
+checking for fontconfig/fontconfig.h... yes
+checking for FRIBIDI... yes
+checking for SVG... yes
+checking linux/fb.h usability... yes
+checking linux/fb.h presence... yes
+checking for linux/fb.h... yes
+checking for CACA... no
+configure: WARNING: Library caca >= 0.99.beta14 needed for caca was not found
+checking kva.h usability... no
+checking kva.h presence... no
+checking for kva.h... no
+checking for PULSE... yes
+checking for ALSA... yes
+checking sndio.h usability... no
+checking sndio.h presence... no
+checking for sndio.h... no
+checking audioclient.h usability... no
+checking audioclient.h presence... no
+checking for audioclient.h... no
+checking for JACK... no
+configure: WARNING: No package 'jack' found, trying jack1 instead
+checking for JACK... no
+configure: WARNING: No package 'jack' found
+No package 'jack' found.
+checking for SAMPLERATE... yes
+checking kai.h usability... no
+checking kai.h presence... no
+checking for kai.h... no
+checking for CHROMAPRINT... no
+configure: WARNING: Library libchromaprint >= 0.6.0 needed for chromaprint was not found
+checking for QT... no
+checking for QT... no
+configure: WARNING: No package 'QtCore' found
+No package 'QtGui' found.
+configure: WARNING: The skins2 module depends on the Qt4 interface, Qt4 is not built so skins2 is disabled.
+checking for NCURSES... yes
+checking for GOOM... no
+configure: WARNING: Library libgoom2 needed for goom was not found
+checking for PROJECTM... no
+configure: WARNING: No package 'libprojectM' found.
+checking for VSXU... no
+configure: WARNING: No package 'libvsxu' found.
+checking for BONJOUR... yes
+checking for UDEV... yes
+checking for MTP... yes
+checking for UPNP... no
+configure: WARNING: Library libupnp needed for upnp was not found
+checking for LIBXML2... yes
+checking for GNUTLS... yes
+checking for TAGLIB... yes
+checking for NOTIFY... yes
+checking whether byte ordering is bigendian... no
+./configure: line 50801: kde4-config: command not found
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating doc/Makefile
+config.status: creating modules/Makefile
+config.status: creating m4/Makefile
+config.status: creating po/Makefile.in
+config.status: creating share/Makefile
+config.status: creating compat/Makefile
+config.status: creating src/Makefile
+config.status: creating lib/Makefile
+config.status: creating bin/Makefile
+config.status: creating test/Makefile
+config.status: creating modules/access/Makefile
+config.status: creating modules/access/rtp/Makefile
+config.status: creating modules/access_output/Makefile
+config.status: creating modules/audio_filter/Makefile
+config.status: creating modules/audio_mixer/Makefile
+config.status: creating modules/audio_output/Makefile
+config.status: creating modules/codec/Makefile
+config.status: creating modules/control/Makefile
+config.status: creating modules/demux/Makefile
+config.status: creating modules/gui/Makefile
+config.status: creating modules/gui/macosx/Makefile
+config.status: creating modules/gui/minimal_macosx/Makefile
+config.status: creating modules/gui/macosx_dialog_provider/Makefile
+config.status: creating modules/gui/qt4/Makefile
+config.status: creating modules/gui/skins2/Makefile
+config.status: creating modules/lua/Makefile
+config.status: creating modules/meta_engine/Makefile
+config.status: creating modules/misc/Makefile
+config.status: creating modules/mux/Makefile
+config.status: creating modules/notify/Makefile
+config.status: creating modules/packetizer/Makefile
+config.status: creating modules/services_discovery/Makefile
+config.status: creating modules/stream_filter/Makefile
+config.status: creating modules/stream_out/Makefile
+config.status: creating modules/text_renderer/Makefile
+config.status: creating modules/video_chroma/Makefile
+config.status: creating modules/video_filter/Makefile
+config.status: creating modules/video_output/Makefile
+config.status: creating modules/visualization/Makefile
+config.status: creating modules/mmx/Makefile
+config.status: creating modules/sse2/Makefile
+config.status: creating modules/altivec/Makefile
+config.status: creating modules/arm_neon/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+
+libvlc configuration
+--------------------
+version               : 2.1.4
+system                : linux
+architecture          : armv7l
+optimizations         : yes
+vlc aliases           : cvlc rvlc nvlc
+
+To build vlc and its plugins, type `make', or `./compile' if you like nice colors.
+
+  
