@@ -9,8 +9,8 @@ core-image-sato working,
 07/28/15
 This image now supports OpenCV using 2 C920 cameras.
  
-08/13/15
-Goal: To install MyHDL, GTKWave, XSTOOLs and Iverilog on a core-image-sato.
+08/15/15
+Goal: To install MyHDL, GTKWave, XSTOOLs Iverilog and VLC on a core-image-sato.
 
 Created several recipes and modified core-image-sato.bb.
 The core-image-sato.bb is the recipe that I am using to add other 
@@ -20,6 +20,9 @@ Each of the new recipes are in folders that begin with recipe_xxxxx.
 
 The recipes for gtkwave_3.6.66.bb & XsTools_0.1.29.bb still needs work. Until these are
 working the target will be used to compile and install.
+
+VLC also need to be compiled on the target see the file vlc_target.txt
+VLC currently can be used in the cvlc mode to stream video to other systems.
 
 Note: Compiling on the target takes 17 mins for GTKWAVE and over 20 mins for Iverilog.
 
@@ -103,6 +106,30 @@ poky/meta/recipes-devtools/python/python-myhdl_1.0.0.bb
 poky/meta/recipes-devtools/python/pyusb-1.0.0a3.bb
 
 poky/meta/recipes-sato/images/core-image-sato.bb
+
+Testing GTKWave_MyHDL_Iverilog.doc provides testing of these software
+following the generation of 
+
+files_needed_for_iverilog/cosimulation.tgz
+
+cosimulation/icarus/
+cosimulation/icarus/Makefile
+cosimulation/icarus/myhdl.c.20030518
+cosimulation/icarus/README.txt
+cosimulation/icarus/myhdl.c
+cosimulation/icarus/myhdl_table.c
+cosimulation/icarus/test/
+cosimulation/icarus/test/test_all.py
+cosimulation/icarus/test/dff_clkout.py
+cosimulation/icarus/test/bin2gray.py
+cosimulation/icarus/test/dff.py
+cosimulation/icarus/test/test.py
+cosimulation/icarus/test/tb_test.v
+cosimulation/icarus/test/inc.py
+cosimulation/icarus/myhdl_20030518.c
+
+The above files are used with iverilog files to generate
+ myhdl.vpi.  
 
 
  
