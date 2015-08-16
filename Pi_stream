@@ -1,2 +1,8 @@
 #!/bin/bash
-cvlc -vvvvv 'Smurfs.avi' --sout '#standard{access=http,mux=ogg,dst=192.168.1.136:1234}' 
+#this script can be used to stream a video to serveral system
+# modify xxxxx.avi with a valid file name 
+#modify xxx.xxx.xxx.xxx:zzz with the Pi IP and the desired port
+
+cvlc -vvvvv 'xxxxx.avi' --sout '#standard{access=http,mux=ogg,dst=xxx.xxx.xxx.xxx:zzz}' 
+#the system reciving the stream needs vlc an execute 
+#vlc -vvv http://xxx.xxx.xxx.xxx:zzz

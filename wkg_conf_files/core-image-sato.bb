@@ -19,4 +19,6 @@ IMAGE_INSTALL += "packagegroup-core-x11-sato-games kernel-dev xterm git \
  python-matplotlib wiringpi squashfs-tools libmtp libtool \
  fluidsynth fluidsynth-dev lua lua-dev lua-staticdev python-cheetah fribidi \
  samba live555 libnotify libsdl-image mpeg2dec \
+ qt4-x11-free  tiff gnutls \
+ libopus schroedinger tremor \
  "

@@ -446,13 +446,11 @@ checking for LIBMPEG2... yes
 checking for VORBIS... yes
 checking for SPEEX... yes
 checking for SPEEXDSP... yes
-checking for OPUS... no
-configure: WARNING: Library ogg opus needed for opus was not found
+checking for OPUS... yes
 checking for THEORA... yes
 checking for DIRAC... no
 configure: WARNING: Library dirac >= 0.10.0 needed for dirac was not found
-checking for SCHROEDINGER... no
-configure: WARNING: Library schroedinger-1.0 >= 1.0.10 needed for schroedinger was not found
+checking for SCHROEDINGER... yes
 checking png.h usability... yes
 checking png.h presence... yes
 checking for png.h... yes
@@ -527,10 +525,19 @@ checking for kai.h... no
 checking for CHROMAPRINT... no
 configure: WARNING: Library libchromaprint >= 0.6.0 needed for chromaprint was not found
 checking for QT... no
-checking for QT... no
-configure: WARNING: No package 'QtCore' found
-No package 'QtGui' found.
-configure: WARNING: The skins2 module depends on the Qt4 interface, Qt4 is not built so skins2 is disabled.
+checking for QT... yes
+checking whether Qt uses Xlib... yes
+checking for moc-qt4... no
+checking for moc... /usr/bin/moc
+checking for rcc... /usr/bin/rcc
+checking for uic-qt4... no
+checking for uic... /usr/bin/uic
+checking for XPM... yes
+checking for XINERAMA... yes
+checking for XEXT... yes
+checking libtar.h usability... no
+checking libtar.h presence... no
+checking for libtar.h... no
 checking for NCURSES... yes
 checking for GOOM... no
 configure: WARNING: Library libgoom2 needed for goom was not found
@@ -608,8 +615,7 @@ version               : 2.1.4
 system                : linux
 architecture          : armv7l
 optimizations         : yes
-vlc aliases           : cvlc rvlc nvlc
+vlc aliases           : cvlc rvlc qvlc svlc nvlc
 
 To build vlc and its plugins, type `make', or `./compile' if you like nice colors.
 
-  

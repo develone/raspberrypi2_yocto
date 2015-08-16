@@ -9,8 +9,8 @@ core-image-sato working,
 07/28/15
 This image now supports OpenCV using 2 C920 cameras.
  
-08/15/15
-Goal: To install MyHDL, GTKWave, XSTOOLs Iverilog and VLC on a core-image-sato.
+08/16/15
+Goal: To install MyHDL, GTKWave, XSTOOLs Iverilog Matplotlib and VLC on a core-image-sato.
 
 Created several recipes and modified core-image-sato.bb.
 The core-image-sato.bb is the recipe that I am using to add other 
@@ -22,7 +22,18 @@ The recipes for gtkwave_3.6.66.bb & XsTools_0.1.29.bb still needs work. Until th
 working the target will be used to compile and install.
 
 VLC also need to be compiled on the target see the file vlc_target.txt
-VLC currently can be used in the cvlc mode to stream video to other systems.
+An Image vlc-image can be used to install vlc-2.1.4 in less time.
+
+The script Pi_stream can be modified to stream to severals systems at the same time.
+
+#!/bin/bash
+#this script can be used to stream a video to serveral system
+# modify xxxxx.avi with a valid file name 
+#modify xxx.xxx.xxx.xxx:zzz with the Pi IP and the desired port
+
+cvlc -vvvvv 'xxxxx.avi' --sout '#standard{access=http,mux=ogg,dst=xxx.xxx.xxx.xxx:zzz}' 
+#the system reciving the stream needs vlc an execute 
+#vlc -vvv http://xxx.xxx.xxx.xxx:zzz
 
 Note: Compiling on the target takes 17 mins for GTKWAVE and over 20 mins for Iverilog.
 
@@ -129,7 +140,10 @@ cosimulation/icarus/test/inc.py
 cosimulation/icarus/myhdl_20030518.c
 
 The above files are used with iverilog files to generate
- myhdl.vpi.  
+ myhdl.vpi. 
+
+matplot is installed but no display pops up.
+ 
 
 
  
