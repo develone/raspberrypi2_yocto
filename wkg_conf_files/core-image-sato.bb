@@ -20,5 +20,5 @@ IMAGE_INSTALL += "packagegroup-core-x11-sato-games kernel-dev xterm git \
  fluidsynth fluidsynth-dev lua lua-dev lua-staticdev python-cheetah fribidi \
  samba live555 libnotify libsdl-image mpeg2dec \
  qt4-x11-free  tiff gnutls \
- libopus schroedinger tremor \
+ libopus schroedinger tremor hexedit man iproute2 socat \
  "

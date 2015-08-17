@@ -144,6 +144,14 @@ The above files are used with iverilog files to generate
 
 matplot is installed but no display pops up.
  
+08/17/15 
+Added the doc-pkgs to the local.conf which now install several 
+RPMs increasing the package count 3753 which 200 additional.
+This also increases the image size by 47%.
+1409286144 bytes to 2071986176 bytes.
+
+Also adding hexedit man iproute2 socat
+
 
 
  
