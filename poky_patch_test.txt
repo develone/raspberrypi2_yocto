@@ -1,0 +1,70 @@
+mkdir RaspberryPi2
+cd RaspberryPi2
+rsync -avl ../repo072015/poky .
+git checkout -b fido
+cd poky/
+git checkout -b fido
+rsync -avl ../../repo072015/meta-raspberrypi  .
+git checkout -b fido
+rsync -avl ../../repo072015/meta-openembedded/meta-oe  .
+cd meta-oe
+git checkout -b fido
+cd ../
+rsync -avl ../../repo072015/meta-openembedded/meta-multimedia  .
+cd meta-multimedia/
+git checkout -b fido
+cd ../.
+rsync -avl ../../repo072015/meta-openembedded/meta-python  .
+cd meta-python/
+git checkout -b fido
+cd ../
+rsync -avl ../../repo072015/meta-openembedded/meta-gnome  .
+cd meta-gnome/
+git checkout -b fido
+cd ../
+. oe-init-build-env
+rm -rf conf/local.conf conf/bblayers.conf
+patch -p 1 --dry-run < ~/wkg/raspberrypi2_yocto/poky_diff.txt 
+cd ../
+patch -p1 --dry-run < ~/wkg/raspberrypi2_yocto/poky_diff.txt 
+patch -p1  < ~/wkg/raspberrypi2_yocto/poky_diff.txt 
+git add -f meta/recipes-devtools/python/PyPubSub_3.1.3.bb meta/recipes-devtools/python/argparse_1.2.1.bb meta/recipes-devtools/python/intelhex_1.5.bb meta/recipes-devtools/python/python-bitstring_3.1.3.bb meta/recipes-devtools/python/python-myhdl_1.0.0.bb meta/recipes-devtools/python/pyusb_1.0.0a3.bb
+git add -f build/conf/local.conf build/conf/bblayers.conf
+git commit -a
+git diff 0f8d89ce66 > ~/wkg/raspberrypi2_yocto/poky_diff.txt
+cd build
+date ; bitbake core-image-sato; date
+
+Wed Aug 19 08:42:39 MDT 2015
+Wed Aug 19 12:10:52 MDT 2015
+
+date ; bitbake core-image-sato -c populate_sdk; date
+
+Wed Aug 19 12:31:15 MDT 2015
+
+Wed Aug 19 13:36:31 MDT 2015
+
+ls -la tmp/deploy/sdk/
+total 1364160
+drwxr-xr-x 2 vidal vidal       4096 Aug 19 13:36 .
+drwxr-xr-x 6 vidal vidal       4096 Aug 19 13:32 ..
+-rw-rw-r-- 1 vidal vidal       9237 Aug 19 13:33 poky-glibc-x86_64-core-image-sato-cortexa7hf-vfp-vfpv4-neon-toolchain-1.8+snapshot.host.manifest
+-rwxr-xr-x 1 vidal vidal 1396612798 Aug 19 13:36 poky-glibc-x86_64-core-image-sato-cortexa7hf-vfp-vfpv4-neon-toolchain-1.8+snapshot.sh
+-rw-rw-r-- 1 vidal vidal     259757 Aug 19 13:32 poky-glibc-x86_64-core-image-sato-cortexa7hf-vfp-vfpv4-neon-toolchain-1.8+snapshot.target.manifest
+
+Install gtkwave iverilog-xstools vlc on target 
+
+sudo dd bs=16M if=/dev/sdb | gzip > /home/wkg/vidal/yocto/core-image-sato-gtkwave-iverilog-xstools-vlc.gz
+/yocto/core-image-sato-gtkwave-iverilog-xstools-vlc.gz
+236+1 records in
+236+1 records out
+3963617280 bytes (4.0 GB) copied, 374.659 s, 10.6 MB/s
+
+ls -la wkg/yocto/core-image-sato-gtkwave-iverilog-xstools-vlc.gz -rw-r--r-- 1 root root 2003492863 Aug 19 16:01 wkg/yocto/core-image-sato-gtkwave-iverilog-xstools-vlc.gz
+
+
+gzip -dc /home/vidal/wkg/yocto/core-image-sato-gtkwave-iverilog-xstools-vlc.gz  | dd bs=16M of=/dev/sdb
+
+
+
+

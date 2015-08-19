@@ -18,11 +18,9 @@ software to my build.
 These can be found at https://github.com/develone/raspberrypi2_yocto.git
 Each of the new recipes are in folders that begin with recipe_xxxxx.
 
-The recipes for gtkwave_3.6.66.bb & XsTools_0.1.29.bb still needs work. Until these are
-working the target will be used to compile and install.
+The recipes for gtkwave_3.6.66.bb iverilog XsTools_0.1.29.bb and vlc still needs work. 
+Until these are working the target will be used to compile and install.
 
-VLC also need to be compiled on the target see the file vlc_target.txt
-An Image vlc-image can be used to install vlc-2.1.4 in less time.
 
 The script Pi_stream can be modified to stream to severals systems at the same time.
 
@@ -35,24 +33,6 @@ cvlc -vvvvv 'xxxxx.avi' --sout '#standard{access=http,mux=ogg,dst=xxx.xxx.xxx.xx
 #the system reciving the stream needs vlc an execute 
 #vlc -vvv http://xxx.xxx.xxx.xxx:zzz
 
-Note: Compiling on the target takes 17 mins for GTKWAVE and over 20 mins for Iverilog.
-
-Testing an approach of using a squashfs to install GTKWave, Iverilog, and XSTOOLS.
-A squashfs image "gtkwave_iverilog_compiled_xtools" is 
-"unsquashfs -d gtkwave_iverilog_compiled_xtools add_gtkwave_iverilog_xstools"
-this process takes less than a min.
-
-"cd gtkwave_iverilog_compiled_xtools/" 
-
-"./add_gtkwave_iverilog_xstools.sh"
-In addition this process installs some additional rpms
-wiringpi-dbg-git-r0.cortexa7hf_vfp_vfpv4_neon.rpm
-wiringpi-doc-git-r0.cortexa7hf_vfp_vfpv4_neon.rpm
-gtk-demo-2.24.28-r0.cortexa7hf_vfp_vfpv4_neon.rpm
-for a detailed decrription see the file add_gtkwave_iverilog_xstools.sh
-After the system reboots
-
-"cp -R gtkwave_iverilog_compiled_xtools/xstools_test_files ."
 
 "cd xstools_test_files"
 
@@ -152,6 +132,8 @@ This also increases the image size by 47%.
 
 Also adding hexedit man iproute2 socat
 
+08/19/15
+New image with gtkwave iverilog xstools and vlc installed
 
 
  

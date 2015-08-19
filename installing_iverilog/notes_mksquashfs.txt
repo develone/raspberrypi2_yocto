@@ -37,6 +37,7 @@ Number of gids 2
 	unknown (500)
 
 unsquashfs -d gtkwave_iverilog_compiled_xtools add_gtkwave_iverilog_xstools
+unsquashfs -d vlc-2.1.4 vlc-image
 
 Parallel unsquashfs: Using 4 processors
 3846 inodes (4963 blocks) to write

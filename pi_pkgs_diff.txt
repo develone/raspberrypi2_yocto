@@ -1,0 +1,18 @@
+--- pi_pkgs081915.txt	2015-08-19 13:57:11.126524986 -0600
++++ pi_pkgs081915_a.txt	2015-08-19 13:58:09.646524330 -0600
+@@ -551,6 +551,7 @@
+ gstreamer1.0-plugins-good-y4menc-dev-1.4.5-r0.cortexa7hf_vfp_vfpv4_neon
+ gtk+-dev-2.24.28-r0.cortexa7hf_vfp_vfpv4_neon
+ gtk+-locale-en-gb-2.24.28-r0.cortexa7hf_vfp_vfpv4_neon
++gtk-demo-2.24.28-r0.cortexa7hf_vfp_vfpv4_neon
+ gtk-sato-engine-0.3.3+git0+4740ad8d53-r0.cortexa7hf_vfp_vfpv4_neon
+ gtk-sato-engine-dev-0.3.3+git0+4740ad8d53-r0.cortexa7hf_vfp_vfpv4_neon
+ gtk-theme-sato-0.3.3+git0+4740ad8d53-r0.cortexa7hf_vfp_vfpv4_neon
+@@ -3673,6 +3674,7 @@
+ wayland-dev-1.8.1-r0.cortexa7hf_vfp_vfpv4_neon
+ wireless-tools-30.pre9-r0.cortexa7hf_vfp_vfpv4_neon
+ wireless-tools-doc-30.pre9-r0.cortexa7hf_vfp_vfpv4_neon
++wiringpi-dbg-git-r0.cortexa7hf_vfp_vfpv4_neon
+ wiringpi-dev-git-r0.cortexa7hf_vfp_vfpv4_neon
+ wiringpi-doc-git-r0.cortexa7hf_vfp_vfpv4_neon
+ wiringpi-git-r0.cortexa7hf_vfp_vfpv4_neon
