@@ -9,17 +9,10 @@ LICENSE = "MIT"
 inherit core-image
 
 IMAGE_INSTALL += "packagegroup-core-x11-sato-games kernel-dev xterm git \
- jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
- python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
- chkconfig v4l-utils python-imaging parted python-distribute \
- python-pyrex python-pexpect gperf tree libav libav-dev \
- x264 x264-dev libav libav-dev opencv opencv-samples cmake \
- opencv-apps python-opencv tcl tk rpi-gpio python-myhdl python-bitstring \
- PyPubSub tar intelhex pyusb argparse pv openjpeg libftdi \
- python-matplotlib wiringpi squashfs-tools libmtp libtool \
- fluidsynth fluidsynth-dev lua lua-dev lua-staticdev python-cheetah fribidi \
- samba live555 libnotify libsdl-image mpeg2dec \
- qt4-x11-free  tiff gnutls \
- libopus schroedinger tremor hexedit man iproute2 socat lame \
- rsync yasm  \
+ jasper gsl liba52  libmad hexedit man iproute2 \
+ chkconfig v4l-utils python-imaging socat lame vlc \
+ gperf tree libav x264  libav  opencv opencv-samples cmake \
+ opencv-apps python-opencv tcl tk rpi-gpio \
+ tar pv openjpeg libftdi wiringpi squashfs-tools libmtp libtool \
+ rsync yasm evince gparted firefox geany python-pip \
  "

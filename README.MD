@@ -12,17 +12,28 @@ This image now supports OpenCV using 2 C920 cameras.
 08/16/15
 Goal: To install MyHDL, GTKWave, XSTOOLs Iverilog Matplotlib and VLC on a core-image-sato.
 
-Created several recipes and modified core-image-sato.bb.
+08/17/15 
+Added the doc-pkgs to the local.conf which now install several 
+RPMs increasing the package count 3753 which 200 additional.
+This also increases the image size by 47%.
+1409286144 bytes to 2071986176 bytes.
+
+Added hexedit man iproute2 socat packages
+
+08/19/15
+New image with gtkwave iverilog xstools and vlc installed
+08/23/15
+Modified core-image-sato.bb.
 The core-image-sato.bb is the recipe that I am using to add other 
 software to my build.
 These can be found at https://github.com/develone/raspberrypi2_yocto.git
 Each of the new recipes are in folders that begin with recipe_xxxxx.
 
-The recipes for gtkwave_3.6.66.bb iverilog XsTools_0.1.29.bb and vlc still needs work. 
+The recipes for gtkwave_3.6.66.bb iverilog XsTools_0.1.29.bb are not working
 Until these are working the target will be used to compile and install.
+The installed versions are installed using an squashfs see post_install/README.MD
 
-
-The script Pi_stream can be modified to stream to severals systems at the same time.
+The script Pi_stream can be modified to stream to several systems at the same time.
 
 #!/bin/bash
 #this script can be used to stream a video to serveral system
@@ -72,8 +83,8 @@ Now if a led is connected if flash at higher rate.
  55 -  10 =   45 ==> CORRECT!
 
 
-The recipes intelhex, PyPubSub, python-bitstring, pyusb argparse were the dependencies
-for XSTOOLs.  XSTOOLs installs on the target and is working
+The dependencies for XSTOOLs are installed see post_install/README.MD.  
+XSTOOLs installs on the target and is working
 see the file core-image-sato_xstools.txt  
 XSTOOLs 0.1.29 is updated.  In prior versions these commands below
  would provide what appeared to be errors.
@@ -86,54 +97,16 @@ Success: Bitstream in blinker_h1.bit downloaded to FPGA on XuLA2-LX9!
 xsload --usb 0 --fpga pc_fast_blinker_sub_h1.bit 
 Success: Bitstream in pc_fast_blinker_sub_h1.bit downloaded to FPGA on XuLA2-LX9!
 
-**poky/meta/recipes-devtools/gtkwave/gtkwave_3.6.66.bb
-**poky/meta/recipes-devtools/python/xstools_0.1.29.bb
-
-poky/meta/recipes-devtools/python/argparse_1.2.1.bb
-poky/meta/recipes-devtools/python/intelhex_1.5.bb
-poky/meta/recipes-devtools/python/PyPubSub_3.1.3.bb
-poky/meta/recipes-devtools/python/python-bitstring_3.1.3.bb
-poky/meta/recipes-devtools/python/python-myhdl_1.0.0.bb
-poky/meta/recipes-devtools/python/pyusb-1.0.0a3.bb
-
-poky/meta/recipes-sato/images/core-image-sato.bb
-
-Testing GTKWave_MyHDL_Iverilog.doc provides testing of these software
-following the generation of 
-
-files_needed_for_iverilog/cosimulation.tgz
-
-cosimulation/icarus/
-cosimulation/icarus/Makefile
-cosimulation/icarus/myhdl.c.20030518
-cosimulation/icarus/README.txt
-cosimulation/icarus/myhdl.c
-cosimulation/icarus/myhdl_table.c
-cosimulation/icarus/test/
-cosimulation/icarus/test/test_all.py
-cosimulation/icarus/test/dff_clkout.py
-cosimulation/icarus/test/bin2gray.py
-cosimulation/icarus/test/dff.py
-cosimulation/icarus/test/test.py
-cosimulation/icarus/test/tb_test.v
-cosimulation/icarus/test/inc.py
-cosimulation/icarus/myhdl_20030518.c
-
-The above files are used with iverilog files to generate
- myhdl.vpi. 
-
-matplot is installed but no display pops up.
  
-08/17/15 
-Added the doc-pkgs to the local.conf which now install several 
-RPMs increasing the package count 3753 which 200 additional.
-This also increases the image size by 47%.
-1409286144 bytes to 2071986176 bytes.
 
-Also adding hexedit man iproute2 socat
+ 
 
-08/19/15
-New image with gtkwave iverilog xstools and vlc installed
+ 
+
+ 
+
+
+
 
 
  

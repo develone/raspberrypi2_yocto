@@ -41,24 +41,31 @@ NATIVELSBSTRING   = "Ubuntu-12.04"
 TARGET_SYS        = "arm-poky-linux-gnueabi"
 MACHINE           = "raspberrypi2"
 DISTRO            = "poky"
-DISTRO_VERSION    = "1.8+snapshot-20150819"
+DISTRO_VERSION    = "1.8+snapshot-20150822"
 TUNE_FEATURES     = "arm armv7a vfp thumb neon callconvention-hard vfpv4 cortexa7"
 TARGET_FPU        = "vfp-vfpv4-neon"
 meta              
 meta-yocto        
 meta-yocto-bsp    = "fido:89cf954fe598a32e91f8374b32a2c092e6e2d8c7"
-meta-raspberrypi  = "master:7457bf182c8fd550ec877ecd786a3edd16e65495"
+meta-raspberrypi  = "master:17dad9328b100beda1cf870c9075e509b5cbfa90"
 meta-oe           
 meta-python       
 meta-multimedia   
 meta-gnome        = "fido:89cf954fe598a32e91f8374b32a2c092e6e2d8c7"
+meta-browser      = "master:ca96f4326345dcd779fc539877a04f069f431749"
 
 NOTE: Preparing RunQueue
 NOTE: Executing SetScene Tasks
 NOTE: Executing RunQueue Tasks
- 
-NOTE: Running noexec task 6839 of 6839 (ID: 11, /home/vidal/wkg/yocto/RaspberryPi2/poky/meta/recipes-sato/images/core-image-sato.bb, do_build)
-NOTE: Tasks Summary: Attempted 6839 tasks of which 18 didn't need to be rerun and all succeeded.
+NOTE: Tasks Summary: Attempted 7275 tasks of which 7269 didn't need to be rerun and all succeeded.
+
+wc tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.manifest 
+  3994  11982 264414 tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.manifest
+ls -la tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg 
+lrwxrwxrwx 1 vidal vidal 60 Aug 22 05:10 tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg -> core-image-sato-raspberrypi2-20150822104828.rootfs.rpi-sdimg
+ls -la tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2-20150822104828.rootfs.rpi-sdimg
+-rw-r--r-- 1 vidal vidal 2436890624 Aug 22 05:09 tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2-20150822104828.rootfs.rpi-sdimg
+
 
 
 Summary: There were 22 WARNING messages shown.
@@ -246,13 +253,14 @@ sudo dd if=tmp/deploy/images/raspberrypi2/rpi-basic-image-raspberrypi2.rpi-sdimg
 
 dd if=tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg | pv | sudo dd of=/dev/sdb bs=16
  
-4055040+0 records inMB/s] [ <=>                                                ]
-4055040+0 records out
-2076180480 bytes (2.1 GB) copied, 1184.12 s, 1.8 MB/s
-1.93GB 0:19:44 [1.67MB/s] [<=>                                                 ]
-129761280+0 records in
-129761280+0 records out
-2076180480 bytes (2.1 GB) copied, 1185.32 s, 1.8 MB/s
+4759552+0 records inMB/s] [                         <=>                        ]
+4759552+0 records out
+2436890624 bytes (2.4 GB) copied, 1364.7 s, 1.8 MB/s
+2.27GB 0:22:44 [ 1.7MB/s] [                          <=>                       ]
+152305664+0 records in
+152305664+0 records out
+2436890624 bytes (2.4 GB) copied, 1367.47 s, 1.8 MB/s
+
 
 
 

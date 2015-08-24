@@ -54,14 +54,18 @@ drwxr-xr-x 6 vidal vidal       4096 Aug 19 13:32 ..
 
 Install gtkwave iverilog-xstools vlc on target 
 
+sudo dd bs=16M if=/dev/sdb | gzip > /home/vidal/wkg/yocto/core-image-sato-082315.gz 
 sudo dd bs=16M if=/dev/sdb | gzip > /home/wkg/vidal/yocto/core-image-sato-gtkwave-iverilog-xstools-vlc.gz
 /yocto/core-image-sato-gtkwave-iverilog-xstools-vlc.gz
+l/wkg/yocto/core-image-sato-082315.gz
 236+1 records in
 236+1 records out
-3963617280 bytes (4.0 GB) copied, 374.659 s, 10.6 MB/s
+3963617280 bytes (4.0 GB) copied, 363.824 s, 10.9 MB/s
+
 
 ls -la wkg/yocto/core-image-sato-gtkwave-iverilog-xstools-vlc.gz -rw-r--r-- 1 root root 2003492863 Aug 19 16:01 wkg/yocto/core-image-sato-gtkwave-iverilog-xstools-vlc.gz
 
+gzip -dc /home/vidal/wkg/yocto/core-image-sato-082315.gz  | dd bs=16M of=/dev/sdb
 
 gzip -dc /home/vidal/wkg/yocto/core-image-sato-gtkwave-iverilog-xstools-vlc.gz  | dd bs=16M of=/dev/sdb
 
