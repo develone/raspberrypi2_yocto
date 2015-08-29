@@ -737,6 +737,16 @@ iproute2-doc-3.17.0-r0.cortexa7hf_vfp_vfpv4_neon
 iptables-1.4.21-r0.cortexa7hf_vfp_vfpv4_neon
 iptables-dev-1.4.21-r0.cortexa7hf_vfp_vfpv4_neon
 iptables-doc-1.4.21-r0.cortexa7hf_vfp_vfpv4_neon
+iputils-arping-s20121221-r0.cortexa7hf_vfp_vfpv4_neon
+iputils-clockdiff-s20121221-r0.cortexa7hf_vfp_vfpv4_neon
+iputils-dev-s20121221-r0.cortexa7hf_vfp_vfpv4_neon
+iputils-doc-s20121221-r0.cortexa7hf_vfp_vfpv4_neon
+iputils-ping-s20121221-r0.cortexa7hf_vfp_vfpv4_neon
+iputils-ping6-s20121221-r0.cortexa7hf_vfp_vfpv4_neon
+iputils-s20121221-r0.cortexa7hf_vfp_vfpv4_neon
+iputils-tracepath-s20121221-r0.cortexa7hf_vfp_vfpv4_neon
+iputils-tracepath6-s20121221-r0.cortexa7hf_vfp_vfpv4_neon
+iputils-traceroute6-s20121221-r0.cortexa7hf_vfp_vfpv4_neon
 kbd-2.0.2-r0.cortexa7hf_vfp_vfpv4_neon
 kbd-dev-2.0.2-r0.cortexa7hf_vfp_vfpv4_neon
 kbd-doc-2.0.2-r0.cortexa7hf_vfp_vfpv4_neon
