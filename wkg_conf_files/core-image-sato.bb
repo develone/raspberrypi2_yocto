@@ -14,5 +14,5 @@ IMAGE_INSTALL += "packagegroup-core-x11-sato-games kernel-dev xterm git \
  gperf tree libav x264  libav  opencv opencv-samples cmake \
  opencv-apps python-opencv tcl tk rpi-gpio \
  tar pv openjpeg libftdi wiringpi squashfs-tools libmtp libtool \
- rsync yasm evince gparted firefox geany python-pip \
+ rsync yasm evince gparted firefox geany python-pip iputils \
  "

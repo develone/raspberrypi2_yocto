@@ -97,10 +97,84 @@ Success: Bitstream in blinker_h1.bit downloaded to FPGA on XuLA2-LX9!
 xsload --usb 0 --fpga pc_fast_blinker_sub_h1.bit 
 Success: Bitstream in pc_fast_blinker_sub_h1.bit downloaded to FPGA on XuLA2-LX9!
 
- 
+08/29/15 Adding iputils to image
+Added python3 using source which gtkwave_iverilog_python3_usrlocal082915
+This also includes a version of bison to compile vhd2vl2.tgz
 
- 
+Yocto installs bison-3.0.4
+bison-3.0.4-r0.cortexa7hf_vfp_vfpv4_neon.rpm
+bison-dev-3.0.4-r0.cortexa7hf_vfp_vfpv4_neon.rpm
 
+
+
+
+1.0 HOW TO BUILD vhd2vl:
+
+Just type 'make' in the src directory.
+
+This version of vhd2vl has been tested with bison (GNU Bison) 1.875,
+and flex version 2.5.4.
+
+
+2.0 HOW TO USE vhd2vl:
+
+   vhd2vl VHDL_file.vhd > VHDL_file.v
+bison -V            
+bison (GNU Bison) 2.5.1
+Written by Robert Corbett and Richard Stallman.
+
+Copyright (C) 2012 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Build fails on Raspberry Pi 2 B
+ 
+unsquashfs gtkwave_iverilog_python3_usrlocal082915 
+cd squashfs-root/
+
+mkdir /usr/local
+cp -R * /usr/local/
+
+pip3 list
+myhdl (1.0.dev0)
+numpy (1.9.2)
+pip (7.1.2)
+pyparsing (2.0.3)
+python-dateutil (2.4.2)
+pytz (2015.4)
+setuptools (12.0.5)
+six (1.9.0)
+tornado (4.2.1)
+
+/usr/local/bin/bison -V
+bison (GNU Bison) 2.5.1
+Written by Robert Corbett and Richard Stallman.
+
+Copyright (C) 2012 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Tos disable version and to use the one installed with the image using RPMs
+chmod 666 /usr/local/bin/bison
+
+bison -V
+bison (GNU Bison) 3.0.4
+Written by Robert Corbett and Richard Stallman.
+
+Copyright (C) 2015 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
++iputils-arping-s20121221-r0.cortexa7hf_vfp_vfpv4_neon
++iputils-clockdiff-s20121221-r0.cortexa7hf_vfp_vfpv4_neon
++iputils-dev-s20121221-r0.cortexa7hf_vfp_vfpv4_neon
++iputils-doc-s20121221-r0.cortexa7hf_vfp_vfpv4_neon
++iputils-ping-s20121221-r0.cortexa7hf_vfp_vfpv4_neon
++iputils-ping6-s20121221-r0.cortexa7hf_vfp_vfpv4_neon
++iputils-s20121221-r0.cortexa7hf_vfp_vfpv4_neon
++iputils-tracepath-s20121221-r0.cortexa7hf_vfp_vfpv4_neon
++iputils-tracepath6-s20121221-r0.cortexa7hf_vfp_vfpv4_neon
++iputils-traceroute6-s20121221-r0.cortexa7hf_vfp_vfpv4_neon
  
 
  
