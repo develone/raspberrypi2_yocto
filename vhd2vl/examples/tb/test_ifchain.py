@@ -1,0 +1,60 @@
+"""The example was generater using vhd2vl
+Now a test bench is being generater to test
+using myhdo & iverilog 
+"""
+from __future__ import division
+from __future__ import print_function
+from myhdl import *
+import os
+import argparse
+from argparse import Namespace
+def test_bench(args):
+    """Need to create the signals that are to be test
+    """
+    clk = Signal(bool(0))
+    rstn = Signal(bool(0))
+    a = Signal(intbv(0)[3:])
+    b = Signal(intbv(0)[3:])
+    #status = Signal(intbv(0)[1:])
+    status = Signal(bool(0))
+    print(" %s" % bin(status,1))
+    """Need an instance of the test code"""
+    """Need to define stimlus"""
+    @instance
+    def stimlus():
+		for i in range(10):
+			a.next = 10
+			b.next = 8
+			yield clk.posedge
+		raise Stop.Simulation
+    
+    """Need to create a clkgen that will be returned to simulation
+    """
+    @always(delay(4))
+    def clkgen():
+		clk.next = not clk
+    
+    dut = _prep_cosim(args, clk=clk, rstn=rstn, a=a, b=b, status=status)
+    print("back from prep cosim")
+    print("start (co)simulation ...")
+    Simulation((tbdut, clkgen, stimlus,)).run()
+    #return clkgen, stimlus
+    
+def _prep_cosim(args, **sigs):
+    """ prepare the cosimulation environment
+    """
+    print ("  *%s" %  (sigs))   
+    print("compiling ...")
+    cmd = "iverilog -o ifchain ../ifchain.v"
+    print("  %s" %  (cmd))
+    os.system(cmd)
+    # get the handle to the
+    print("cosimulation setup ...")
+    cmd = "vvp -m ./myhdl.vpi ifchains"
+    print("  %s" %  (cmd))
+    
+    return Cosimulation(cmd, **sigs)
+ 
+if __name__ == '__main__':
+	print("Running test...")
+	test_bench(Namespace())
