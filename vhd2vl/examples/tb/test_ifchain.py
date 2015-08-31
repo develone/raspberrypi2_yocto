@@ -18,7 +18,6 @@ def test_bench(args):
     #status = Signal(intbv(0)[1:])
     status = Signal(bool(0))
     print(" %s" % bin(status,1))
-    """Need an instance of the test code"""
     """Need to define stimlus"""
     @instance
     def stimlus():
@@ -27,33 +26,32 @@ def test_bench(args):
 			b.next = 8
 			yield clk.posedge
 		raise Stop.Simulation
-    
     """Need to create a clkgen that will be returned to simulation
     """
     @always(delay(4))
     def clkgen():
 		clk.next = not clk
-    
+    """Need an instance of the test code"""
     dut = _prep_cosim(args, clk=clk, rstn=rstn, a=a, b=b, status=status)
     print("back from prep cosim")
     print("start (co)simulation ...")
-    Simulation((tbdut, clkgen, stimlus,)).run()
-    #return clkgen, stimlus
+    Simulation((dut, clkgen, stimlus)).run()
     
 def _prep_cosim(args, **sigs):
     """ prepare the cosimulation environment
     """
     print ("  *%s" %  (sigs))   
     print("compiling ...")
-    cmd = "iverilog -o ifchain ../ifchain.v"
+    cmd = "iverilog -o ifchain ../ifchain.v ./tb_ifchain.v"
     print("  %s" %  (cmd))
     os.system(cmd)
     # get the handle to the
     print("cosimulation setup ...")
-    cmd = "vvp -m ./myhdl.vpi ifchains"
+    cmd = "vvp -m ./myhdl.vpi ifchain"
     print("  %s" %  (cmd))
-    
-    return Cosimulation(cmd, **sigs)
+    cosim = Cosimulation(cmd, **sigs)
+    print("  %s" %  (cosim))
+    return cosim
  
 if __name__ == '__main__':
 	print("Running test...")
