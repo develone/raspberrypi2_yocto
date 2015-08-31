@@ -22,17 +22,18 @@ def test_bench(args):
     @instance
     def stimlus():
 		for i in range(10):
-			a.next = 10
-			b.next = 8
+			#a.next = 10
+			#b.next = 8
 			yield clk.posedge
-		raise Stop.Simulation
+		raise StopSimulation
     """Need to create a clkgen that will be returned to simulation
     """
     @always(delay(4))
     def clkgen():
 		clk.next = not clk
     """Need an instance of the test code"""
-    dut = _prep_cosim(args, clk=clk, rstn=rstn, a=a, b=b, status=status)
+    #dut = _prep_cosim(args, clk=clk, rstn=rstn, a=a, b=b, status=status)
+    dut = _prep_cosim(args, clk=clk, a=a, b=b, status=status)
     print("back from prep cosim")
     print("start (co)simulation ...")
     Simulation((dut, clkgen, stimlus)).run()

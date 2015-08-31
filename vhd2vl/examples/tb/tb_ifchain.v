@@ -3,8 +3,8 @@
 
 module tb_ifchain1;
 
-wire   clk;
-wire   rstn;
+reg clk;
+
 wire   status;
 
 reg [3:0] a;
@@ -25,6 +25,6 @@ initial begin
         status
     );
 end
-
+wire rstn;
    
 endmodule
