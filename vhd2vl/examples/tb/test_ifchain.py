@@ -13,17 +13,21 @@ def test_bench(args):
     """
     clk = Signal(bool(0))
     rstn = Signal(bool(0))
-    a = Signal(intbv(0)[3:])
-    b = Signal(intbv(0)[3:])
+    a = Signal(intbv(0)[4:])
+    b = Signal(intbv(0)[4:])
     #status = Signal(intbv(0)[1:])
     status = Signal(bool(0))
     print(" %s" % bin(status,1))
     """Need to define stimlus"""
     @instance
     def stimlus():
+		rstn.next = 1
+		yield clk.posedge
+		rstn.next = 0
+		yield clk.posedge		
 		for i in range(10):
-			#a.next = 10
-			#b.next = 8
+			a.next = 12
+			b.next = 2
 			yield clk.posedge
 		raise StopSimulation
     """Need to create a clkgen that will be returned to simulation
@@ -33,10 +37,10 @@ def test_bench(args):
 		clk.next = not clk
     """Need an instance of the test code"""
     #dut = _prep_cosim(args, clk=clk, rstn=rstn, a=a, b=b, status=status)
-    dut = _prep_cosim(args, clk=clk, a=a, b=b, status=status)
+    tb_dut = _prep_cosim(args, clk=clk, rstn=rstn, a=a, b=b, status=status)
     print("back from prep cosim")
     print("start (co)simulation ...")
-    Simulation((dut, clkgen, stimlus)).run()
+    Simulation((tb_dut, clkgen, stimlus)).run()
     
 def _prep_cosim(args, **sigs):
     """ prepare the cosimulation environment

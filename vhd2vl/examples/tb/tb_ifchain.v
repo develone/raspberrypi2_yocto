@@ -4,8 +4,9 @@
 module tb_ifchain1;
 
 reg clk;
+reg rstn;
 
-wire   status;
+reg   status;
 
 reg [3:0] a;
 reg [3:0] b;
@@ -19,20 +20,16 @@ initial begin
     $from_myhdl(
         a,
         b,
-        clk
+        clk,
+        rstn
     );
     $to_myhdl(
         status
     );
 end
-wire rstn;
+//wire rstn;
 
-initial begin
-	# 10 a = 10;
-	# 20 b = 8;
-	# 200 $stop;
-
-end
+ 
 
 test dut_test(clk, rstn);   
 
