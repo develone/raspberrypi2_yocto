@@ -4,60 +4,73 @@
 :vpi_module "system";
 :vpi_module "v2005_math";
 :vpi_module "va_math";
-S_0x20a1d78 .scope module, "tb_ifchain1" "tb_ifchain1" 2 4;
+S_0x3d3d78 .scope module, "tb_ifchain1" "tb_ifchain1" 2 4;
  .timescale -9 -11;
-v0x20a1e78_0 .var "a", 3 0;
-v0x209e600_0 .var "b", 3 0;
-v0x209e660_0 .var "clk", 0 0;
-v0x209e6c0_0 .net "status", 0 0, C4<z>; 0 drivers
-S_0x20a1df8 .scope module, "test" "test" 3 12;
+v0x3d0ba8_0 .var "a", 3 0;
+v0x3d0c18_0 .var "b", 3 0;
+v0x3d0c78_0 .var "clk", 0 0;
+v0x3d0ce8_0 .net "rstn", 0 0, C4<z>; 0 drivers
+v0x3d0d70_0 .net "status", 0 0, C4<z>; 0 drivers
+S_0x3d3df8 .scope module, "dut_test" "test" 2 37, 3 12, S_0x3d3d78;
  .timescale 0 0;
-v0x209e768_0 .net "a", 3 0, C4<zzzz>; 0 drivers
-v0x209e7d8_0 .net "b", 3 0, C4<zzzz>; 0 drivers
-v0x209e838_0 .net "clk", 0 0, C4<z>; 0 drivers
-v0x209e898_0 .net "rstn", 0 0, C4<z>; 0 drivers
-v0x209e900_0 .var "status", 0 0;
-E_0x209e728 .event posedge, v0x209e838_0;
-    .scope S_0x20a1d78;
+v0x3d3e78_0 .net "a", 3 0, C4<zzzz>; 0 drivers
+v0x3d0a20_0 .net "b", 3 0, C4<zzzz>; 0 drivers
+v0x3d0a80_0 .net "clk", 0 0, v0x3d0c78_0; 1 drivers
+v0x3d0ae0_0 .alias "rstn", 0 0, v0x3d0ce8_0;
+v0x3d0b48_0 .var "status", 0 0;
+E_0x3d4b10 .event posedge, v0x3d0a80_0;
+    .scope S_0x3d3df8;
 T_0 ;
-    %vpi_call 2 14 "$dumpfile", "vcd/ifchain1.vcd";
-    %vpi_call 2 15 "$dumpvars", 1'sb0, S_0x20a1d78;
-    %end;
-    .thread T_0;
-    .scope S_0x20a1d78;
-T_1 ;
-    %vpi_call 2 19 "$from_myhdl", v0x20a1e78_0, v0x209e600_0, v0x209e660_0;
-    %vpi_call 2 24 "$to_myhdl", v0x209e6c0_0;
-    %end;
-    .thread T_1;
-    .scope S_0x20a1df8;
-T_2 ;
-    %wait E_0x209e728;
+    %wait E_0x3d4b10;
     %ix/load 1, 2, 0;
     %mov 4, 0, 1;
-    %jmp/1 T_2.0, 4;
-    %load/x1p 11, v0x209e768_0, 2;
-    %jmp T_2.1;
-T_2.0 ;
+    %jmp/1 T_0.0, 4;
+    %load/x1p 11, v0x3d3e78_0, 2;
+    %jmp T_0.1;
+T_0.0 ;
     %mov 11, 2, 2;
-T_2.1 ;
+T_0.1 ;
     %mov 8, 11, 2; Move signal select into place
     %ix/load 1, 1, 0;
     %mov 4, 0, 1;
-    %jmp/1 T_2.2, 4;
-    %load/x1p 11, v0x209e7d8_0, 1;
-    %jmp T_2.3;
-T_2.2 ;
+    %jmp/1 T_0.2, 4;
+    %load/x1p 11, v0x3d0a20_0, 1;
+    %jmp T_0.3;
+T_0.2 ;
     %mov 11, 2, 1;
-T_2.3 ;
+T_0.3 ;
     %mov 10, 11, 1; Move signal select into place
     %cmpi/u 8, 1, 3;
-    %jmp/0xz  T_2.4, 4;
+    %jmp/0xz  T_0.4, 4;
     %ix/load 0, 1, 0;
-    %assign/v0 v0x209e900_0, 0, 1;
-T_2.4 ;
-    %jmp T_2;
+    %assign/v0 v0x3d0b48_0, 0, 1;
+T_0.4 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0x3d3d78;
+T_1 ;
+    %vpi_call 2 14 "$dumpfile", "vcd/ifchain1.vcd";
+    %vpi_call 2 15 "$dumpvars", 1'sb0, S_0x3d3d78;
+    %end;
+    .thread T_1;
+    .scope S_0x3d3d78;
+T_2 ;
+    %vpi_call 2 19 "$from_myhdl", v0x3d0ba8_0, v0x3d0c18_0, v0x3d0c78_0;
+    %vpi_call 2 24 "$to_myhdl", v0x3d0d70_0;
+    %end;
     .thread T_2;
+    .scope S_0x3d3d78;
+T_3 ;
+    %delay 1000, 0;
+    %movi 8, 10, 4;
+    %set/v v0x3d0ba8_0, 8, 4;
+    %delay 2000, 0;
+    %movi 8, 8, 4;
+    %set/v v0x3d0c18_0, 8, 4;
+    %delay 20000, 0;
+    %vpi_call 2 33 "$stop";
+    %end;
+    .thread T_3;
 # The file index is used to find the file name in the following table.
 :file_names 4;
     "N/A";

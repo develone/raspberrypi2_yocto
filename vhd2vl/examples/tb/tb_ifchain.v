@@ -26,5 +26,14 @@ initial begin
     );
 end
 wire rstn;
-   
+
+initial begin
+	# 10 a = 10;
+	# 20 b = 8;
+	# 200 $stop;
+
+end
+
+test dut_test(clk, rstn);   
+
 endmodule
