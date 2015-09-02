@@ -1,0 +1,228 @@
+ 
+
+git clone https://github.com/cliffordwolf/yosys.git  this works okay on PC
+commit 6f9a6fd783dcca871ab89890aa9cde7add648f1e
+Author: Clifford Wolf <clifford@clifford.at>
+Date:   Tue Sep 1 13:10:36 2015 +0200
+
+    Fixed port ordering in "splitnets" cmd
+
+rsync -avl yocto/xstools_iverilog_gtkwave_myhdl/yosys . this fails on PC
+Date:   Sat Aug 22 14:46:42 2015 +0200
+
+    Fixed handling of memory read without address
+
+commit c475deec6c69d509ac828cca437e2b9502f7b0c3
+frontends/blif/blifparse.cc: In function ‘void Yosys::parse_blif(Yosys::RTLIL::Design*, std::istream&, std::string)’:
+frontends/blif/blifparse.cc:136:11: error: ‘std::string’ has no member named ‘pop_back’
+make: *** [frontends/blif/blifparse.o] Error 1
+cd yosys/
+less README
+Needed extra packages
+sudo apt-get install tcl-dev
+sudo apt-get install python3
+sudo apt-get install libffi-dev
+sudo apt-get install libreadline-dev
+make config-gcc
+make 
+
+ls
+abc           frontends  Makefile.conf  README    yosys
+backends      kernel     manual         share     yosys-abc
+CHANGELOG     libs       misc           techlibs  yosys-config
+CodingReadme  Makefile   passes         tests     yosys-filterlib
+
+
+
+http://hg-git.github.io/  Need to convert hg bitbucket to github
+sudo easy_install hg-git
+ls -la /usr/local/lib/python2.7/dist-packages/hg_git*
+total 16
+drwxr-sr-x 4 root staff 4096 Sep  1 16:35 .
+drwxrwsr-x 9 root staff 4096 Sep  1 16:35 ..
+drwxr-sr-x 2 root staff 4096 Sep  1 16:35 EGG-INFO
+drwxr-sr-x 3 root staff 4096 Sep  1 16:35 hggit
+
+
+mkdir ubuntu_hg090115
+mv abc ubuntu_hg090115/
+ln -sf ubuntu_hg090115/abc/ abc
+ls -la abc
+lrwxrwxrwx 1 root root 20 Aug 31 07:31 abc -> ubuntu_hg090115/abc/
+ hg log | grep c3698e053a7a
+changeset:   2869:c3698e053a7a
+yosys Makefile 
+# Note: If you do ABC development, make sure that 'abc' in this directory
+# is just a symlink to your actual ABC working directory, as 'make mrproper'
+# will remove the 'abc' directory and you do not want to accidentally
+# delete your work on ABC..
+ABCREV = c3698e053a7a
+ABCPULL = 1
+ABCMKARGS = CC="$(CXX)" CXX="$(CXX)"
+ubuntu was used to get abc
+ABC: System for Sequential Logic Synthesis and Formal Verification 
+~/wkg/yosys$ cd bitbucket090115/abc
+hg log | grep c3698e053a7a
+changeset:   2869:c3698e053a7a
+mksquashfs yosys_git090115/ yosys_git090115_no_abc
+/home/root/yosys_git090115/yosys/abc
+make
+`` Compiling: /src/aig/hop/hopObj.c
+`` Compiling: /src/aig/hop/hopOper.c
+`` Compiling: /src/aig/hop/hopTable.c
+`` Compiling: /src/aig/hop/hopTruth.c
+`` Compiling: /src/aig/hop/hopUtil.c
+`` Building binary: abc
+-rwxr-xr-x  1 root root 49725872 Aug 31 10:37 abc
+cd ../
+make 
+[Makefile.conf] CONFIG := gcc
+[  0%] Building abc/abc-c3698e053a7a
+/bin/sh: hg: command not found
+
+mksquashfs yosys_git090115 yosys_git090115_with_abc_compiled 
+ 
+failed after downloadd https://www.samba.org/~jelmer/dulwich/dulwich-0.10.1.tar.gz
+On Pi fails at the point where hg is called 
+Pulling ABC from bitbucket.org:
++ test -d abc
++ hg clone https://bitbucket.org/alanmi/abc abc
+/bin/sh: line 3: hg: command not found
++ cd abc
+/bin/sh: line 4: cd: abc: No such file or directory
+Makefile:328: recipe for target 'abc/abc-c3698e053a7a' failed
+make: *** [abc/abc-c3698e053a7a] Error 1
+
+************************************************
+
+Testing on Ubuntu 12.04 ws009
+
+Need to use git instead of hg on Raspberry Pi 2 B
+Need to install a python program named gitifyhg
+
+https://github.com/buchuki/gitifyhg
+
+cd wkg
+mkdir test_gitifyhg
+cd test_gitifyhg/
+git clone https://github.com/buchuki/gitifyhg.git
+
+cd gitifyhg/
+ 
+sudo python setup.py install
+ 
+mkdir test_gitifyhg
+
+cd test_gitifyhg/
+
+git clone gitifyhg::https://bitbucket.org/alanmi/abc abc
+
+mkdir new_branch_test
+cd new_branch_test/
+rsync -avl ../abc .
+cd abc
+git checkout b1a6ac84f127668a05bcd5131a5a0a0f1c51ba35
+
+hg		git					   git-remote-hg
+c3698e053a7a 	b1a6ac84f127668a05bcd5131a5a0a0f1c51ba35   f8f9694ec12327906b1da2706a67d0c8aa43068e
+Author: alanmi <unknown>
+Date:   Mon Jul 6 07:57:18 2015 -0700
+
+    Add fix to Liberty parser to skip extra semicolon.
+
+
+changeset:   2869:c3698e053a7a
+user:        alanmi
+date:        Mon Jul 06 07:57:18 2015 -0700
+summary:     Add fix to Liberty parser to skip extra semicolon.
+
+
+commit b1a6ac84f127668a05bcd5131a5a0a0f1c51ba35
+Author: alanmi <>
+Date:   Mon Jul 6 07:57:18 2015 -0700
+
+    Add fix to Liberty parser to skip extra semicolon.
+
+XXXXXXXXXXyosys raspbianXXXXXXXXXXXXXXXXXX
+RaspBian yosys 09/02/15
+cd wkg/
+
+Need to add adiitional packages to install yosys.
+In addition installed squashfs-tools
+***********************************
+sudo apt-get install python3
+sudo apt-get install mercurial
+sudo apt-get install gawk
+sudo apt-get install libreadline-dev
+sudo apt-get install libffi-dev
+sudo apt-get install tcl-dev
+sudo apt-get install tcl
+sudo apt-get install squashfs-tools
+***********************************
+
+git clone https://github.com/cliffordwolf/yosys.git
+cd yosys/
+make config-gcc
+make
+Note: this is the point that the yocto build crash since hg is having 
+
+[100%] Building abc/abc-c3698e053a7a
+Pulling ABC from bitbucket.org:
++ test -d abc
++ hg clone https://bitbucket.org/alanmi/abc abc
+requesting all changes
+adding changesets
+adding manifests
+adding file changes
+added 2948 changesets with 13693 changes to 2035 files (+5 heads)
+updating to branch default
+1533 files updated, 0 files merged, 0 files removed, 0 files unresolved
++ cd abc
+[100%] Building share/ice40/brams_init3.vh
+
+  Build successful.
+sudo make install
+[Makefile.conf] CONFIG := gcc
+mkdir -p /usr/local/bin
+install yosys yosys-config yosys-abc yosys-filterlib /usr/local/bin/
+mkdir -p /usr/local/share/yosys
+cp -r share/. /usr/local/share/yosys/.
+
+ls
+abc           frontends  Makefile.conf  README    yosys
+backends      kernel     manual         share     yosys-abc
+CHANGELOG     libs       misc           techlibs  yosys-config
+CodingReadme  Makefile   passes         tests     yosys-filterlib
+ 
+XXXXXXXXXXyosys raspbianXXXXXXXXXXXXXXXXXX
+This is yocto issue which can be disable in 
+There is discussion of the in July 2015 Yocto 
+https://lists.yoctoproject.org/pipermail/yocto/2015-July/025750.html
+>         [1] https://www.python.org/dev/peps/pep-0476/
+>
+>         Kind regards,
+>               alimon
+>
+>
+>     I'm using the stock python 2.7.9 from Poky/Yocto master:901be2cb69892595443ed41ab4be285932db15eb
+>
+>     Is there an answer for this that's a bit less intrusive?
+>     Perhaps there could be a DISTRO or even IMAGE feature to
+>     enable/disable this checking?
+>
+>     The pep you referenced mostly talks about why this was changed
+>     and how to disable it - manually within the python code itself.
+>     What I don't see is where/how/what to change/import to actually
+>     let the full certificate checking happen.
+>
+>
+> I think the better bet is to fix it so it actually finds the certs from ca-certificates rather than bypassing certificate checking, personally, but I can see how that would be a
+> useful workaround. :)
+
+I tried this same code on my Ubuntu 15.04 desktop and it looks
+like they've disabled it in the main python http[s] code - there
+were no certificates examined during the transaction as far as
+I could tell (strace is my friend)
+
+I'll see if I can figure out how to stitch this together with our
+[Poky/Yocto/OE-core] setup for OpenSSL and ca-certificates.

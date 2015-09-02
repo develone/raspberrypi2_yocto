@@ -1,0 +1,184 @@
+Transferred the files
+yosys_bin.tgz
+yosys_share.tgz
+which were compiled on Raspbian Raspberry Pi 2 B
+Extracted the tar files
+
+cd /usr/local/bin/
+tar xvfz ~/yosys_bin.tgz
+cd ../
+tar xvfz ~/yosys_share.tgz
+
+Usage: yosys [options] [<infile> [..]]
+
+    -Q
+        suppress printing of banner (copyright, disclaimer, version)
+
+    -T
+        suppress printing of footer (log hash, version, timing statistics)
+
+    -q
+        quiet operation. only write warnings and error messages to console
+        use this option twice to also quiet warning messages
+
+    -v <level>
+        print log headers up to level <level> to the console. (this
+        implies -q for everything except the 'End of script.' message.)
+
+    -t
+        annotate all log messages with a time stamp
+
+    -d
+        print more detailed timing stats at exit
+
+    -l logfile
+        write log messages to the specified file
+
+    -L logfile
+        like -l but open log file in line buffered mode
+
+    -o outfile
+        write the design to the specified file on exit
+
+    -b backend
+        use this backend for the output file specified on the command line
+
+    -f backend
+        use the specified front for the input files on the command line
+
+    -H
+        print the command list
+
+    -h command
+        print the help message for the specified command
+
+    -s scriptfile
+        execute the commands in the script file
+
+    -c tcl_scriptfile
+        execute the commands in the tcl script file (see 'help tcl' for details)
+
+    -p command
+        execute the commands
+
+    -m module_file
+        load the specified module (aka plugin)
+
+    -X
+        enable tracing of core data structure changes. for debugging
+
+    -M
+        will slightly randomize allocated pointer addresses. for debugging
+
+    -A
+        will call abort() at the end of the script. for debugging
+
+    -V
+        print version information and exit
+
+The option -S is an shortcut for calling the "synth" command, a default
+script for transforming the Verilog input to a gate-level netlist. For example:
+
+    yosys -o output.blif -S input.v
+
+For more complex synthesis jobs it is recommended to use the read_* and write_*
+commands in a script file instead of specifying input and output files on the
+command line.
+
+When no commands, script files or input files are specified on the command
+line, yosys automatically enters the interactive command mode. Use the 'help'
+command to get information on the individual commands.
+
+UC Berkeley, ABC 1.01 (compiled Sep  2 2015 20:31:10)
+yosys-abc -h                     
+UC Berkeley, ABC 1.01 (compiled Sep  2 2015 20:31:10)
+
+usage: yosys-abc [-c cmd] [-f script] [-h] [-o file] [-s] [-t type] [-T type] [-x] [-b] [file]
+    -c cmd	execute commands `cmd'
+    -q cmd	execute commands `cmd' quietly
+    -C cmd	execute commands `cmd', then continue in interactive mode
+    -F script	execute commands from a script file and echo commands
+    -f script	execute commands from a script file
+    -h		print the command usage
+    -o file	specify output filename to store the result
+    -s		do not read any initialization file
+    -t type	specify input type (blif_mv (default), blif_mvs, blif, or none)
+    -T type	specify output type (blif_mv (default), blif_mvs, blif, or none)
+    -x		equivalent to '-t none -T none'
+    -b		running in bridge mode
+
+ yosys-config -h
+
+Usage: /usr/local/bin/yosys-config [--exec] [--prefix pf] args..
+       /usr/local/bin/yosys-config --build modname.so cppsources..
+
+Replecement args:
+    --cxx         gcc
+    --cxxflags    -Wall -Wextra -ggdb -I"/usr/local/share/yosys/include" \
+                      -MD -D_YOSYS_ -fPIC -I/usr/local/include -std=gnu++0x \
+                      -Os -DYOSYS_ENABLE_READLINE -DYOSYS_ENABLE_PLUGINS \
+                      -I/usr/include/tcl8.6 -DYOSYS_ENABLE_TCL -DYOSYS_ENABLE_ABC \
+                      -DYOSYS_ENABLE_COVER
+    --ldflags     -L/usr/local/lib -rdynamic
+    --ldlibs      -lstdc++ -lm -lrt -lreadline -lffi   -ldl -ltcl8.6
+    --bindir      /usr/local/bin
+    --datdir      /usr/local/share/yosys
+
+All other args are passed through as they are.
+
+Use --exec to call a command instead of generating output. Example usage:
+
+  yosys-config --exec --cxx --cxxflags --ldflags -o plugin.so -shared plugin.cc --ldlibs
+
+The above command can be abbreviated as:
+
+  yosys-config --build plugin.so plugin.cc
+
+Use --prefix to change the prefix for the special args from '--' to
+something else. Example:
+
+  yosys-config --prefix @ bindir: @bindir
+
+The args --bindir and --datdir can be directly followed by a slash and
+additional text. Example:
+
+  yosys-config --datdir/simlib.v
+
+ yosys-config -h
+
+Usage: /usr/local/bin/yosys-config [--exec] [--prefix pf] args..
+       /usr/local/bin/yosys-config --build modname.so cppsources..
+
+Replecement args:
+    --cxx         gcc
+    --cxxflags    -Wall -Wextra -ggdb -I"/usr/local/share/yosys/include" \
+                      -MD -D_YOSYS_ -fPIC -I/usr/local/include -std=gnu++0x \
+                      -Os -DYOSYS_ENABLE_READLINE -DYOSYS_ENABLE_PLUGINS \
+                      -I/usr/include/tcl8.6 -DYOSYS_ENABLE_TCL -DYOSYS_ENABLE_ABC \
+                      -DYOSYS_ENABLE_COVER
+    --ldflags     -L/usr/local/lib -rdynamic
+    --ldlibs      -lstdc++ -lm -lrt -lreadline -lffi   -ldl -ltcl8.6
+    --bindir      /usr/local/bin
+    --datdir      /usr/local/share/yosys
+
+All other args are passed through as they are.
+
+Use --exec to call a command instead of generating output. Example usage:
+
+  yosys-config --exec --cxx --cxxflags --ldflags -o plugin.so -shared plugin.cc --ldlibs
+
+The above command can be abbreviated as:
+
+  yosys-config --build plugin.so plugin.cc
+
+Use --prefix to change the prefix for the special args from '--' to
+something else. Example:
+
+  yosys-config --prefix @ bindir: @bindir
+
+The args --bindir and --datdir can be directly followed by a slash and
+additional text. Example:
+
+  yosys-config --datdir/simlib.v
+
+
