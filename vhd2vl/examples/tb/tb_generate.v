@@ -1,36 +1,41 @@
 
 `timescale 1ns/10ps
+ 
+module tb_generate1;
 
-module tb_ifchain1;
-
-reg clk;
-reg rstn;
+reg sysclk;
+reg reset;
 
 reg   status;
-
-reg [3:0] a;
-reg [3:0] b;
+parameter bus_width=15;
+reg [bus_width:0] din;
+reg [bus_width:0] rdout;
 
 initial begin
-    $dumpfile("vcd/ifchain1.vcd");
-    $dumpvars(0, tb_ifchain1);
+    $dumpfile("vcd/generate1.vcd");
+    $dumpvars(0, tb_generate1);
 end
 
 initial begin
     $from_myhdl(
-        a,
-        b,
-        clk,
-        rstn
+	sysclk,
+	reset,
+	wrb,
+	din
+	
     );
     $to_myhdl(
-        status
+        rdout
     );
 end
 //wire rstn;
 
  
 
-test dut_test(clk, rstn);   
+gen dut_gen(sysclk,
+reset,
+wrb,
+din,
+rdout);   
 
 endmodule
