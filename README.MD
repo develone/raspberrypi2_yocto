@@ -177,7 +177,8 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 +iputils-traceroute6-s20121221-r0.cortexa7hf_vfp_vfpv4_neon
  
 
- 
+9/2/15 Added yosys to yocto build. 
+Testing vhd2vl with MyHDL cosimulation 
 
 
 
