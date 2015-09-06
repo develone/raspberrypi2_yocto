@@ -180,7 +180,11 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 9/2/15 Added yosys to yocto build. 
 Testing vhd2vl with MyHDL cosimulation 
 
-
+9/6/15 Added libbcm and testing spi
+//If you tie MISO to MOSI, you should read back what was sent
+CHAN24 (net bcm9_miso   loc = f1;) & 
+CHAN25 (net bcm10_mosi  loc = f2;)PM3 on StickIt-MB
+When you run bcm2835-1.45/examples/spi/spi
 
 
 
