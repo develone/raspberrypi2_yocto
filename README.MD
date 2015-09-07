@@ -185,6 +185,35 @@ Testing vhd2vl with MyHDL cosimulation
 CHAN24 (net bcm9_miso   loc = f1;) & 
 CHAN25 (net bcm10_mosi  loc = f2;)PM3 on StickIt-MB
 When you run bcm2835-1.45/examples/spi/spi
+09/07/15 
+image now includes devicetree
+devicetree-Image-bcm2708-rpi-b-plus.dtb
+devicetree-Image-bcm2708-rpi-b.dtb
+devicetree-Image-bcm2709-rpi-2-b.dtb
+devicetree-Image-ds1307-rtc-overlay.dtb
+devicetree-Image-hifiberry-amp-overlay.dtb
+devicetree-Image-hifiberry-dac-overlay.dtb
+devicetree-Image-hifiberry-dacplus-overlay.dtb
+devicetree-Image-hifiberry-digi-overlay.dtb
+devicetree-Image-iqaudio-dac-overlay.dtb
+devicetree-Image-iqaudio-dacplus-overlay.dtb
+devicetree-Image-lirc-rpi-overlay.dtb
+devicetree-Image-pcf8523-rtc-overlay.dtb
+devicetree-Image-pps-gpio-overlay.dtb
+devicetree-Image-w1-gpio-overlay.dtb
+devicetree-Image-w1-gpio-pullup-overlay.dtb
+ds1307-rtc-overlay.dtb
+hifiberry-amp-overlay.dtb
+hifiberry-dac-overlay.dtb
+hifiberry-dacplus-overlay.dtb
+hifiberry-digi-overlay.dtb
+iqaudio-dac-overlay.dtb
+iqaudio-dacplus-overlay.dtb
+lirc-rpi-overlay.dtb
+pcf8523-rtc-overlay.dtb
+pps-gpio-overlay.dtb
+w1-gpio-overlay.dtb
+w1-gpio-pullup-overlay.dtb
 
 
 

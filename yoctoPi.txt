@@ -41,7 +41,7 @@ NATIVELSBSTRING   = "Ubuntu-12.04"
 TARGET_SYS        = "arm-poky-linux-gnueabi"
 MACHINE           = "raspberrypi2"
 DISTRO            = "poky"
-DISTRO_VERSION    = "1.8+snapshot-20150829"
+DISTRO_VERSION    = "1.8+snapshot-20150907"
 TUNE_FEATURES     = "arm armv7a vfp thumb neon callconvention-hard vfpv4 cortexa7"
 TARGET_FPU        = "vfp-vfpv4-neon"
 meta              
@@ -57,7 +57,7 @@ meta-browser      = "master:ca96f4326345dcd779fc539877a04f069f431749"
 NOTE: Preparing RunQueue
 NOTE: Executing SetScene Tasks
 NOTE: Executing RunQueue Tasks
-NOTE: Tasks Summary: Attempted 7288 tasks of which 7282 didn't need to be rerun and all succeeded..
+NOTE: Tasks Summary: Attempted 7288 tasks of which 7282 didn't need to be rerun and all succeeded.
 
 wc tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.manifest 
   3994  11982 264414 tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.manifest
@@ -257,22 +257,33 @@ kernel-dev xterm git \
  opencv-apps python-opencv tcl tk rpi-gpio \
  tar pv openjpeg libftdi wiringpi squashfs-tools libmtp libtool \
  rsync yasm evince gparted firefox geany python-pip iputils
+core-image-sato with dev-pkgs tools-sdk 7288 tasks
+kernel-dev xterm git \
+ jasper gsl liba52  libmad hexedit man iproute2 \
+ chkconfig v4l-utils python-imaging socat lame vlc \
+ gperf tree libav x264  libav  opencv opencv-samples cmake \
+ opencv-apps python-opencv tcl tk rpi-gpio \
+ tar pv openjpeg libftdi wiringpi squashfs-tools libmtp libtool \
+ rsync yasm evince gparted firefox geany python-pip iputils kernel-devicetree
 sudo dd if=tmp/deploy/images/raspberrypi2/rpi-basic-image-raspberrypi2.rpi-sdimg | pv | sudo dd of=/dev/sdX bs=16M
 
 dd if=tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg | pv | sudo dd of=/dev/sdb bs=16
  
-4759552+0 records inMB/s] [                                      <=>           ]
+4759552+0 records inMB/s] [                        <=>                         ]
 4759552+0 records out
-2436890624 bytes (2.4 GB) copied, 1585.54 s, 1.5 MB/s
-2.27GB 0:26:25 [1.47MB/s] [                                     <=>            ]
+2436890624 bytes (2.4 GB) copied, 1369.14 s, 1.8 MB/s
+2.27GB 0:22:49 [ 1.7MB/s] [                         <=>                        ]
 152305664+0 records in
 152305664+0 records out
-2436890624 bytes (2.4 GB) copied, 1587 s, 1.5 MB/s
+2436890624 bytes (2.4 GB) copied, 1375.41 s, 1.8 MB/s
 
-2280 was resized to 15752 for testing
+resied 2280 to 3280 for testing
+copied wkg/yocto/xstools_iverilog_gtkwave_myhdl to /home/root
+copied wkg/yocto/gtkwave_iverilog_python3_yosys_bcm2735_usrlocal090615
+dd bs=16M if=/dev/sdb | gzip > /home/vidal/wkg/yocto/core-image-sato090715.gz
+d155b3bc9ce0ec73d350fe1f75464b0eeeda271252ab2937c6816fb6cd3463e1  /home/vidal/wkg/yocto/core-image-sato090715.gz
 
-
-
+gzip -dc /home/vidal/wkg/yocto/core-image-sato090715.gz | dd bs=16M of=/dev/sdb
 
 Read more: http://www.cnx-software.com/2015/02/27/yocto-project-raspberry-pi-2-board-minimal-image/#ixzz3gTs5MrwG
 
