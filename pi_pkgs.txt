@@ -757,7 +757,6 @@ kbd-doc-2.0.2-r0.cortexa7hf_vfp_vfpv4_neon
 kbproto-dev-1.0.7-r0.cortexa7hf_vfp_vfpv4_neon
 kernel-3.18.11-3.18.11+gitd64fa8121fca9883d6fb14ca06d2abf66496195e-r0.raspberrypi2
 kernel-dev-3.18.11+gitd64fa8121fca9883d6fb14ca06d2abf66496195e-r0.raspberrypi2
-kernel-devicetree-3.18.11+gitd64fa8121fca9883d6fb14ca06d2abf66496195e-r0.raspberrypi2
 kernel-image-3.18.11-3.18.11+gitd64fa8121fca9883d6fb14ca06d2abf66496195e-r0.raspberrypi2
 kernel-module-6lowpan-3.18.11+gitd64fa8121fca9883d6fb14ca06d2abf66496195e-r0.raspberrypi2
 kernel-module-6pack-3.18.11+gitd64fa8121fca9883d6fb14ca06d2abf66496195e-r0.raspberrypi2
