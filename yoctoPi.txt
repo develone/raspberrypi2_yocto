@@ -34,6 +34,16 @@ meta-python
 meta-multimedia   
 meta-gnome        = "fido:0f8d89ce66cfffccc9911d6c61470a585173b79d"
 
+bitbake core-image-sato
+
+kernel-dev xterm git \
+ jasper gsl liba52  libmad hexedit man iproute2 \
+ chkconfig v4l-utils python-imaging socat lame vlc \
+ gperf tree libav x264  libav  opencv opencv-samples cmake \
+ opencv-apps python-opencv tcl tk rpi-gpio \
+ tar pv openjpeg libftdi wiringpi squashfs-tools libmtp libtool \
+ rsync yasm evince gparted firefox geany python-pip iputils kernel-devicetree \
+ intelhex python-bitstring pyusb PyPubSub  \
 Build Configuration:
 BB_VERSION        = "1.27.1"
 BUILD_SYS         = "x86_64-linux"
@@ -41,7 +51,7 @@ NATIVELSBSTRING   = "Ubuntu-12.04"
 TARGET_SYS        = "arm-poky-linux-gnueabi"
 MACHINE           = "raspberrypi2"
 DISTRO            = "poky"
-DISTRO_VERSION    = "1.8+snapshot-20150907"
+DISTRO_VERSION    = "1.8+snapshot-20150908"
 TUNE_FEATURES     = "arm armv7a vfp thumb neon callconvention-hard vfpv4 cortexa7"
 TARGET_FPU        = "vfp-vfpv4-neon"
 meta              
@@ -57,7 +67,29 @@ meta-browser      = "master:ca96f4326345dcd779fc539877a04f069f431749"
 NOTE: Preparing RunQueue
 NOTE: Executing SetScene Tasks
 NOTE: Executing RunQueue Tasks
-NOTE: Tasks Summary: Attempted 7288 tasks of which 7282 didn't need to be rerun and all succeeded.
+NOTE: Tasks Summary: Attempted 7340 tasks of which 7334 didn't need to be rerun and all succeeded.
+
+lrwxrwxrwx 1 vidal vidal 60 Sep  8 10:42 tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg -> core-image-sato-raspberrypi2-20150908162329.rootfs.rpi-sdimg
+
+dd if=tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg | pv | sudo dd of=/dev/sdb bs=16
+4767744+0 records inkB/s] [             <=>                                    ]
+4767744+0 records out
+2441084928 bytes (2.4 GB) copied, 1427.29 s, 1.7 MB/s
+2.27GB 0:23:47 [1.63MB/s] [              <=>                                   ]
+152567808+0 records in
+152567808+0 records out
+2441084928 bytes (2.4 GB) copied, 1427.87 s, 1.7 MB/s
+
+Use gparted /dev/sdX to resize the 2nd partition.
+resied 2284 to 3284 for testing
+
+copied /home/vidal/wkg/yocto/xstools_iverilog_gtkwave_myhdl /home/root of SD card
+copied wkg/yocto/gtkwave_iverilog_python3_yosys_bcm2735_usrlocal090615 /home/root of SD card
+
+dd bs=16M if=/dev/sdb | gzip > /home/vidal/wkg/yocto/core-image-sato090715.gz
+d155b3bc9ce0ec73d350fe1f75464b0eeeda271252ab2937c6816fb6cd3463e1  /home/vidal/wkg/yocto/core-image-sato090715.gz
+
+gzip -dc /home/vidal/wkg/yocto/core-image-sato090715.gz | dd bs=16M of=/dev/sdb
 
 wc tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.manifest 
   3994  11982 264414 tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.manifest
@@ -66,239 +98,16 @@ lrwxrwxrwx 1 vidal vidal 60 Aug 22 05:10 tmp/deploy/images/raspberrypi2/core-ima
 ls -la tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2-20150822104828.rootfs.rpi-sdimg
 -rw-r--r-- 1 vidal vidal 2436890624 Aug 22 05:09 tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2-20150822104828.rootfs.rpi-sdimg
 
-
-
-Summary: There were 22 WARNING messages shown.
-Summary: There were 2 ERROR messages shown, returning a non-zero exit code.
-
 core-image-sato 3hrs 45 min build time on ws009 amd 6 core with 16GB of Memory now uses
 6 instead of 12 in local.conf.
 
 rpi-basic-image 1965 tasks 
-core-image-sato with dev-pkgs tools-sdk 5667 tasks
-core-image-sato with dev-pkgs tools-sdk 5924 tasks
- kernel-dev xterm git \
- jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
- python-numpy
-core-image-sato with dev-pkgs tools-sdk 6015 tasks
-kernel-dev xterm git \
- jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
- python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
- chkconfig v4l-utils
-core-image-sato with dev-pkgs tools-sdk 6054 tasks
-kernel-dev xterm git \
- jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
- python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
- chkconfig v4l-utils python-imaging
-core-image-sato with dev-pkgs tools-sdk 6070 tasks
-kernel-dev xterm git \
- jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
- python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
- chkconfig v4l-utils python-imaging parted
-core-image-sato with dev-pkgs tools-sdk 6109 tasks
-kernel-dev xterm git \
- jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
- python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
- chkconfig v4l-utils python-imaging parted python-distribute \
- python-pyrex python-pexpect"
-core-image-sato with dev-pkgs tools-sdk 6135 tasks
-kernel-dev xterm git \
- jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
- python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
- chkconfig v4l-utils python-imaging parted python-distribute \
- python-pyrex python-pexpect gperf tree
-core-image-sato with dev-pkgs tools-sdk 6233 tasks
-kernel-dev xterm git \
- jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
- python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
- chkconfig v4l-utils python-imaging parted python-distribute \
- python-pyrex python-pexpect gperf tree libav libav-dev \
- x264 x264-dev libav libav-dev opencv opencv-samples
-core-image-sato with dev-pkgs tools-sdk 6325 tasks
-kernel-dev xterm git \
- jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
- python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
- chkconfig v4l-utils python-imaging parted python-distribute \
- python-pyrex python-pexpect gperf tree libav libav-dev \
- x264 x264-dev libav libav-dev opencv opencv-samples cmake \
- opencv-apps python-opencv tcl tk python-myhdl python-bitstring \
- PyPubSub tar "
-core-image-sato with dev-pkgs tools-sdk 6351 tasks
-kernel-dev xterm git \
- jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
- python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
- chkconfig v4l-utils python-imaging parted python-distribute \
- python-pyrex python-pexpect gperf tree libav libav-dev \
- x264 x264-dev libav libav-dev opencv opencv-samples cmake \
- opencv-apps python-opencv tcl tk python-myhdl python-bitstring \
- PyPubSub tar intelhex pyusb
-core-image-sato with dev-pkgs tools-sdk 6364 tasks
-kernel-dev xterm git \
- jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
- python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
- chkconfig v4l-utils python-imaging parted python-distribute \
- python-pyrex python-pexpect gperf tree libav libav-dev \
- x264 x264-dev libav libav-dev opencv opencv-samples cmake \
- opencv-apps python-opencv tcl tk python-myhdl python-bitstring \
- PyPubSub tar intelhex pyusb argparse
-core-image-sato with dev-pkgs tools-sdk 6377 tasks
-kernel-dev xterm git \
- jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
- python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
- chkconfig v4l-utils python-imaging parted python-distribute \
- python-pyrex python-pexpect gperf tree libav libav-dev \
- x264 x264-dev libav libav-dev opencv opencv-samples cmake \
- opencv-apps python-opencv tcl tk rpi-gpio python-myhdl python-bitstring \
- PyPubSub tar intelhex pyusb argparse 
-core-image-sato with dev-pkgs tools-sdk 6422 tasks
-kernel-dev xterm git \
- jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
- python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
- chkconfig v4l-utils python-imaging parted python-distribute \
- python-pyrex python-pexpect gperf tree libav libav-dev \
- x264 x264-dev libav libav-dev opencv opencv-samples cmake \
- opencv-apps python-opencv tcl tk rpi-gpio python-myhdl python-bitstring \
- PyPubSub tar intelhex pyusb argparse pv openjpeg libftdi
-core-image-sato with dev-pkgs tools-sdk 6470 tasks
-kernel-dev xterm git \
- jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
- python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
- chkconfig v4l-utils python-imaging parted python-distribute \
- python-pyrex python-pexpect gperf tree libav libav-dev \
- x264 x264-dev libav libav-dev opencv opencv-samples cmake \
- opencv-apps python-opencv tcl tk rpi-gpio python-myhdl python-bitstring \
- PyPubSub tar intelhex pyusb argparse pv openjpeg libftdi \
- python-matplotlib
-core-image-sato with dev-pkgs tools-sdk 6483 tasks
-kernel-dev xterm git \
- jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
- python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
- chkconfig v4l-utils python-imaging parted python-distribute \
- python-pyrex python-pexpect gperf tree libav libav-dev \
- x264 x264-dev libav libav-dev opencv opencv-samples cmake \
- opencv-apps python-opencv tcl tk rpi-gpio python-myhdl python-bitstring \
- PyPubSub tar intelhex pyusb argparse pv openjpeg libftdi \
- python-matplotlib wiringpi
-core-image-sato with dev-pkgs tools-sdk 6655 tasks
-kernel-dev xterm git \
- jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
- python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
- chkconfig v4l-utils python-imaging parted python-distribute \
- python-pyrex python-pexpect gperf tree libav libav-dev \
- x264 x264-dev libav libav-dev opencv opencv-samples cmake \
- opencv-apps python-opencv tcl tk rpi-gpio python-myhdl python-bitstring \
- PyPubSub tar intelhex pyusb argparse pv openjpeg libftdi \
- python-matplotlib wiringpi squashfs-tools libmtp libtool \
- fluidsynth fluidsynth-dev lua lua-dev lua-staticdev python-cheetah fribidi \
- samba live555 libnotify libsdl-image mpeg2dec \
-core-image-sato with dev-pkgs tools-sdk 6726 tasks
-kernel-dev xterm git \
- jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
- python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
- chkconfig v4l-utils python-imaging parted python-distribute \
- python-pyrex python-pexpect gperf tree libav libav-dev \
- x264 x264-dev libav libav-dev opencv opencv-samples cmake \
- opencv-apps python-opencv tcl tk rpi-gpio python-myhdl python-bitstring \
- PyPubSub tar intelhex pyusb argparse pv openjpeg libftdi \
- python-matplotlib wiringpi squashfs-tools libmtp libtool \
- fluidsynth fluidsynth-dev lua lua-dev lua-staticdev python-cheetah fribidi \
- samba live555 libnotify libsdl-image mpeg2dec \
- qt4-x11-free  tiff gnutls \
- libopus schroedinger tremor \
-core-image-sato with dev-pkgs tools-sdk 6800 tasks
-kernel-dev xterm git \
- jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
- python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
- chkconfig v4l-utils python-imaging parted python-distribute \
- python-pyrex python-pexpect gperf tree libav libav-dev \
- x264 x264-dev libav libav-dev opencv opencv-samples cmake \
- opencv-apps python-opencv tcl tk rpi-gpio python-myhdl python-bitstring \
- PyPubSub tar intelhex pyusb argparse pv openjpeg libftdi \
- python-matplotlib wiringpi squashfs-tools libmtp libtool \
- fluidsynth fluidsynth-dev lua lua-dev lua-staticdev python-cheetah fribidi \
- samba live555 libnotify libsdl-image mpeg2dec \
- qt4-x11-free  tiff gnutls \
- libopus schroedinger tremor hexedit man iproute2 socat \
-core-image-sato with dev-pkgs tools-sdk 6839 tasks
-kernel-dev xterm git \
- jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
- python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
- chkconfig v4l-utils python-imaging parted python-distribute \
- python-pyrex python-pexpect gperf tree libav libav-dev \
- x264 x264-dev libav libav-dev opencv opencv-samples cmake \
- opencv-apps python-opencv tcl tk rpi-gpio python-myhdl python-bitstring \
- PyPubSub tar intelhex pyusb argparse pv openjpeg libftdi \
- python-matplotlib wiringpi squashfs-tools libmtp libtool \
- fluidsynth fluidsynth-dev lua lua-dev lua-staticdev python-cheetah fribidi \
- samba live555 libnotify libsdl-image mpeg2dec \
- qt4-x11-free  tiff gnutls \
- libopus schroedinger tremor hexedit man iproute2 socat lame \
- rsync yasm gfortran \
-core-image-sato with dev-pkgs tools-sdk  tasks
- kernel-dev xterm git \
- jasper gsl gsl-dev python-netserver python-pygtk python-pygtk-dev \
- python-numpy liba52 liba52-dev libmad libmad-dev libmad-staticdev \
- chkconfig v4l-utils python-imaging parted python-distribute \
- python-pyrex python-pexpect gperf tree libav libav-dev \
- x264 x264-dev libav libav-dev opencv opencv-samples cmake \
- opencv-apps python-opencv tcl tk rpi-gpio python-myhdl python-bitstring \
- PyPubSub tar intelhex pyusb argparse pv openjpeg libftdi \
- python-matplotlib wiringpi squashfs-tools libmtp libtool \
- fluidsynth fluidsynth-dev lua lua-dev lua-staticdev python-cheetah fribidi \
- samba live555 libnotify libsdl-image mpeg2dec \
- qt4-x11-free  tiff gnutls \
- libopus schroedinger tremor hexedit man iproute2 socat lame \
- rsync yasm 
-core-image-sato with dev-pkgs tools-sdk 7288 tasks
-kernel-dev xterm git \
- jasper gsl liba52  libmad hexedit man iproute2 \
- chkconfig v4l-utils python-imaging socat lame vlc \
- gperf tree libav x264  libav  opencv opencv-samples cmake \
- opencv-apps python-opencv tcl tk rpi-gpio \
- tar pv openjpeg libftdi wiringpi squashfs-tools libmtp libtool \
- rsync yasm evince gparted firefox geany python-pip iputils
-core-image-sato with dev-pkgs tools-sdk 7288 tasks
-kernel-dev xterm git \
- jasper gsl liba52  libmad hexedit man iproute2 \
- chkconfig v4l-utils python-imaging socat lame vlc \
- gperf tree libav x264  libav  opencv opencv-samples cmake \
- opencv-apps python-opencv tcl tk rpi-gpio \
- tar pv openjpeg libftdi wiringpi squashfs-tools libmtp libtool \
- rsync yasm evince gparted firefox geany python-pip iputils kernel-devicetree
-sudo dd if=tmp/deploy/images/raspberrypi2/rpi-basic-image-raspberrypi2.rpi-sdimg | pv | sudo dd of=/dev/sdX bs=16M
-
-dd if=tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg | pv | sudo dd of=/dev/sdb bs=16
  
-4759552+0 records inMB/s] [                        <=>                         ]
-4759552+0 records out
-2436890624 bytes (2.4 GB) copied, 1369.14 s, 1.8 MB/s
-2.27GB 0:22:49 [ 1.7MB/s] [                         <=>                        ]
-152305664+0 records in
-152305664+0 records out
-2436890624 bytes (2.4 GB) copied, 1375.41 s, 1.8 MB/s
 
-resied 2280 to 3280 for testing
-copied wkg/yocto/xstools_iverilog_gtkwave_myhdl to /home/root
-copied wkg/yocto/gtkwave_iverilog_python3_yosys_bcm2735_usrlocal090615
-dd bs=16M if=/dev/sdb | gzip > /home/vidal/wkg/yocto/core-image-sato090715.gz
-d155b3bc9ce0ec73d350fe1f75464b0eeeda271252ab2937c6816fb6cd3463e1  /home/vidal/wkg/yocto/core-image-sato090715.gz
+bitbake core-image-sato -c populate_sdk
 
-gzip -dc /home/vidal/wkg/yocto/core-image-sato090715.gz | dd bs=16M of=/dev/sdb
+root@ws009:/home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/deploy/sdk# ./poky-glibc-x86_64-core-image-sato-cortexa7hf-vfp-vfpv4-neon-toolchain-1.8+snapshot.sh
 
-Read more: http://www.cnx-software.com/2015/02/27/yocto-project-raspberry-pi-2-board-minimal-image/#ixzz3gTs5MrwG
-
-212992+0 records in3MB/s] [ <=>                                                ]
-212992+0 records out
-109051904 bytes (109 MB) copied, 2.53324 s, 43.0 MB/s
- 104MB 0:00:02 [  42MB/s] [  <=>                                               ]
-0+1598 records in
-0+1598 records out
-109051904 bytes (109 MB) copied, 13.3466 s, 8.2 MB/s
-
-Use gparted /dev/sdX to resize the 2nd partition.
-
-bitbake meta-toolchain
-root@ws009:/home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/deploy/sdk# ./poky-glibc-x86_64-meta-toolchain-cortexa7hf-vfp-vfpv4-neon-toolchain-1.8+snapshot.sh  
 Poky (Yocto Project Reference Distro) SDK installer version 1.8+snapshot
 ===========================================================
 Enter target directory for SDK (default: /opt/poky/1.8+snapshot): 

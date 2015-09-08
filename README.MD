@@ -214,6 +214,9 @@ pcf8523-rtc-overlay.dtb
 pps-gpio-overlay.dtb
 w1-gpio-overlay.dtb
 w1-gpio-pullup-overlay.dtb
+09/08/15
+Added XSTOOLs python depends
+Cleaning up yoctoPi.txt 
 
 
 
