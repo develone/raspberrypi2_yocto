@@ -217,7 +217,9 @@ w1-gpio-pullup-overlay.dtb
 09/08/15
 Added XSTOOLs python depends
 Cleaning up yoctoPi.txt 
-
+device tree are added by defualt 
+http://git.yoctoproject.org/cgit/cgit.cgi/meta-raspberrypi/about/
+2.L. Device tree support
 
 
  

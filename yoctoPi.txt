@@ -69,7 +69,7 @@ NOTE: Executing SetScene Tasks
 NOTE: Executing RunQueue Tasks
 NOTE: Tasks Summary: Attempted 7340 tasks of which 7334 didn't need to be rerun and all succeeded.
 
-lrwxrwxrwx 1 vidal vidal 60 Sep  8 10:42 tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg -> core-image-sato-raspberrypi2-20150908162329.rootfs.rpi-sdimg
+lrwxrwxrwx 1 vidal vidal 60 Sep  8 15:45 tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg -> core-image-sato-raspberrypi2-20150908212410.rootfs.rpi-sdimg
 
 dd if=tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg | pv | sudo dd of=/dev/sdb bs=16
 4767744+0 records inkB/s] [             <=>                                    ]
@@ -78,10 +78,10 @@ dd if=tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg | pv
 2.27GB 0:23:47 [1.63MB/s] [              <=>                                   ]
 152567808+0 records in
 152567808+0 records out
-2441084928 bytes (2.4 GB) copied, 1427.87 s, 1.7 MB/s
+2436890624 bytes (2.4 GB) copied, 1427.87 s, 1.7 MB/s
 
 Use gparted /dev/sdX to resize the 2nd partition.
-resied 2284 to 3284 for testing
+resied 2280 to 3280 for testing
 
 copied /home/vidal/wkg/yocto/xstools_iverilog_gtkwave_myhdl /home/root of SD card
 copied wkg/yocto/gtkwave_iverilog_python3_yosys_bcm2735_usrlocal090615 /home/root of SD card
