@@ -87,11 +87,11 @@ resied 2280 to 3280 for testing
 copied /home/vidal/wkg/yocto/xstools_iverilog_gtkwave_myhdl /home/root of SD card
 copied wkg/yocto/gtkwave_iverilog_python3_yosys_bcm2735_usrlocal090615 /home/root of SD card
 
-dd bs=16M if=/dev/sdb | gzip > /home/vidal/wkg/yocto/core-image-sato090815.gz
-c7a6f248098f6b35e4acac11a57886abaeb7140d9a88689703efe1ad4bb25e10  core-image-sato090815.gz
+dd bs=16M if=/dev/sdb | gzip > /home/vidal/wkg/yocto/core-image-sato090915.gz
+d87766d18745758897535a0b3eb4aae744eed5084ef569950c15158b6e179961  core-image-sato090915.gz
 
 
-gzip -dc /home/vidal/wkg/yocto/core-image-sato090815.gz | dd bs=16M of=/dev/sdb
+gzip -dc /home/vidal/wkg/yocto/core-image-sato090915.gz | dd bs=16M of=/dev/sdb
 
 wc tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.manifest 
   3994  11982 264414 tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.manifest
