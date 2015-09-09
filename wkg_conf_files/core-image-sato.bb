@@ -15,5 +15,5 @@ IMAGE_INSTALL += "packagegroup-core-x11-sato-games kernel-dev xterm git \
  opencv-apps python-opencv tcl tk rpi-gpio \
  tar pv openjpeg libftdi wiringpi squashfs-tools libmtp libtool \
  rsync yasm evince gparted firefox geany python-pip iputils \
- intelhex python-bitstring pyusb PyPubSub  \
+ intelhex python-bitstring pyusb PyPubSub whiptail  \
 "

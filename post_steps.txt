@@ -1,0 +1,63 @@
+    1  passwd
+    2  df
+    3  cd /run/media/mmcblk0p1/
+    4  ls
+    5  ls ~/xstools_iverilog_gtkwave_myhdl/
+    6  diff /run/media/mmcblk0p1/config.txt ~/xstools_iverilog_gtkwave_myhdl/RPi-config/config.txt 
+    7  less /run/media/mmcblk0p1/config.txt 
+    8  less /run/media/mmcblk0p1/config.txt 
+    9  cp /run/media/mmcblk0p1/config.txt ~/config.txt.orig
+   10  cd ~/
+   11  diff -u config.txt.orig xstools_iverilog_gtkwave_myhdl/RPi-config/config.txt 
+   12  cd ~/xstools_iverilog_gtkwave_myhdl/RPi-config/
+   13  ls
+   14  less README.md 
+   15  geany config.txt 
+   16  whiptail
+   17  man whiptail
+   18  cd ../
+   19  cp -R RPi-config/ ~/
+   20  cd ~/
+   21  diff -u config.txt.orig RPi-config/config.txt 
+   22  pwd
+   23  cd RPi-config/
+   24  pwd
+   25  cd ../
+   26  unsquashfs gtkwave_iverilog_python3_yosys_bcm2735_usrlocal090615 
+   27  mkdir /usr/local
+   28  cp -R squashfs-root/* /usr/local/
+   29  cp -R xstools_iverilog_gtkwave_myhdl/myhdl/ .
+   30  cp -R xstools_iverilog_gtkwave_myhdl/raspberrypi2_yocto/ .
+   31  tar xfz xstools_iverilog_gtkwave_myhdl/bcm2835-1.45.tar.gz 
+   32  cd bcm2835-1.45/examples/spi
+   33  less spi.c 
+   34  gcc -o spi spi.c -l bcm2835
+   35  ./spi 
+   36  cd ~/myhdl/
+   37  git pull
+   38  python setup.py install
+   39  cd cosimulation/icarus/
+   40  make
+   41  cd ../../
+   42  python3 setup.py install
+   43  cd  ~/xstools_iverilog_gtkwave_myhdl/XSTOOLs/
+   44  git pull
+   45  python setup.py install
+   46  cd ../
+   47  unzip xsconnect-0.1.2.zip 
+   48  cd xsconnect-0.1.2
+   49  python setup.py install
+   50  cd ../
+   51  ls
+   52  cd ~/
+   53  ls
+   54  df
+   55  rm -rf xstools_iverilog_gtkwave_myhdl/ squashfs-root/ gtkwave_iverilog_python3_yosys_bcm2735_usrlocal090615 
+   56  df
+   57  cd raspberrypi2_yocto/xstools_test_files/
+   58  xsload --usb 0 --fpga pc_fast_blinker_sub_h1.bit 
+   59  python pc_subtractor_test.py 
+   60  cd ~/
+   61  rpm -qa | sort > pi_pkgs.txt
+   62  passwd
+   63  history > post_steps.txt

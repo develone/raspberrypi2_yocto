@@ -3921,6 +3921,7 @@ vte-locale-en-gb-0.28.2-r6.cortexa7hf_vfp_vfpv4_neon
 vte-termcap-0.28.2-r6.cortexa7hf_vfp_vfpv4_neon
 wayland-1.8.1-r0.cortexa7hf_vfp_vfpv4_neon
 wayland-dev-1.8.1-r0.cortexa7hf_vfp_vfpv4_neon
+whiptail-0.52.18-r0.cortexa7hf_vfp_vfpv4_neon
 wireless-tools-30.pre9-r0.cortexa7hf_vfp_vfpv4_neon
 wireless-tools-doc-30.pre9-r0.cortexa7hf_vfp_vfpv4_neon
 wiringpi-dev-git-r0.cortexa7hf_vfp_vfpv4_neon

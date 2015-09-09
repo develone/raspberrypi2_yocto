@@ -221,5 +221,21 @@ device tree are added by defualt
 http://git.yoctoproject.org/cgit/cgit.cgi/meta-raspberrypi/about/
 2.L. Device tree support
 
-
+09/09/15
+Added whiptail to image.  The package rpi_config caused errors in do_rootfs.
+This version rpi-config does not appear to be useing whiptail.
+A copy was added manually at /home/root/RPi-config
+diff -u config.txt.orig RPi-config/config.txt 
+--- config.txt.orig	2015-09-09 02:11:38.419999827 +0000
++++ RPi-config/config.txt	2015-09-09 03:45:56.189997668 +0000
+@@ -496,7 +496,7 @@
+ ##
+ ##     Default 64
+ ##
+-gpu_mem=16
++#gpu_mem=128
+ 
+ ## gpu_mem_256
+ ##     GPU memory allocation in MB for 256MB board revision.
+The value gpu_mem 16 appears to set from the local.conf
  

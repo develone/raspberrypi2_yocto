@@ -51,7 +51,7 @@ NATIVELSBSTRING   = "Ubuntu-12.04"
 TARGET_SYS        = "arm-poky-linux-gnueabi"
 MACHINE           = "raspberrypi2"
 DISTRO            = "poky"
-DISTRO_VERSION    = "1.8+snapshot-20150908"
+DISTRO_VERSION    = "1.8+snapshot-20150909"
 TUNE_FEATURES     = "arm armv7a vfp thumb neon callconvention-hard vfpv4 cortexa7"
 TARGET_FPU        = "vfp-vfpv4-neon"
 meta              
@@ -67,9 +67,10 @@ meta-browser      = "master:ca96f4326345dcd779fc539877a04f069f431749"
 NOTE: Preparing RunQueue
 NOTE: Executing SetScene Tasks
 NOTE: Executing RunQueue Tasks
-NOTE: Tasks Summary: Attempted 7340 tasks of which 7334 didn't need to be rerun and all succeeded.
+NOTE: Tasks Summary: Attempted 7358 tasks of which 7352 didn't need to be rerun and all succeeded.
 
-lrwxrwxrwx 1 vidal vidal 60 Sep  8 15:45 tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg -> core-image-sato-raspberrypi2-20150908212410.rootfs.rpi-sdimg
+
+lrwxrwxrwx 1 vidal vidal 60 Sep  8 20:11 tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg -> core-image-sato-raspberrypi2-20150909015018.rootfs.rpi-sdim
 
 dd if=tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg | pv | sudo dd of=/dev/sdb bs=16
 4767744+0 records inkB/s] [             <=>                                    ]
