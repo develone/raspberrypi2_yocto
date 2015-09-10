@@ -72,7 +72,7 @@ NOTE: Tasks Summary: Attempted 7358 tasks of which 7352 didn't need to be rerun 
 
 lrwxrwxrwx 1 vidal vidal 60 Sep  8 20:11 tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg -> core-image-sato-raspberrypi2-20150909015018.rootfs.rpi-sdim
 
-dd if=tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg | pv | sudo dd of=/dev/sdb bs=16
+dd if=tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg | pv | sudo dd of=/dev/sdb bs=16M
 4767744+0 records inkB/s] [             <=>                                    ]
 4767744+0 records out
 2441084928 bytes (2.4 GB) copied, 1427.29 s, 1.7 MB/s
