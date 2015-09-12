@@ -1,0 +1,258 @@
+wkg/yocto/repo091015 testing 
+meta-yocto-bsp    = "fido:d4585fa23d56a58c583ee33db067a23177a936b1"
+meta-raspberrypi  = "fido:17dad9328b100beda1cf870c9075e509b5cbfa90"
+meta-oe           
+meta-multimedia   
+meta-python       
+meta-gnome        = "fido:d4585fa23d56a58c583ee33db067a23177a936b1"
+meta-browser      = "fido:ca96f4326345dcd779fc539877a04f069f431749"
+
+modified:   meta-yocto/conf/distro/poky.conf adding  Ubuntu-12.04
+Not needing to modify meta/recipes-graphics/libepoxy/libepoxy_git.bb
+libeproxy-1.3.1 libeproxy1.2+gitAUTOINC+20062c25e7-r0
+gcc-5.2.0 instead of gcc-4.9.3 
+
+repo091015/poky
+commit d4585fa23d56a58c583ee33db067a23177a936b1
+Author: Bruce Ashfield <bruce.ashfield@windriver.com>
+Date:   Tue Sep 8 09:45:35 2015 -0400
+
+    bsps: update 3.14 SRCREVs
+    
+    Updating the 3.14 SRCREVs to ensure that both gcc 4.9.x and gcc 5.x
+    produce working images for all reference BSPs.
+    
+    (From meta-yocto rev: 5eb20f021851ac564da191e6adb276ef1254ee23)
+    
+    Signed-off-by: Bruce Ashfield <bruce.ashfield@windriver.com>
+    Signed-off-by: Richard Purdie <richard.purdie@linuxfoundation.org>
+
+repo091015/meta-raspberrypi
+commit 17dad9328b100beda1cf870c9075e509b5cbfa90
+Author: Khem Raj <raj.khem@gmail.com>
+Date:   Mon Aug 10 00:52:47 2015 -0700
+
+    README: Add extra iformation on creating/sending patches using git
+    
+    Current instructions could be improvised to help user in creating
+    properly formatted patches with some command help on git format-patch
+    and git send-email
+    
+    Signed-off-by: Khem Raj <raj.khem@gmail.com>
+
+repo091015/meta-openembedded
+commit d36e2d1066f50036080f978583a58fe79ecfac54
+Author: Alexander Kanavin <alexander.kanavin@linux.intel.com>
+Date:   Mon Sep 7 14:22:23 2015 +0300
+
+    libunique: add a recipe from oe-core
+    
+    Signed-off-by: Alexander Kanavin <alexander.kanavin@linux.intel.com>
+    Signed-off-by: Martin Jansa <Martin.Jansa@gmail.com>
+
+repo091015/qmeta-browser
+commit ca96f4326345dcd779fc539877a04f069f431749
+Author: Max Krummenacher <max.krummenacher@toradex.com>
+Date:   Sun Aug 16 21:40:23 2015 +0200
+
+    firefox-l10n: Update all languages for 10.0.12esr release
+    
+    Signed-off-by: Max Krummenacher <max.oss.09@gmail.com>
+    Signed-off-by: Otavio Salvador <otavio@ossystems.com.br>
+
+mkdir RaspberryPi2
+
+cd RaspberryPi2
+
+rsync -avl ../repo091015/poky .
+
+cd poky/
+
+git checkout -b fido
+
+rsync -avl ../../repo091015/meta-raspberrypi .
+
+cd meta-raspberrypi/
+
+git checkout -b fido
+
+cd ../
+
+rsync -avl ../../repo091015/meta-openembedded/meta-oe
+
+rsync -avl ../../repo091015/meta-openembedded/meta-multimedia
+
+rsync -avl ../../repo091015/meta-openembedded/meta-gnome
+
+rsync -avl ../../repo091015/meta-openembedded/meta-python
+
+rsync -avl ../../repo091015/meta-browser
+
+cd meta-browser
+
+git checkout -f fido
+
+. oe-init-build-env
+
+Save local.conf, bblayers.conf poky.conf in raspberrypi2_yocto/poky_orig_files/repo091019
+
+Merge changes in local.conf
+
+Save poky.conf
+
+Merge changes in poky.conf
+
+Add /home/vidal/wkg/yocto/RaspberryPi2/poky/meta-raspberrypi \ to bblayers.conf
+  /home/vidal/wkg/yocto/RaspberryPi2/poky/meta-oe \
+  /home/vidal/wkg/yocto/RaspberryPi2/poky/meta-multimedia \
+  /home/vidal/wkg/yocto/RaspberryPi2/poky/meta-python \
+  /home/vidal/wkg/yocto/RaspberryPi2/poky/meta-gnome \
+  /home/vidal/wkg/yocto/RaspberryPi2/poky/meta-browser \
+core-image-sato 5683/5684
+WARNING: QA Issue This may be due to host contamination [host-user-contaminated
+Thu Sep 10 14:57:30 MDT 2015 Thu Sep 10 16:52:51 MDT 2015
+WARNING: QA Issue: /etc/init.d/nscd_nscd contained in package nscd requires /bin/bash, but no providers found in its RDEPENDS [file-rdeps]
+
+Build Configuration:
+BB_VERSION        = "1.27.1"
+BUILD_SYS         = "x86_64-linux"
+NATIVELSBSTRING   = "Ubuntu-12.04"
+TARGET_SYS        = "arm-poky-linux-gnueabi"
+MACHINE           = "raspberrypi2"
+DISTRO            = "poky"
+DISTRO_VERSION    = "1.8+snapshot-20150911"
+TUNE_FEATURES     = "arm armv7a vfp thumb neon callconvention-hard vfpv4 cortexa7"
+TARGET_FPU        = "vfp-vfpv4-neon"
+meta              
+meta-yocto        
+meta-yocto-bsp    = "fido:d4585fa23d56a58c583ee33db067a23177a936b1"
+meta-raspberrypi  = "fido:17dad9328b100beda1cf870c9075e509b5cbfa90"
+meta-oe           
+meta-multimedia   
+meta-python       
+meta-gnome        = "fido:d4585fa23d56a58c583ee33db067a23177a936b1"
+meta-browser      = "fido:ca96f4326345dcd779fc539877a04f069f431749"
+
+NOTE: Preparing RunQueue
+NOTE: Executing RunQueue Tasks
+NOTE: Tasks Summary: Attempted 2 tasks of which 0 didn't need to be rerun and all succeeded.
+vidal@ws009:~/wkg/yocto/RaspberryPi2/poky/build$ bitbake core-image-sato -c cleansstate
+Parsing recipes: 100% |#########################################| Time: 00:00:35
+Parsing of 1851 .bb files complete (0 cached, 1851 parsed). 2383 targets, 113 skipped, 0 masked, 0 errors.
+NOTE: Resolving any missing task queue dependencies
+
+Build Configuration:
+BB_VERSION        = "1.27.1"
+BUILD_SYS         = "x86_64-linux"
+NATIVELSBSTRING   = "Ubuntu-12.04"
+TARGET_SYS        = "arm-poky-linux-gnueabi"
+MACHINE           = "raspberrypi2"
+DISTRO            = "poky"
+DISTRO_VERSION    = "1.8+snapshot-20150911"
+TUNE_FEATURES     = "arm armv7a vfp thumb neon callconvention-hard vfpv4 cortexa7"
+TARGET_FPU        = "vfp-vfpv4-neon"
+meta              
+meta-yocto        
+meta-yocto-bsp    = "fido:d4585fa23d56a58c583ee33db067a23177a936b1"
+meta-raspberrypi  = "fido:17dad9328b100beda1cf870c9075e509b5cbfa90"
+meta-oe           
+meta-multimedia   
+meta-python       
+meta-gnome        = "fido:d4585fa23d56a58c583ee33db067a23177a936b1"
+meta-browser      = "fido:ca96f4326345dcd779fc539877a04f069f431749"
+
+NOTE: Preparing RunQueue
+NOTE: Executing RunQueue Tasks
+NOTE: Tasks Summary: Attempted 2 tasks of which 0 didn't need to be rerun and all succeeded.
+vidal@ws009:~/wkg/yocto/RaspberryPi2/poky/build$ bitbake core-image-sato 
+Loading cache: 100% |###########################################| ETA:  00:00:00
+Loaded 2384 entries from dependency cache.
+NOTE: Resolving any missing task queue dependencies
+
+Build Configuration:
+BB_VERSION        = "1.27.1"
+BUILD_SYS         = "x86_64-linux"
+NATIVELSBSTRING   = "Ubuntu-12.04"
+TARGET_SYS        = "arm-poky-linux-gnueabi"
+MACHINE           = "raspberrypi2"
+DISTRO            = "poky"
+DISTRO_VERSION    = "1.8+snapshot-20150911"
+TUNE_FEATURES     = "arm armv7a vfp thumb neon callconvention-hard vfpv4 cortexa7"
+TARGET_FPU        = "vfp-vfpv4-neon"
+meta              
+meta-yocto        
+meta-yocto-bsp    = "fido:d4585fa23d56a58c583ee33db067a23177a936b1"
+meta-raspberrypi  = "fido:17dad9328b100beda1cf870c9075e509b5cbfa90"
+meta-oe           
+meta-multimedia   
+meta-python       
+meta-gnome        = "fido:d4585fa23d56a58c583ee33db067a23177a936b1"
+meta-browser      = "fido:ca96f4326345dcd779fc539877a04f069f431749"
+
+NOTE: Preparing RunQueue
+NOTE: Executing SetScene Tasks
+NOTE: Executing RunQueue Tasks
+WARNING: Failed to fetch URL ftp://invisible-island.net/ncurses/current/ncurses-5.9-20150329.tgz, attempting MIRRORS if available
+WARNING: Failed to fetch URL ftp://ftp.debian.org/debian/pool/main/o/ossp-uuid/ossp-uuid_1.6.2.orig.tar.gz, attempting MIRRORS if available
+WARNING: Failed to fetch URL http://www.apache.org/dist/subversion/subversion-1.8.13.tar.bz2, attempting MIRRORS if available
+WARNING: Failed to fetch URL http://downloads.sourceforge.net/libexif/libexif-0.6.21.tar.bz2, attempting MIRRORS if available
+WARNING: Failed to fetch URL http://ftp.gnome.org/pub/GNOME/sources/libsoup/2.50/libsoup-2.50.0.tar.xz, attempting MIRRORS if available
+WARNING: QA Issue: gstreamer1.0-plugins-bad: configure was passed unrecognised options: --with-egl-window-system [unknown-configure-option]
+WARNING: Failed to fetch URL ftp://alpha.gnu.org/gnu/findutils/findutils-4.5.14.tar.gz, attempting MIRRORS if available
+WARNING: QA Issue: /home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/work/cortexa7hf-vfp-vfpv4-neon-poky-linux-gnueabi/sed/4.2.2-r0/packages-split/sed-ptest/usr/lib/sed/ptest/testsuite/bug-regex15 is owned by uid 1000, which is the same as the user running bitbake. This may be due to host contamination [host-user-contaminated]
+WARNING: QA Issue: /home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/work/cortexa7hf-vfp-vfpv4-neon-poky-linux-gnueabi/e2fsprogs/1.42.9-r0/packages-split/e2fsprogs-ptest/usr/lib/e2fsprogs/ptest/test/f_selinux/image.gz is owned by uid 1000, which is the same as the user running bitbake. This may be due to host contamination [host-user-contaminated]
+WARNING: QA Issue: /home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/work/cortexa7hf-vfp-vfpv4-neon-poky-linux-gnueabi/acl/2.2.52-r0/packages-split/acl-ptest/usr/lib/acl/ptest/test/root/permissions.test is owned by uid 1000, which is the same as the user running bitbake. This may be due to host contamination [host-user-contaminated]
+WARNING: QA Issue: /home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/work/cortexa7hf-vfp-vfpv4-neon-poky-linux-gnueabi/attr/2.4.47-r0/packages-split/attr-ptest/usr/lib/attr/ptest/test/root/getfattr.test is owned by uid 1000, which is the same as the user running bitbake. This may be due to host contamination [host-user-contaminated]
+WARNING: QA Issue: /home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/work/cortexa7hf-vfp-vfpv4-neon-poky-linux-gnueabi/perl/5.22.0-r0/packages-split/perl-ptest/usr/lib/perl/ptest/hints/epix.sh is owned by uid 1000, which is the same as the user running bitbake. This may be due to host contamination [host-user-contaminated]
+WARNING: QA Issue: /etc/init.d/nscd_nscd contained in package nscd requires /bin/bash, but no providers found in its RDEPENDS [file-rdeps]
+NOTE: Tasks Summary: Attempted 5684 tasks of which 15 didn't need to be rerun and all succeeded.
+
+Summary: There were 13 WARNING messages shown.
+
+ls -la tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg 
+lrwxrwxrwx 1 vidal vidal 60 Sep 11 10:19 tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg -> core-image-sato-raspberrypi2-20150911143217.rootfs.rpi-sdimg
+
+
+dd if=tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg | pv | sudo dd of=/dev/sdb bs=16M
+
+ 
+2260992+0 records inkB/s] [                 <=>                                ]
+2260992+0 records out
+1157627904 bytes (1.2 GB) copied, 82.2385 s, 14.1 MB/s
+1.08GB 0:01:22 [13.4MB/s] [                <=>                                 ]
+0+17468 records in
+0+17468 records out
+1157627904 bytes (1.2 GB) copied, 149.183 s, 7.8 MB/s
+
+
+resize 1060 to 2060
+cp ../../../../raspberrypi2_yocto/recipe_bitstring/python-bitstring_3.1.3.bb ../meta/recipes-devtools/python
+
+cp ../../../../raspberrypi2_yocto/recipe_intelhex/intelhex_1.5.bb ../meta/recipes-devtools/python/
+
+cp ../../../../raspberrypi2_yocto/recipe_pyusb/pyusb_1.0.0a3.bb ../meta/recipes-devtools/python/
+
+cp ../../../../raspberrypi2_yocto/recipe_pypubsub/PyPubSub_3.1.3.bb ../meta/recipes-devtools/python/
+
+ bitbake intelhex python-bitstring pyusb PyPubSub
+
+IMAGE_INSTALL_append += " intelhex python-bitstring pyusb PyPubSub" to core-image-sato
+
+resize 924 to 1924 for testing XSTOOLs & MyHDL
+
+ls /usr/lib/python2.7/site-packages/
+PyPubSub-3.3.0-py2.7.egg-info	intelhex-1.5-py2.7.egg-info
+_dbus_bindings.la		pubsub
+_dbus_bindings.so		pygtk.pth
+_dbus_glib_bindings.la		pygtk.py
+_dbus_glib_bindings.so		pygtk.pyo
+bitstring-3.1.3-py2.7.egg-info	pyusb-1.0.0a3-py2.7.egg-info
+bitstring.py			rpm
+bitstring.pyc			setuptools-18.2-py2.7.egg
+dbus				setuptools.pth
+glib				smart
+gobject				smart-1.5-py2.7.egg-info
+gtk-2.0				usb
+intelhex
+rsync -avl ../../repo091015/meta-openembedded/meta-python .
+need git 
