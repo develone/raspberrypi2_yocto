@@ -13,11 +13,12 @@ def test_bench(args):
     """
     sys_clk_i = Signal(bool(0))
     sys_rst_i = Signal(bool(0))
-    io_din = Signal(intbv(0)[4:])
-    io_addr = Signal(intbv(0)[4:])
+    io_din = Signal(intbv(0)[16:])
+    io_addr = Signal(intbv(0)[16:])
     #status = Signal(intbv(0)[1:])
-    status = Signal(bool(0))
-    print(" %s" % bin(status,1))
+    io_rd = Signal(bool(0))
+    io_wr = Signal(bool(0))
+ 
     """Need to define stimlus"""
     @instance
     def stimlus():
@@ -36,8 +37,7 @@ def test_bench(args):
     def clkgen():
 		sys_clk_i.next = not sys_clk_i
     """Need an instance of the test code"""
-    #dut = _prep_cosim(args, sys_clk_i=sys_clk_i, sys_rst_i=sys_rst_i, io_din=io_din, b=b, status=status)
-    tb_dut = _prep_cosim(args, sys_clk_i=sys_clk_i, sys_rst_i=sys_rst_i, io_din=io_din, b=io_addr, status=status)
+    tb_dut = _prep_cosim(args, sys_clk_i=sys_clk_i, sys_rst_i=sys_rst_i, io_din=io_din, io_addr=io_addr,io_rd=io_rd,io_wr=io_wr)
     print("back from prep cosim")
     print("start (co)simulation ...")
     Simulation((tb_dut, clkgen, stimlus)).run()
