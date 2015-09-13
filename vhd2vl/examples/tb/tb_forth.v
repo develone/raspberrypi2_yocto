@@ -20,12 +20,13 @@ end
 initial begin
     $from_myhdl(
         io_din,
-        io_addr,
+
         sys_clk_i,
         sys_rst_i
     );
     $to_myhdl(
         io_dout,
+        io_addr,
         io_rd,
         io_wr
     );

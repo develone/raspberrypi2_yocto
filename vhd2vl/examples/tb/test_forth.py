@@ -1,6 +1,6 @@
-"""The example was generater using vhd2vl
-Now a test bench is being generater to test
-using myhdo & iverilog 
+"""The example was found on the internet
+Now a test bench is being created to test
+using myhdl, iverilog & vvp 
 """
 from __future__ import division
 from __future__ import print_function
@@ -9,15 +9,22 @@ import os
 import argparse
 from argparse import Namespace
 def test_bench(args):
-    """Need to create the signals that are to be test
+    """Need to create the signals that are to be tested
+    module j1(
+    input sys_clk_i, input sys_rst_i, input [15:0] io_din,
+    output io_rd, output io_wr, output [15:0] io_addr, output [15:0] io_dout);
     """
+    
     sys_clk_i = Signal(bool(0))
     sys_rst_i = Signal(bool(0))
     io_din = Signal(intbv(0)[16:])
-    io_addr = Signal(intbv(0)[16:])
-    #status = Signal(intbv(0)[1:])
+    
+    
     io_rd = Signal(bool(0))
-    io_wr = Signal(bool(0))
+    io_wr = Signal(bool(0))    
+    io_addr = Signal(intbv(0)[16:])
+    io_dout = Signal(intbv(0)[16:])
+
  
     """Need to define stimlus"""
     @instance
@@ -37,7 +44,7 @@ def test_bench(args):
     def clkgen():
 		sys_clk_i.next = not sys_clk_i
     """Need an instance of the test code"""
-    tb_dut = _prep_cosim(args, sys_clk_i=sys_clk_i, sys_rst_i=sys_rst_i, io_din=io_din, io_addr=io_addr,io_rd=io_rd,io_wr=io_wr)
+    tb_dut = _prep_cosim(args, sys_clk_i=sys_clk_i, sys_rst_i=sys_rst_i, io_din=io_din, io_addr=io_addr, io_rd=io_rd, io_wr=io_wr, io_dout=io_dout)
     print("back from prep cosim")
     print("start (co)simulation ...")
     Simulation((tb_dut, clkgen, stimlus)).run()
