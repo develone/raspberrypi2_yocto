@@ -1,0 +1,162 @@
+ . oe-init-build-env
+ 2005  rm -rf tmp
+ 2006  cd ../
+ 2007  rm -rf poky/
+ 2008  rsync -avl ../repo072015/poky .
+ 2009  cd poky/
+ 2010  git checkout -b fido
+ 2011  rsync -avl ../../repo072015/repo_test_pi/meta-raspberrypi .
+ 2012  cd meta-raspberrypi/
+ 2013  git checkout -b fido
+ 2014  cd ../
+ 2015  rsync -avl ../../repo072015/meta-openembedded/meta-oe .
+ 2016  rsync -avl ../../repo072015/meta-openembedded/meta-multimedia .
+ 2017  rsync -avl ../../repo072015/meta-openembedded/meta-python  .
+ 2018  rsync -avl ../../repo072015/meta-openembedded/meta-gnome  .
+ 2019  rsync -avl ../../repo072015/repo-meta-browser/meta-browser .
+ 2020  cd meta-browser/
+ 2021  git log
+ 2022  cd ../
+ 2023  ls ../
+ 2024  . oe-init-build-env
+ 2025  cp conf/local.conf ../../
+ 2026  cp conf/bblayers.conf ../../
+ 2027  ls ../../
+ 2028  cp ../meta-yocto/conf/distro/poky.conf ../../
+ 2029  ls ../../
+ 2030  cp ~/wkg/raspberrypi2_yocto/wkg_conf_files/local.conf conf/
+ 2031  cp ~/wkg/raspberrypi2_yocto/wkg_conf_files/bblayers.conf conf/
+ 2032  cp ~/wkg/raspberrypi2_yocto/wkg_conf_files/poky.conf ../meta-yocto/conf/distro/
+ 2033  cp ~/wkg/raspberrypi2_yocto/wkg_conf_files/libepoxy_git.bb ../meta/recipes-graphics/libepoxy/libepoxy_git.bb 
+
+ 2035  cp ~/wkg/raspberrypi2_yocto/recipe_intelhex/intelhex_1.5.bb ../meta/recipes-devtools/python/
+ 2036  cp ~/wkg/raspberrypi2_yocto/recipe_bitstring/python-bitstring_3.1.3.bb ../meta/recipes-devtools/python/
+ 2037  cp ~/wkg/raspberrypi2_yocto/recipe_pypubsub/PyPubSub_3.1.3.bb ../meta/recipes-devtools/python/
+ 2038  cp ~/wkg/raspberrypi2_yocto/recipe_pyusb/pyusb_1.0.0a3.bb ../meta/recipes-devtools/python/
+
+diff --git a/meta-yocto/conf/distro/poky.conf b/meta-yocto/conf/distro/poky.conf
+index e3d3c78..238b553 100644
+--- a/meta-yocto/conf/distro/poky.conf
++++ b/meta-yocto/conf/distro/poky.conf
+@@ -72,6 +72,7 @@ CONNECTIVITY_CHECK_URIS ?= " \
+ SANITY_TESTED_DISTROS ?= " \
+             poky-1.7 \n \
+             poky-1.8 \n \
++            Ubuntu-12.04 \n \
+             Ubuntu-14.04 \n \
+             Ubuntu-14.10 \n \
+             Ubuntu-15.04 \n \
+diff --git a/meta/recipes-graphics/libepoxy/libepoxy_git.bb b/meta/recipes-graphics/libepoxy/libepoxy_git.bb
+index 9816257..0330a7b 100644
+--- a/meta/recipes-graphics/libepoxy/libepoxy_git.bb
++++ b/meta/recipes-graphics/libepoxy/libepoxy_git.bb
+@@ -16,7 +16,7 @@ PV = "1.2+git${SRCPV}"
+ 
+ S = "${WORKDIR}/git"
+ 
+-inherit autotools pkgconfig
++inherit autotools pkgconfig python3native
+ 
+ DEPENDS = "util-macros virtual/egl"
+
+git status
+# On branch fido
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   meta-yocto/conf/distro/poky.conf
+#	modified:   meta/recipes-graphics/libepoxy/libepoxy_git.bb
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	meta/recipes-devtools/python/PyPubSub_3.1.3.bb
+#	meta/recipes-devtools/python/intelhex_1.5.bb
+#	meta/recipes-devtools/python/python-bitstring_3.1.3.bb
+#	meta/recipes-devtools/python/pyusb_1.0.0a3.bb
+no changes added to commit (use "git add" and/or "git commit -a")
+
+date ; bitbake core-image-sato ; date
+Sat Sep 12 12:55:52 MDT 2015 Sat Sep 12 16:57:14 MDT 2015
+
+meta-yocto        
+meta-yocto-bsp    = "fido:0f8d89ce66cfffccc9911d6c61470a585173b79d"
+meta-raspberrypi  = "fido:17dad9328b100beda1cf870c9075e509b5cbfa90"
+meta-oe           
+meta-python       
+meta-multimedia   
+meta-gnome        = "fido:0f8d89ce66cfffccc9911d6c61470a585173b79d"
+meta-browser      = "master:ca96f4326345dcd779fc539877a04f069f431749" 
+
+Build Configuration:
+BB_VERSION        = "1.27.1"
+BUILD_SYS         = "x86_64-linux"
+NATIVELSBSTRING   = "Ubuntu-12.04"
+TARGET_SYS        = "arm-poky-linux-gnueabi"
+MACHINE           = "raspberrypi2"
+DISTRO            = "poky"
+DISTRO_VERSION    = "1.8+snapshot-20150912"
+TUNE_FEATURES     = "arm armv7a vfp thumb neon callconvention-hard vfpv4 cortexa7"
+TARGET_FPU        = "vfp-vfpv4-neon"
+meta              
+meta-yocto        
+meta-yocto-bsp    = "fido:0f8d89ce66cfffccc9911d6c61470a585173b79d"
+meta-raspberrypi  = "fido:17dad9328b100beda1cf870c9075e509b5cbfa90"
+meta-oe           
+meta-python       
+meta-multimedia   
+meta-gnome        = "fido:0f8d89ce66cfffccc9911d6c61470a585173b79d"
+meta-browser      = "master:ca96f4326345dcd779fc539877a04f069f431749"
+
+NOTE: Preparing RunQueue
+NOTE: Executing SetScene Tasks
+NOTE: Executing RunQueue Tasks
+WARNING: File 'home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/x86_64-linux/usr/lib/libQtSql.so.4.8.7' from qt4-native was already stripped, this will prevent future debugging!
+WARNING: File 'home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/x86_64-linux/usr/lib/libQtDBus.so.4.8.7' from qt4-native was already stripped, this will prevent future debugging!
+WARNING: File 'home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/x86_64-linux/usr/lib/libQt3Support.so.4.8.7' from qt4-native was already stripped, this will prevent future debugging!
+WARNING: File 'home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/x86_64-linux/usr/lib/libQtCore.so.4.8.7' from qt4-native was already stripped, this will prevent future debugging!
+WARNING: File 'home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/x86_64-linux/usr/lib/libQtXml.so.4.8.7' from qt4-native was already stripped, this will prevent future debugging!
+WARNING: File 'home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/x86_64-linux/usr/lib/libQtTest.so.4.8.7' from qt4-native was already stripped, this will prevent future debugging!
+WARNING: File 'home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/x86_64-linux/usr/lib/libQtGui.so.4.8.7' from qt4-native was already stripped, this will prevent future debugging!
+WARNING: File 'home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/x86_64-linux/usr/lib/libQtNetwork.so.4.8.7' from qt4-native was already stripped, this will prevent future debugging!
+WARNING: File 'home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/x86_64-linux/usr/lib/libQtXmlPatterns.so.4.8.7' from qt4-native was already stripped, this will prevent future debugging!
+WARNING: File 'home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/x86_64-linux/usr/bin/moc' from qt4-native was already stripped, this will prevent future debugging!
+WARNING: File 'home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/x86_64-linux/usr/bin/uic' from qt4-native was already stripped, this will prevent future debugging!
+WARNING: File 'home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/x86_64-linux/usr/bin/lrelease' from qt4-native was already stripped, this will prevent future debugging!
+WARNING: File 'home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/x86_64-linux/usr/bin/rcc' from qt4-native was already stripped, this will prevent future debugging!
+WARNING: File 'home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/x86_64-linux/usr/bin/qdbuscpp2xml' from qt4-native was already stripped, this will prevent future debugging!
+WARNING: File 'home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/x86_64-linux/usr/bin/qdbusxml2cpp' from qt4-native was already stripped, this will prevent future debugging!
+WARNING: File 'home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/x86_64-linux/usr/bin/lconvert' from qt4-native was already stripped, this will prevent future debugging!
+WARNING: File 'home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/x86_64-linux/usr/bin/xmlpatterns' from qt4-native was already stripped, this will prevent future debugging!
+WARNING: File 'home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/x86_64-linux/usr/bin/uic3' from qt4-native was already stripped, this will prevent future debugging!
+WARNING: File 'home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/x86_64-linux/usr/bin/lupdate' from qt4-native was already stripped, this will prevent future debugging!
+WARNING: QA Issue: gstreamer1.0-plugins-bad: configure was passed unrecognised options: --with-egl-window-system [unknown-configure-option]
+WARNING: QA Issue: ELF binary '/home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/work/cortexa7hf-vfp-vfpv4-neon-poky-linux-gnueabi/x264/r2491+gitAUTOINC+c8a773ebfc-r0/packages-split/x264/usr/lib/libx264.so.144' has relocations in .text [textrel]
+WARNING: QA Issue: ELF binary '/home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/work/cortexa7hf-vfp-vfpv4-neon-poky-linux-gnueabi/libav/9.18-r0/packages-split/libavcodec/usr/lib/libavcodec.so.54.35.0' has relocations in .text [textrel]
+WARNING: QA Issue: vlc rdepends on speex, but it isn't a build dependency? [build-deps]
+WARNING: QA Issue: vlc rdepends on libsamplerate0, but it isn't a build dependency? [build-deps]
+NOTE: Tasks Summary: Attempted 7358 tasks of which 18 didn't need to be rerun and all succeeded.
+
+Summary: There were 32 WARNING messages shown.
+
+dd if=tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg | pv | sudo dd of=/dev/sdb bs=16M
+
+4759552+0 records inMB/s] [                               <=>                  ]
+4759552+0 records out
+2436890624 bytes (2.4 GB) copied, 268.374 s, 9.1 MB/s
+2.27GB 0:04:28 [8.66MB/s] [                              <=>                   ]
+0+36827 records in
+0+36827 records out
+2436890624 bytes (2.4 GB) copied, 311.788 s, 7.8 MB/s
+
+resize 2280 to 3280 for testing
+
+df
+
+/dev/sdb2        3147648   1838636   1141076  62% /media/bce8ba32-610c-4e2d-9e82-d6c55e6601f0
+
+cp -R ../../../../yocto/xstools_iverilog_gtkwave_myhdl/ /media/bce8ba32-610c-4e2d-9e82-d6c55e6601f0/home/root/
+
+cp -R ../../../../yocto/gtkwave_iverilog_python3_yosys_bcm2735_usrlocal090615 /media/bce8ba32-610c-4e2d-9e82-d6c55e6601f0/home/root/
+
