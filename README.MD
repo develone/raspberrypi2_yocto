@@ -238,4 +238,8 @@ diff -u config.txt.orig RPi-config/config.txt
  ## gpu_mem_256
  ##     GPU memory allocation in MB for 256MB board revision.
 The value gpu_mem 16 appears to set from the local.conf
+
+09/14/15 
+recipe_xstools/xstools_0.1.30.bb is now working
+
  
