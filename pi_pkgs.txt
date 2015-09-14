@@ -756,7 +756,6 @@ kbd-dev-2.0.2-r0.cortexa7hf_vfp_vfpv4_neon
 kbd-doc-2.0.2-r0.cortexa7hf_vfp_vfpv4_neon
 kbproto-dev-1.0.7-r0.cortexa7hf_vfp_vfpv4_neon
 kernel-3.18.11-3.18.11+gitd64fa8121fca9883d6fb14ca06d2abf66496195e-r0.raspberrypi2
-kernel-dev-3.18.11+gitd64fa8121fca9883d6fb14ca06d2abf66496195e-r0.raspberrypi2
 kernel-image-3.18.11-3.18.11+gitd64fa8121fca9883d6fb14ca06d2abf66496195e-r0.raspberrypi2
 kernel-module-6lowpan-3.18.11+gitd64fa8121fca9883d6fb14ca06d2abf66496195e-r0.raspberrypi2
 kernel-module-6pack-3.18.11+gitd64fa8121fca9883d6fb14ca06d2abf66496195e-r0.raspberrypi2
@@ -2614,6 +2613,7 @@ librsvg-2-doc-2.40.9-r0.cortexa7hf_vfp_vfpv4_neon
 librsvg-2-gtk-2.40.9-r0.cortexa7hf_vfp_vfpv4_neon
 libsamplerate0-0.1.8-r1.cortexa7hf_vfp_vfpv4_neon
 libsamplerate0-dev-0.1.8-r1.cortexa7hf_vfp_vfpv4_neon
+libsamplerate0-doc-0.1.8-r1.cortexa7hf_vfp_vfpv4_neon
 libschroedinger-1.0-0-1.0.11-r0.cortexa7hf_vfp_vfpv4_neon
 libschroedinger-1.0-dev-1.0.11-r0.cortexa7hf_vfp_vfpv4_neon
 libschroedinger-1.0-doc-1.0.11-r0.cortexa7hf_vfp_vfpv4_neon
@@ -4001,6 +4001,8 @@ xserver-xorg-doc-1.17.2-r0.cortexa7hf_vfp_vfpv4_neon
 xset-1.2.3-r0.cortexa7hf_vfp_vfpv4_neon
 xset-dev-1.2.3-r0.cortexa7hf_vfp_vfpv4_neon
 xset-doc-1.2.3-r0.cortexa7hf_vfp_vfpv4_neon
+xstools-0.1.30-r0.cortexa7hf_vfp_vfpv4_neon
+xstools-dev-0.1.30-r0.cortexa7hf_vfp_vfpv4_neon
 xterm-303-r0.cortexa7hf_vfp_vfpv4_neon
 xterm-dev-303-r0.cortexa7hf_vfp_vfpv4_neon
 xterm-doc-303-r0.cortexa7hf_vfp_vfpv4_neon

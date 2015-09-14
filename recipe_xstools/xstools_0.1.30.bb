@@ -1,4 +1,3 @@
-recipetool create  -o /home/vidal/wkg/yocto/RaspberryPi2/poky/meta/recipes-devtools/python/xstools_0.1.30.bb https://github.com/xesscorp/XSTOOLs/archive/python.zip
 # Recipe created by recipetool
 # This is the basis of a recipe and may need further editing in order to be fully functional.
 # (Feel free to remove these comments when editing.)
@@ -38,4 +37,3 @@ RDEPENDS_${PN} += "PyPubSub intelhex python-argparse python-bitstring python-cor
 #    wx.lib.intctrl
 #    wx.lib.platebtn
 #    xstools.__init__
- 

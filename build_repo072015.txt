@@ -96,7 +96,7 @@ NATIVELSBSTRING   = "Ubuntu-12.04"
 TARGET_SYS        = "arm-poky-linux-gnueabi"
 MACHINE           = "raspberrypi2"
 DISTRO            = "poky"
-DISTRO_VERSION    = "1.8+snapshot-20150912"
+DISTRO_VERSION    = "1.8+snapshot-20150914"
 TUNE_FEATURES     = "arm armv7a vfp thumb neon callconvention-hard vfpv4 cortexa7"
 TARGET_FPU        = "vfp-vfpv4-neon"
 meta              
@@ -112,6 +112,9 @@ meta-browser      = "master:ca96f4326345dcd779fc539877a04f069f431749"
 NOTE: Preparing RunQueue
 NOTE: Executing SetScene Tasks
 NOTE: Executing RunQueue Tasks
+NOTE: Tasks Summary: Attempted 7371 tasks of which 7365 didn't need to be rerun and all succeeded
+The warnings below were for the first build 
+
 WARNING: File 'home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/x86_64-linux/usr/lib/libQtSql.so.4.8.7' from qt4-native was already stripped, this will prevent future debugging!
 WARNING: File 'home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/x86_64-linux/usr/lib/libQtDBus.so.4.8.7' from qt4-native was already stripped, this will prevent future debugging!
 WARNING: File 'home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/sysroots/x86_64-linux/usr/lib/libQt3Support.so.4.8.7' from qt4-native was already stripped, this will prevent future debugging!
@@ -142,21 +145,22 @@ Summary: There were 32 WARNING messages shown.
 
 dd if=tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg | pv | sudo dd of=/dev/sdb bs=16M
 
-4759552+0 records inMB/s] [                               <=>                  ]
-4759552+0 records out
-2436890624 bytes (2.4 GB) copied, 268.374 s, 9.1 MB/s
-2.27GB 0:04:28 [8.66MB/s] [                              <=>                   ]
-0+36827 records in
-0+36827 records out
-2436890624 bytes (2.4 GB) copied, 311.788 s, 7.8 MB/s
+4767744+0 records inMB/s] [                      <=>                           ]
+4767744+0 records out
+2441084928 bytes (2.4 GB) copied, 277.132 s, 8.8 MB/s
+2.27GB 0:04:37 [ 8.4MB/s] [                     <=>                            ]
+0+37214 records in
+0+37214 records out
+2441084928 bytes (2.4 GB) copied, 316.12 s, 7.7 MB/s
 
-resize 2280 to 3280 for testing
+
+resize 2284 to 3284 for testing
 
 df
 
 /dev/sdb2        3147648   1838636   1141076  62% /media/bce8ba32-610c-4e2d-9e82-d6c55e6601f0
 
-cp -R ../../../../yocto/xstools_iverilog_gtkwave_myhdl/ /media/bce8ba32-610c-4e2d-9e82-d6c55e6601f0/home/root/
+cp -R ../../../../yocto/xstools_iverilog_gtkwave_myhdl/ /media/7063bc68-9900-4d1c-be21-7611f91478a4/home/root/
 
 cp -R ../../../../yocto/gtkwave_iverilog_python3_yosys_bcm2735_usrlocal090615 /media/bce8ba32-610c-4e2d-9e82-d6c55e6601f0/home/root/
 
