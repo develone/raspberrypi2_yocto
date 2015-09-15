@@ -241,5 +241,8 @@ The value gpu_mem 16 appears to set from the local.conf
 
 09/14/15 
 recipe_xstools/xstools_0.1.30.bb is now working
+09/15/15
+Image now has the HDL tools icestrom, arachne-pnr, and yosys
+Ran arachne-pnr test 5:41 hrs 536 additional files in the test folder
 
  

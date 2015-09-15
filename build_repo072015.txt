@@ -160,7 +160,9 @@ df
 
 /dev/sdb2        3147648   1838636   1141076  62% /media/bce8ba32-610c-4e2d-9e82-d6c55e6601f0
 
-cp -R ../../../../yocto/xstools_iverilog_gtkwave_myhdl/ /media/7063bc68-9900-4d1c-be21-7611f91478a4/home/root/
+cp -R ../../../../yocto/bcm2835_xsconnect_RPi-config_myhdl/ /media/7063bc68-9900-4d1c-be21-7611f91478a4/home/root/
 
-cp -R ../../../../yocto/gtkwave_iverilog_python3_yosys_bcm2735_usrlocal090615 /media/bce8ba32-610c-4e2d-9e82-d6c55e6601f0/home/root/
+cp -R ../../../../yocto/gtkwave_iverilog_python3_yosys_bcm2735_arachne-pnr_icebox_usrlocal091515 /media/bce8ba32-610c-4e2d-9e82-d6c55e6601f0/home/root/
+
+
 

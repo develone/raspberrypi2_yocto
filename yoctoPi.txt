@@ -70,7 +70,7 @@ NOTE: Executing RunQueue Tasks
 NOTE: Tasks Summary: Attempted 7358 tasks of which 7352 didn't need to be rerun and all succeeded.
 
 
-lrwxrwxrwx 1 vidal vidal 60 Sep  8 20:11 tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg -> core-image-sato-raspberrypi2-20150909015018.rootfs.rpi-sdim
+lrwxrwxrwx 1 vidal vidal 60 Sep 14 07:32 tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg -> core-image-sato-raspberrypi2-20150914131024.rootfs.rpi-sdimg
 
 dd if=tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg | pv | sudo dd of=/dev/sdb bs=16M
 4767744+0 records inkB/s] [             <=>                                    ]
@@ -87,11 +87,11 @@ resied 2280 to 3280 for testing
 copied /home/vidal/wkg/yocto/xstools_iverilog_gtkwave_myhdl /home/root of SD card
 copied wkg/yocto/gtkwave_iverilog_python3_yosys_bcm2735_usrlocal090615 /home/root of SD card
 
-dd bs=16M if=/dev/sdb | gzip > /home/vidal/wkg/yocto/core-image-sato090915.gz
-d87766d18745758897535a0b3eb4aae744eed5084ef569950c15158b6e179961  core-image-sato090915.gz
+dd bs=16M if=/dev/sdb | gzip > /home/vidal/wkg/yocto/core-image-sato091515.zip
+eeb2675887773f0c7fe7e3c682f76d5d167d9cb306c29df08fbaed88e2aa17bb  core-image-sato091515.zip
 
 
-gzip -dc /home/vidal/wkg/yocto/core-image-sato090915.gz | dd bs=16M of=/dev/sdb
+gzip -dc /home/vidal/wkg/yocto/core-image-sato091515.zip | dd bs=16M of=/dev/sdb
 
 wc tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.manifest 
   3994  11982 264414 tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.manifest
