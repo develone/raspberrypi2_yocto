@@ -1,0 +1,4 @@
+ 
+# pin definitions 
+set_io clock 21 
+set_io toggle 99 

@@ -1,0 +1,1118 @@
+git clone https://github.com/cfelton/rhea.git
+
+cd rhea
+
+python setup.py install
+
+cd examples/build
+date; python ex_icestick.py; date ; iceriver/icestick.sh ; date 
+fails since icestick.sh is not executeable
+Tue Sep 15 00:33:26 UTC 2015
+** ToVerilogWarning: Output port is read internally: toggle
+** ToVerilogWarning: Signal is driven but not read: reset
+   removing ./iceriver/icestick.v
+   moving icestick.v --> ./iceriver/
+Tue Sep 15 00:33:41 UTC 2015
+-sh: iceriver/icestick.sh: Permission denied
+Tue Sep 15 00:33:41 UTC 2015
+
+chmod +x iceriver/icestick.sh
+
+myhdl  15 sec
+yosys  11 sec
+
+root@raspberrypi2:~/rhea/examples/build# ls -la iceriver/
+total 264
+drwxr-xr-x 2 root root   4096 Sep 15 00:04 .
+drwxr-xr-x 3 root root   4096 Sep 15 00:15 ..
+-rw-r--r-- 1 root root  32216 Sep 15 00:04 icestick.bin
+-rw-r--r-- 1 root root  15959 Sep 15 00:04 icestick.blif
+-rw-r--r-- 1 root root     56 Sep 15 00:04 icestick.pcf
+-rwxr-xr-x 1 root root    233 Sep 15 00:04 icestick.sh
+-rw-r--r-- 1 root root 189687 Sep 15 00:04 icestick.txt
+-rw-r--r-- 1 root root    521 Sep 15 00:03 icestick.v
+-rw-r--r-- 1 root root    565 Sep 15 00:04 icestick.ys
+
+date; python ex_icestick.py; date ; iceriver/icestick.sh ; date
+
+root@raspberrypi2:~/rhea/examples/build# date; python ex_icestick.py; date ; iceriver/icestick.sh ; date
+Tue Sep 15 00:03:58 UTC 2015
+** ToVerilogWarning: Output port is read internally: toggle
+** ToVerilogWarning: Signal is driven but not read: reset
+   removing ./iceriver/icestick.v
+   moving icestick.v --> ./iceriver/
+Tue Sep 15 00:04:13 UTC 2015
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2015  Clifford Wolf <clifford@clifford.at>           |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.5+292 (git sha1 6f9a6fd, gcc 4.6.3-14+rpi1 -fPIC -Os)
+
+
+-- Parsing `./iceriver/icestick.v' using frontend `verilog' --
+
+1. Executing Verilog-2005 frontend.
+Parsing Verilog input from `./iceriver/icestick.v' to AST representation.
+Generating RTLIL representation for module `\icestick'.
+Successfully finished Verilog frontend.
+
+-- Running command `synth_ice40 -blif ./iceriver/icestick.blif' --
+
+2. Executing SYNTH_ICE40 pass.
+
+2.1. Executing Verilog-2005 frontend.
+Parsing Verilog input from `/usr/local/bin/../share/yosys/ice40/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\SB_IO'.
+Generating RTLIL representation for module `\SB_GB_IO'.
+Generating RTLIL representation for module `\SB_GB'.
+Generating RTLIL representation for module `\SB_LUT4'.
+Generating RTLIL representation for module `\SB_CARRY'.
+Generating RTLIL representation for module `\SB_DFF'.
+Generating RTLIL representation for module `\SB_DFFE'.
+Generating RTLIL representation for module `\SB_DFFSR'.
+Generating RTLIL representation for module `\SB_DFFR'.
+Generating RTLIL representation for module `\SB_DFFSS'.
+Generating RTLIL representation for module `\SB_DFFS'.
+Generating RTLIL representation for module `\SB_DFFESR'.
+Generating RTLIL representation for module `\SB_DFFER'.
+Generating RTLIL representation for module `\SB_DFFESS'.
+Generating RTLIL representation for module `\SB_DFFES'.
+Generating RTLIL representation for module `\SB_DFFN'.
+Generating RTLIL representation for module `\SB_DFFNE'.
+Generating RTLIL representation for module `\SB_DFFNSR'.
+Generating RTLIL representation for module `\SB_DFFNR'.
+Generating RTLIL representation for module `\SB_DFFNSS'.
+Generating RTLIL representation for module `\SB_DFFNS'.
+Generating RTLIL representation for module `\SB_DFFNESR'.
+Generating RTLIL representation for module `\SB_DFFNER'.
+Generating RTLIL representation for module `\SB_DFFNESS'.
+Generating RTLIL representation for module `\SB_DFFNES'.
+Generating RTLIL representation for module `\SB_RAM40_4K'.
+Generating RTLIL representation for module `\SB_RAM40_4KNR'.
+Generating RTLIL representation for module `\SB_RAM40_4KNW'.
+Generating RTLIL representation for module `\SB_RAM40_4KNRNW'.
+Generating RTLIL representation for module `\ICESTORM_LC'.
+Generating RTLIL representation for module `\SB_PLL40_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2F_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_2F_PAD'.
+Generating RTLIL representation for module `\SB_WARMBOOT'.
+Successfully finished Verilog frontend.
+
+2.2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2.1. Finding top of design hierarchy..
+root of   0 design levels: icestick            
+Automatically selected icestick as design top module.
+
+2.2.2. Analyzing design hierarchy..
+Top module:  \icestick
+
+2.2.3. Analyzing design hierarchy..
+Top module:  \icestick
+Removed 0 unused modules.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+2.3.3. Executing PROC_INIT pass (extract init attributes).
+
+2.3.4. Executing PROC_ARST pass (detect async resets in processes).
+
+2.3.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\icestick.$proc$./iceriver/icestick.v:36$5'.
+  creating decoder for signal `$0\reset[0:0]'.
+Creating decoders for process `\icestick.$proc$./iceriver/icestick.v:25$1'.
+  creating decoder for signal `$0\toggle[0:0]'.
+  creating decoder for signal `$0\cnt[23:0]'.
+
+2.3.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.3.7. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\icestick.\reset' using process `\icestick.$proc$./iceriver/icestick.v:36$5'.
+  created $dff cell `$procdff$12' with positive edge clock.
+Creating register for signal `\icestick.\toggle' using process `\icestick.$proc$./iceriver/icestick.v:25$1'.
+  created $dff cell `$procdff$13' with positive edge clock.
+Creating register for signal `\icestick.\cnt' using process `\icestick.$proc$./iceriver/icestick.v:25$1'.
+  created $dff cell `$procdff$14' with positive edge clock.
+
+2.3.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `icestick.$proc$./iceriver/icestick.v:36$5'.
+Found and cleaned up 1 empty switch in `\icestick.$proc$./iceriver/icestick.v:25$1'.
+Removing empty process `icestick.$proc$./iceriver/icestick.v:25$1'.
+Cleaned up 1 empty switch.
+
+2.4. Executing FLATTEN pass (flatten design).
+No more expansions possible.
+
+2.5. Executing TRIBUF pass.
+
+2.6. Executing SYNTH pass.
+
+2.6.1. Executing PROC pass (convert processes to netlists).
+
+2.6.1.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.6.1.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+2.6.1.3. Executing PROC_INIT pass (extract init attributes).
+
+2.6.1.4. Executing PROC_ARST pass (detect async resets in processes).
+
+2.6.1.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+2.6.1.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.6.1.7. Executing PROC_DFF pass (convert process syncs to FFs).
+
+2.6.1.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.6.2. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \icestick..
+  removing unused `$dff' cell `$procdff$12'.
+  removing unused non-port wire \reset.
+  removed 1 unused temporary wires.
+
+2.6.3. Executing CHECK pass (checking for obvious problems).
+checking module icestick..
+found and reported 0 problems.
+
+2.6.4. Executing OPT pass (performing simple optimizations).
+
+2.6.4.1. Executing OPT_CONST pass (perform const folding).
+
+2.6.4.2. Executing OPT_SHARE pass (detect identical cells).
+Finding identical cells in module `\icestick'.
+Removed a total of 0 cells.
+
+2.6.4.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizier on module \icestick..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+    Root of a mux tree: $procmux$10 (pure)
+    Root of a mux tree: $procmux$7 (pure)
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+
+2.6.4.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \icestick.
+Performed a total of 0 changes.
+
+2.6.4.5. Executing OPT_SHARE pass (detect identical cells).
+Finding identical cells in module `\icestick'.
+Removed a total of 0 cells.
+
+2.6.4.6. Executing OPT_RMDFF pass (remove dff with constant values).
+Replaced 0 DFF cells.
+
+2.6.4.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \icestick..
+
+2.6.4.8. Executing OPT_CONST pass (perform const folding).
+
+2.6.4.9. Finished OPT passes. (There is nothing left to do.)
+
+2.6.5. Executing WREDUCE pass (reducing word size of cells).
+Removed top 31 bits (of 32) from port B of cell icestick.$add$./iceriver/icestick.v:31$4 ($add).
+Removed top 8 bits (of 32) from port Y of cell icestick.$add$./iceriver/icestick.v:31$4 ($add).
+Removed top 8 bits (of 32) from wire icestick.$add$./iceriver/icestick.v:31$4_Y.
+
+2.6.6. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module icestick:
+  creating $macc model for $add$./iceriver/icestick.v:31$4 ($add).
+  creating $alu model for $macc $add$./iceriver/icestick.v:31$4.
+  creating $alu cell for $add$./iceriver/icestick.v:31$4: $auto$alumacc.cc:470:replace_alu$16
+  created 1 $alu and 0 $macc cells.
+
+2.6.7. Executing SHARE pass (SAT-based resource sharing).
+
+2.6.8. Executing OPT pass (performing simple optimizations).
+
+2.6.8.1. Executing OPT_CONST pass (perform const folding).
+
+2.6.8.2. Executing OPT_SHARE pass (detect identical cells).
+Finding identical cells in module `\icestick'.
+Removed a total of 0 cells.
+
+2.6.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizier on module \icestick..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+    Root of a mux tree: $procmux$10 (pure)
+    Root of a mux tree: $procmux$7 (pure)
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+
+2.6.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \icestick.
+Performed a total of 0 changes.
+
+2.6.8.5. Executing OPT_SHARE pass (detect identical cells).
+Finding identical cells in module `\icestick'.
+Removed a total of 0 cells.
+
+2.6.8.6. Executing OPT_RMDFF pass (remove dff with constant values).
+Replaced 0 DFF cells.
+
+2.6.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \icestick..
+
+2.6.8.8. Executing OPT_CONST pass (perform const folding).
+
+2.6.8.9. Finished OPT passes. (There is nothing left to do.)
+
+2.6.9. Executing FSM pass (extract and optimize FSM).
+
+2.6.9.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+2.6.9.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+2.6.9.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+2.6.9.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \icestick..
+
+2.6.9.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+2.6.9.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+2.6.9.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+2.6.9.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+2.6.10. Executing OPT pass (performing simple optimizations).
+
+2.6.10.1. Executing OPT_CONST pass (perform const folding).
+
+2.6.10.2. Executing OPT_SHARE pass (detect identical cells).
+Finding identical cells in module `\icestick'.
+Removed a total of 0 cells.
+
+2.6.10.3. Executing OPT_RMDFF pass (remove dff with constant values).
+Replaced 0 DFF cells.
+
+2.6.10.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \icestick..
+
+2.6.10.5. Finished fast OPT passes.
+
+2.6.11. Executing MEMORY pass.
+
+2.6.11.1. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+
+2.6.11.2. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \icestick..
+
+2.6.11.3. Executing MEMORY_SHARE pass (consolidating $memrc/$memwr cells).
+
+2.6.11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \icestick..
+
+2.6.11.5. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.6.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \icestick..
+
+2.7. Executing MEMORY_BRAM pass (mapping $mem cells to block memories).
+
+2.8. Executing TECHMAP pass (map to technology primitives).
+
+2.8.1. Executing Verilog-2005 frontend.
+Parsing Verilog input from `/usr/local/bin/../share/yosys/ice40/brams_map.v' to AST representation.
+Generating RTLIL representation for module `\$__ICE40_RAM4K'.
+Generating RTLIL representation for module `\$__ICE40_RAM4K_M0'.
+Generating RTLIL representation for module `\$__ICE40_RAM4K_M123'.
+Successfully finished Verilog frontend.
+No more expansions possible.
+
+2.9. Executing OPT pass (performing simple optimizations).
+
+2.9.1. Executing OPT_CONST pass (perform const folding).
+
+2.9.2. Executing OPT_SHARE pass (detect identical cells).
+Finding identical cells in module `\icestick'.
+Removed a total of 0 cells.
+
+2.9.3. Executing OPT_RMDFF pass (remove dff with constant values).
+Replaced 0 DFF cells.
+
+2.9.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \icestick..
+
+2.9.5. Finished fast OPT passes.
+
+2.10. Executing MEMORY_MAP pass (converting $mem cells to logic and flip-flops).
+
+2.11. Executing OPT pass (performing simple optimizations).
+
+2.11.1. Executing OPT_CONST pass (perform const folding).
+
+2.11.2. Executing OPT_SHARE pass (detect identical cells).
+Finding identical cells in module `\icestick'.
+Removed a total of 0 cells.
+
+2.11.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizier on module \icestick..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+    Root of a mux tree: $procmux$10 (pure)
+    Root of a mux tree: $procmux$7 (pure)
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+
+2.11.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \icestick.
+Performed a total of 0 changes.
+
+2.11.5. Executing OPT_SHARE pass (detect identical cells).
+Finding identical cells in module `\icestick'.
+Removed a total of 0 cells.
+
+2.11.6. Executing OPT_RMDFF pass (remove dff with constant values).
+Replaced 0 DFF cells.
+
+2.11.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \icestick..
+
+2.11.8. Executing OPT_CONST pass (perform const folding).
+
+2.11.9. Finished OPT passes. (There is nothing left to do.)
+
+2.12. Executing TECHMAP pass (map to technology primitives).
+
+2.12.1. Executing Verilog-2005 frontend.
+Parsing Verilog input from `/usr/local/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+2.12.2. Executing Verilog-2005 frontend.
+Parsing Verilog input from `/usr/local/bin/../share/yosys/ice40/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_ice40_alu'.
+Successfully finished Verilog frontend.
+Mapping icestick.$eq$./iceriver/icestick.v:26$2 ($eq) with simplemap.
+Mapping icestick.$logic_not$./iceriver/icestick.v:28$3 ($logic_not) with simplemap.
+Mapping icestick.$procmux$7 ($mux) with simplemap.
+
+2.12.3. Executing AST frontend in derive mode using pre-parsed AST for module `\_80_ice40_alu'.
+Parameter \A_SIGNED = 0
+Parameter \B_SIGNED = 0
+Parameter \A_WIDTH = 1
+Parameter \B_WIDTH = 24
+Parameter \Y_WIDTH = 24
+Generating RTLIL representation for module `$paramod\_80_ice40_alu\A_SIGNED=0\B_SIGNED=0\A_WIDTH=1\B_WIDTH=24\Y_WIDTH=24'.
+
+2.12.4. Continuing TECHMAP pass.
+Mapping icestick.$auto$alumacc.cc:470:replace_alu$16 using $paramod\_80_ice40_alu\A_SIGNED=0\B_SIGNED=0\A_WIDTH=1\B_WIDTH=24\Y_WIDTH=24.
+Mapping icestick.$procmux$10 ($mux) with simplemap.
+Mapping icestick.$procdff$13 ($dff) with simplemap.
+Mapping icestick.$procdff$14 ($dff) with simplemap.
+Mapping icestick.$techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131 ($xor) with simplemap.
+Mapping icestick.$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130 ($mux) with simplemap.
+Mapping icestick.$techmap$auto$alumacc.cc:470:replace_alu$16.$not$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$129 ($not) with simplemap.
+Mapping icestick.$auto$alumacc.cc:470:replace_alu$16.B_conv ($pos) with simplemap.
+Mapping icestick.$auto$alumacc.cc:470:replace_alu$16.A_conv ($pos) with simplemap.
+No more expansions possible.
+
+2.13. Executing ICE40_OPT pass (performing simple optimizations).
+
+2.13.1. Running ICE40 specific optimizations.
+
+2.13.2. Executing OPT_CONST pass (perform const folding).
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$205' (??0) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130_Y [0] = \cnt [0]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$79' (?0) in module `\icestick' with constant driver `$auto$simplemap.cc:250:simplemap_eqne$69 [8] = \cnt [8]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$81' (?0) in module `\icestick' with constant driver `$auto$simplemap.cc:250:simplemap_eqne$69 [10] = \cnt [10]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$84' (?0) in module `\icestick' with constant driver `$auto$simplemap.cc:250:simplemap_eqne$69 [13] = \cnt [13]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$85' (?0) in module `\icestick' with constant driver `$auto$simplemap.cc:250:simplemap_eqne$69 [14] = \cnt [14]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$86' (?0) in module `\icestick' with constant driver `$auto$simplemap.cc:250:simplemap_eqne$69 [15] = \cnt [15]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$90' (?0) in module `\icestick' with constant driver `$auto$simplemap.cc:250:simplemap_eqne$69 [19] = \cnt [19]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$93' (?0) in module `\icestick' with constant driver `$auto$simplemap.cc:250:simplemap_eqne$69 [22] = \cnt [22]'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$128' in module `icestick'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$132' in module `icestick'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$133' in module `icestick'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$134' in module `icestick'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$135' in module `icestick'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$136' in module `icestick'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$137' in module `icestick'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$138' in module `icestick'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$139' in module `icestick'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$140' in module `icestick'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$141' in module `icestick'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$142' in module `icestick'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$143' in module `icestick'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$144' in module `icestick'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$145' in module `icestick'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$146' in module `icestick'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$147' in module `icestick'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$148' in module `icestick'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$149' in module `icestick'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$150' in module `icestick'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$151' in module `icestick'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$152' in module `icestick'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$153' in module `icestick'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$154' in module `icestick'.
+Optimizing away select inverter for $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$155' in module `icestick'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$206' (??0) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130_Y [1] = \cnt [1]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$182' (0?) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131_Y [1] = \cnt [1]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$207' (??0) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130_Y [2] = \cnt [2]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$183' (0?) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131_Y [2] = \cnt [2]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$208' (??0) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130_Y [3] = \cnt [3]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$184' (0?) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131_Y [3] = \cnt [3]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$209' (??0) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130_Y [4] = \cnt [4]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$185' (0?) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131_Y [4] = \cnt [4]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$210' (??0) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130_Y [5] = \cnt [5]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$186' (0?) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131_Y [5] = \cnt [5]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$211' (??0) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130_Y [6] = \cnt [6]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$187' (0?) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131_Y [6] = \cnt [6]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$212' (??0) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130_Y [7] = \cnt [7]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$188' (0?) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131_Y [7] = \cnt [7]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$213' (??0) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130_Y [8] = \cnt [8]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$189' (0?) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131_Y [8] = \cnt [8]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$214' (??0) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130_Y [9] = \cnt [9]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$190' (0?) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131_Y [9] = \cnt [9]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$215' (??0) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130_Y [10] = \cnt [10]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$191' (0?) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131_Y [10] = \cnt [10]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$216' (??0) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130_Y [11] = \cnt [11]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$192' (0?) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131_Y [11] = \cnt [11]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$217' (??0) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130_Y [12] = \cnt [12]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$193' (0?) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131_Y [12] = \cnt [12]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$218' (??0) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130_Y [13] = \cnt [13]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$194' (0?) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131_Y [13] = \cnt [13]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$219' (??0) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130_Y [14] = \cnt [14]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$195' (0?) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131_Y [14] = \cnt [14]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$220' (??0) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130_Y [15] = \cnt [15]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$196' (0?) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131_Y [15] = \cnt [15]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$221' (??0) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130_Y [16] = \cnt [16]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$197' (0?) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131_Y [16] = \cnt [16]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$222' (??0) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130_Y [17] = \cnt [17]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$198' (0?) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131_Y [17] = \cnt [17]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$223' (??0) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130_Y [18] = \cnt [18]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$199' (0?) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131_Y [18] = \cnt [18]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$224' (??0) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130_Y [19] = \cnt [19]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$200' (0?) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131_Y [19] = \cnt [19]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$225' (??0) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130_Y [20] = \cnt [20]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$201' (0?) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131_Y [20] = \cnt [20]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$226' (??0) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130_Y [21] = \cnt [21]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$202' (0?) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131_Y [21] = \cnt [21]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$227' (??0) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130_Y [22] = \cnt [22]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$203' (0?) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131_Y [22] = \cnt [22]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$228' (??0) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$ternary$/usr/local/bin/../share/yosys/ice40/arith_map.v:42$130_Y [23] = \cnt [23]'.
+Replacing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$204' (0?) in module `\icestick' with constant driver `$techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131_Y [23] = \cnt [23]'.
+
+2.13.3. Executing OPT_SHARE pass (detect identical cells).
+Finding identical cells in module `\icestick'.
+  Cell `$auto$simplemap.cc:85:simplemap_bitop$71' is identical to cell `$auto$simplemap.cc:85:simplemap_bitop$181'.
+    Redirecting output \Y: $auto$simplemap.cc:250:simplemap_eqne$69 [0] = $techmap$auto$alumacc.cc:470:replace_alu$16.$xor$/usr/local/bin/../share/yosys/ice40/arith_map.v:68$131_Y [0]
+    Removing $_XOR_ cell `$auto$simplemap.cc:85:simplemap_bitop$71' from module `\icestick'.
+Removed a total of 1 cells.
+
+2.13.4. Executing OPT_RMDFF pass (remove dff with constant values).
+Replaced 0 DFF cells.
+
+2.13.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \icestick..
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:206:simplemap_lognot$126'.
+  removing unused `\SB_CARRY' cell `$auto$alumacc.cc:470:replace_alu$16.slice[23].carry'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:37:simplemap_not$229'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:37:simplemap_not$230'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:37:simplemap_not$231'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:37:simplemap_not$232'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:37:simplemap_not$233'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:37:simplemap_not$234'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:37:simplemap_not$235'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:37:simplemap_not$236'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:37:simplemap_not$237'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:37:simplemap_not$238'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:37:simplemap_not$239'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:37:simplemap_not$240'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:37:simplemap_not$241'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:37:simplemap_not$242'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:37:simplemap_not$243'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:37:simplemap_not$244'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:37:simplemap_not$245'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:37:simplemap_not$246'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:37:simplemap_not$247'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:37:simplemap_not$248'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:37:simplemap_not$249'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:37:simplemap_not$250'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:37:simplemap_not$251'.
+  removing unused `$_NOT_' cell `$auto$simplemap.cc:37:simplemap_not$252'.
+
+2.13.6. Rerunning OPT passes. (Removed registers in this run.)
+
+2.13.7. Running ICE40 specific optimizations.
+Optimized away SB_CARRY cell icestick.$auto$alumacc.cc:470:replace_alu$16.slice[0].carry: CO=\cnt [0]
+Mapping SB_LUT4 cell icestick.$auto$alumacc.cc:470:replace_alu$16.slice[1].adder back to logic.
+
+2.13.8. Executing OPT_CONST pass (perform const folding).
+Replacing $_MUX_ cell `$auto$simplemap.cc:311:simplemap_lut$260' (01?) in module `\icestick' with constant driver `$auto$simplemap.cc:309:simplemap_lut$253 [6] = \cnt [0]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:311:simplemap_lut$259' (01?) in module `\icestick' with constant driver `$auto$simplemap.cc:309:simplemap_lut$253 [5] = \cnt [0]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:311:simplemap_lut$269' (??0) in module `\icestick' with constant driver `$auto$simplemap.cc:309:simplemap_lut$267 [1] = $auto$simplemap.cc:309:simplemap_lut$262 [2]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:311:simplemap_lut$257' (01?) in module `\icestick' with constant driver `$auto$simplemap.cc:309:simplemap_lut$253 [3] = \cnt [0]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:311:simplemap_lut$254' (01?) in module `\icestick' with constant driver `$auto$simplemap.cc:309:simplemap_lut$253 [0] = \cnt [0]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:311:simplemap_lut$268' (??0) in module `\icestick' with constant driver `$auto$simplemap.cc:309:simplemap_lut$267 [0] = $auto$simplemap.cc:309:simplemap_lut$262 [0]'.
+Replacing $_MUX_ cell `$auto$simplemap.cc:311:simplemap_lut$271' (??0) in module `\icestick' with constant driver `$auto$simplemap.cc:309:simplemap_lut$270 = $auto$simplemap.cc:309:simplemap_lut$262 [0]'.
+
+2.13.9. Executing OPT_SHARE pass (detect identical cells).
+Finding identical cells in module `\icestick'.
+  Cell `$auto$simplemap.cc:311:simplemap_lut$256' is identical to cell `$auto$simplemap.cc:311:simplemap_lut$258'.
+    Redirecting output \Y: $auto$simplemap.cc:309:simplemap_lut$253 [2] = $auto$simplemap.cc:309:simplemap_lut$253 [4]
+    Removing $_NOT_ cell `$auto$simplemap.cc:311:simplemap_lut$256' from module `\icestick'.
+  Cell `$auto$simplemap.cc:311:simplemap_lut$255' is identical to cell `$auto$simplemap.cc:311:simplemap_lut$258'.
+    Redirecting output \Y: $auto$simplemap.cc:309:simplemap_lut$253 [1] = $auto$simplemap.cc:309:simplemap_lut$253 [4]
+    Removing $_NOT_ cell `$auto$simplemap.cc:311:simplemap_lut$255' from module `\icestick'.
+  Cell `$auto$simplemap.cc:311:simplemap_lut$264' is identical to cell `$auto$simplemap.cc:311:simplemap_lut$265'.
+    Redirecting output \Y: $auto$simplemap.cc:309:simplemap_lut$262 [1] = $auto$simplemap.cc:309:simplemap_lut$262 [2]
+    Removing $_MUX_ cell `$auto$simplemap.cc:311:simplemap_lut$264' from module `\icestick'.
+  Cell `$auto$simplemap.cc:311:simplemap_lut$261' is identical to cell `$auto$simplemap.cc:311:simplemap_lut$258'.
+    Redirecting output \Y: $auto$simplemap.cc:309:simplemap_lut$253 [7] = $auto$simplemap.cc:309:simplemap_lut$253 [4]
+    Removing $_NOT_ cell `$auto$simplemap.cc:311:simplemap_lut$261' from module `\icestick'.
+  Cell `$auto$simplemap.cc:311:simplemap_lut$263' is identical to cell `$auto$simplemap.cc:311:simplemap_lut$266'.
+    Redirecting output \Y: $auto$simplemap.cc:309:simplemap_lut$262 [0] = $auto$simplemap.cc:309:simplemap_lut$262 [3]
+    Removing $_MUX_ cell `$auto$simplemap.cc:311:simplemap_lut$263' from module `\icestick'.
+Removed a total of 5 cells.
+
+2.13.10. Executing OPT_RMDFF pass (remove dff with constant values).
+Replaced 0 DFF cells.
+
+2.13.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \icestick..
+  removing unused `$_MUX_' cell `$auto$simplemap.cc:311:simplemap_lut$265'.
+
+2.13.12. Rerunning OPT passes. (Removed registers in this run.)
+
+2.13.13. Running ICE40 specific optimizations.
+
+2.13.14. Executing OPT_CONST pass (perform const folding).
+
+2.13.15. Executing OPT_SHARE pass (detect identical cells).
+Finding identical cells in module `\icestick'.
+Removed a total of 0 cells.
+
+2.13.16. Executing OPT_RMDFF pass (remove dff with constant values).
+Replaced 0 DFF cells.
+
+2.13.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \icestick..
+
+2.13.18. Finished OPT passes. (There is nothing left to do.)
+
+2.14. Executing DFF2DFFE pass (transform $dff to $dffe where applicable).
+Selected cell types for direct conversion:
+  $_DFF_PP1_ -> $__DFFE_PP1
+  $_DFF_PP0_ -> $__DFFE_PP0
+  $_DFF_PN1_ -> $__DFFE_PN1
+  $_DFF_PN0_ -> $__DFFE_PN0
+  $_DFF_NP1_ -> $__DFFE_NP1
+  $_DFF_NP0_ -> $__DFFE_NP0
+  $_DFF_NN1_ -> $__DFFE_NN1
+  $_DFF_NN0_ -> $__DFFE_NN0
+  $_DFF_N_ -> $_DFFE_NP_
+  $_DFF_P_ -> $_DFFE_PP_
+Transforming FF to FF+Enable cells in module icestick:
+  converting $_DFF_P_ cell $auto$simplemap.cc:373:simplemap_dff$156 to $_DFFE_PP_ for $0\toggle[0:0] -> \toggle.
+
+2.15. Executing TECHMAP pass (map to technology primitives).
+
+2.15.1. Executing Verilog-2005 frontend.
+Parsing Verilog input from `/usr/local/bin/../share/yosys/ice40/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NN_'.
+Generating RTLIL representation for module `\$_DFFE_PN_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NN0_'.
+Generating RTLIL representation for module `\$_DFF_NN1_'.
+Generating RTLIL representation for module `\$_DFF_PN0_'.
+Generating RTLIL representation for module `\$_DFF_PN1_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$__DFFE_NN0'.
+Generating RTLIL representation for module `\$__DFFE_NN1'.
+Generating RTLIL representation for module `\$__DFFE_PN0'.
+Generating RTLIL representation for module `\$__DFFE_PN1'.
+Generating RTLIL representation for module `\$__DFFE_NP0'.
+Generating RTLIL representation for module `\$__DFFE_NP1'.
+Generating RTLIL representation for module `\$__DFFE_PP0'.
+Generating RTLIL representation for module `\$__DFFE_PP1'.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$156 using \$_DFFE_PP_.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$157 using \$_DFF_P_.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$158 using \$_DFF_P_.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$159 using \$_DFF_P_.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$160 using \$_DFF_P_.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$161 using \$_DFF_P_.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$162 using \$_DFF_P_.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$163 using \$_DFF_P_.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$164 using \$_DFF_P_.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$165 using \$_DFF_P_.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$166 using \$_DFF_P_.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$167 using \$_DFF_P_.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$168 using \$_DFF_P_.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$169 using \$_DFF_P_.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$170 using \$_DFF_P_.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$171 using \$_DFF_P_.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$172 using \$_DFF_P_.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$173 using \$_DFF_P_.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$174 using \$_DFF_P_.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$175 using \$_DFF_P_.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$176 using \$_DFF_P_.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$177 using \$_DFF_P_.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$178 using \$_DFF_P_.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$179 using \$_DFF_P_.
+Mapping icestick.$auto$simplemap.cc:373:simplemap_dff$180 using \$_DFF_P_.
+No more expansions possible.
+
+2.16. Executing OPT_CONST pass (perform const folding).
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$128' (?x?) in module `\icestick' with constant driver `$0\toggle[0:0] = $logic_not$./iceriver/icestick.v:28$3_Y'.
+
+2.17. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+2.18. Executing ICE40_FFSSR pass (merge synchronous set/reset into FF cells).
+Merging set/reset $_MUX_ cells into SB_FFs in icestick.
+  Merging $auto$simplemap.cc:277:simplemap_mux$155 (A=1'0, B=$add$./iceriver/icestick.v:31$4_Y [23], S=$auto$simplemap.cc:256:simplemap_eqne$95) into $auto$simplemap.cc:373:simplemap_dff$180 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$132 (A=1'0, B=$add$./iceriver/icestick.v:31$4_Y [0], S=$auto$simplemap.cc:256:simplemap_eqne$95) into $auto$simplemap.cc:373:simplemap_dff$157 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$133 (A=1'0, B=$auto$simplemap.cc:309:simplemap_lut$270, S=$auto$simplemap.cc:256:simplemap_eqne$95) into $auto$simplemap.cc:373:simplemap_dff$158 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$134 (A=1'0, B=$add$./iceriver/icestick.v:31$4_Y [2], S=$auto$simplemap.cc:256:simplemap_eqne$95) into $auto$simplemap.cc:373:simplemap_dff$159 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$135 (A=1'0, B=$add$./iceriver/icestick.v:31$4_Y [3], S=$auto$simplemap.cc:256:simplemap_eqne$95) into $auto$simplemap.cc:373:simplemap_dff$160 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$136 (A=1'0, B=$add$./iceriver/icestick.v:31$4_Y [4], S=$auto$simplemap.cc:256:simplemap_eqne$95) into $auto$simplemap.cc:373:simplemap_dff$161 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$137 (A=1'0, B=$add$./iceriver/icestick.v:31$4_Y [5], S=$auto$simplemap.cc:256:simplemap_eqne$95) into $auto$simplemap.cc:373:simplemap_dff$162 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$138 (A=1'0, B=$add$./iceriver/icestick.v:31$4_Y [6], S=$auto$simplemap.cc:256:simplemap_eqne$95) into $auto$simplemap.cc:373:simplemap_dff$163 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$139 (A=1'0, B=$add$./iceriver/icestick.v:31$4_Y [7], S=$auto$simplemap.cc:256:simplemap_eqne$95) into $auto$simplemap.cc:373:simplemap_dff$164 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$140 (A=1'0, B=$add$./iceriver/icestick.v:31$4_Y [8], S=$auto$simplemap.cc:256:simplemap_eqne$95) into $auto$simplemap.cc:373:simplemap_dff$165 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$141 (A=1'0, B=$add$./iceriver/icestick.v:31$4_Y [9], S=$auto$simplemap.cc:256:simplemap_eqne$95) into $auto$simplemap.cc:373:simplemap_dff$166 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$142 (A=1'0, B=$add$./iceriver/icestick.v:31$4_Y [10], S=$auto$simplemap.cc:256:simplemap_eqne$95) into $auto$simplemap.cc:373:simplemap_dff$167 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$143 (A=1'0, B=$add$./iceriver/icestick.v:31$4_Y [11], S=$auto$simplemap.cc:256:simplemap_eqne$95) into $auto$simplemap.cc:373:simplemap_dff$168 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$144 (A=1'0, B=$add$./iceriver/icestick.v:31$4_Y [12], S=$auto$simplemap.cc:256:simplemap_eqne$95) into $auto$simplemap.cc:373:simplemap_dff$169 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$145 (A=1'0, B=$add$./iceriver/icestick.v:31$4_Y [13], S=$auto$simplemap.cc:256:simplemap_eqne$95) into $auto$simplemap.cc:373:simplemap_dff$170 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$146 (A=1'0, B=$add$./iceriver/icestick.v:31$4_Y [14], S=$auto$simplemap.cc:256:simplemap_eqne$95) into $auto$simplemap.cc:373:simplemap_dff$171 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$147 (A=1'0, B=$add$./iceriver/icestick.v:31$4_Y [15], S=$auto$simplemap.cc:256:simplemap_eqne$95) into $auto$simplemap.cc:373:simplemap_dff$172 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$148 (A=1'0, B=$add$./iceriver/icestick.v:31$4_Y [16], S=$auto$simplemap.cc:256:simplemap_eqne$95) into $auto$simplemap.cc:373:simplemap_dff$173 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$149 (A=1'0, B=$add$./iceriver/icestick.v:31$4_Y [17], S=$auto$simplemap.cc:256:simplemap_eqne$95) into $auto$simplemap.cc:373:simplemap_dff$174 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$150 (A=1'0, B=$add$./iceriver/icestick.v:31$4_Y [18], S=$auto$simplemap.cc:256:simplemap_eqne$95) into $auto$simplemap.cc:373:simplemap_dff$175 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$151 (A=1'0, B=$add$./iceriver/icestick.v:31$4_Y [19], S=$auto$simplemap.cc:256:simplemap_eqne$95) into $auto$simplemap.cc:373:simplemap_dff$176 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$152 (A=1'0, B=$add$./iceriver/icestick.v:31$4_Y [20], S=$auto$simplemap.cc:256:simplemap_eqne$95) into $auto$simplemap.cc:373:simplemap_dff$177 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$153 (A=1'0, B=$add$./iceriver/icestick.v:31$4_Y [21], S=$auto$simplemap.cc:256:simplemap_eqne$95) into $auto$simplemap.cc:373:simplemap_dff$178 (SB_DFF).
+  Merging $auto$simplemap.cc:277:simplemap_mux$154 (A=1'0, B=$add$./iceriver/icestick.v:31$4_Y [22], S=$auto$simplemap.cc:256:simplemap_eqne$95) into $auto$simplemap.cc:373:simplemap_dff$179 (SB_DFF).
+
+2.19. Executing ICE40_OPT pass (performing simple optimizations).
+
+2.19.1. Running ICE40 specific optimizations.
+
+2.19.2. Executing OPT_CONST pass (perform const folding).
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$132' in module `icestick' with and-gate.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$133' in module `icestick' with and-gate.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$134' in module `icestick' with and-gate.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$135' in module `icestick' with and-gate.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$136' in module `icestick' with and-gate.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$137' in module `icestick' with and-gate.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$138' in module `icestick' with and-gate.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$139' in module `icestick' with and-gate.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$140' in module `icestick' with and-gate.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$141' in module `icestick' with and-gate.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$142' in module `icestick' with and-gate.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$143' in module `icestick' with and-gate.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$144' in module `icestick' with and-gate.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$145' in module `icestick' with and-gate.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$146' in module `icestick' with and-gate.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$147' in module `icestick' with and-gate.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$148' in module `icestick' with and-gate.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$149' in module `icestick' with and-gate.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$150' in module `icestick' with and-gate.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$151' in module `icestick' with and-gate.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$152' in module `icestick' with and-gate.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$153' in module `icestick' with and-gate.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$154' in module `icestick' with and-gate.
+Replacing $_MUX_ cell `$auto$simplemap.cc:277:simplemap_mux$155' in module `icestick' with and-gate.
+
+2.19.3. Executing OPT_SHARE pass (detect identical cells).
+Finding identical cells in module `\icestick'.
+  Cell `$auto$ice40_ffssr.cc:101:execute$357' is identical to cell `$auto$ice40_ffssr.cc:101:execute$359'.
+    Redirecting output \Y: $auto$rtlil.cc:1690:NotGate$358 = $auto$rtlil.cc:1690:NotGate$360
+    Removing $_NOT_ cell `$auto$ice40_ffssr.cc:101:execute$357' from module `\icestick'.
+  Cell `$auto$ice40_ffssr.cc:101:execute$355' is identical to cell `$auto$ice40_ffssr.cc:101:execute$359'.
+    Redirecting output \Y: $auto$rtlil.cc:1690:NotGate$356 = $auto$rtlil.cc:1690:NotGate$360
+    Removing $_NOT_ cell `$auto$ice40_ffssr.cc:101:execute$355' from module `\icestick'.
+  Cell `$auto$ice40_ffssr.cc:101:execute$353' is identical to cell `$auto$ice40_ffssr.cc:101:execute$359'.
+    Redirecting output \Y: $auto$rtlil.cc:1690:NotGate$354 = $auto$rtlil.cc:1690:NotGate$360
+    Removing $_NOT_ cell `$auto$ice40_ffssr.cc:101:execute$353' from module `\icestick'.
+  Cell `$auto$ice40_ffssr.cc:101:execute$351' is identical to cell `$auto$ice40_ffssr.cc:101:execute$359'.
+    Redirecting output \Y: $auto$rtlil.cc:1690:NotGate$352 = $auto$rtlil.cc:1690:NotGate$360
+    Removing $_NOT_ cell `$auto$ice40_ffssr.cc:101:execute$351' from module `\icestick'.
+  Cell `$auto$ice40_ffssr.cc:101:execute$349' is identical to cell `$auto$ice40_ffssr.cc:101:execute$359'.
+    Redirecting output \Y: $auto$rtlil.cc:1690:NotGate$350 = $auto$rtlil.cc:1690:NotGate$360
+    Removing $_NOT_ cell `$auto$ice40_ffssr.cc:101:execute$349' from module `\icestick'.
+  Cell `$auto$ice40_ffssr.cc:101:execute$347' is identical to cell `$auto$ice40_ffssr.cc:101:execute$359'.
+    Redirecting output \Y: $auto$rtlil.cc:1690:NotGate$348 = $auto$rtlil.cc:1690:NotGate$360
+    Removing $_NOT_ cell `$auto$ice40_ffssr.cc:101:execute$347' from module `\icestick'.
+  Cell `$auto$ice40_ffssr.cc:101:execute$345' is identical to cell `$auto$ice40_ffssr.cc:101:execute$359'.
+    Redirecting output \Y: $auto$rtlil.cc:1690:NotGate$346 = $auto$rtlil.cc:1690:NotGate$360
+    Removing $_NOT_ cell `$auto$ice40_ffssr.cc:101:execute$345' from module `\icestick'.
+  Cell `$auto$ice40_ffssr.cc:101:execute$343' is identical to cell `$auto$ice40_ffssr.cc:101:execute$359'.
+    Redirecting output \Y: $auto$rtlil.cc:1690:NotGate$344 = $auto$rtlil.cc:1690:NotGate$360
+    Removing $_NOT_ cell `$auto$ice40_ffssr.cc:101:execute$343' from module `\icestick'.
+  Cell `$auto$ice40_ffssr.cc:101:execute$341' is identical to cell `$auto$ice40_ffssr.cc:101:execute$359'.
+    Redirecting output \Y: $auto$rtlil.cc:1690:NotGate$342 = $auto$rtlil.cc:1690:NotGate$360
+    Removing $_NOT_ cell `$auto$ice40_ffssr.cc:101:execute$341' from module `\icestick'.
+  Cell `$auto$ice40_ffssr.cc:101:execute$339' is identical to cell `$auto$ice40_ffssr.cc:101:execute$359'.
+    Redirecting output \Y: $auto$rtlil.cc:1690:NotGate$340 = $auto$rtlil.cc:1690:NotGate$360
+    Removing $_NOT_ cell `$auto$ice40_ffssr.cc:101:execute$339' from module `\icestick'.
+  Cell `$auto$ice40_ffssr.cc:101:execute$337' is identical to cell `$auto$ice40_ffssr.cc:101:execute$359'.
+    Redirecting output \Y: $auto$rtlil.cc:1690:NotGate$338 = $auto$rtlil.cc:1690:NotGate$360
+    Removing $_NOT_ cell `$auto$ice40_ffssr.cc:101:execute$337' from module `\icestick'.
+  Cell `$auto$ice40_ffssr.cc:101:execute$335' is identical to cell `$auto$ice40_ffssr.cc:101:execute$359'.
+    Redirecting output \Y: $auto$rtlil.cc:1690:NotGate$336 = $auto$rtlil.cc:1690:NotGate$360
+    Removing $_NOT_ cell `$auto$ice40_ffssr.cc:101:execute$335' from module `\icestick'.
+  Cell `$auto$ice40_ffssr.cc:101:execute$333' is identical to cell `$auto$ice40_ffssr.cc:101:execute$359'.
+    Redirecting output \Y: $auto$rtlil.cc:1690:NotGate$334 = $auto$rtlil.cc:1690:NotGate$360
+    Removing $_NOT_ cell `$auto$ice40_ffssr.cc:101:execute$333' from module `\icestick'.
+  Cell `$auto$ice40_ffssr.cc:101:execute$331' is identical to cell `$auto$ice40_ffssr.cc:101:execute$359'.
+    Redirecting output \Y: $auto$rtlil.cc:1690:NotGate$332 = $auto$rtlil.cc:1690:NotGate$360
+    Removing $_NOT_ cell `$auto$ice40_ffssr.cc:101:execute$331' from module `\icestick'.
+  Cell `$auto$ice40_ffssr.cc:101:execute$329' is identical to cell `$auto$ice40_ffssr.cc:101:execute$359'.
+    Redirecting output \Y: $auto$rtlil.cc:1690:NotGate$330 = $auto$rtlil.cc:1690:NotGate$360
+    Removing $_NOT_ cell `$auto$ice40_ffssr.cc:101:execute$329' from module `\icestick'.
+  Cell `$auto$ice40_ffssr.cc:101:execute$327' is identical to cell `$auto$ice40_ffssr.cc:101:execute$359'.
+    Redirecting output \Y: $auto$rtlil.cc:1690:NotGate$328 = $auto$rtlil.cc:1690:NotGate$360
+    Removing $_NOT_ cell `$auto$ice40_ffssr.cc:101:execute$327' from module `\icestick'.
+  Cell `$auto$ice40_ffssr.cc:101:execute$325' is identical to cell `$auto$ice40_ffssr.cc:101:execute$359'.
+    Redirecting output \Y: $auto$rtlil.cc:1690:NotGate$326 = $auto$rtlil.cc:1690:NotGate$360
+    Removing $_NOT_ cell `$auto$ice40_ffssr.cc:101:execute$325' from module `\icestick'.
+  Cell `$auto$ice40_ffssr.cc:101:execute$323' is identical to cell `$auto$ice40_ffssr.cc:101:execute$359'.
+    Redirecting output \Y: $auto$rtlil.cc:1690:NotGate$324 = $auto$rtlil.cc:1690:NotGate$360
+    Removing $_NOT_ cell `$auto$ice40_ffssr.cc:101:execute$323' from module `\icestick'.
+  Cell `$auto$ice40_ffssr.cc:101:execute$321' is identical to cell `$auto$ice40_ffssr.cc:101:execute$359'.
+    Redirecting output \Y: $auto$rtlil.cc:1690:NotGate$322 = $auto$rtlil.cc:1690:NotGate$360
+    Removing $_NOT_ cell `$auto$ice40_ffssr.cc:101:execute$321' from module `\icestick'.
+  Cell `$auto$ice40_ffssr.cc:101:execute$319' is identical to cell `$auto$ice40_ffssr.cc:101:execute$359'.
+    Redirecting output \Y: $auto$rtlil.cc:1690:NotGate$320 = $auto$rtlil.cc:1690:NotGate$360
+    Removing $_NOT_ cell `$auto$ice40_ffssr.cc:101:execute$319' from module `\icestick'.
+  Cell `$auto$ice40_ffssr.cc:101:execute$317' is identical to cell `$auto$ice40_ffssr.cc:101:execute$359'.
+    Redirecting output \Y: $auto$rtlil.cc:1690:NotGate$318 = $auto$rtlil.cc:1690:NotGate$360
+    Removing $_NOT_ cell `$auto$ice40_ffssr.cc:101:execute$317' from module `\icestick'.
+  Cell `$auto$ice40_ffssr.cc:101:execute$315' is identical to cell `$auto$ice40_ffssr.cc:101:execute$359'.
+    Redirecting output \Y: $auto$rtlil.cc:1690:NotGate$316 = $auto$rtlil.cc:1690:NotGate$360
+    Removing $_NOT_ cell `$auto$ice40_ffssr.cc:101:execute$315' from module `\icestick'.
+  Cell `$auto$ice40_ffssr.cc:101:execute$313' is identical to cell `$auto$ice40_ffssr.cc:101:execute$359'.
+    Redirecting output \Y: $auto$rtlil.cc:1690:NotGate$314 = $auto$rtlil.cc:1690:NotGate$360
+    Removing $_NOT_ cell `$auto$ice40_ffssr.cc:101:execute$313' from module `\icestick'.
+Removed a total of 23 cells.
+
+2.19.4. Executing OPT_RMDFF pass (remove dff with constant values).
+Replaced 0 DFF cells.
+
+2.19.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \icestick..
+  removing unused `$_AND_' cell `$auto$simplemap.cc:277:simplemap_mux$132'.
+  removing unused `$_AND_' cell `$auto$simplemap.cc:277:simplemap_mux$133'.
+  removing unused `$_AND_' cell `$auto$simplemap.cc:277:simplemap_mux$134'.
+  removing unused `$_AND_' cell `$auto$simplemap.cc:277:simplemap_mux$135'.
+  removing unused `$_AND_' cell `$auto$simplemap.cc:277:simplemap_mux$136'.
+  removing unused `$_AND_' cell `$auto$simplemap.cc:277:simplemap_mux$137'.
+  removing unused `$_AND_' cell `$auto$simplemap.cc:277:simplemap_mux$138'.
+  removing unused `$_AND_' cell `$auto$simplemap.cc:277:simplemap_mux$139'.
+  removing unused `$_AND_' cell `$auto$simplemap.cc:277:simplemap_mux$140'.
+  removing unused `$_AND_' cell `$auto$simplemap.cc:277:simplemap_mux$141'.
+  removing unused `$_AND_' cell `$auto$simplemap.cc:277:simplemap_mux$142'.
+  removing unused `$_AND_' cell `$auto$simplemap.cc:277:simplemap_mux$143'.
+  removing unused `$_AND_' cell `$auto$simplemap.cc:277:simplemap_mux$144'.
+  removing unused `$_AND_' cell `$auto$simplemap.cc:277:simplemap_mux$145'.
+  removing unused `$_AND_' cell `$auto$simplemap.cc:277:simplemap_mux$146'.
+  removing unused `$_AND_' cell `$auto$simplemap.cc:277:simplemap_mux$147'.
+  removing unused `$_AND_' cell `$auto$simplemap.cc:277:simplemap_mux$148'.
+  removing unused `$_AND_' cell `$auto$simplemap.cc:277:simplemap_mux$149'.
+  removing unused `$_AND_' cell `$auto$simplemap.cc:277:simplemap_mux$150'.
+  removing unused `$_AND_' cell `$auto$simplemap.cc:277:simplemap_mux$151'.
+  removing unused `$_AND_' cell `$auto$simplemap.cc:277:simplemap_mux$152'.
+  removing unused `$_AND_' cell `$auto$simplemap.cc:277:simplemap_mux$153'.
+  removing unused `$_AND_' cell `$auto$simplemap.cc:277:simplemap_mux$154'.
+  removing unused `$_AND_' cell `$auto$simplemap.cc:277:simplemap_mux$155'.
+
+2.19.6. Rerunning OPT passes. (Removed registers in this run.)
+
+2.19.7. Running ICE40 specific optimizations.
+
+2.19.8. Executing OPT_CONST pass (perform const folding).
+
+2.19.9. Executing OPT_SHARE pass (detect identical cells).
+Finding identical cells in module `\icestick'.
+Removed a total of 0 cells.
+
+2.19.10. Executing OPT_RMDFF pass (remove dff with constant values).
+Replaced 0 DFF cells.
+
+2.19.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \icestick..
+
+2.19.12. Finished OPT passes. (There is nothing left to do.)
+
+2.20. Executing ABC pass (technology mapping using ABC).
+
+2.20.1. Extracting gate netlist of module `\icestick' to `<abc-temp-dir>/input.blif'..
+Extracted 45 gates and 71 wires to a netlist network with 25 inputs and 4 outputs.
+
+2.20.1.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/yosys-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lut <abc-temp-dir>/lutdefs.txt 
+ABC: + strash 
+ABC: + scorr 
+ABC: Error: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + ifraig 
+ABC: + retime 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + if 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+2.20.1.2. Re-integrating ABC results.
+ABC RESULTS:              $lut cells:       11
+ABC RESULTS:        internal signals:       42
+ABC RESULTS:           input signals:       25
+ABC RESULTS:          output signals:        4
+Removing temp directory.
+Removed 0 unused cells and 37 unused wires.
+
+2.21. Executing TECHMAP pass (map to technology primitives).
+
+2.21.1. Executing Verilog-2005 frontend.
+Parsing Verilog input from `/usr/local/bin/../share/yosys/ice40/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NN_'.
+Generating RTLIL representation for module `\$_DFFE_PN_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NN0_'.
+Generating RTLIL representation for module `\$_DFF_NN1_'.
+Generating RTLIL representation for module `\$_DFF_PN0_'.
+Generating RTLIL representation for module `\$_DFF_PN1_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$__DFFE_NN0'.
+Generating RTLIL representation for module `\$__DFFE_NN1'.
+Generating RTLIL representation for module `\$__DFFE_PN0'.
+Generating RTLIL representation for module `\$__DFFE_PN1'.
+Generating RTLIL representation for module `\$__DFFE_NP0'.
+Generating RTLIL representation for module `\$__DFFE_NP1'.
+Generating RTLIL representation for module `\$__DFFE_PP0'.
+Generating RTLIL representation for module `\$__DFFE_PP1'.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+2.21.2. Executing AST frontend in derive mode using pre-parsed AST for module `\$lut'.
+Parameter \WIDTH = 4
+Parameter \LUT = 16'0000000000000001
+Generating RTLIL representation for module `$paramod\$lut\WIDTH=4\LUT=16'0000000000000001'.
+
+2.21.3. Continuing TECHMAP pass.
+Mapping icestick.$abc$361$auto$blifparse.cc:298:parse_blif$368 using $paramod\$lut\WIDTH=4\LUT=16'0000000000000001.
+
+2.21.4. Executing AST frontend in derive mode using pre-parsed AST for module `\$lut'.
+Parameter \WIDTH = 4
+Parameter \LUT = 16'1000000000000000
+Generating RTLIL representation for module `$paramod\$lut\WIDTH=4\LUT=16'1000000000000000'.
+
+2.21.5. Continuing TECHMAP pass.
+Mapping icestick.$abc$361$auto$blifparse.cc:298:parse_blif$367 using $paramod\$lut\WIDTH=4\LUT=16'1000000000000000.
+
+2.21.6. Executing AST frontend in derive mode using pre-parsed AST for module `\$lut'.
+Parameter \WIDTH = 4
+Parameter \LUT = 16'0100000000000000
+Generating RTLIL representation for module `$paramod\$lut\WIDTH=4\LUT=16'0100000000000000'.
+
+2.21.7. Continuing TECHMAP pass.
+Mapping icestick.$abc$361$auto$blifparse.cc:298:parse_blif$365 using $paramod\$lut\WIDTH=4\LUT=16'0100000000000000.
+Mapping icestick.$abc$361$auto$blifparse.cc:298:parse_blif$366 using $paramod\$lut\WIDTH=4\LUT=16'1000000000000000.
+Mapping icestick.$abc$361$auto$blifparse.cc:298:parse_blif$364 using $paramod\$lut\WIDTH=4\LUT=16'1000000000000000.
+Mapping icestick.$abc$361$auto$blifparse.cc:298:parse_blif$363 using $paramod\$lut\WIDTH=4\LUT=16'1000000000000000.
+
+2.21.8. Executing AST frontend in derive mode using pre-parsed AST for module `\$lut'.
+Parameter \WIDTH = 4
+Parameter \LUT = 16'0001000000000000
+Generating RTLIL representation for module `$paramod\$lut\WIDTH=4\LUT=16'0001000000000000'.
+
+2.21.9. Continuing TECHMAP pass.
+Mapping icestick.$abc$361$auto$blifparse.cc:298:parse_blif$369 using $paramod\$lut\WIDTH=4\LUT=16'0001000000000000.
+
+2.21.10. Executing AST frontend in derive mode using pre-parsed AST for module `\$lut'.
+Parameter \WIDTH = 3
+Parameter \LUT = 8'10000000
+Generating RTLIL representation for module `$paramod\$lut\WIDTH=3\LUT=8'10000000'.
+
+2.21.11. Continuing TECHMAP pass.
+Mapping icestick.$abc$361$auto$blifparse.cc:298:parse_blif$362 using $paramod\$lut\WIDTH=3\LUT=8'10000000.
+
+2.21.12. Executing AST frontend in derive mode using pre-parsed AST for module `\$lut'.
+Parameter \WIDTH = 2
+Parameter \LUT = 4'0110
+Generating RTLIL representation for module `$paramod\$lut\WIDTH=2\LUT=4'0110'.
+
+2.21.13. Continuing TECHMAP pass.
+Mapping icestick.$abc$361$auto$blifparse.cc:298:parse_blif$370 using $paramod\$lut\WIDTH=2\LUT=4'0110.
+
+2.21.14. Executing AST frontend in derive mode using pre-parsed AST for module `\$lut'.
+Parameter \WIDTH = 1
+Parameter \LUT = 2'01
+Generating RTLIL representation for module `$paramod\$lut\WIDTH=1\LUT=2'01'.
+
+2.21.15. Continuing TECHMAP pass.
+Mapping icestick.$abc$361$auto$blifparse.cc:298:parse_blif$371 using $paramod\$lut\WIDTH=1\LUT=2'01.
+Mapping icestick.$abc$361$auto$blifparse.cc:298:parse_blif$372 using $paramod\$lut\WIDTH=3\LUT=8'10000000.
+No more expansions possible.
+Removed 0 unused cells and 22 unused wires.
+
+2.22. Executing HIERARCHY pass (managing design hierarchy).
+
+2.22.1. Analyzing design hierarchy..
+Top module:  \icestick
+
+2.22.2. Analyzing design hierarchy..
+Top module:  \icestick
+Removed 0 unused modules.
+
+2.23. Printing statistics.
+
+=== icestick ===
+
+   Number of wires:                 16
+   Number of wire bits:             85
+   Number of public wires:           3
+   Number of public wire bits:      26
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 81
+     SB_CARRY                       22
+     SB_DFFE                         1
+     SB_DFFSR                       24
+     SB_LUT4                        34
+
+=== design hierarchy ===
+
+   icestick                          1
+
+   Number of wires:                 16
+   Number of wire bits:             85
+   Number of public wires:           3
+   Number of public wire bits:      26
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 81
+     SB_CARRY                       22
+     SB_DFFE                         1
+     SB_DFFSR                       24
+     SB_LUT4                        34
+
+2.24. Executing CHECK pass (checking for obvious problems).
+checking module icestick..
+found and reported 0 problems.
+
+2.25. Executing BLIF backend.
+
+End of script. Logfile hash: 8d876143df
+CPU: user 4.94s system 0.27s, MEM: 10.84 MB total, 7.17 MB resident
+Yosys 0.5+292 (git sha1 6f9a6fd, gcc 4.6.3-14+rpi1 -fPIC -Os)
+Time spent: 40% 8x read_verilog (2 sec), 11% 1x share (0 sec), ...
+seed: 1
+device: 1k
+read_chipdb +/share/arachne-pnr/chipdb-1k.bin...
+  supported packages: tq144
+read_blif ./iceriver/icestick.blif...
+prune...
+read_pcf ./iceriver/icestick.pcf...
+instantiate_io...
+pack...
+
+After packing:
+IOs          2 / 96
+LCs          37 / 1280
+  DFF        4
+  CARRY      2
+  CARRY, DFF 21
+  DFF PASS   0
+  CARRY PASS 2
+BRAMs        0 / 16
+WARMBOOTs    0 / 1
+GBs          0 / 8
+
+promote_globals...
+  promoted clock$2, 25 / 25
+  promoted $auto$rtlil.cc:1690:NotGate$314, 24 / 24
+  promoted 2 nets
+    1 sr/we
+    1 clk
+  2 globals
+    1 sr/we
+    1 clk
+realize_constants...
+  realized 1
+place...
+  initial wire length = 564
+  final wire length = 71
+
+After placement:
+PIOs       3 / 96
+PLBs       9 / 160
+BRAMs      0 / 16
+
+  place time 0.58s
+route...
+  pass 1, 0 shared.
+  route time 0.17s
+write_txt ./iceriver/icestick.txt...
+Tue Sep 15 00:04:24 UTC 2015 
+
