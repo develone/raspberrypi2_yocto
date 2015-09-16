@@ -1,0 +1,21 @@
+1.) URL to get source code. https://github.com/cfelton/rhea/archive/master.zip
+
+2.) Create a recipe to which will preform several function fetch the source, compile and create 
+the  the rpm, deb, or ipk files, and populate the sysroot.
+
+"recipetool create  -o /home/vidal/wkg/yocto/RaspberryPi2/poky/meta/recipes-devtools/python/rhea_0.1.0.bb https://github.com/cfelton/rhea/archive/master.zip"
+(See the file task_for_pkgs_recipe.txt)
+
+3.) Create the rpm, deb, or ipk files "bitbake rhea"
+(See the file task_for_pkgs_recipe.txt)
+
+4.) Add to IMAGE_INSTALL_append = " xterm git \
+ jasper gsl liba52  libmad hexedit man iproute2 \
+ chkconfig v4l-utils python-imaging socat lame vlc \
+ gperf tree libav x264  libav  opencv opencv-samples cmake \
+ opencv-apps python-opencv tcl tk rpi-gpio \
+ tar pv openjpeg libftdi wiringpi squashfs-tools libmtp libtool \
+ rsync yasm evince gparted firefox geany python-pip iputils \
+ intelhex python-bitstring pyusb PyPubSub xstools whiptail  \
+"
+5.) Create the image "bitbake core-image-sato".
