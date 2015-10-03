@@ -158,15 +158,17 @@ tmpfs             499016     536    498480   1% /run
 tmpfs             499016     104    498912   1% /var/volatile
 /dev/mmcblk0p1     40862   20118     20744  50% /run/media/mmcblk0p1
 root@raspberrypi2:~# ls
-RPi-config    bcm2835_xsconnect_RPi-config_myhdl  pi_pkgs.txt
-bcm2835-1.45  myhdl				  raspberrypi2_yocto
+RPi-config  bcm2835-1.45  myhdl  pi_pkgs.txt  raspberrypi2_yocto  rhea
+cd bcm2835-1.45/examples/spi
+gcc -o spi spi.c -l bcm2835
+cd ~/
+rm -rf bcm2835_xsconnect_RPi-config_myhdl/
+
+dd bs=16M if=/dev/sdb | gzip > /home/vidal/wkg/yocto/core-image-sato100215.zip
+b46c5e0f7134e063c0f721965895e8cdb360f6c7c1bf32a03d5b6b4c239afcf0  core-image-sato100215.zip
 
 
-dd bs=16M if=/dev/sdb | gzip > /home/vidal/wkg/yocto/core-image-sato091515.zip
-eeb2675887773f0c7fe7e3c682f76d5d167d9cb306c29df08fbaed88e2aa17bb  core-image-sato091515.zip
-
-
-gzip -dc /home/vidal/wkg/yocto/core-image-sato091515.zip | dd bs=16M of=/dev/sdb
+gzip -dc /home/vidal/wkg/yocto/core-image-sato100215.zip | dd bs=16M of=/dev/sdb
 
 wc tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.manifest 
   3994  11982 264414 tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.manifest

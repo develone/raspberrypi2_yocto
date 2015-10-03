@@ -245,4 +245,5 @@ recipe_xstools/xstools_0.1.30.bb is now working
 Image now has the HDL tools icestrom, arachne-pnr, and yosys
 Ran arachne-pnr test 5:41 hrs 536 additional files in the test folder
 
+10/02/15 added linux-firmware to support wi-fi
  
