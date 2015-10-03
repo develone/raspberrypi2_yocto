@@ -51,41 +51,100 @@ NATIVELSBSTRING   = "Ubuntu-12.04"
 TARGET_SYS        = "arm-poky-linux-gnueabi"
 MACHINE           = "raspberrypi2"
 DISTRO            = "poky"
-DISTRO_VERSION    = "1.8+snapshot-20150909"
+DISTRO_VERSION    = "1.8+snapshot-20151002"
 TUNE_FEATURES     = "arm armv7a vfp thumb neon callconvention-hard vfpv4 cortexa7"
 TARGET_FPU        = "vfp-vfpv4-neon"
 meta              
 meta-yocto        
-meta-yocto-bsp    = "fido:89cf954fe598a32e91f8374b32a2c092e6e2d8c7"
-meta-raspberrypi  = "master:17dad9328b100beda1cf870c9075e509b5cbfa90"
+meta-yocto-bsp    = "fido:0f8d89ce66cfffccc9911d6c61470a585173b79d"
+meta-raspberrypi  = "fido:17dad9328b100beda1cf870c9075e509b5cbfa90"
 meta-oe           
 meta-python       
 meta-multimedia   
-meta-gnome        = "fido:89cf954fe598a32e91f8374b32a2c092e6e2d8c7"
+meta-gnome        = "fido:0f8d89ce66cfffccc9911d6c61470a585173b79d"
 meta-browser      = "master:ca96f4326345dcd779fc539877a04f069f431749"
 
 NOTE: Preparing RunQueue
 NOTE: Executing SetScene Tasks
 NOTE: Executing RunQueue Tasks
-NOTE: Tasks Summary: Attempted 7358 tasks of which 7352 didn't need to be rerun and all succeeded.
+NOTE: Tasks Summary: Attempted 7384 tasks of which 7378 didn't need to be rerun and all succeeded.
 
 
 lrwxrwxrwx 1 vidal vidal 60 Sep 14 07:32 tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg -> core-image-sato-raspberrypi2-20150914131024.rootfs.rpi-sdimg
 
 dd if=tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg | pv | sudo dd of=/dev/sdb bs=16M
-4767744+0 records inkB/s] [             <=>                                    ]
-4767744+0 records out
-2441084928 bytes (2.4 GB) copied, 1427.29 s, 1.7 MB/s
-2.27GB 0:23:47 [1.63MB/s] [              <=>                                   ]
-152567808+0 records in
-152567808+0 records out
-2436890624 bytes (2.4 GB) copied, 1427.87 s, 1.7 MB/s
+5021696+0 records in
+5021696+0 records out
+2571108352 bytes (2.6 GB) copied
+, 293.934 s, 8.7 MB/s
+0+37817 records in
+0+37817 records out
+2571108352 bytes (2.6 GB) copied, 344.023 s, 7.5 MB/s
 
 Use gparted /dev/sdX to resize the 2nd partition.
-resied 2280 to 3280 for testing
+resied 2408 to 3408 for testing
 
 copied /home/vidal/wkg/yocto/xstools_iverilog_gtkwave_myhdl /home/root of SD card
-copied wkg/yocto/gtkwave_iverilog_python3_yosys_bcm2735_usrlocal090615 /home/root of SD card
+copied wkg/yocto/gtkwave_iverilog_python3_yosys_bcm2735_usrlocal091715 /home/root of SD card
+cd /media/f2799411-5073-42c8-86a3-ab94d6ac7b06/etc/
+cp wpa_supplicant.conf wpa_supplicant.conf.orig
+cp /home/vidal/wkg/raspberrypi2_yocto/wpa_supplicant.conf /media/f2799411-5073-42c8-86a3-ab94d6ac7b06/etc/
+modify myssid & mypsk in /etc/wpa_supplicant.conf 
+At the console before the wireless works
+At boot need to enable wireless and provide the psk.
+with linux-firmware pi_pkgs.txt are 4061.
+
+    1  passwd
+    2  rpm -qa | sort > pi_pkgs.txt
+    3  wc pi_pkgs.txt 
+    4  unsquashfs gtkwave_iverilog_python3_yosys_bcm2735_arachne-pnr_icebox_usrlocal091715 
+    5  mkdir /usr/local
+    6  cp -R squashfs-root/* /usr/local/
+    7  cp -R bcm2835_xsconnect_RPi-config_myhdl/myhdl/ .
+    8  cp -R bcm2835_xsconnect_RPi-config_myhdl/raspberrypi2_yocto/ .
+    9  tar xvfz bcm2835_xsconnect_RPi-config_myhdl/bcm2835-1.45.tar.gz 
+   10  cd bcm2835_xsconnect_RPi-config_myhdl/
+   11  unzip xsconnect-0.1.2.zip 
+   12  cd xsconnect-0.1.2
+   13  python setup.py 
+   14  python setup.py install
+   15  cd ../
+   16  cd ../
+   17  rm -rf squashfs-root/
+   18  ls
+   19  rm -f gtkwave_iverilog_python3_yosys_bcm2735_arachne-pnr_icebox_usrlocal091715 
+   20  cd myhdl/
+   21  python setup.py install
+   22  cd cosimulation/icarus/
+   23  make
+   24  cd ../../
+   25  python3 setup.py install
+   26  cd ../
+   27  ls
+   28  ls bcm2835_xsconnect_RPi-config_myhdl/
+   29  cp -R bcm2835_xsconnect_RPi-config_myhdl/RPi-config/ .
+   30  ls
+   31  cd raspberrypi2_yocto/xstools_test_files/
+   32  xstest -u 0 -b xula2-lx9
+   33  xsload --usb 0 --fpga pc_fast_blinker_sub_h1.bit 
+   34  python pc_subtractor_test.py 
+   35  cd ../
+   36  cd ../
+   39  cd raspberrypi2_yocto/opencv_python_yocto_raspberry_pi/
+   40  python facedetect_my.py 
+
+df
+Filesystem     1K-blocks    Used Available Use% Mounted on
+/dev/root        3204960 2487428    543048  83% /
+devtmpfs          494728       4    494724   1% /dev
+tmpfs                 40       0        40   0% /mnt/.psplash
+tmpfs             499016     536    498480   1% /run
+tmpfs             499016     104    498912   1% /var/volatile
+/dev/mmcblk0p1     40862   20118     20744  50% /run/media/mmcblk0p1
+root@raspberrypi2:~# ls
+RPi-config    bcm2835_xsconnect_RPi-config_myhdl  pi_pkgs.txt
+bcm2835-1.45  myhdl				  raspberrypi2_yocto
+
 
 dd bs=16M if=/dev/sdb | gzip > /home/vidal/wkg/yocto/core-image-sato091515.zip
 eeb2675887773f0c7fe7e3c682f76d5d167d9cb306c29df08fbaed88e2aa17bb  core-image-sato091515.zip
