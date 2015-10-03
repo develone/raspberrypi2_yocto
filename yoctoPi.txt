@@ -132,7 +132,23 @@ with linux-firmware pi_pkgs.txt are 4061.
    36  cd ../
    39  cd raspberrypi2_yocto/opencv_python_yocto_raspberry_pi/
    40  python facedetect_my.py 
-
+   52  git clone https://github.com/cfelton/rhea.git
+   53  cd rhea/
+   54  python setup.py develop
+   55  cd examples/build/
+   56  python ex_icestick.py 
+   57  ls -la iceriver/
+ls -la iceriver/
+total 336
+drwxr-xr-x 2 root root   4096 Oct  2 21:21 .
+drwxr-xr-x 3 root root   4096 Oct  2 21:21 ..
+-rw-r--r-- 1 root root  71079 Oct  2 21:21 build_iceriver.log
+-rw-r--r-- 1 root root  32216 Oct  2 21:21 icestick.bin
+-rw-r--r-- 1 root root  15741 Oct  2 21:21 icestick.blif
+-rw-r--r-- 1 root root    128 Oct  2 21:21 icestick.pcf
+-rw-r--r-- 1 root root 189936 Oct  2 21:21 icestick.txt
+-rw-r--r-- 1 root root    624 Oct  2 21:21 icestick.v
+-rw-r--r-- 1 root root    753 Oct  2 21:21 icestick.ys
 df
 Filesystem     1K-blocks    Used Available Use% Mounted on
 /dev/root        3204960 2487428    543048  83% /
