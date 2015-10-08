@@ -1,0 +1,54 @@
+#!/bin/bash
+cd ~/
+#create a list of installed packages
+echo "create a list of installed packages"
+rpm -qa | sort > pi_pkgs.txt
+wc pi_pkgs.txt
+#add the compiled programs to /usr/local 
+echo "add the compiled programs to /usr/local"
+unsquashfs gtkwave_iverilog_python3_yosys_bcm2735_arachne-pnr_icebox_usrlocal091715 
+mkdir /usr/local
+cp -R squashfs-root/* /usr/local/
+#clean up unused files not needed anymore
+echo "clean up unused files not needed anymore"
+rm -rf squashfs-root/
+rm -f gtkwave_iverilog_python3_yosys_bcm2735_arachne-pnr_icebox_usrlocal091715
+#copy code needed in home folder
+echo "copy code needed in home folder"
+cp -R bcm2835_xsconnect_RPi-config_myhdl_rhea_hats/myhdl/ .
+cp -R bcm2835_xsconnect_RPi-config_myhdl_rhea_hats/raspberrypi2_yocto/ .
+cp -R bcm2835_xsconnect_RPi-config_myhdl_rhea_hats/rhea .
+cp -R bcm2835_xsconnect_RPi-config_myhdl_rhea_hats/hats .
+cp -R bcm2835_xsconnect_RPi-config_myhdl_rhea_hats/RPi-config .
+tar xvfz bcm2835_xsconnect_RPi-config_myhdl_rhea_hats/bcm2835-1.45.tar.gz
+ls 
+cd bcm2835-1.45/examples/spi
+gcc -o spi spi.c -l bcm2835
+./spi
+cd ~/bcm2835_xsconnect_RPi-config_myhdl/_rhea_hats/
+unzip xsconnect-0.1.2.zip 
+cd xsconnect-0.1.2
+python setup.py install
+cd ~/myhdl/
+python setup.py install
+cd cosimulation/icarus/
+make
+cd ../../
+python3 setup.py install
+cd ~/
+cd raspberrypi2_yocto/xstools_test_files/
+xstest -u 0 -b xula2-lx9
+xsload --usb 0 --fpga pc_fast_blinker_sub_h1.bit
+python pc_subtractor_test.py
+cd ~/
+#testing yosys arachne-pnr icepack
+echo "testing yosys arachne-pnr icepack"
+cd rhea/
+python setup.py develop
+cd examples/build/
+python ex_icestick.py
+ls -la iceriver/
+cd raspberrypi2_yocto/opencv_python_yocto_raspberry_pi/
+python facedetect_my.py
+cd ~/
+
