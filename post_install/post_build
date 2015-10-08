@@ -21,10 +21,13 @@ cp -R bcm2835_xsconnect_RPi-config_myhdl_rhea_hats/rhea .
 cp -R bcm2835_xsconnect_RPi-config_myhdl_rhea_hats/hats .
 cp -R bcm2835_xsconnect_RPi-config_myhdl_rhea_hats/RPi-config .
 tar xvfz bcm2835_xsconnect_RPi-config_myhdl_rhea_hats/bcm2835-1.45.tar.gz
-ls 
+ls -la
 cd bcm2835-1.45/examples/spi
 gcc -o spi spi.c -l bcm2835
 ./spi
+cd ~/hats/eepromutils
+make
+ls -la
 cd ~/bcm2835_xsconnect_RPi-config_myhdl/_rhea_hats/
 unzip xsconnect-0.1.2.zip 
 cd xsconnect-0.1.2
@@ -33,6 +36,7 @@ cd ~/myhdl/
 python setup.py install
 cd cosimulation/icarus/
 make
+ls -la
 cd ../../
 python3 setup.py install
 cd ~/
