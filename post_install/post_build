@@ -25,6 +25,7 @@ cp -R bcm2835_xsconnect_RPi-config_myhdl_rhea_hats/raspberrypi2_yocto/ .
 cp -R bcm2835_xsconnect_RPi-config_myhdl_rhea_hats/rhea .
 cp -R bcm2835_xsconnect_RPi-config_myhdl_rhea_hats/hats .
 cp -R bcm2835_xsconnect_RPi-config_myhdl_rhea_hats/RPi-config .
+cp -R bcm2835_xsconnect_RPi-config_myhdl_rhea_hats/SDRAM_Controller .
 tar xvfz bcm2835_xsconnect_RPi-config_myhdl_rhea_hats/bcm2835-1.45.tar.gz
 ls -la  >> post_build.log
 cd ~/bcm2835-1.45/examples/spi
