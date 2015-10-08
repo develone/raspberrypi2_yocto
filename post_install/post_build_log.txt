@@ -1,0 +1,987 @@
+ssh -Y 192.168.1.136
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+12:e3:53:0d:93:0d:b2:72:e5:4f:10:06:5b:6d:51:b9.
+Please contact your system administrator.
+Add correct host key in /root/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /root/.ssh/known_hosts:3
+  remove with: ssh-keygen -f "/root/.ssh/known_hosts" -R 192.168.1.136
+RSA host key for 192.168.1.136 has changed and you have requested strict checking.
+Host key verification failed.
+root@ws009:/home/vidal/wkg/yocto/RaspberryPi2/poky/build# ssh-keygen -f "/root/.ssh/known_hosts" -R 192.168.1.136
+/root/.ssh/known_hosts updated.
+Original contents retained as /root/.ssh/known_hosts.old
+root@ws009:/home/vidal/wkg/yocto/RaspberryPi2/poky/build# ssh -Y 192.168.1.136The authenticity of host '192.168.1.136 (192.168.1.136)' can't be established.
+RSA key fingerprint is 12:e3:53:0d:93:0d:b2:72:e5:4f:10:06:5b:6d:51:b9.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '192.168.1.136' (RSA) to the list of known hosts.
+xauth:  file /home/root/.Xauthority does not exist
+root@raspberrypi2:~# passwd    
+Changing password for root
+Enter the new password (minimum of 5 characters)
+Please use a combination of upper and lower case letters and numbers.
+New password: 
+Bad password: too short.  
+Warning: weak password (enter it again to use it anyway).
+New password: 
+Bad password: too short.  
+Warning: weak password (enter it again to use it anyway).
+New password: 
+Re-enter new password: 
+They don't match; try again.
+New password: 
+Re-enter new password: 
+passwd: password changed.
+
+root@raspberrypi2:~# ./post_build 
+create a list of installed packages
+  4061   4061 280060 pi_pkgs.txt
+add the compiled programs to /usr/local
+Parallel unsquashfs: Using 4 processors
+6952 inodes (9278 blocks) to write
+
+[=============================================================/] 9278/9278 100%
+
+created 6941 files
+created 512 directories
+created 11 symlinks
+created 0 devices
+created 0 fifos
+total 163288
+drwxr-xr-x 2 root root     4096 Oct  2 20:36 .
+drwxr-xr-x 8 root root     4096 Oct  2 20:38 ..
+lrwxrwxrwx 1 root root        8 Oct  2 20:34 2to3 -> 2to3-3.4
+-rwxr-xr-x 1 root root      101 Oct  2 20:34 2to3-3.4
+-rwxr-xr-x 1 root root   452092 Oct  2 20:34 arachne-pnr
+-rw-r--r-- 1 root root  1295656 Oct  2 20:34 bison
+-rwxr-xr-x 1 root root      241 Oct  2 20:34 easy_install-3.4
+-rwxr-xr-x 1 root root    48876 Oct  2 20:34 evcd2vcd
+-rwxr-xr-x 1 root root      685 Oct  2 20:34 f2py3
+-rwxr-xr-x 1 root root   284960 Oct  2 20:34 fst2vcd
+-rwxr-xr-x 1 root root   291680 Oct  2 20:34 fstminer
+-rwxr-xr-x 1 root root    73832 Oct  2 20:34 ghwdump
+-rwxr-xr-x 1 root root  5413108 Oct  2 20:34 gtkwave
+-rw-r--r-- 1 root root    76434 Oct  2 20:34 icebox.py
+-rw-r--r-- 1 root root    56706 Oct  2 20:34 icebox.pyc
+-rwxr-xr-x 1 root root     7930 Oct  2 20:34 icebox_chipdb
+-rwxr-xr-x 1 root root     4928 Oct  2 20:34 icebox_colbuf
+-rwxr-xr-x 1 root root     3539 Oct  2 20:34 icebox_diff
+-rwxr-xr-x 1 root root     5836 Oct  2 20:34 icebox_explain
+-rwxr-xr-x 1 root root    24948 Oct  2 20:34 icebox_html
+-rwxr-xr-x 1 root root     4902 Oct  2 20:34 icebox_maps
+-rwxr-xr-x 1 root root    40562 Oct  2 20:34 icebox_vlog
+-rw-r--r-- 1 root root   526004 Oct  2 20:34 iceboxdb.py
+-rw-r--r-- 1 root root   526215 Oct  2 20:34 iceboxdb.pyc
+-rwxr-xr-x 1 root root    61644 Oct  2 20:34 icemulti
+-rwxr-xr-x 1 root root   453336 Oct  2 20:34 icepack
+-rwxr-xr-x 1 root root    32660 Oct  2 20:34 iceprog
+lrwxrwxrwx 1 root root        7 Oct  2 20:34 iceunpack -> icepack
+lrwxrwxrwx 1 root root        7 Oct  2 20:34 idle3 -> idle3.4
+-rwxr-xr-x 1 root root       99 Oct  2 20:34 idle3.4
+-rwxr-xr-x 1 root root   106340 Oct  2 20:34 iverilog
+-rwxr-xr-x 1 root root     2971 Oct  2 20:34 iverilog-vpi
+-rwxr-xr-x 1 root root    85896 Oct  2 20:34 lxt2miner
+-rwxr-xr-x 1 root root    96304 Oct  2 20:34 lxt2vcd
+-rwxr-xr-x 1 root root      213 Oct  2 20:34 pip
+-rwxr-xr-x 1 root root      213 Oct  2 20:34 pip3
+-rwxr-xr-x 1 root root      213 Oct  2 20:34 pip3.4
+lrwxrwxrwx 1 root root        8 Oct  2 20:34 pydoc3 -> pydoc3.4
+-rwxr-xr-x 1 root root       84 Oct  2 20:34 pydoc3.4
+lrwxrwxrwx 1 root root        9 Oct  2 20:34 python3 -> python3.4
+lrwxrwxrwx 1 root root       16 Oct  2 20:34 python3-config -> python3.4-config
+-rwxr-xr-x 1 root root  8466304 Oct  2 20:34 python3.4
+lrwxrwxrwx 1 root root       17 Oct  2 20:34 python3.4-config -> python3.4m-config
+-rwxr-xr-x 1 root root  8466304 Oct  2 20:34 python3.4m
+-rwxr-xr-x 1 root root     3032 Oct  2 20:34 python3.4m-config
+lrwxrwxrwx 1 root root       10 Oct  2 20:34 pyvenv -> pyvenv-3.4
+-rwxr-xr-x 1 root root      236 Oct  2 20:34 pyvenv-3.4
+-rwxr-xr-x 1 root root   678992 Oct  2 20:34 rtlbrowse
+-rwxr-xr-x 1 root root    23216 Oct  2 20:34 shasum
+-rwxr-xr-x 1 root root    23164 Oct  2 20:34 shmidcat
+-rwxr-xr-x 1 root root    41024 Oct  2 20:34 twinwave
+-rwxr-xr-x 1 root root   338784 Oct  2 20:34 vcd2fst
+-rwxr-xr-x 1 root root   133140 Oct  2 20:34 vcd2lxt
+-rwxr-xr-x 1 root root   122668 Oct  2 20:34 vcd2lxt2
+-rwxr-xr-x 1 root root   135752 Oct  2 20:34 vcd2vzt
+-rwxr-xr-x 1 root root   519628 Oct  2 20:34 vermin
+-rwxr-xr-x 1 root root  2989608 Oct  2 20:34 vvp
+-rwxr-xr-x 1 root root   127576 Oct  2 20:34 vzt2vcd
+-rwxr-xr-x 1 root root   116784 Oct  2 20:34 vztminer
+-rwxr-xr-x 1 root root       45 Oct  2 20:34 yacc
+-rwxr-xr-x 1 root root 86123424 Oct  2 20:36 yosys
+-rwxr-xr-x 1 root root 48274644 Oct  2 20:36 yosys-abc
+-rwxr-xr-x 1 root root     3312 Oct  2 20:36 yosys-config
+-rwxr-xr-x 1 root root   231556 Oct  2 20:36 yosys-filterlib
+total 60
+drwxr-xr-x 15 root root 4096 Oct  2 20:40 .
+drwxr-xr-x  8 root root 4096 Oct  2 20:38 ..
+drwxr-xr-x  2 root root 4096 Oct  2 20:38 aclocal
+drwxr-xr-x  2 root root 4096 Oct  2 20:38 applications
+drwxr-xr-x  2 root root 4096 Oct  2 20:39 arachne-pnr
+drwxr-xr-x  4 root root 4096 Oct  2 20:39 bison
+drwxr-xr-x  3 root root 4096 Oct  2 20:39 gtkwave
+drwxr-xr-x  2 root root 4096 Oct  2 20:39 icebox
+drwxr-xr-x  3 root root 4096 Oct  2 20:40 icons
+drwxr-xr-x  2 root root 4096 Oct  2 20:40 info
+drwxr-xr-x 38 root root 4096 Oct  2 20:40 locale
+drwxr-xr-x  4 root root 4096 Oct  2 20:40 man
+drwxr-xr-x  3 root root 4096 Oct  2 20:40 mime
+drwxr-xr-x  3 root root 4096 Oct  2 20:40 python3.4
+drwxr-xr-x  6 root root 4096 Oct  2 20:40 yosys
+total 32
+drwxr-xr-x  8 root root 4096 Oct  2 20:38 .
+drwxr-xr-x 11 root root 4096 Oct  2 20:34 ..
+drwxr-xr-x  2 root root 4096 Oct  2 20:36 bin
+drwxr-xr-x  5 root root 4096 Oct  2 20:36 include
+drwxr-xr-x  2 root root 4096 Oct  2 20:36 info
+drwxr-xr-x  5 root root 4096 Oct  2 20:37 lib
+drwxr-xr-x  3 root root 4096 Oct  2 20:38 man
+drwxr-xr-x 15 root root 4096 Oct  2 20:40 share
+clean up unused files not needed anymore
+copy code needed in home folder
+bcm2835-1.45/
+bcm2835-1.45/config.sub
+bcm2835-1.45/ChangeLog
+bcm2835-1.45/doc/
+bcm2835-1.45/doc/Makefile.am
+bcm2835-1.45/doc/Makefile.in
+bcm2835-1.45/doc/Doxyfile.in
+bcm2835-1.45/aclocal.m4
+bcm2835-1.45/configure.ac
+bcm2835-1.45/README
+bcm2835-1.45/src/
+bcm2835-1.45/src/bcm2835.h
+bcm2835-1.45/src/Makefile.am
+bcm2835-1.45/src/bcm2835.c
+bcm2835-1.45/src/test.c
+bcm2835-1.45/src/Makefile.in
+bcm2835-1.45/INSTALL
+bcm2835-1.45/depcomp
+bcm2835-1.45/config.h.in
+bcm2835-1.45/config.guess
+bcm2835-1.45/NEWS
+bcm2835-1.45/COPYING
+bcm2835-1.45/Makefile.am
+bcm2835-1.45/ltmain.sh
+bcm2835-1.45/configure
+bcm2835-1.45/missing
+bcm2835-1.45/install-sh
+bcm2835-1.45/Makefile.in
+bcm2835-1.45/AUTHORS
+bcm2835-1.45/examples/
+bcm2835-1.45/examples/blink/
+bcm2835-1.45/examples/blink/blink.c
+bcm2835-1.45/examples/i2c/
+bcm2835-1.45/examples/i2c/i2c.c
+bcm2835-1.45/examples/input/
+bcm2835-1.45/examples/input/input.c
+bcm2835-1.45/examples/gpio/
+bcm2835-1.45/examples/gpio/gpio.c
+bcm2835-1.45/examples/spin/
+bcm2835-1.45/examples/spin/spin.c
+bcm2835-1.45/examples/event/
+bcm2835-1.45/examples/event/event.c
+bcm2835-1.45/examples/spi/
+bcm2835-1.45/examples/spi/spi.c
+bcm2835-1.45/examples/pwm/
+bcm2835-1.45/examples/pwm/pwm.c
+bcm2835-1.45/test-driver
+cc eepmake.c -o eepmake -Wno-format
+cc eepdump.c -o eepdump -Wno-format
+Archive:  xsconnect-0.1.2.zip
+  inflating: xsconnect-0.1.2/AUTHORS.rst
+  inflating: xsconnect-0.1.2/CONTRIBUTING.rst
+  inflating: xsconnect-0.1.2/HISTORY.rst
+  inflating: xsconnect-0.1.2/LICENSE
+  inflating: xsconnect-0.1.2/MANIFEST.in
+  inflating: xsconnect-0.1.2/PKG-INFO
+  inflating: xsconnect-0.1.2/README.rst
+  inflating: xsconnect-0.1.2/setup.cfg
+  inflating: xsconnect-0.1.2/setup.py
+  inflating: xsconnect-0.1.2/docs/authors.rst
+  inflating: xsconnect-0.1.2/docs/conf.py
+  inflating: xsconnect-0.1.2/docs/contributing.rst
+  inflating: xsconnect-0.1.2/docs/history.rst
+  inflating: xsconnect-0.1.2/docs/index.rst
+  inflating: xsconnect-0.1.2/docs/installation.rst
+  inflating: xsconnect-0.1.2/docs/make.bat
+  inflating: xsconnect-0.1.2/docs/Makefile
+  inflating: xsconnect-0.1.2/docs/readme.rst
+  inflating: xsconnect-0.1.2/docs/usage.rst
+  inflating: xsconnect-0.1.2/scripts/gxsconn.cmd
+  inflating: xsconnect-0.1.2/scripts/gxsconn.py
+  inflating: xsconnect-0.1.2/scripts/xsconn.cmd
+  inflating: xsconnect-0.1.2/scripts/xsconn.py
+  inflating: xsconnect-0.1.2/tests/test_xsconnect.py
+  inflating: xsconnect-0.1.2/tests/__init__.py
+  inflating: xsconnect-0.1.2/xsconnect/xess.gif
+  inflating: xsconnect-0.1.2/xsconnect/xsconnect.py
+  inflating: xsconnect-0.1.2/xsconnect/__init__.py
+  inflating: xsconnect-0.1.2/xsconnect/daughterboards/XuLA.py
+  inflating: xsconnect-0.1.2/xsconnect/daughterboards/XuLA2.py
+  inflating: xsconnect-0.1.2/xsconnect/daughterboards/__init__.py
+  inflating: xsconnect-0.1.2/xsconnect/motherboards/StickIt_V321.py
+  inflating: xsconnect-0.1.2/xsconnect/motherboards/StickIt_V4.py
+  inflating: xsconnect-0.1.2/xsconnect/motherboards/__init__.py
+  inflating: xsconnect-0.1.2/xsconnect/peripheralboards/Generic.py
+  inflating: xsconnect-0.1.2/xsconnect/peripheralboards/RPi_V2.py
+  inflating: xsconnect-0.1.2/xsconnect/peripheralboards/StickIt_AudioIO_V1.py
+  inflating: xsconnect-0.1.2/xsconnect/peripheralboards/StickIt_Buttons_V2.py
+  inflating: xsconnect-0.1.2/xsconnect/peripheralboards/StickIt_DIPSwitch_V1.py
+  inflating: xsconnect-0.1.2/xsconnect/peripheralboards/StickIt_Grove.py
+  inflating: xsconnect-0.1.2/xsconnect/peripheralboards/StickIt_LEDDigits_V2.py
+  inflating: xsconnect-0.1.2/xsconnect/peripheralboards/StickIt_MPU_6050_V1.py
+  inflating: xsconnect-0.1.2/xsconnect/peripheralboards/StickIt_MPU_9150_V1.py
+  inflating: xsconnect-0.1.2/xsconnect/peripheralboards/StickIt_PS2_V2.py
+  inflating: xsconnect-0.1.2/xsconnect/peripheralboards/StickIt_Rotary_Encoder_V1.py
+  inflating: xsconnect-0.1.2/xsconnect/peripheralboards/StickIt_VGA_V1.py
+  inflating: xsconnect-0.1.2/xsconnect/peripheralboards/__init__.py
+  inflating: xsconnect-0.1.2/xsconnect.egg-info/dependency_links.txt
+  inflating: xsconnect-0.1.2/xsconnect.egg-info/not-zip-safe
+  inflating: xsconnect-0.1.2/xsconnect.egg-info/pbr.json
+  inflating: xsconnect-0.1.2/xsconnect.egg-info/PKG-INFO
+  inflating: xsconnect-0.1.2/xsconnect.egg-info/SOURCES.txt
+  inflating: xsconnect-0.1.2/xsconnect.egg-info/top_level.txt
+running install
+running bdist_egg
+running egg_info
+writing xsconnect.egg-info/PKG-INFO
+writing top-level names to xsconnect.egg-info/top_level.txt
+writing dependency_links to xsconnect.egg-info/dependency_links.txt
+reading manifest file 'xsconnect.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no previously-included files matching '__pycache__' found under directory '*'
+warning: no previously-included files matching '*.py[co]' found under directory '*'
+writing manifest file 'xsconnect.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-armv7l/egg
+running install_lib
+running build_py
+creating build
+creating build/lib
+creating build/lib/tests
+copying tests/__init__.py -> build/lib/tests
+copying tests/test_xsconnect.py -> build/lib/tests
+creating build/lib/xsconnect
+copying xsconnect/__init__.py -> build/lib/xsconnect
+copying xsconnect/xsconnect.py -> build/lib/xsconnect
+creating build/lib/xsconnect/daughterboards
+copying xsconnect/daughterboards/__init__.py -> build/lib/xsconnect/daughterboards
+copying xsconnect/daughterboards/XuLA.py -> build/lib/xsconnect/daughterboards
+copying xsconnect/daughterboards/XuLA2.py -> build/lib/xsconnect/daughterboards
+creating build/lib/xsconnect/motherboards
+copying xsconnect/motherboards/__init__.py -> build/lib/xsconnect/motherboards
+copying xsconnect/motherboards/StickIt_V321.py -> build/lib/xsconnect/motherboards
+copying xsconnect/motherboards/StickIt_V4.py -> build/lib/xsconnect/motherboards
+creating build/lib/xsconnect/peripheralboards
+copying xsconnect/peripheralboards/StickIt_MPU_9150_V1.py -> build/lib/xsconnect/peripheralboards
+copying xsconnect/peripheralboards/StickIt_MPU_6050_V1.py -> build/lib/xsconnect/peripheralboards
+copying xsconnect/peripheralboards/StickIt_PS2_V2.py -> build/lib/xsconnect/peripheralboards
+copying xsconnect/peripheralboards/__init__.py -> build/lib/xsconnect/peripheralboards
+copying xsconnect/peripheralboards/StickIt_AudioIO_V1.py -> build/lib/xsconnect/peripheralboards
+copying xsconnect/peripheralboards/StickIt_Buttons_V2.py -> build/lib/xsconnect/peripheralboards
+copying xsconnect/peripheralboards/StickIt_VGA_V1.py -> build/lib/xsconnect/peripheralboards
+copying xsconnect/peripheralboards/StickIt_Grove.py -> build/lib/xsconnect/peripheralboards
+copying xsconnect/peripheralboards/StickIt_LEDDigits_V2.py -> build/lib/xsconnect/peripheralboards
+copying xsconnect/peripheralboards/StickIt_DIPSwitch_V1.py -> build/lib/xsconnect/peripheralboards
+copying xsconnect/peripheralboards/StickIt_Rotary_Encoder_V1.py -> build/lib/xsconnect/peripheralboards
+copying xsconnect/peripheralboards/RPi_V2.py -> build/lib/xsconnect/peripheralboards
+copying xsconnect/peripheralboards/Generic.py -> build/lib/xsconnect/peripheralboards
+copying xsconnect/xess.gif -> build/lib/xsconnect
+creating build/bdist.linux-armv7l
+creating build/bdist.linux-armv7l/egg
+creating build/bdist.linux-armv7l/egg/tests
+copying build/lib/tests/__init__.py -> build/bdist.linux-armv7l/egg/tests
+copying build/lib/tests/test_xsconnect.py -> build/bdist.linux-armv7l/egg/tests
+creating build/bdist.linux-armv7l/egg/xsconnect
+copying build/lib/xsconnect/xess.gif -> build/bdist.linux-armv7l/egg/xsconnect
+creating build/bdist.linux-armv7l/egg/xsconnect/daughterboards
+copying build/lib/xsconnect/daughterboards/__init__.py -> build/bdist.linux-armv7l/egg/xsconnect/daughterboards
+copying build/lib/xsconnect/daughterboards/XuLA.py -> build/bdist.linux-armv7l/egg/xsconnect/daughterboards
+copying build/lib/xsconnect/daughterboards/XuLA2.py -> build/bdist.linux-armv7l/egg/xsconnect/daughterboards
+copying build/lib/xsconnect/__init__.py -> build/bdist.linux-armv7l/egg/xsconnect
+creating build/bdist.linux-armv7l/egg/xsconnect/motherboards
+copying build/lib/xsconnect/motherboards/__init__.py -> build/bdist.linux-armv7l/egg/xsconnect/motherboards
+copying build/lib/xsconnect/motherboards/StickIt_V321.py -> build/bdist.linux-armv7l/egg/xsconnect/motherboards
+copying build/lib/xsconnect/motherboards/StickIt_V4.py -> build/bdist.linux-armv7l/egg/xsconnect/motherboards
+copying build/lib/xsconnect/xsconnect.py -> build/bdist.linux-armv7l/egg/xsconnect
+creating build/bdist.linux-armv7l/egg/xsconnect/peripheralboards
+copying build/lib/xsconnect/peripheralboards/StickIt_MPU_9150_V1.py -> build/bdist.linux-armv7l/egg/xsconnect/peripheralboards
+copying build/lib/xsconnect/peripheralboards/StickIt_MPU_6050_V1.py -> build/bdist.linux-armv7l/egg/xsconnect/peripheralboards
+copying build/lib/xsconnect/peripheralboards/StickIt_PS2_V2.py -> build/bdist.linux-armv7l/egg/xsconnect/peripheralboards
+copying build/lib/xsconnect/peripheralboards/__init__.py -> build/bdist.linux-armv7l/egg/xsconnect/peripheralboards
+copying build/lib/xsconnect/peripheralboards/StickIt_AudioIO_V1.py -> build/bdist.linux-armv7l/egg/xsconnect/peripheralboards
+copying build/lib/xsconnect/peripheralboards/StickIt_Buttons_V2.py -> build/bdist.linux-armv7l/egg/xsconnect/peripheralboards
+copying build/lib/xsconnect/peripheralboards/StickIt_VGA_V1.py -> build/bdist.linux-armv7l/egg/xsconnect/peripheralboards
+copying build/lib/xsconnect/peripheralboards/StickIt_Grove.py -> build/bdist.linux-armv7l/egg/xsconnect/peripheralboards
+copying build/lib/xsconnect/peripheralboards/StickIt_LEDDigits_V2.py -> build/bdist.linux-armv7l/egg/xsconnect/peripheralboards
+copying build/lib/xsconnect/peripheralboards/StickIt_DIPSwitch_V1.py -> build/bdist.linux-armv7l/egg/xsconnect/peripheralboards
+copying build/lib/xsconnect/peripheralboards/StickIt_Rotary_Encoder_V1.py -> build/bdist.linux-armv7l/egg/xsconnect/peripheralboards
+copying build/lib/xsconnect/peripheralboards/RPi_V2.py -> build/bdist.linux-armv7l/egg/xsconnect/peripheralboards
+copying build/lib/xsconnect/peripheralboards/Generic.py -> build/bdist.linux-armv7l/egg/xsconnect/peripheralboards
+byte-compiling build/bdist.linux-armv7l/egg/tests/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-armv7l/egg/tests/test_xsconnect.py to test_xsconnect.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xsconnect/daughterboards/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xsconnect/daughterboards/XuLA.py to XuLA.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xsconnect/daughterboards/XuLA2.py to XuLA2.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xsconnect/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xsconnect/motherboards/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xsconnect/motherboards/StickIt_V321.py to StickIt_V321.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xsconnect/motherboards/StickIt_V4.py to StickIt_V4.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xsconnect/xsconnect.py to xsconnect.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xsconnect/peripheralboards/StickIt_MPU_9150_V1.py to StickIt_MPU_9150_V1.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xsconnect/peripheralboards/StickIt_MPU_6050_V1.py to StickIt_MPU_6050_V1.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xsconnect/peripheralboards/StickIt_PS2_V2.py to StickIt_PS2_V2.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xsconnect/peripheralboards/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xsconnect/peripheralboards/StickIt_AudioIO_V1.py to StickIt_AudioIO_V1.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xsconnect/peripheralboards/StickIt_Buttons_V2.py to StickIt_Buttons_V2.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xsconnect/peripheralboards/StickIt_VGA_V1.py to StickIt_VGA_V1.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xsconnect/peripheralboards/StickIt_Grove.py to StickIt_Grove.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xsconnect/peripheralboards/StickIt_LEDDigits_V2.py to StickIt_LEDDigits_V2.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xsconnect/peripheralboards/StickIt_DIPSwitch_V1.py to StickIt_DIPSwitch_V1.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xsconnect/peripheralboards/StickIt_Rotary_Encoder_V1.py to StickIt_Rotary_Encoder_V1.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xsconnect/peripheralboards/RPi_V2.py to RPi_V2.pyc
+byte-compiling build/bdist.linux-armv7l/egg/xsconnect/peripheralboards/Generic.py to Generic.pyc
+creating build/bdist.linux-armv7l/egg/EGG-INFO
+installing scripts to build/bdist.linux-armv7l/egg/EGG-INFO/scripts
+running install_scripts
+running build_scripts
+creating build/scripts-2.7
+copying scripts/xsconn.py -> build/scripts-2.7
+copying scripts/gxsconn.py -> build/scripts-2.7
+copying scripts/xsconn.cmd -> build/scripts-2.7
+copying scripts/gxsconn.cmd -> build/scripts-2.7
+changing mode of build/scripts-2.7/xsconn.py from 644 to 755
+changing mode of build/scripts-2.7/gxsconn.py from 644 to 755
+changing mode of build/scripts-2.7/xsconn.cmd from 644 to 755
+changing mode of build/scripts-2.7/gxsconn.cmd from 644 to 755
+creating build/bdist.linux-armv7l/egg/EGG-INFO/scripts
+copying build/scripts-2.7/xsconn.py -> build/bdist.linux-armv7l/egg/EGG-INFO/scripts
+copying build/scripts-2.7/gxsconn.cmd -> build/bdist.linux-armv7l/egg/EGG-INFO/scripts
+copying build/scripts-2.7/gxsconn.py -> build/bdist.linux-armv7l/egg/EGG-INFO/scripts
+copying build/scripts-2.7/xsconn.cmd -> build/bdist.linux-armv7l/egg/EGG-INFO/scripts
+changing mode of build/bdist.linux-armv7l/egg/EGG-INFO/scripts/xsconn.py to 755
+changing mode of build/bdist.linux-armv7l/egg/EGG-INFO/scripts/gxsconn.cmd to 755
+changing mode of build/bdist.linux-armv7l/egg/EGG-INFO/scripts/gxsconn.py to 755
+changing mode of build/bdist.linux-armv7l/egg/EGG-INFO/scripts/xsconn.cmd to 755
+copying xsconnect.egg-info/PKG-INFO -> build/bdist.linux-armv7l/egg/EGG-INFO
+copying xsconnect.egg-info/SOURCES.txt -> build/bdist.linux-armv7l/egg/EGG-INFO
+copying xsconnect.egg-info/dependency_links.txt -> build/bdist.linux-armv7l/egg/EGG-INFO
+copying xsconnect.egg-info/not-zip-safe -> build/bdist.linux-armv7l/egg/EGG-INFO
+copying xsconnect.egg-info/pbr.json -> build/bdist.linux-armv7l/egg/EGG-INFO
+copying xsconnect.egg-info/top_level.txt -> build/bdist.linux-armv7l/egg/EGG-INFO
+creating dist
+creating 'dist/xsconnect-0.1.2-py2.7.egg' and adding 'build/bdist.linux-armv7l/egg' to it
+removing 'build/bdist.linux-armv7l/egg' (and everything under it)
+Processing xsconnect-0.1.2-py2.7.egg
+creating /usr/lib/python2.7/site-packages/xsconnect-0.1.2-py2.7.egg
+Extracting xsconnect-0.1.2-py2.7.egg to /usr/lib/python2.7/site-packages
+Adding xsconnect 0.1.2 to easy-install.pth file
+Installing xsconn.py script to /usr/bin
+Installing gxsconn.cmd script to /usr/bin
+Installing gxsconn.py script to /usr/bin
+Installing xsconn.cmd script to /usr/bin
+
+Installed /usr/lib/python2.7/site-packages/xsconnect-0.1.2-py2.7.egg
+Processing dependencies for xsconnect==0.1.2
+Finished processing dependencies for xsconnect==0.1.2
+clean up unused files not needed anymore
+running install
+running bdist_egg
+running egg_info
+creating myhdl.egg-info
+writing myhdl.egg-info/PKG-INFO
+writing top-level names to myhdl.egg-info/top_level.txt
+writing dependency_links to myhdl.egg-info/dependency_links.txt
+writing manifest file 'myhdl.egg-info/SOURCES.txt'
+reading manifest file 'myhdl.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no files found matching '*.pdf' anywhere in distribution
+warning: no files found matching '*.ps' anywhere in distribution
+warning: no files found matching 'makefile*' anywhere in distribution
+no previously-included directories found matching '.hg'
+no previously-included directories found matching 'dist'
+no previously-included directories found matching 'olddoc'
+no previously-included directories found matching 'myhdl/old_conversion'
+no previously-included directories found matching 'myhdl/*/work'
+no previously-included directories found matching 'myhdl/*/*/work'
+no previously-included directories found matching 'myhdl/*/*/*/work'
+no previously-included directories found matching 'myhdl/*/work_vlog'
+no previously-included directories found matching 'myhdl/*/*/work_vlog'
+no previously-included directories found matching 'myhdl/*/*/*/work_vlog'
+no previously-included directories found matching 'myhdl/*/work_vcom'
+no previously-included directories found matching 'myhdl/*/*/work_vcom'
+no previously-included directories found matching 'myhdl/*/*/*/work_vcom'
+warning: no directories found matching 'doc/build/html'
+warning: no previously-included files found matching 'myhdl/test/conversion/*/*.v'
+warning: no previously-included files found matching 'myhdl/test/conversion/*/*.vhd'
+writing manifest file 'myhdl.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-armv7l/egg
+running install_lib
+running build_py
+creating build
+creating build/lib
+creating build/lib/myhdl
+copying myhdl/_Simulation.py -> build/lib/myhdl
+copying myhdl/_getcellvars.py -> build/lib/myhdl
+copying myhdl/_extractHierarchy.py -> build/lib/myhdl
+copying myhdl/_delay.py -> build/lib/myhdl
+copying myhdl/__init__.py -> build/lib/myhdl
+copying myhdl/_enum.py -> build/lib/myhdl
+copying myhdl/_visitors.py -> build/lib/myhdl
+copying myhdl/_concat.py -> build/lib/myhdl
+copying myhdl/_bin.py -> build/lib/myhdl
+copying myhdl/_modbv.py -> build/lib/myhdl
+copying myhdl/_simulator.py -> build/lib/myhdl
+copying myhdl/_join.py -> build/lib/myhdl
+copying myhdl/_compat.py -> build/lib/myhdl
+copying myhdl/_ShadowSignal.py -> build/lib/myhdl
+copying myhdl/_Waiter.py -> build/lib/myhdl
+copying myhdl/_traceSignals.py -> build/lib/myhdl
+copying myhdl/_always_comb.py -> build/lib/myhdl
+copying myhdl/_resolverefs.py -> build/lib/myhdl
+copying myhdl/_util.py -> build/lib/myhdl
+copying myhdl/_instance.py -> build/lib/myhdl
+copying myhdl/_always_seq.py -> build/lib/myhdl
+copying myhdl/_intbv.py -> build/lib/myhdl
+copying myhdl/_misc.py -> build/lib/myhdl
+copying myhdl/_tristate.py -> build/lib/myhdl
+copying myhdl/_Cosimulation.py -> build/lib/myhdl
+copying myhdl/_Signal.py -> build/lib/myhdl
+copying myhdl/_always.py -> build/lib/myhdl
+creating build/lib/myhdl/conversion
+copying myhdl/conversion/_toVHDLPackage.py -> build/lib/myhdl/conversion
+copying myhdl/conversion/__init__.py -> build/lib/myhdl/conversion
+copying myhdl/conversion/_toVerilog.py -> build/lib/myhdl/conversion
+copying myhdl/conversion/_verify.py -> build/lib/myhdl/conversion
+copying myhdl/conversion/_analyze.py -> build/lib/myhdl/conversion
+copying myhdl/conversion/_toVHDL.py -> build/lib/myhdl/conversion
+copying myhdl/conversion/_misc.py -> build/lib/myhdl/conversion
+creating build/bdist.linux-armv7l
+creating build/bdist.linux-armv7l/egg
+creating build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_Simulation.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_getcellvars.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_extractHierarchy.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_delay.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/__init__.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_enum.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_visitors.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_concat.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_bin.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_modbv.py -> build/bdist.linux-armv7l/egg/myhdl
+creating build/bdist.linux-armv7l/egg/myhdl/conversion
+copying build/lib/myhdl/conversion/_toVHDLPackage.py -> build/bdist.linux-armv7l/egg/myhdl/conversion
+copying build/lib/myhdl/conversion/__init__.py -> build/bdist.linux-armv7l/egg/myhdl/conversion
+copying build/lib/myhdl/conversion/_toVerilog.py -> build/bdist.linux-armv7l/egg/myhdl/conversion
+copying build/lib/myhdl/conversion/_verify.py -> build/bdist.linux-armv7l/egg/myhdl/conversion
+copying build/lib/myhdl/conversion/_analyze.py -> build/bdist.linux-armv7l/egg/myhdl/conversion
+copying build/lib/myhdl/conversion/_toVHDL.py -> build/bdist.linux-armv7l/egg/myhdl/conversion
+copying build/lib/myhdl/conversion/_misc.py -> build/bdist.linux-armv7l/egg/myhdl/conversion
+copying build/lib/myhdl/_simulator.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_join.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_compat.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_ShadowSignal.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_Waiter.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_traceSignals.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_always_comb.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_resolverefs.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_util.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_instance.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_always_seq.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_intbv.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_misc.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_tristate.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_Cosimulation.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_Signal.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_always.py -> build/bdist.linux-armv7l/egg/myhdl
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_Simulation.py to _Simulation.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_getcellvars.py to _getcellvars.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_extractHierarchy.py to _extractHierarchy.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_delay.py to _delay.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_enum.py to _enum.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_visitors.py to _visitors.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_concat.py to _concat.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_bin.py to _bin.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_modbv.py to _modbv.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/conversion/_toVHDLPackage.py to _toVHDLPackage.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/conversion/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/conversion/_toVerilog.py to _toVerilog.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/conversion/_verify.py to _verify.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/conversion/_analyze.py to _analyze.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/conversion/_toVHDL.py to _toVHDL.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/conversion/_misc.py to _misc.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_simulator.py to _simulator.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_join.py to _join.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_compat.py to _compat.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_ShadowSignal.py to _ShadowSignal.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_Waiter.py to _Waiter.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_traceSignals.py to _traceSignals.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_always_comb.py to _always_comb.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_resolverefs.py to _resolverefs.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_util.py to _util.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_instance.py to _instance.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_always_seq.py to _always_seq.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_intbv.py to _intbv.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_misc.py to _misc.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_tristate.py to _tristate.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_Cosimulation.py to _Cosimulation.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_Signal.py to _Signal.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_always.py to _always.pyc
+installing package data to build/bdist.linux-armv7l/egg
+running install_data
+creating build/bdist.linux-armv7l/egg/share
+creating build/bdist.linux-armv7l/egg/share/myhdl
+creating build/bdist.linux-armv7l/egg/share/myhdl/cosimulation
+creating build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test
+copying cosimulation/test/test_inc.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test
+copying cosimulation/test/test_bin2gray.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test
+copying cosimulation/test/bin2gray.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test
+copying cosimulation/test/test_dff.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test
+copying cosimulation/test/dff_clkout.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test
+copying cosimulation/test/inc.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test
+copying cosimulation/test/test_all.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test
+copying cosimulation/test/dff.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test
+creating build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/cver
+creating build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/cver/test
+copying cosimulation/cver/test/bin2gray.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/cver/test
+copying cosimulation/cver/test/dff_clkout.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/cver/test
+copying cosimulation/cver/test/inc.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/cver/test
+copying cosimulation/cver/test/test_all.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/cver/test
+copying cosimulation/cver/test/dff.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/cver/test
+creating build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim-win
+copying cosimulation/modelsim-win/myhdl_vpi.c -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim-win
+copying cosimulation/modelsim-win/Makefile -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim-win
+creating build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim
+copying cosimulation/modelsim/myhdl_vpi.c -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim
+copying cosimulation/modelsim/Makefile -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim
+creating build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test/verilog
+copying cosimulation/test/verilog/inc.v -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test/verilog
+copying cosimulation/test/verilog/dut_bin2gray.v -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test/verilog
+copying cosimulation/test/verilog/dut_dff.v -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test/verilog
+copying cosimulation/test/verilog/dut_inc.v -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test/verilog
+copying cosimulation/test/verilog/dff.v -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test/verilog
+copying cosimulation/test/verilog/bin2gray.v -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test/verilog
+copying cosimulation/test/verilog/dut_dff_clkout.v -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test/verilog
+copying cosimulation/test/verilog/dff_clkout.v -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test/verilog
+copying cosimulation/cver/myhdl_vpi.c -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/cver
+copying cosimulation/cver/Makefile.lnx -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/cver
+copying cosimulation/cver/Makefile.lnx64 -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/cver
+copying cosimulation/cver/Makefile.osx -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/cver
+copying cosimulation/cver/README.txt -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/cver
+creating build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus
+creating build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus/test
+copying cosimulation/icarus/test/bin2gray.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus/test
+copying cosimulation/icarus/test/test.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus/test
+copying cosimulation/icarus/test/dff_clkout.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus/test
+copying cosimulation/icarus/test/inc.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus/test
+copying cosimulation/icarus/test/test_all.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus/test
+copying cosimulation/icarus/test/dff.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus/test
+copying cosimulation/icarus/test/tb_test.v -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus/test
+creating build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim/test
+copying cosimulation/modelsim/test/bin2gray.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim/test
+copying cosimulation/modelsim/test/dff_clkout.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim/test
+copying cosimulation/modelsim/test/inc.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim/test
+copying cosimulation/modelsim/test/test_all.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim/test
+copying cosimulation/modelsim/test/dff.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim/test
+creating build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim-win/test
+copying cosimulation/modelsim-win/test/bin2gray.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim-win/test
+copying cosimulation/modelsim-win/test/dff_clkout.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim-win/test
+copying cosimulation/modelsim-win/test/inc.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim-win/test
+copying cosimulation/modelsim-win/test/test_all.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim-win/test
+copying cosimulation/modelsim-win/test/dff.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim-win/test
+copying cosimulation/icarus/myhdl_20030518.c -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus
+copying cosimulation/icarus/myhdl_table.c -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus
+copying cosimulation/icarus/myhdl.c -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus
+copying cosimulation/icarus/Makefile -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus
+copying cosimulation/icarus/README.txt -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus
+creating build/bdist.linux-armv7l/egg/EGG-INFO
+copying myhdl.egg-info/PKG-INFO -> build/bdist.linux-armv7l/egg/EGG-INFO
+copying myhdl.egg-info/SOURCES.txt -> build/bdist.linux-armv7l/egg/EGG-INFO
+copying myhdl.egg-info/dependency_links.txt -> build/bdist.linux-armv7l/egg/EGG-INFO
+copying myhdl.egg-info/top_level.txt -> build/bdist.linux-armv7l/egg/EGG-INFO
+zip_safe flag not set; analyzing archive contents...
+myhdl._traceSignals: module MAY be using inspect.getouterframes
+myhdl._always_comb: module MAY be using inspect.getsource
+myhdl._always_seq: module MAY be using inspect.getsource
+myhdl._Signal: module MAY be using inspect.getouterframes
+myhdl._misc: module MAY be using inspect.getouterframes
+myhdl._Waiter: module MAY be using inspect.getsource
+myhdl._util: module MAY be using inspect.getsource
+myhdl._util: module MAY be using inspect.getsourcefile
+myhdl._extractHierarchy: module MAY be using inspect.getsourcefile
+myhdl._extractHierarchy: module MAY be using inspect.getframeinfo
+myhdl._extractHierarchy: module MAY be using inspect.getouterframes
+myhdl.conversion._toVerilog: module MAY be using inspect.trace
+creating dist
+creating 'dist/myhdl-1.0dev-py2.7.egg' and adding 'build/bdist.linux-armv7l/egg' to it
+removing 'build/bdist.linux-armv7l/egg' (and everything under it)
+Processing myhdl-1.0dev-py2.7.egg
+creating /usr/lib/python2.7/site-packages/myhdl-1.0dev-py2.7.egg
+Extracting myhdl-1.0dev-py2.7.egg to /usr/lib/python2.7/site-packages
+Adding myhdl 1.0dev to easy-install.pth file
+
+Installed /usr/lib/python2.7/site-packages/myhdl-1.0dev-py2.7.egg
+Processing dependencies for myhdl==1.0dev
+Finished processing dependencies for myhdl==1.0dev
+iverilog-vpi myhdl.c myhdl_table.c
+Compiling myhdl.c...
+myhdl.c: In function 'to_myhdl_calltf':
+myhdl.c:159:15: warning: variable 'value_s' set but not used [-Wunused-but-set-variable]
+   s_vpi_value value_s;
+               ^
+Compiling myhdl_table.c...
+Making myhdl.vpi from  myhdl.o myhdl_table.o...
+/usr/local/lib/python3.4/site-packages/setuptools/dist.py:283: UserWarning: The version specified requires normalization, consider using '1.0.dev0' instead of '1.0dev'.
+  self.metadata.version,
+running install
+running bdist_egg
+running egg_info
+writing dependency_links to myhdl.egg-info/dependency_links.txt
+writing top-level names to myhdl.egg-info/top_level.txt
+writing myhdl.egg-info/PKG-INFO
+reading manifest file 'myhdl.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no files found matching '*.pdf' anywhere in distribution
+warning: no files found matching '*.ps' anywhere in distribution
+warning: no files found matching 'makefile*' anywhere in distribution
+no previously-included directories found matching '.hg'
+no previously-included directories found matching 'dist'
+no previously-included directories found matching 'olddoc'
+no previously-included directories found matching 'myhdl/old_conversion'
+no previously-included directories found matching 'myhdl/*/work'
+no previously-included directories found matching 'myhdl/*/*/work'
+no previously-included directories found matching 'myhdl/*/*/*/work'
+no previously-included directories found matching 'myhdl/*/work_vlog'
+no previously-included directories found matching 'myhdl/*/*/work_vlog'
+no previously-included directories found matching 'myhdl/*/*/*/work_vlog'
+no previously-included directories found matching 'myhdl/*/work_vcom'
+no previously-included directories found matching 'myhdl/*/*/work_vcom'
+no previously-included directories found matching 'myhdl/*/*/*/work_vcom'
+warning: no directories found matching 'doc/build/html'
+warning: no previously-included files found matching 'myhdl/test/conversion/*/*.v'
+warning: no previously-included files found matching 'myhdl/test/conversion/*/*.vhd'
+writing manifest file 'myhdl.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-armv7l/egg
+running install_lib
+running build_py
+creating build/bdist.linux-armv7l/egg
+creating build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_Simulation.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_getcellvars.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_extractHierarchy.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_delay.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/__init__.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_enum.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_visitors.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_concat.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_bin.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_modbv.py -> build/bdist.linux-armv7l/egg/myhdl
+creating build/bdist.linux-armv7l/egg/myhdl/conversion
+copying build/lib/myhdl/conversion/_toVHDLPackage.py -> build/bdist.linux-armv7l/egg/myhdl/conversion
+copying build/lib/myhdl/conversion/__init__.py -> build/bdist.linux-armv7l/egg/myhdl/conversion
+copying build/lib/myhdl/conversion/_toVerilog.py -> build/bdist.linux-armv7l/egg/myhdl/conversion
+copying build/lib/myhdl/conversion/_verify.py -> build/bdist.linux-armv7l/egg/myhdl/conversion
+copying build/lib/myhdl/conversion/_analyze.py -> build/bdist.linux-armv7l/egg/myhdl/conversion
+copying build/lib/myhdl/conversion/_toVHDL.py -> build/bdist.linux-armv7l/egg/myhdl/conversion
+copying build/lib/myhdl/conversion/_misc.py -> build/bdist.linux-armv7l/egg/myhdl/conversion
+copying build/lib/myhdl/_simulator.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_join.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_compat.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_ShadowSignal.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_Waiter.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_traceSignals.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_always_comb.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_resolverefs.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_util.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_instance.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_always_seq.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_intbv.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_misc.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_tristate.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_Cosimulation.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_Signal.py -> build/bdist.linux-armv7l/egg/myhdl
+copying build/lib/myhdl/_always.py -> build/bdist.linux-armv7l/egg/myhdl
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_Simulation.py to _Simulation.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_getcellvars.py to _getcellvars.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_extractHierarchy.py to _extractHierarchy.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_delay.py to _delay.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/__init__.py to __init__.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_enum.py to _enum.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_visitors.py to _visitors.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_concat.py to _concat.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_bin.py to _bin.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_modbv.py to _modbv.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/conversion/_toVHDLPackage.py to _toVHDLPackage.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/conversion/__init__.py to __init__.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/conversion/_toVerilog.py to _toVerilog.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/conversion/_verify.py to _verify.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/conversion/_analyze.py to _analyze.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/conversion/_toVHDL.py to _toVHDL.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/conversion/_misc.py to _misc.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_simulator.py to _simulator.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_join.py to _join.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_compat.py to _compat.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_ShadowSignal.py to _ShadowSignal.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_Waiter.py to _Waiter.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_traceSignals.py to _traceSignals.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_always_comb.py to _always_comb.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_resolverefs.py to _resolverefs.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_util.py to _util.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_instance.py to _instance.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_always_seq.py to _always_seq.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_intbv.py to _intbv.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_misc.py to _misc.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_tristate.py to _tristate.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_Cosimulation.py to _Cosimulation.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_Signal.py to _Signal.cpython-34.pyc
+byte-compiling build/bdist.linux-armv7l/egg/myhdl/_always.py to _always.cpython-34.pyc
+installing package data to build/bdist.linux-armv7l/egg
+running install_data
+creating build/bdist.linux-armv7l/egg/share
+creating build/bdist.linux-armv7l/egg/share/myhdl
+creating build/bdist.linux-armv7l/egg/share/myhdl/cosimulation
+creating build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus
+creating build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus/test
+copying cosimulation/icarus/test/bin2gray.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus/test
+copying cosimulation/icarus/test/test.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus/test
+copying cosimulation/icarus/test/dff_clkout.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus/test
+copying cosimulation/icarus/test/inc.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus/test
+copying cosimulation/icarus/test/test_all.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus/test
+copying cosimulation/icarus/test/dff.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus/test
+copying cosimulation/icarus/test/tb_test.v -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus/test
+creating build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/cver
+copying cosimulation/cver/myhdl_vpi.c -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/cver
+copying cosimulation/cver/Makefile.lnx -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/cver
+copying cosimulation/cver/Makefile.lnx64 -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/cver
+copying cosimulation/cver/Makefile.osx -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/cver
+copying cosimulation/cver/README.txt -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/cver
+creating build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test
+creating build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test/verilog
+copying cosimulation/test/verilog/inc.v -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test/verilog
+copying cosimulation/test/verilog/dut_bin2gray.v -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test/verilog
+copying cosimulation/test/verilog/dut_dff.v -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test/verilog
+copying cosimulation/test/verilog/dut_inc.v -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test/verilog
+copying cosimulation/test/verilog/dff.v -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test/verilog
+copying cosimulation/test/verilog/bin2gray.v -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test/verilog
+copying cosimulation/test/verilog/dut_dff_clkout.v -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test/verilog
+copying cosimulation/test/verilog/dff_clkout.v -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test/verilog
+creating build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim-win
+creating build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim-win/test
+copying cosimulation/modelsim-win/test/bin2gray.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim-win/test
+copying cosimulation/modelsim-win/test/dff_clkout.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim-win/test
+copying cosimulation/modelsim-win/test/inc.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim-win/test
+copying cosimulation/modelsim-win/test/test_all.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim-win/test
+copying cosimulation/modelsim-win/test/dff.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim-win/test
+creating build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim
+creating build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim/test
+copying cosimulation/modelsim/test/bin2gray.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim/test
+copying cosimulation/modelsim/test/dff_clkout.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim/test
+copying cosimulation/modelsim/test/inc.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim/test
+copying cosimulation/modelsim/test/test_all.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim/test
+copying cosimulation/modelsim/test/dff.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim/test
+creating build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/cver/test
+copying cosimulation/cver/test/bin2gray.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/cver/test
+copying cosimulation/cver/test/dff_clkout.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/cver/test
+copying cosimulation/cver/test/inc.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/cver/test
+copying cosimulation/cver/test/test_all.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/cver/test
+copying cosimulation/cver/test/dff.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/cver/test
+copying cosimulation/modelsim/myhdl_vpi.c -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim
+copying cosimulation/modelsim/Makefile -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim
+copying cosimulation/modelsim-win/myhdl_vpi.c -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim-win
+copying cosimulation/modelsim-win/Makefile -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/modelsim-win
+copying cosimulation/test/test_inc.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test
+copying cosimulation/test/test_bin2gray.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test
+copying cosimulation/test/bin2gray.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test
+copying cosimulation/test/test_dff.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test
+copying cosimulation/test/dff_clkout.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test
+copying cosimulation/test/inc.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test
+copying cosimulation/test/test_all.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test
+copying cosimulation/test/dff.py -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/test
+copying cosimulation/icarus/myhdl_20030518.c -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus
+copying cosimulation/icarus/myhdl_table.c -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus
+copying cosimulation/icarus/myhdl.c -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus
+copying cosimulation/icarus/Makefile -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus
+copying cosimulation/icarus/README.txt -> build/bdist.linux-armv7l/egg/share/myhdl/cosimulation/icarus
+creating build/bdist.linux-armv7l/egg/EGG-INFO
+copying myhdl.egg-info/PKG-INFO -> build/bdist.linux-armv7l/egg/EGG-INFO
+copying myhdl.egg-info/SOURCES.txt -> build/bdist.linux-armv7l/egg/EGG-INFO
+copying myhdl.egg-info/dependency_links.txt -> build/bdist.linux-armv7l/egg/EGG-INFO
+copying myhdl.egg-info/top_level.txt -> build/bdist.linux-armv7l/egg/EGG-INFO
+zip_safe flag not set; analyzing archive contents...
+myhdl.__pycache__._extractHierarchy.cpython-34: module MAY be using inspect.getsourcefile
+myhdl.__pycache__._extractHierarchy.cpython-34: module MAY be using inspect.getframeinfo
+myhdl.__pycache__._extractHierarchy.cpython-34: module MAY be using inspect.getouterframes
+myhdl.__pycache__._misc.cpython-34: module MAY be using inspect.getouterframes
+myhdl.__pycache__._Signal.cpython-34: module MAY be using inspect.getouterframes
+myhdl.__pycache__._always_seq.cpython-34: module MAY be using inspect.getsource
+myhdl.__pycache__._Waiter.cpython-34: module MAY be using inspect.getsource
+myhdl.__pycache__._traceSignals.cpython-34: module MAY be using inspect.getouterframes
+myhdl.__pycache__._util.cpython-34: module MAY be using inspect.getsource
+myhdl.__pycache__._util.cpython-34: module MAY be using inspect.getsourcefile
+myhdl.__pycache__._always_comb.cpython-34: module MAY be using inspect.getsource
+myhdl.conversion.__pycache__._toVerilog.cpython-34: module MAY be using inspect.trace
+creating 'dist/myhdl-1.0.dev0-py3.4.egg' and adding 'build/bdist.linux-armv7l/egg' to it
+removing 'build/bdist.linux-armv7l/egg' (and everything under it)
+Processing myhdl-1.0.dev0-py3.4.egg
+removing '/usr/local/lib/python3.4/site-packages/myhdl-1.0.dev0-py3.4.egg' (and everything under it)
+creating /usr/local/lib/python3.4/site-packages/myhdl-1.0.dev0-py3.4.egg
+Extracting myhdl-1.0.dev0-py3.4.egg to /usr/local/lib/python3.4/site-packages
+myhdl 1.0.dev0 is already the active version in easy-install.pth
+
+Installed /usr/local/lib/python3.4/site-packages/myhdl-1.0.dev0-py3.4.egg
+Processing dependencies for myhdl==1.0.dev0
+Finished processing dependencies for myhdl==1.0.dev0
+Success: XuLA2-LX9 passed diagnostic test!
+Success: Bitstream in pc_fast_blinker_sub_h1.bit downloaded to FPGA on XuLA2-LX9!
+
+##################################################################
+# This program tests the interface between the host PC and the FPGA 
+# on the XuLA board that has been programmed to act as a subtractor.
+##################################################################
+
+ 11 -  91 =  -80 ==> CORRECT!
+ 45 -  25 =   20 ==> CORRECT!
+ 26 -   5 =   21 ==> CORRECT!
+ 69 -   7 =   62 ==> CORRECT!
+ 23 -   6 =   17 ==> CORRECT!
+ 25 -  60 =  -35 ==> CORRECT!
+126 -   3 =  123 ==> CORRECT!
+125 -  74 =   51 ==> CORRECT!
+122 -  12 =  110 ==> CORRECT!
+ 43 -  58 =  -15 ==> CORRECT!
+126 -   4 =  122 ==> CORRECT!
+ 60 -  70 =  -10 ==> CORRECT!
+127 -  73 =   54 ==> CORRECT!
+ 50 -  87 =  -37 ==> CORRECT!
+ 64 -  55 =    9 ==> CORRECT!
+ 75 -  78 =   -3 ==> CORRECT!
+ 38 - 123 =  -85 ==> CORRECT!
+ 69 -  14 =   55 ==> CORRECT!
+ 42 - 121 =  -79 ==> CORRECT!
+ 96 -  49 =   47 ==> CORRECT!
+  6 -  89 =  -83 ==> CORRECT!
+ 38 -  47 =   -9 ==> CORRECT!
+ 73 - 100 =  -27 ==> CORRECT!
+ 29 -  71 =  -42 ==> CORRECT!
+ 23 -  35 =  -12 ==> CORRECT!
+  2 -  31 =  -29 ==> CORRECT!
+100 - 108 =   -8 ==> CORRECT!
+ 17 -  88 =  -71 ==> CORRECT!
+ 12 -  73 =  -61 ==> CORRECT!
+124 -  29 =   95 ==> CORRECT!
+ 48 - 122 =  -74 ==> CORRECT!
+126 -  63 =   63 ==> CORRECT!
+ 28 -   1 =   27 ==> CORRECT!
+ 86 -  25 =   61 ==> CORRECT!
+ 26 -  34 =   -8 ==> CORRECT!
+ 24 -  58 =  -34 ==> CORRECT!
+ 85 - 127 =  -42 ==> CORRECT!
+ 39 - 126 =  -87 ==> CORRECT!
+ 90 -  44 =   46 ==> CORRECT!
+123 -  39 =   84 ==> CORRECT!
+ 13 -  81 =  -68 ==> CORRECT!
+104 -   8 =   96 ==> CORRECT!
+122 -  35 =   87 ==> CORRECT!
+ 53 -  21 =   32 ==> CORRECT!
+104 -  69 =   35 ==> CORRECT!
+ 95 - 112 =  -17 ==> CORRECT!
+ 93 -  37 =   56 ==> CORRECT!
+ 54 - 102 =  -48 ==> CORRECT!
+ 84 -  13 =   71 ==> CORRECT!
+ 11 -  94 =  -83 ==> CORRECT!
+ 11 -  52 =  -41 ==> CORRECT!
+104 - 123 =  -19 ==> CORRECT!
+111 -  39 =   72 ==> CORRECT!
+ 59 - 124 =  -65 ==> CORRECT!
+ 58 -  89 =  -31 ==> CORRECT!
+ 49 -   7 =   42 ==> CORRECT!
+ 93 -   0 =   93 ==> CORRECT!
+ 46 -  50 =   -4 ==> CORRECT!
+ 78 - 118 =  -40 ==> CORRECT!
+ 70 -  64 =    6 ==> CORRECT!
+ 29 -  75 =  -46 ==> CORRECT!
+101 -  26 =   75 ==> CORRECT!
+106 -  48 =   58 ==> CORRECT!
+ 21 - 107 =  -86 ==> CORRECT!
+ 54 -  43 =   11 ==> CORRECT!
+ 31 -  78 =  -47 ==> CORRECT!
+ 39 - 102 =  -63 ==> CORRECT!
+ 15 -  48 =  -33 ==> CORRECT!
+111 -  23 =   88 ==> CORRECT!
+113 - 124 =  -11 ==> CORRECT!
+ 73 -  69 =    4 ==> CORRECT!
+ 50 -  67 =  -17 ==> CORRECT!
+ 65 - 116 =  -51 ==> CORRECT!
+ 29 -  66 =  -37 ==> CORRECT!
+ 88 - 111 =  -23 ==> CORRECT!
+ 48 - 103 =  -55 ==> CORRECT!
+ 34 - 117 =  -83 ==> CORRECT!
+ 23 -  48 =  -25 ==> CORRECT!
+ 30 -  73 =  -43 ==> CORRECT!
+ 47 -  98 =  -51 ==> CORRECT!
+  0 -  83 =  -83 ==> CORRECT!
+116 -  59 =   57 ==> CORRECT!
+ 54 -   5 =   49 ==> CORRECT!
+120 -  54 =   66 ==> CORRECT!
+ 31 -  37 =   -6 ==> CORRECT!
+ 48 -  13 =   35 ==> CORRECT!
+118 -   9 =  109 ==> CORRECT!
+ 84 -  76 =    8 ==> CORRECT!
+110 -  80 =   30 ==> CORRECT!
+121 -  80 =   41 ==> CORRECT!
+ 32 - 103 =  -71 ==> CORRECT!
+126 - 118 =    8 ==> CORRECT!
+119 -  22 =   97 ==> CORRECT!
+122 -  16 =  106 ==> CORRECT!
+ 86 - 120 =  -34 ==> CORRECT!
+ 53 -  39 =   14 ==> CORRECT!
+ 12 -  95 =  -83 ==> CORRECT!
+106 - 118 =  -12 ==> CORRECT!
+ 52 -  91 =  -39 ==> CORRECT!
+ 68 - 111 =  -43 ==> CORRECT!
+testing yosys arachne-pnr icepack
+running develop
+running egg_info
+writing rhea.egg-info/PKG-INFO
+writing top-level names to rhea.egg-info/top_level.txt
+writing dependency_links to rhea.egg-info/dependency_links.txt
+reading manifest file 'rhea.egg-info/SOURCES.txt'
+writing manifest file 'rhea.egg-info/SOURCES.txt'
+running build_ext
+Creating /usr/lib/python2.7/site-packages/rhea.egg-link (link to .)
+Adding rhea 0.1.0 to easy-install.pth file
+
+Installed /home/root/rhea
+Processing dependencies for rhea==0.1.0
+Finished processing dependencies for rhea==0.1.0
+** ToVerilogWarning: Signal is driven but not read: reset
+   removing iceriver/icestick.v
+   moving icestick.v --> iceriver/
+
+USAGE: facedetect.py [--cascade <cascade_fn>] [--nested-cascade <cascade_fn>] [<video_source>]
+
+Gtk-Message: Failed to load module "canberra-gtk-module"
+^CTraceback (most recent call last):
+  File "facedetect_my.py", line 49, in <module>
+    rects = detect(gray, cascade)
+  File "facedetect_my.py", line 15, in detect
+    rects = cascade.detectMultiScale(img, scaleFactor=1.3, minNeighbors=4, minSize=(30, 30), flags = cv2.CASCADE_SCALE_IMAGE)
+KeyboardInterrupt
+
+
+
+
+
+
+
+
+
+
+
+ 
