@@ -9,6 +9,9 @@ echo "add the compiled programs to /usr/local"
 unsquashfs gtkwave_iverilog_python3_yosys_bcm2735_arachne-pnr_icebox_usrlocal091715 
 mkdir /usr/local
 cp -R squashfs-root/* /usr/local/
+ls -la /usr/local/bin
+ls -la /usr/local/share
+ls -la /usr/local
 #clean up unused files not needed anymore
 echo "clean up unused files not needed anymore"
 rm -rf squashfs-root/
@@ -32,6 +35,11 @@ cd ~/bcm2835_xsconnect_RPi-config_myhdl/_rhea_hats/
 unzip xsconnect-0.1.2.zip 
 cd xsconnect-0.1.2
 python setup.py install
+ls -la /usr/lib/python2.7/sites-packages
+#clean up unused files not needed anymore
+echo "clean up unused files not needed anymore"
+rm -rf bcm2835_xsconnect_RPi-config_myhdl_rhea_hats/
+ls -la
 cd ~/myhdl/
 python setup.py install
 cd cosimulation/icarus/
