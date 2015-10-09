@@ -1,10 +1,10 @@
 `timescale 1ns / 1ps
-
+//`timescale 10ns / 1ps
 ////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer:
 //
-// Create Date:   07:30:15 10/09/2015
+// Create Date:   04:47:07 10/09/2015
 // Design Name:   MySdramCntl
 // Module Name:   C:/Users/vidal/Documents/GitHub/SDRAM_Controller/SDRAM/MySdramCntl_tb.v
 // Project Name:  SDRAM
@@ -71,6 +71,13 @@ module MySdramCntl_tb;
 		.host_intf_rd_i(host_intf_rd_i), 
 		.host_intf_addr_i(host_intf_addr_i)
 	);
+   initial begin
+    clk_i = 1'b0;
+     
+    repeat(4) #10 clk_i = ~clk_i;
+    
+    forever #10 clk_i = ~clk_i; // generate a clock
+  end
 
 	initial begin
 		// Initialize Inputs
@@ -80,12 +87,18 @@ module MySdramCntl_tb;
 		host_intf_data_i = 0;
 		host_intf_rd_i = 0;
 		host_intf_addr_i = 0;
-
+      host_intf_wr_i = 0;
 		// Wait 100 ns for global reset to finish
 		#100;
-        
+      #210 host_intf_rst_i = 1;
+		#220 host_intf_rst_i = 0;
 		// Add stimulus here
-
+	   #240 host_intf_data_i = 250;
+      #250 host_intf_wr_i = 1;
+ 
+		#260 host_intf_wr_i = 0;
+		#270 host_intf_rd_i = 1;
+		
 	end
       
 endmodule
