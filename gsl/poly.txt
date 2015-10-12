@@ -1,0 +1,44 @@
+To demonstrate the use of the general polynomial solver we will take the polynomial P(x) = x^5 - 1 which has the following roots,
+
+     1, e^{2\pi i /5}, e^{4\pi i /5}, e^{6\pi i /5}, e^{8\pi i /5}
+
+The following program will find these roots.
+
+     #include <stdio.h>
+     #include <gsl/gsl_poly.h>
+     
+     int
+     main (void)
+     {
+       int i;
+       /* coefficients of P(x) =  -1 + x^5  */
+       double a[6] = { -1, 0, 0, 0, 0, 1 };  
+       double z[10];
+     
+       gsl_poly_complex_workspace * w 
+           = gsl_poly_complex_workspace_alloc (6);
+       
+       gsl_poly_complex_solve (a, 6, w, z);
+     
+       gsl_poly_complex_workspace_free (w);
+     
+       for (i = 0; i < 5; i++)
+         {
+           printf ("z%d = %+.18f %+.18f\n", 
+                   i, z[2*i], z[2*i+1]);
+         }
+     
+       return 0;
+     }
+
+The output of the program is,
+
+     $ ./a.out
+
+     z0 = -0.809016994374947451 +0.587785252292473137
+     z1 = -0.809016994374947451 -0.587785252292473137
+     z2 = +0.309016994374947451 +0.951056516295153642
+     z3 = +0.309016994374947451 -0.951056516295153642
+     z4 = +1.000000000000000000 +0.000000000000000000
+
+which agrees with the analytic result, z_n = \exp(2 \pi n i/5). 

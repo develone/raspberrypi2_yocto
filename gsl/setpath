@@ -1,0 +1,2 @@
+#!/bin/bash
+export CFLAGS="-I/usr/include -L/usr/lib -lgsl -lgslcblas -lm"

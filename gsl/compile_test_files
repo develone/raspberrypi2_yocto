@@ -1,0 +1,5 @@
+#!/bin/bash
+gcc ${CFLAGS} sqmatrice.c -o sqmatice
+gcc ${CFLAGS} linalg.c -o linalg
+gcc ${CFLAGS} poly.c -o poly
+gcc ${CFLAGS} testmatrices.c -o testmatrices
