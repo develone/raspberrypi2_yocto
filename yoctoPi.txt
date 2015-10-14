@@ -51,7 +51,7 @@ NATIVELSBSTRING   = "Ubuntu-12.04"
 TARGET_SYS        = "arm-poky-linux-gnueabi"
 MACHINE           = "raspberrypi2"
 DISTRO            = "poky"
-DISTRO_VERSION    = "1.8+snapshot-20151002"
+DISTRO_VERSION    = "1.8+snapshot-20151014"
 TUNE_FEATURES     = "arm armv7a vfp thumb neon callconvention-hard vfpv4 cortexa7"
 TARGET_FPU        = "vfp-vfpv4-neon"
 meta              
@@ -67,22 +67,23 @@ meta-browser      = "master:ca96f4326345dcd779fc539877a04f069f431749"
 NOTE: Preparing RunQueue
 NOTE: Executing SetScene Tasks
 NOTE: Executing RunQueue Tasks
-NOTE: Tasks Summary: Attempted 7384 tasks of which 7378 didn't need to be rerun and all succeeded.
+NOTE: Tasks Summary: Attempted 7425 tasks of which 7423 didn't need to be rerun and all succeeded.
 
+Summary: There were 9 WARNING messages shown.
 
 lrwxrwxrwx 1 vidal vidal 60 Sep 14 07:32 tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg -> core-image-sato-raspberrypi2-20150914131024.rootfs.rpi-sdimg
 
 dd if=tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg | pv | sudo dd of=/dev/sdb bs=16M
-5021696+0 records in
-5021696+0 records out
-2571108352 bytes (2.6 GB) copied
-, 293.934 s, 8.7 MB/s
-0+37817 records in
-0+37817 records out
-2571108352 bytes (2.6 GB) copied, 344.023 s, 7.5 MB/s
+5029888+0 records inMB/s] [                                                <=> ]
+5029888+0 records out
+2575302656 bytes (2.6 GB) copied, 251.344 s, 10.2 MB/s
+ 2.4GB 0:04:11 [9.77MB/s] [                                               <=>  ]
+0+38167 records in
+0+38167 records out
+2575302656 bytes (2.6 GB) copied, 305.868 s, 8.4 MB/s
 
 Use gparted /dev/sdX to resize the 2nd partition.
-resied 2408 to 3408 for testing
+resized 2412 to 3412 for testing
 
 copied /home/vidal/wkg/yocto/xstools_iverilog_gtkwave_myhdl /home/root of SD card
 copied wkg/yocto/gtkwave_iverilog_python3_yosys_bcm2735_usrlocal091715 /home/root of SD card
