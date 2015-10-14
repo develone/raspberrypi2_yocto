@@ -165,11 +165,11 @@ gcc -o spi spi.c -l bcm2835
 cd ~/
 rm -rf bcm2835_xsconnect_RPi-config_myhdl/
 
-dd bs=16M if=/dev/sdb | gzip > /home/vidal/wkg/yocto/core-image-sato100215.zip
-b46c5e0f7134e063c0f721965895e8cdb360f6c7c1bf32a03d5b6b4c239afcf0  core-image-sato100215.zip
+dd bs=16M if=/dev/sdb | gzip > /home/vidal/wkg/yocto/core-image-sato101415.zip
+77234e919d1a46f997e67340256b705e5511aaefd58c86ac9af7dec6065f644e  core-image-sato101415.zip
 
 
-gzip -dc /home/vidal/wkg/yocto/core-image-sato100215.zip | dd bs=16M of=/dev/sdb
+gzip -dc /home/vidal/wkg/yocto/core-image-sato101415.zip | dd bs=16M of=/dev/sdb
 
 wc tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.manifest 
   3994  11982 264414 tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.manifest
