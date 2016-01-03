@@ -1,0 +1,8 @@
+#!/bin/bash
+xstest -u 0 -b xula2-lx9
+sleep 2
+xsload --usb 0 --fpga xula2.bit
+sleep 2
+xsload --usb 0 --fpga blinker_h1.bit
+sleep 10
+xsload --usb 0 --fpga pc_fast_blinker_sub_h1.bit 
