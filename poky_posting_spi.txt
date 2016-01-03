@@ -1,0 +1,56 @@
+[yocto] [meta-raspberrypi][PATCH] rpi-config: SPI bus support
+Gary Thomas gary at mlbassoc.com
+Thu Nov 19 08:52:10 PST 2015
+
+    Previous message: [yocto] Query configuration
+    Next message: [yocto] Change in behaviour
+    Messages sorted by: [ date ] [ thread ] [ subject ] [ author ]
+
+With the newer kernels that use device tree, the SPI bus is only
+enabled by a device tree setting.  This is now supported by adding
+  ENABLE_SPI_BUS = "1"
+in local.conf
+
+Signed-off-by: Gary Thomas <gary at mlbassoc.com>
+---
+ README                                  | 5 +++++
+ recipes-bsp/bootfiles/rpi-config_git.bb | 6 ++++++
+ 2 files changed, 11 insertions(+)
+
+diff --git a/README b/README
+index e16dee9..bef13a3 100644
+--- a/README
++++ b/README
+@@ -189,6 +189,11 @@ kernels.
+ NOTE: KERNEL_DEVICETREE is default enabled for kernel >= 3.18 and always disabled for
+       older kernel versions.
+ 
++2.M. Optional - enable SPI bus
++==============================
++When using device tree kernels, set this variable to enable the SPI bus
++ENABLE_SPI_BUS = "1"
++
+ 3. Extra apps
+ =============
+ 
+diff --git a/recipes-bsp/bootfiles/rpi-config_git.bb b/recipes-bsp/bootfiles/rpi-config_git.bb
+index 45b9f1d..aa11b25 100644
+--- a/recipes-bsp/bootfiles/rpi-config_git.bb
++++ b/recipes-bsp/bootfiles/rpi-config_git.bb
+@@ -66,6 +66,12 @@ do_deploy() {
+         echo "# Enable offline compositing" >>${DEPLOYDIR}/bcm2835-bootfiles/config.txt
+         echo "dispmanx_offline=1" >>${DEPLOYDIR}/bcm2835-bootfiles/config.txt
+     fi
++
++    # SPI bus support
++    if [ -n "${ENABLE_SPI_BUS}" ]; then
++        echo "# Enable SPI bus" >>${DEPLOYDIR}/bcm2835-bootfiles/config.txt
++        echo "dtparam=spi=on" >>${DEPLOYDIR}/bcm2835-bootfiles/config.txt
++    fi
+ }
+ 
+ addtask deploy before do_package after do_install
+-- 
+1.9.1
+
+
