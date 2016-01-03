@@ -6,3 +6,7 @@ sleep 2
 xsload --usb 0 --fpga blinker_h1.bit
 sleep 10
 xsload --usb 0 --fpga pc_fast_blinker_sub_h1.bit 
+python pc_subtractor_test.py 
+python pc_subtractor_test.py 
+python pc_subtractor_test.py 
+xsload --usb 0 --fpga leddigitstest.bit
