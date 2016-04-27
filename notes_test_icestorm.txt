@@ -11,12 +11,12 @@ http://www.latticesemi.com/icestick
 
  
 
-1.) "git clone https://github.com/cliffordwolf/icestorm.git icestorm"
+1.) "git clone https://github.com/cliffordwolf/icestorm.git icestormq	"
 commit 99d93dae2296d86e77974f5607af3d92a3fc7b6a
 Author: Clifford Wolf <clifford@clifford.at>
 Date:   Thu Aug 6 11:11:31 2015 +0200
 
-    Improved documentation
+    Improved documentationma
 
 2.) "cd icestorm/"
 
