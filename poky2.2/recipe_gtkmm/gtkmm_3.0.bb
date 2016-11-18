@@ -16,7 +16,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=d8045f3b8f929c1cb29a1e3fd737b499 \
 SRC_URI = "http://ftp.gnome.org/pub/GNOME/sources/gtkmm/${PV}/gtkmm-${PV}.0.tar.bz2"
 SRC_URI[md5sum] = "90bb087152a3214c2cc348aa04f917c3"
 SRC_URI[sha256sum] = "567582948d4c47c29aa751162adc714644f50958d3d3e427c7a8c3818cd643f9"
-
+PR = "r0"
 S = "${WORKDIR}/${BPN}-${PV}.0"
 
 # NOTE: if this software is not capable of being built in a separate build directory
