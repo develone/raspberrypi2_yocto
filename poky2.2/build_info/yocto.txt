@@ -1,0 +1,306 @@
+Yocto 11/13/16
+
+Goal: To create an image completly from source which supports communication 
+with an Arty board with Pmod GPS receiver and Pmod USBUART.
+
+The Initial version will transfer data from the Pmod GPS receiver to Arty 
+Board FPGA connected on USB port of RaspberryPi2 RPi2.  Using zip-gcc 
+the RPi2 will compile & load programs (exmulti.c, exstartup.c, cputest and
+oledtest.c) that will run on the  Arty Board
+On a 2nd USB port the Pmod USBUART send data at 9600 baud to a 
+mincom terminal emulation program running on the RPi2.
+
+Ubuntu 16.04 x86_64 six core 
+
+sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
+build-essential chrpath socat libsdl1.2-dev xterm
+
+mkdir wkg/yocto/RaspberryPi2
+
+cd RaspberryPi2
+
+git clone git://git.yoctoproject.org/poky
+
+cd poky
+
+git checkout -b morty origin/morty
+
+mkdir wkg/yocto/RaspberryPi2
+
+git clone git://git.yoctoproject.org/poky
+
+cd poky
+
+git checkout -b morty origin/morty
+
+git clone git://git.yoctoproject.org/meta-raspberrypi
+
+Using poky morty 
+
+vidal@ws009:~/wkg/yocto/RaspberryPi2/poky$ diff -u ../local.conf build/conf/local.conf 
+--- RaspberryPi2/local.conf	2016-11-13 15:43:59.659288772 -0700
++++ RaspberryPi2/poky/build/conf/local.conf	2016-11-16 17:36:44.033197671 -0700
+@@ -33,13 +33,25 @@
+ #MACHINE ?= "genericx86-64"
+ #MACHINE ?= "mpc8315e-rdb"
+ #MACHINE ?= "edgerouter"
++MACHINE ??= "raspberrypi2"
++GPU_MEM = "16"
++
++IMAGE_INSTALL_append = " xterm git \
++gperf tree tcl tk rsync tar pv libftdi \
++geany cmake man iproute2 squashfs-tools \
++minicom linux-firmware iputils yasm \
++texinfo python-imaging libmtp python-pip openjpeg \
++chkconfig openjpeg lame liba52 libmad gtkmm vlc \
++v4l-utils \
++"
++LICENSE_FLAGS_WHITELIST = "commercial_libmad commercial_mpeg2dec commercial_libav commercial_ffmpeg commercial_x264 commercial_lame"
+ #
+ # This sets the default machine to be qemux86 if no other machine is selected:
+-MACHINE ??= "qemux86"
++#MACHINE ??= "qemux86"
+ 
+ #
+ # Where to place downloads
+-#
++# 
+ # During a first build the system will download many different source code tarballs
+ # from various upstream projects. This can take a while, particularly if your network
+ # connection is slow. These are all stored in DL_DIR. When wiping and rebuilding you
+@@ -138,7 +150,7 @@
+ # There are other application targets that can be used here too, see
+ # meta/classes/image.bbclass and meta/classes/core-image.bbclass for more details.
+ # We default to enabling the debugging tweaks.
+-EXTRA_IMAGE_FEATURES ?= "debug-tweaks"
++EXTRA_IMAGE_FEATURES ?= "debug-tweaks dev-pkgs tools-sdk doc-pkgs"
+ 
+ #
+ # Additional image features
+
+
+
+vidal@ws009:~/wkg/yocto/RaspberryPi2/poky$ diff -u ../bblayers.conf build/conf/bblayers.conf 
+--- ../bblayers.conf	2016-11-13 15:44:09.843212245 -0700
++++ build/conf/bblayers.conf	2016-11-13 21:25:59.262538032 -0700
+@@ -9,4 +9,10 @@
+   /home/vidal/wkg/yocto/RaspberryPi2/poky/meta \
+   /home/vidal/wkg/yocto/RaspberryPi2/poky/meta-poky \
+   /home/vidal/wkg/yocto/RaspberryPi2/poky/meta-yocto-bsp \
++  /home/vidal/wkg/yocto/RaspberryPi2/poky/meta-raspberrypi \
++  /home/vidal/wkg/yocto/RaspberryPi2/poky/meta-oe \
++  /home/vidal/wkg/yocto/RaspberryPi2/poky/meta-python \
++  /home/vidal/wkg/yocto/RaspberryPi2/poky/meta-multimedia \
++  /home/vidal/wkg/yocto/RaspberryPi2/poky/meta-gnome \
++  /home/vidal/wkg/yocto/RaspberryPi2/poky/meta-browser \
+   "
+
+. oe-init-build-env
+
+bitbake core-image-sato
+
+Build Configuration:
+BB_VERSION        = "1.32.0"
+BUILD_SYS         = "x86_64-linux"
+NATIVELSBSTRING   = "universal"
+TARGET_SYS        = "arm-poky-linux-gnueabi"
+MACHINE           = "raspberrypi2"
+DISTRO            = "poky"
+DISTRO_VERSION    = "2.2"
+TUNE_FEATURES     = "arm armv7ve vfp thumb neon vfpv4 callconvention-hard cortexa7"
+TARGET_FPU        = "hard"
+meta              
+meta-poky         
+meta-yocto-bsp    = "morty:6c9f6b5f70ab3ee194b2c2c6f3bd462c994848fa"
+meta-raspberrypi  = "master:6bd1bfe472ea491c0edeb7c854d1c0cc5192afeb"
+meta-oe           
+meta-python       
+meta-multimedia   
+meta-gnome        = "morty:6c9f6b5f70ab3ee194b2c2c6f3bd462c994848fa"
+meta-browser      = "master:1edcce7791b4cee9a515c1f11b351753a4f8b12e"
+
+This requires 6876 tasks resulting in 3959 RPMs
+
+as user root
+
+cd /home/vidal/wkg/yocto/RaspberryPi2/poky/build/tmp/deploy/images/raspberrypi2
+
+vidal@ws009:~/wkg/yocto/RaspberryPi2/poky$ ls -la build/tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg 
+lrwxrwxrwx 2 vidal vidal 60 Nov 14 11:27 build/tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2.rpi-sdimg -> core-image-sato-raspberrypi2-20161114182039.rootfs.rpi-sdimg
+
+vidal@ws009:~/wkg/yocto/RaspberryPi2/poky$ ls -la build/tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2-20161114182039.rootfs.rpi-sdimg 
+-rw-r--r-- 2 vidal vidal 1606418432 Nov 14 11:27 build/tmp/deploy/images/raspberrypi2/core-image-sato-raspberrypi2-20161114182039.rootfs.rpi-sdimg
+
+dd if=core-image-sato-raspberrypi2.rpi-sdimg of=/dev/sdx bs=16M
+
+Created a core-image-sato with additional packages
+ls -la core-image-sato-raspberrypi2-20161117003745.rootfs.rpi-sdimg
+-rw-r--r-- 2 vidal vidal 1828716544 Nov 16 17:45 core-image-sato-raspberrypi2-20161117003745.rootfs.rpi-sdimg
+pck111616.txt
+
+1,66 GB image created with poky needed to resized
+
+working with a 8GB & 16GB micro SD-card
+
+Adding verilator, openarty, and zipcpu.
+
+
+ 
+
+    
+openarty
+commit 61e539b5cba7b218e3f64e3d188392e346fb2a2b
+Author: Me <me@example.com>
+Date:   Thu Nov 3 14:32:24 2016 -0400
+
+    Working binaries
+      
+zipcpu
+commit 6037ee7b856228f9253da2f235ded060d8c5a9fc
+Author: Me <me@example.com>
+Date:   Fri Nov 4 18:52:08 2016 -0400
+
+    Massive specification rewrite
+
+meta-broswer & meta-openembedded provides several of the layers used
+to create core-image-sato.
+
+meta-broswer
+commit 1edcce7791b4cee9a515c1f11b351753a4f8b12e
+Author: Martin Jansa <Martin.Jansa@gmail.com>
+Date:   Thu Oct 13 15:53:30 2016 +0200
+
+    chromium-wayland: skip when CHROMIUM_ENABLE_WAYLAND isn't enabled
+    
+    * otherwise chromium-wayland recipe might build with CHROMIUM_ENABLE_WAYLAND 0 and then
+      autodetect couple of x11 libraries
+      chromium-wayland-48.0.2548.0: chromium-wayland rdepends on atk, but it isn't a build dependency, missing atk in DEPENDS or PACKAGECONFIG? [build-deps]
+      chromium-wayland-48.0.2548.0: chromium-wayland rdepends on gdk-pixbuf, but it isn't a build dependency, missing gdk-pixbuf in DEPENDS or PACKAGECONFIG? [build-deps]
+      chromium-wayland-48.0.2548.0: chromium-wayland rdepends on gtk+, but it isn't a build dependency, missing gtk+ in DEPENDS or PACKAGECONFIG? [build-deps]
+      chromium-wayland-48.0.2548.0: chromium-wayland rdepends on libxcomposite, but it isn't a build dependency, missing libxcomposite in DEPENDS or PACKAGECONFIG? [build-deps]
+      chromium-wayland-48.0.2548.0: chromium-wayland rdepends on libxcursor, but it isn't a build dependency, missing libxcursor in DEPENDS or PACKAGECONFIG? [build-deps]
+      chromium-wayland-48.0.2548.0: chromium-wayland rdepends on libxscrnsaver,
+ 
+meta-openembedded
+commit 7a491f384c277ee42ac895fec6fc2ef70f15df4d
+Author: Jonathan Liu <net147@gmail.com>
+Date:   Tue Oct 25 00:40:27 2016 +1100
+
+    nodejs: update to 4.6.1
+    
+    Fixes CVE-2016-5180.
+    
+    Signed-off-by: Jonathan Liu <net147@gmail.com>
+    Signed-off-by: Martin Jansa <Martin.Jansa@gmail.com>
+
+root@raspberrypi2:~/openarty/sw/host# ./wbregs version
+00000100 ( VERSION) : [....] 20161106
+root@raspberrypi2:~/openarty/sw/host# ./zipstate 
+0x017c0600: HALTED 
+root@raspberrypi2:~/openarty/sw/host# ./wbsettime 
+Time set to   165300
+Date set to 20161114
+(Now reads 20161114)
+root@raspberrypi2:~/openarty/sw/host# ./wbregs clock
+00000128 (   CLOCK) : [..V&] 80165626
+root@raspberrypi2:~/openarty/sw/host# date
+Mon Nov 14 16:56:29 UTC 2016
+
+root@raspberrypi2:~# df
+Filesystem     1K-blocks    Used Available Use% Mounted on
+/dev/root       14271484 1252692  12258064  10% /
+devtmpfs          493856       4    493852   1% /dev
+tmpfs                 40       0        40   0% /mnt/.psplash
+tmpfs             498188     168    498020   1% /run
+tmpfs             498188      96    498092   1% /var/volatile
+/dev/mmcblk0p1     40862   21276     19586  53% /run/media/mmcblk0p1 
+
+commit 183cabc77d2447dc477ad06f4b112c28e69367f0
+Author: Wilson Snyder <wsnyder@wsnyder.org>
+Date:   Tue Nov 8 21:16:22 2016 -0500
+
+    Internals: Have cloning return node's type to avoid casts. No functional change.
+
+
+root@raspberrypi2:~/verilator# ./configure 
+configuring for Verilator 3.889 devel
+checking whether to disable hardcoded paths... yes
+checking whether to show and stop on compilation warnings... no
+checking whether to run long tests... no
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking for a BSD-compatible install... /usr/bin/install -c
+checking that C++ compiler can compile simple program... yes
+checking for perl... /usr/bin/perl
+checking for flex... /usr/bin/flex
+checking for bison... /usr/bin/bison
+checking how to run the C++ preprocessor... g++ -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for size_t... yes
+checking for size_t... (cached) yes
+checking for inline... inline
+checking whether g++ accepts -Wno-unused-parameter... yes
+checking whether g++ accepts -Wno-char-subscripts... yes
+checking whether g++ accepts -Wno-undefined-bool-conversion... yes
+checking whether g++ accepts -Qunused-arguments... no
+checking whether g++ accepts -fno-delete-null-pointer-checks... yes
+checking whether g++ accepts -Wno-unused... yes
+checking whether g++ accepts -Wno-parentheses-equality... yes
+checking whether g++ accepts -Wno-null-conversion... yes
+checking whether g++ accepts -Wno-char-subscripts... yes
+checking whether g++ accepts -Wno-parentheses-equality... yes
+checking whether g++ accepts -Wno-sign-compare... yes
+checking whether g++ accepts -Wno-uninitialized... yes
+checking whether g++ accepts -Wno-unused-but-set-variable... yes
+checking whether g++ accepts -Wno-unused-parameter... yes
+checking whether g++ accepts -Wno-unused-variable... yes
+checking whether g++ accepts -fbracket-depth=4096... no
+checking whether g++ accepts -Qunused-arguments... no
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating src/Makefile_obj
+config.status: creating include/verilated.mk
+config.status: creating include/verilated_config.h
+config.status: creating verilator.pc
+config.status: creating src/config_build.h
+
+Now type 'make' (or sometimes 'gmake') to build Verilator.
+
+make ran without error.
+
+running make install had the following error
+
+mkdir /usr/local/share/verilator/bin
+( cd ./bin ; /usr/bin/install -c verilator_includer /usr/local/share/verilator/bin/verilator_includer )
+pod2man bin/verilator verilator.1
+make: pod2man: Command not found
+make: *** [Makefile:214: verilator.1] Error 127
+
+A version of pod2man from /usr/bin/ on a Ubuntu 16.04 was tested 
+
+root@raspberrypi2Xula:~/verilator# cp ~/arty_repo/verilator_fix/pod2man /usr/bin/
+
+For documentation see 'man verilator' or 'verilator --help'
+For forums and to report bugs see http://www.veripool.org/verilator
