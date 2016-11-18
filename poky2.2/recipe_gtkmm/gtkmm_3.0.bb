@@ -9,7 +9,7 @@
 # these in the LICENSE value using & if the multiple licenses all apply, or | if there
 # is a choice between the multiple licenses. If in doubt, check the accompanying
 # documentation to determine which situation is applicable.
-LICENSE = "LGPLv2.1 GPLv2"
+LICENSE = "LGPLv2.1 & GPLv2"
 LIC_FILES_CHKSUM = "file://COPYING;md5=d8045f3b8f929c1cb29a1e3fd737b499 \
                     file://COPYING.tools;md5=751419260aa954499f7abaabaa882bbe"
 
@@ -25,5 +25,8 @@ S = "${WORKDIR}/${BPN}-${PV}.0"
 inherit pkgconfig autotools
 
 # Specify any options you want to pass to the configure script using EXTRA_OECONF:
-EXTRA_OECONF = ""
+DEPENDS = "atkmm pangomm glibmm gtk+ cairomm"
+
+EXTRA_OECONF = " --disable-documentaion --disable-silent-rules \
+--disable-dependency-tracking --with-libtool-sysroot --disable-static "
 
