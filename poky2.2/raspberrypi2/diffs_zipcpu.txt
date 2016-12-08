@@ -1,0 +1,64 @@
+diff --git a/sw/gas-script.sh b/sw/gas-script.sh
+index f290a66..d3f807a 100644
+--- a/sw/gas-script.sh
++++ b/sw/gas-script.sh
+@@ -40,18 +40,18 @@ then
+   cd ..
+ fi
+ 
+-uname -a | grep x86 > /dev/null
+-if [[ $? != 0 ]]; then
+-  echo "This build script only works for x86_64 machines"
+-  echo "You will need to change the CLFS_HOST line if you wish to build"
+-  echo "on any other type of host."
+-  exit 1
+-fi
++#uname -a | grep x86 > /dev/null
++#if [[ $? != 0 ]]; then
++#  echo "This build script only works for x86_64 machines"
++#  echo "You will need to change the CLFS_HOST line if you wish to build"
++#  echo "on any other type of host."
++#  exit 1
++#fi
+ 
+ set +h
+ set -e
+-CLFS_HOST="x86_64-cross-linux-gnu"
+-# CLFS_HOST="arm-unknown-linux-gnueabihf" # For a Raspberry Pi
++#CLFS_HOST="x86_64-cross-linux-gnu"
++CLFS_HOST="arm-poky-linux-gnueabi" # For a Raspberry Pi
+ CLFS_TARGET="zip"
+ INSTALL_BASE=`pwd`/install
+ mkdir -p ${INSTALL_BASE}/cross-tools
+diff --git a/sw/gcc-script.sh b/sw/gcc-script.sh
+index eadbc50..f282c1c 100644
+--- a/sw/gcc-script.sh
++++ b/sw/gcc-script.sh
+@@ -48,18 +48,18 @@ then
+   fi
+ fi
+ 
+-uname -a | grep x86 > /dev/null
+-if [[ $? != 0 ]]; then
+-  echo "This build script only works for x86_64 machines"
+-  echo "You will need to change the CLFS_HOST line if you wish to build"
+-  echo "on any other type of host."
+-  exit 1
+-fi
++#uname -a | grep x86 > /dev/null
++#if [[ $? != 0 ]]; then
++#  echo "This build script only works for x86_64 machines"
++#  echo "You will need to change the CLFS_HOST line if you wish to build"
++#  echo "on any other type of host."
++#  exit 1
++#fi
+ 
+ set +h
+ set -e
+-CLFS_HOST="x86_64-cross-linux-gnu"
+-# CLFS_HOST="arm-unknown-linux-gnueabihf" # For a Raspberry Pi ??
++#CLFS_HOST="x86_64-cross-linux-gnu"
++CLFS_HOST="arm-poky-linux-gnueabi" # For a Raspberry Pi ??
+ CLFS_TARGET="zip"
+ INSTALL_BASE=`pwd`/install
+ mkdir -p ${INSTALL_BASE}/cross-tools
