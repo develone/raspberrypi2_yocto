@@ -107,6 +107,9 @@ cpp-6.2.0-r0.cortexa7hf_neon_vfpv4
 cpp-symlinks-6.2.0-r0.cortexa7hf_neon_vfpv4
 cryptodev-linux-1.8-r0.cortexa7hf_neon_vfpv4
 cryptodev-linux-dev-1.8-r0.cortexa7hf_neon_vfpv4
+cups-2.1.4-r0.cortexa7hf_neon_vfpv4
+cups-dev-2.1.4-r0.cortexa7hf_neon_vfpv4
+cups-doc-2.1.4-r0.cortexa7hf_neon_vfpv4
 curl-7.50.1-r0.cortexa7hf_neon_vfpv4
 curl-dev-7.50.1-r0.cortexa7hf_neon_vfpv4
 curl-doc-7.50.1-r0.cortexa7hf_neon_vfpv4
@@ -196,6 +199,9 @@ geany-locale-en-gb-1.28-r0.cortexa7hf_neon_vfpv4
 gettext-0.19.8.1-r0.cortexa7hf_neon_vfpv4
 gettext-dev-0.19.8.1-r0.cortexa7hf_neon_vfpv4
 gettext-doc-0.19.8.1-r0.cortexa7hf_neon_vfpv4
+ghostscript-9.19-r0.cortexa7hf_neon_vfpv4
+ghostscript-dev-9.19-r0.cortexa7hf_neon_vfpv4
+ghostscript-doc-9.19-r0.cortexa7hf_neon_vfpv4
 git-2.9.3-r0.cortexa7hf_neon_vfpv4
 git-dev-2.9.3-r0.cortexa7hf_neon_vfpv4
 git-doc-2.9.3-r0.cortexa7hf_neon_vfpv4
@@ -233,6 +239,9 @@ gnome-theme-adwaita-3.20.2-r0.cortexa7hf_neon_vfpv4
 gnome-theme-adwaita-dev-3.20.2-r0.cortexa7hf_neon_vfpv4
 gnome-themes-standard-locale-en-gb-3.20.2-r0.cortexa7hf_neon_vfpv4
 gnu-config-20150728+git0+b576fa87c1-r0.cortexa7hf_neon_vfpv4
+gnuplot-4.6.5-r0.cortexa7hf_neon_vfpv4
+gnuplot-dev-4.6.5-r0.cortexa7hf_neon_vfpv4
+gnuplot-doc-4.6.5-r0.cortexa7hf_neon_vfpv4
 gobject-introspection-1.48.0-r0.cortexa7hf_neon_vfpv4
 gobject-introspection-dev-1.48.0-r0.cortexa7hf_neon_vfpv4
 gobject-introspection-doc-1.48.0-r0.cortexa7hf_neon_vfpv4
@@ -2159,9 +2168,9 @@ liba52-0-0.7.4-r4.cortexa7hf_neon_vfpv4
 liba52-dev-0.7.4-r4.cortexa7hf_neon_vfpv4
 libacl1-2.2.52-r0.cortexa7hf_neon_vfpv4
 libapm1-3.2.2+15-r0.cortexa7hf_neon_vfpv4
-libarchive-3.2.1-r0.cortexa7hf_neon_vfpv4
-libarchive-dev-3.2.1-r0.cortexa7hf_neon_vfpv4
-libarchive-doc-3.2.1-r0.cortexa7hf_neon_vfpv4
+libarchive-3.2.2-r0.cortexa7hf_neon_vfpv4
+libarchive-dev-3.2.2-r0.cortexa7hf_neon_vfpv4
+libarchive-doc-3.2.2-r0.cortexa7hf_neon_vfpv4
 libasan-dev-6.2.0-r0.cortexa7hf_neon_vfpv4
 libasan3-6.2.0-r0.cortexa7hf_neon_vfpv4
 libasm1-0.166-r0.cortexa7hf_neon_vfpv4
@@ -2241,6 +2250,8 @@ libcom-err2-1.43-r1.cortexa7hf_neon_vfpv4
 libcroco-0.6.11-r0.cortexa7hf_neon_vfpv4
 libcroco-dev-0.6.11-r0.cortexa7hf_neon_vfpv4
 libcrypto1.0.0-1.0.2j-r0.cortexa7hf_neon_vfpv4
+libcups2-2.1.4-r0.cortexa7hf_neon_vfpv4
+libcupsimage2-2.1.4-r0.cortexa7hf_neon_vfpv4
 libcurl4-7.50.1-r0.cortexa7hf_neon_vfpv4
 libdaemon-dev-0.14-r0.cortexa7hf_neon_vfpv4
 libdaemon-doc-0.14-r0.cortexa7hf_neon_vfpv4
@@ -2322,6 +2333,8 @@ libgcc1-6.2.0-r0.cortexa7hf_neon_vfpv4
 libgcrypt-1.7.3-r0.cortexa7hf_neon_vfpv4
 libgcrypt-dev-1.7.3-r0.cortexa7hf_neon_vfpv4
 libgcrypt-doc-1.7.3-r0.cortexa7hf_neon_vfpv4
+libgd-dev-2.2.3-r0.cortexa7hf_neon_vfpv4
+libgd3-2.2.3-r0.cortexa7hf_neon_vfpv4
 libgdbm-compat4-1.12-r0.cortexa7hf_neon_vfpv4
 libgdbm-dev-1.12-r0.cortexa7hf_neon_vfpv4
 libgdbm-doc-1.12-r0.cortexa7hf_neon_vfpv4
